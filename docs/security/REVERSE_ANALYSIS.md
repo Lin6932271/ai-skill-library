@@ -18,18 +18,18 @@
 | --- | --- |
 | 软件 | ai技能库 1.3.2 |
 | 发布文件 | `AISkillLibrary-1.3.2-windows-x64.exe` |
-| 大小 | 24,841,797 字节 |
+| 大小 | 24,809,326 字节 |
 | 类型 | x64 Windows PE，GUI 子系统，PyInstaller 单文件包 |
 | 签名 | NotSigned，未附加 Authenticode 证书 |
 | 权限声明 | asInvoker，跟随当前用户权限 |
-| 核心源码提交 | `4f4aea6d5478d91d3e04e45f8b5309c62191f39e` |
+| 核心源码提交 | `573546b2dcc06c4e692e72672eaf86f859ace9b1` |
 | 分析前后哈希 | 一致 |
 
 ```text
-SHA-256: 1c46ac529db10ce25d9d90d52f05e8a614495afda57fc8d7b6037f34a6a24b42
+SHA-256: fdda339cf2c6e235d80541213832fb2a0b5ea744b8e22c1a2b2e38d86c05b53d
 ```
 
-[对应源码](https://github.com/Lin6932271/ai-skill-library/tree/4f4aea6d5478d91d3e04e45f8b5309c62191f39e) · [发布下载](https://github.com/Lin6932271/ai-skill-library/releases/tag/v1.3.2) · [机器可读摘要](https://github.com/Lin6932271/ai-skill-library/blob/main/docs/security/evidence/audit-summary.json)
+[对应源码](https://github.com/Lin6932271/ai-skill-library/tree/573546b2dcc06c4e692e72672eaf86f859ace9b1) · [发布下载](https://github.com/Lin6932271/ai-skill-library/releases/tag/v1.3.2) · [机器可读摘要](https://github.com/Lin6932271/ai-skill-library/blob/main/docs/security/evidence/audit-summary.json)
 
 只有哈希相同的文件属于本报告对象，二次修改或重新构建的文件需另行检查。
 
@@ -39,10 +39,10 @@ SHA-256: 1c46ac529db10ce25d9d90d52f05e8a614495afda57fc8d7b6037f34a6a24b42
 
 | 检查 | 结果 |
 | --- | --- |
-| CArchive / PYZ | 295 个归档成员 / 673 个模块 |
+| CArchive / PYZ | 294 个归档成员 / 673 个模块 |
 | main、backend | 递归代码对象与对应源码编译结果一致 |
 | 启动代码 / runtime hook / struct | 10 项均与对应工具参考源码一致 |
-| 界面及技能资源 | 127 项实际解包字节均与公开源码一致 |
+| 界面及技能资源 | 126 项实际解包字节均与公开源码一致 |
 | 原生 DLL / PYD | 84/84 项与构建环境参考文件的 SHA-256 相同 |
 
 代码比较包含字节码、常量、名称、变量、闭包、异常表和行号表；忽略构建路径相关的 co_filename。
@@ -55,11 +55,11 @@ PE 标准 bootloader 对照、资源类型、导入和权限清单详见 [PE 分
 
 ## 应用代码访问边界
 
-- 服务仅绑定 127.0.0.1；API 验证 Host、Origin 和随机令牌，页面请求指向同源接口。定位：[main.py](https://github.com/Lin6932271/ai-skill-library/blob/4f4aea6d5478d91d3e04e45f8b5309c62191f39e/main.py#L133)、[frontend/app.js](https://github.com/Lin6932271/ai-skill-library/blob/4f4aea6d5478d91d3e04e45f8b5309c62191f39e/frontend/app.js#L49)。
-- ZIP 导入限制 32 MB / 2000 文件，拒绝越界路径、重复路径和链接；技能脚本只保存为附件。定位：[backend.py](https://github.com/Lin6932271/ai-skill-library/blob/4f4aea6d5478d91d3e04e45f8b5309c62191f39e/backend.py#L258)。
-- 技能正文先转义再展示，页面 CSP 限制脚本、连接和媒体同源。定位：[frontend/app.js](https://github.com/Lin6932271/ai-skill-library/blob/4f4aea6d5478d91d3e04e45f8b5309c62191f39e/frontend/app.js#L3)、[main.py](https://github.com/Lin6932271/ai-skill-library/blob/4f4aea6d5478d91d3e04e45f8b5309c62191f39e/main.py#L77)。
-- 安装先保存备份，事务失败时恢复；撤销会保留外部修改。定位：[backend.py](https://github.com/Lin6932271/ai-skill-library/blob/4f4aea6d5478d91d3e04e45f8b5309c62191f39e/backend.py#L355)、[backend.py](https://github.com/Lin6932271/ai-skill-library/blob/4f4aea6d5478d91d3e04e45f8b5309c62191f39e/backend.py#L449)。
-- os.startfile 用于用户点击“打开目录”；PrintWindow 位于显式验收分支，目标为应用自己的窗口。未发现后台全桌面采集、键盘记录、浏览器密码读取或进程内存注入的自写实现。定位：[main.py](https://github.com/Lin6932271/ai-skill-library/blob/4f4aea6d5478d91d3e04e45f8b5309c62191f39e/main.py#L47)、[main.py](https://github.com/Lin6932271/ai-skill-library/blob/4f4aea6d5478d91d3e04e45f8b5309c62191f39e/main.py#L201)。
+- 服务仅绑定 127.0.0.1；API 验证 Host、Origin 和随机令牌，页面请求指向同源接口。定位：[main.py](https://github.com/Lin6932271/ai-skill-library/blob/573546b2dcc06c4e692e72672eaf86f859ace9b1/main.py#L133)、[frontend/app.js](https://github.com/Lin6932271/ai-skill-library/blob/573546b2dcc06c4e692e72672eaf86f859ace9b1/frontend/app.js#L49)。
+- ZIP 导入限制 32 MB / 2000 文件，拒绝越界路径、重复路径和链接；技能脚本只保存为附件。定位：[backend.py](https://github.com/Lin6932271/ai-skill-library/blob/573546b2dcc06c4e692e72672eaf86f859ace9b1/backend.py#L258)。
+- 技能正文先转义再展示，页面 CSP 限制脚本、连接和媒体同源。定位：[frontend/app.js](https://github.com/Lin6932271/ai-skill-library/blob/573546b2dcc06c4e692e72672eaf86f859ace9b1/frontend/app.js#L3)、[main.py](https://github.com/Lin6932271/ai-skill-library/blob/573546b2dcc06c4e692e72672eaf86f859ace9b1/main.py#L77)。
+- 安装先保存备份，事务失败时恢复；撤销会保留外部修改。定位：[backend.py](https://github.com/Lin6932271/ai-skill-library/blob/573546b2dcc06c4e692e72672eaf86f859ace9b1/backend.py#L355)、[backend.py](https://github.com/Lin6932271/ai-skill-library/blob/573546b2dcc06c4e692e72672eaf86f859ace9b1/backend.py#L449)。
+- os.startfile 用于用户点击“打开目录”；PrintWindow 位于显式验收分支，目标为应用自己的窗口。未发现后台全桌面采集、键盘记录、浏览器密码读取或进程内存注入的自写实现。定位：[main.py](https://github.com/Lin6932271/ai-skill-library/blob/573546b2dcc06c4e692e72672eaf86f859ace9b1/main.py#L47)、[main.py](https://github.com/Lin6932271/ai-skill-library/blob/573546b2dcc06c4e692e72672eaf86f859ace9b1/main.py#L201)。
 
 技能安装指写入客户端指令与技能文件。正文中出现安全、逆向、Hook 等词汇属于可阅读资料；用户导入内容和 AI 客户端后续采用指令的行为需单独检查。
 
@@ -94,7 +94,7 @@ Bandit 1.9.4 扫描 main.py 与 backend.py，未跳过规则。高等级 0、中
 | 安全情报 | 1.459.576.0 |
 | 安全情报更新时间 | 2026-10-06T07:12:32.0000000+08:00 |
 | 实时保护 | True |
-| 扫描完成时间 | 2026-10-07T16:53:38.8975139+08:00 |
+| 扫描完成时间 | 2026-10-07T17:16:32.4110448+08:00 |
 
 该结果属于本机单引擎、单文件检查，不能冒充多引擎检测计数或独立安全认证。
 [Microsoft 官方命令说明](https://learn.microsoft.com/en-us/defender-endpoint/command-line-arguments-microsoft-defender-antivirus)

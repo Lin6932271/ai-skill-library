@@ -28,13 +28,6 @@
     "matches_source": true
   },
   {
-    "name": "frontend/assets/brand-mark-BgR0MxcD.png",
-    "type": "b",
-    "bytes": 32843,
-    "sha256": "c8df033d1c95da33ea6237b32fd0366d00da09dc2273faa3156048183f512ad5",
-    "matches_source": true
-  },
-  {
     "name": "frontend/assets/claude-j3qmYznB.png",
     "type": "b",
     "bytes": 25023,

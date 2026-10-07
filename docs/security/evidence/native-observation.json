@@ -6,21 +6,21 @@
     "msedgewebview2.exe"
   ],
   "observed_process_count": 9,
-  "duration_seconds": 10.655,
+  "duration_seconds": 10.616,
   "requested_sampling_interval_seconds": 0.1,
   "mean_sampling_interval_seconds": 0.109,
-  "successful_socket_samples": 99,
+  "successful_socket_samples": 98,
   "socket_sampling_errors": 0,
   "connections": [
     {
       "process": "AISkillLibrary-1.3.2-windows-x64.exe",
       "local": [
         "127.0.0.1",
-        62735
+        57399
       ],
       "remote": [
         "127.0.0.1",
-        58584
+        59172
       ],
       "status": "ESTABLISHED",
       "external_remote": false
@@ -29,46 +29,7 @@
       "process": "AISkillLibrary-1.3.2-windows-x64.exe",
       "local": [
         "127.0.0.1",
-        62735
-      ],
-      "remote": [
-        "127.0.0.1",
-        59340
-      ],
-      "status": "ESTABLISHED",
-      "external_remote": false
-    },
-    {
-      "process": "AISkillLibrary-1.3.2-windows-x64.exe",
-      "local": [
-        "127.0.0.1",
-        62735
-      ],
-      "remote": [
-        "127.0.0.1",
-        65067
-      ],
-      "status": "ESTABLISHED",
-      "external_remote": false
-    },
-    {
-      "process": "AISkillLibrary-1.3.2-windows-x64.exe",
-      "local": [
-        "127.0.0.1",
-        62735
-      ],
-      "remote": [
-        "127.0.0.1",
-        65163
-      ],
-      "status": "ESTABLISHED",
-      "external_remote": false
-    },
-    {
-      "process": "AISkillLibrary-1.3.2-windows-x64.exe",
-      "local": [
-        "127.0.0.1",
-        62735
+        57399
       ],
       "remote": [],
       "status": "LISTEN",
@@ -78,7 +39,7 @@
       "process": "msedgewebview2.exe",
       "local": [
         "127.0.0.1",
-        50721
+        51944
       ],
       "remote": [
         "127.0.0.1",
@@ -91,85 +52,7 @@
       "process": "msedgewebview2.exe",
       "local": [
         "127.0.0.1",
-        50721
-      ],
-      "remote": [
-        "127.0.0.1",
-        7897
-      ],
-      "status": "FIN_WAIT2",
-      "external_remote": false
-    },
-    {
-      "process": "msedgewebview2.exe",
-      "local": [
-        "127.0.0.1",
-        52896
-      ],
-      "remote": [
-        "127.0.0.1",
-        7897
-      ],
-      "status": "ESTABLISHED",
-      "external_remote": false
-    },
-    {
-      "process": "msedgewebview2.exe",
-      "local": [
-        "127.0.0.1",
-        52897
-      ],
-      "remote": [
-        "127.0.0.1",
-        7897
-      ],
-      "status": "ESTABLISHED",
-      "external_remote": false
-    },
-    {
-      "process": "msedgewebview2.exe",
-      "local": [
-        "127.0.0.1",
-        58584
-      ],
-      "remote": [
-        "127.0.0.1",
-        62735
-      ],
-      "status": "ESTABLISHED",
-      "external_remote": false
-    },
-    {
-      "process": "msedgewebview2.exe",
-      "local": [
-        "127.0.0.1",
-        59340
-      ],
-      "remote": [
-        "127.0.0.1",
-        62735
-      ],
-      "status": "ESTABLISHED",
-      "external_remote": false
-    },
-    {
-      "process": "msedgewebview2.exe",
-      "local": [
-        "127.0.0.1",
-        62440
-      ],
-      "remote": [
-        "127.0.0.1",
-        7897
-      ],
-      "status": "ESTABLISHED",
-      "external_remote": false
-    },
-    {
-      "process": "msedgewebview2.exe",
-      "local": [
-        "127.0.0.1",
-        62440
+        51944
       ],
       "remote": [
         "127.0.0.1",
@@ -182,11 +65,11 @@
       "process": "msedgewebview2.exe",
       "local": [
         "127.0.0.1",
-        65067
+        59172
       ],
       "remote": [
         "127.0.0.1",
-        62735
+        57399
       ],
       "status": "ESTABLISHED",
       "external_remote": false
@@ -195,13 +78,52 @@
       "process": "msedgewebview2.exe",
       "local": [
         "127.0.0.1",
-        65163
+        59770
       ],
       "remote": [
         "127.0.0.1",
-        62735
+        7897
       ],
       "status": "ESTABLISHED",
+      "external_remote": false
+    },
+    {
+      "process": "msedgewebview2.exe",
+      "local": [
+        "127.0.0.1",
+        59771
+      ],
+      "remote": [
+        "127.0.0.1",
+        7897
+      ],
+      "status": "ESTABLISHED",
+      "external_remote": false
+    },
+    {
+      "process": "msedgewebview2.exe",
+      "local": [
+        "127.0.0.1",
+        59933
+      ],
+      "remote": [
+        "127.0.0.1",
+        7897
+      ],
+      "status": "ESTABLISHED",
+      "external_remote": false
+    },
+    {
+      "process": "msedgewebview2.exe",
+      "local": [
+        "127.0.0.1",
+        59933
+      ],
+      "remote": [
+        "127.0.0.1",
+        7897
+      ],
+      "status": "FIN_WAIT2",
       "external_remote": false
     }
   ],

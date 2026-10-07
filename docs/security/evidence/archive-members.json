@@ -405,7 +405,7 @@
     "name": "base_library.zip",
     "type": "b",
     "bytes": 1388164,
-    "sha256": "59cc35fafc9ca1eb968130f042acc7018dfe7303d6e2de352162605eb65033ed"
+    "sha256": "5b00558a44c78b2577ad3e6c3760b587efda0b056dd16a0fd6b2785e9c6cc9e2"
   },
   {
     "name": "clr_loader/ffi/dlls/amd64/ClrLoader.dll",
@@ -442,12 +442,6 @@
     "type": "b",
     "bytes": 181643,
     "sha256": "7932d3a85b3bb2fe53f8611ef3ec318497960473d2d00c5c49a2f6baa939d067"
-  },
-  {
-    "name": "frontend/assets/brand-mark-BgR0MxcD.png",
-    "type": "b",
-    "bytes": 32843,
-    "sha256": "c8df033d1c95da33ea6237b32fd0366d00da09dc2273faa3156048183f512ad5"
   },
   {
     "name": "frontend/assets/claude-j3qmYznB.png",
