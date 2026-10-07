@@ -1,5 +1,7 @@
 # ai技能库
 
+**开发方式：AI 开发。**
+
 Windows 桌面技能管理工具，当前版本 **1.3.2**。支持 Codex、Claude、DeepSeek Harness、Hermes、ZCode，以及 WorkBuddy 国内版和国际版。
 
 ![控制台](docs/images/console.png)
