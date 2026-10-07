@@ -1,4 +1,4 @@
-"""Desktop host and localhost-only UI service for Pojia Local."""
+"""Desktop window and local UI service for AI Skill Library."""
 from __future__ import annotations
 
 import argparse

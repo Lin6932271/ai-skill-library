@@ -110,17 +110,17 @@ def run(executable=None):
                 page.screenshot(path=str(output / (prefix + "console-light.png")), full_page=True)
                 card = page.locator("#service-card-codex")
                 initial_profiles = page.locator('#profile-codex option').count()
-                assert page.locator('#profile-codex').input_value() == 'cloud-all'
-                cloud_documents = int(re.search(r'\d+', page.locator('#profile-codex option[value="cloud-all"]').inner_text()).group())
-                assert cloud_documents == 53
+                assert page.locator('#profile-codex').input_value() == 'builtin'
+                builtin_documents = int(re.search(r'\d+', page.locator('#profile-codex option[value="builtin"]').inner_text()).group())
+                assert builtin_documents == 53
                 card.locator(".switch").click()
                 expect(page.locator('#service-card-codex .switch')).to_have_attribute('aria-checked', 'true')
                 assert (sandbox / "home" / ".codex" / "AGENTS.md").exists()
-                assert len(list((sandbox / 'home' / '.codex' / 'skills').glob('*/SKILL.md'))) == cloud_documents + 1
+                assert len(list((sandbox / 'home' / '.codex' / 'skills').glob('*/SKILL.md'))) == builtin_documents + 1
                 installed_suite = (sandbox / 'home/.codex/skills/pojia-local/SKILL.md').read_text('utf-8')
                 assert '云端' not in installed_suite and '取回' not in installed_suite
                 page.locator("#service-card-codex [data-action='verify']").click()
-                expect(page.locator('#modal-body .check')).to_have_count(cloud_documents + 2)
+                expect(page.locator('#modal-body .check')).to_have_count(builtin_documents + 2)
                 page.locator('#modal-title').hover()
                 page.mouse.wheel(0, 20000)
                 page.wait_for_timeout(300)
@@ -128,7 +128,7 @@ def run(executable=None):
                 expect(page.locator('#modal-body p').last).to_be_in_viewport()
                 page.locator('#modal').evaluate('(element) => element.scrollTop = 0')
                 page.locator('#modal-close').click()
-                page.locator("#profile-codex").select_option("curated")
+                page.locator("#profile-codex").select_option("advanced")
                 expect(page.locator('#service-card-codex .switch')).to_be_enabled()
                 assert (sandbox / "home" / ".codex" / "skills" / "pojia-local" / "references" / "checklist.md").exists()
                 page.locator("#service-card-codex [data-action='verify']").click()
@@ -141,15 +141,15 @@ def run(executable=None):
                 page.locator("[data-page='skills']").click()
                 expect(page.locator('.library-card')).to_have_count(initial_profiles)
                 check_wheel_scroll('skills', '#skills-page > .footnote')
-                page.locator('[data-profile="cloud-all"]').click()
+                page.locator('[data-profile="builtin"]').click()
                 directory_text = page.locator('.skill-content').text_content().replace('\r\n', '\n')
-                assert directory_text == (ROOT / 'skills/cloud-all/SKILL.md').read_text('utf-8')
+                assert directory_text == (ROOT / 'skills/builtin/SKILL.md').read_text('utf-8')
                 assert not any(x in directory_text for x in ['云端', '取回', '原云', '404'])
                 page.locator('.skill-content').evaluate('e => e.scrollTop = e.scrollHeight')
                 page.screenshot(path=str(output / (prefix + 'skills-directory.png')))
                 page.locator('#modal-close').click()
-                page.locator('#skill-origin').select_option('cloud')
-                expect(page.locator('.library-card')).to_have_count(cloud_documents + 1)
+                page.locator('#skill-collection').select_option('builtin')
+                expect(page.locator('.library-card')).to_have_count(builtin_documents + 1)
                 page.locator('#skill-search').fill('apk-reverse')
                 expect(page.locator('.library-card')).to_have_count(1)
                 page.locator('.library-card button').click()
@@ -161,7 +161,7 @@ def run(executable=None):
                 page.locator('#skill-category').select_option('入口')
                 expect(page.locator('.library-card')).to_have_count(4)
                 page.locator('#skill-category').select_option('')
-                page.locator('#skill-origin').select_option('')
+                page.locator('#skill-collection').select_option('')
                 assert not any(x in page.locator('body').inner_text() for x in
                                ['本地版', '独立本地版', '原云技能', '原云端取回', '云端原文', '离线适配'])
                 page.locator("#import").click()
@@ -192,8 +192,8 @@ def run(executable=None):
                 assert not errors, errors
                 assert not external, external
                 result = {"pass": True, "cards": 7, "install_switch_verify_revoke": True, "import_preview": True,
-                          "rebuilt_skill_count": 50, "suite_installation": True, "search_and_category": True,
-                          "cloud_documents": cloud_documents, "cloud_origin_filter": True,
+                          "extension_skill_count": 50, "suite_installation": True, "search_and_category": True,
+                          "builtin_documents": builtin_documents, "collection_filter": True,
                           "light_dark_modes": True, "external_requests": external, "page_errors": errors,
                           "wheel_scroll": scroll_checks,
                           "long_modal_scroll": True,

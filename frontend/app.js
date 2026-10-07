@@ -91,16 +91,16 @@ function renderLibrary() {
   if (!state) return;
   const query = $('#skill-search').value.trim().toLowerCase();
   const category = $('#skill-category').value;
-  const origin = $('#skill-origin').value;
+  const collection = $('#skill-collection').value;
   const profiles = state.profiles.filter(p => (!category || (p.category || '其他') === category) &&
-    (!origin || (origin === 'cloud' ? p.cloud_original : origin === 'rebuilt' ? p.reconstructed : !p.cloud_original && !p.reconstructed)) &&
+    (!collection || (collection === 'other' ? !p.collection : p.collection === collection)) &&
     [p.name, p.skill_name || '', p.description, ...(p.keywords || [])].join(' ').toLowerCase().includes(query));
-  $('#skill-library').innerHTML = profiles.map(profile => `<article class="library-card"><span class="chip">${profile.reconstructed ? '扩展技能 · ' + esc(profile.category) : profile.builtin ? esc(profile.category || '内置方案') : '已导入'}</span><h2>${esc(profile.name)}</h2>${profile.skill_name ? `<code>${esc(profile.skill_name)}</code>` : ''}<p>${esc(profile.description)}</p><button class="button" data-action="preview" data-profile="${esc(profile.id)}">查看技能正文</button></article>`).join('');
+  $('#skill-library').innerHTML = profiles.map(profile => `<article class="library-card"><span class="chip">${profile.collection === 'extension' ? '扩展技能 · ' + esc(profile.category) : profile.builtin ? esc(profile.category || '内置方案') : '已导入'}</span><h2>${esc(profile.name)}</h2>${profile.skill_name ? `<code>${esc(profile.skill_name)}</code>` : ''}<p>${esc(profile.description)}</p><button class="button" data-action="preview" data-profile="${esc(profile.id)}">查看技能正文</button></article>`).join('');
   $('#skill-count').textContent = `显示 ${profiles.length} / ${state.profiles.length} 项`;
 }
 $('#skill-search').oninput = renderLibrary;
 $('#skill-category').onchange = renderLibrary;
-$('#skill-origin').onchange = renderLibrary;
+$('#skill-collection').onchange = renderLibrary;
 async function refresh() {
   state = await api('status');
   render();

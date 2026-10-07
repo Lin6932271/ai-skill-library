@@ -21,8 +21,8 @@ class IntegrationTests(unittest.TestCase):
     def tearDown(self):
         self.temp.cleanup()
 
-    def test_rebuilt_suite_all_names_seven_clients_and_individual_switch(self):
-        index = json.loads((self.manager.bundle_dir / 'skills' / 'recovered-index.json').read_text('utf-8'))
+    def test_extensions_suite_all_names_seven_clients_and_individual_switch(self):
+        index = json.loads((self.manager.bundle_dir / 'skills' / 'routing-index.json').read_text('utf-8'))
         names = {row['name'] for row in index['entries'] + index['modules']} | set(index['extra_mapping_names'])
         self.assertEqual(len(names), 50)
         self.assertEqual(names, {row['skill_name'] for row in self.manager.catalog})
@@ -33,48 +33,48 @@ class IntegrationTests(unittest.TestCase):
                 instruction = root / spec[3]
                 original = b'\xef\xbb\xbfExisting instructions\r\n'
                 instruction.write_bytes(original)
-                self.manager.inject(provider, 'rebuilt-all')
+                self.manager.inject(provider, 'extended')
                 self.assertEqual(len(self.manager.verify(provider)['checks']), 52)
                 self.assertTrue(self.manager.verify(provider)['ok'])
                 for name in names:
                     skill = root / 'skills' / name / 'SKILL.md'
-                    self.assertIn('本地重建版', skill.read_text('utf-8'))
-                self.manager.inject(provider, 'rebuilt-apk-reverse')
+                    self.assertNotIn('本地重建版', skill.read_text('utf-8'))
+                self.manager.inject(provider, 'extension-apk-reverse')
                 self.assertTrue((root / 'skills' / 'apk-reverse' / 'SKILL.md').exists())
                 self.assertFalse((root / 'skills' / 'l-reverse' / 'SKILL.md').exists())
                 self.assertIn(b'skills/apk-reverse/SKILL.md', instruction.read_bytes())
-                self.manager.inject(provider, 'rebuilt-all')
+                self.manager.inject(provider, 'extended')
                 self.assertTrue(self.manager.revoke(provider)['removed'])
                 self.assertEqual(instruction.read_bytes(), original)
                 self.assertFalse(list((root / 'skills').rglob('SKILL.md')))
 
-    def test_rebuilt_suite_collision_keeps_every_existing_byte(self):
+    def test_extensions_suite_collision_keeps_every_existing_byte(self):
         root = self.manager.root('codex')
         path = root / 'skills' / 'l-reverse' / 'SKILL.md'
         path.parent.mkdir(parents=True)
         path.write_bytes(b'user skill')
         with self.assertRaises(LocalError):
-            self.manager.inject('codex', 'rebuilt-all')
+            self.manager.inject('codex', 'extended')
         self.assertEqual(path.read_bytes(), b'user skill')
         self.assertFalse((root / 'AGENTS.md').exists())
         self.assertEqual(list((root / 'skills').rglob('SKILL.md')), [path])
 
     def test_previous_release_record_migrates_without_losing_files(self):
-        self.manager.inject('codex', 'curated')
+        self.manager.inject('codex', 'advanced')
         record = self.manager.state['installed']['codex']
         record.pop('files_root')
         record['files'] = {name.removeprefix('pojia-local/'): value for name, value in record['files'].items()}
         self.manager.save()
         reloaded = SkillManager(self.root / 'data', self.root / 'home', use_env=False)
         self.assertTrue(reloaded.verify('codex')['ok'])
-        reloaded.inject('codex', 'rebuilt-all')
+        reloaded.inject('codex', 'extended')
         self.assertFalse((reloaded.root('codex') / 'skills' / 'pojia-local' / 'references' / 'checklist.md').exists())
         self.assertTrue(reloaded.verify('codex')['ok'])
         self.assertTrue(reloaded.revoke('codex')['removed'])
 
-    def test_rebuilt_links_resolve_in_deployed_suite(self):
+    def test_extensions_links_resolve_in_deployed_suite(self):
         import re
-        files = self.manager.deployment_files('rebuilt-all')
+        files = self.manager.deployment_files('extended')
         for rel, content in files.items():
             for target in re.findall(r'\]\(([^)]+)\)', content.decode('utf-8')):
                 resolved = (Path('/skills') / rel).parent / target
@@ -83,15 +83,15 @@ class IntegrationTests(unittest.TestCase):
                 self.assertIn(normalized, files, (rel, target))
 
     def test_single_entry_installs_referenced_modules(self):
-        self.manager.inject('claude', 'rebuilt-l-license')
+        self.manager.inject('claude', 'extension-l-license')
         root = self.manager.root('claude') / 'skills'
         expected = {'l-license', 'reverse-engineering', 'dotnet-reverse', 'apk-reverse', 'thick-client'}
         self.assertEqual({p.parent.name for p in root.glob('*/SKILL.md')}, expected)
         self.assertTrue(self.manager.verify('claude')['ok'])
         self.assertTrue(self.manager.revoke('claude')['removed'])
 
-    def test_cloud_suite_all_clients_switch_and_restore(self):
-        self.assertEqual(len(self.manager.cloud_catalog), 53)
+    def test_builtin_suite_all_clients_switch_and_restore(self):
+        self.assertEqual(len(self.manager.builtin_catalog), 53)
         for provider, spec in PROVIDERS.items():
             with self.subTest(provider=provider):
                 root = self.manager.root(provider)
@@ -99,39 +99,71 @@ class IntegrationTests(unittest.TestCase):
                 instruction = root / spec[3]
                 original = b'Original user instructions\r\n'
                 instruction.write_bytes(original)
-                self.manager.inject(provider, 'rebuilt-all')
-                self.manager.inject(provider, 'cloud-all')
+                self.manager.inject(provider, 'extended')
+                self.manager.inject(provider, 'builtin')
                 self.assertTrue(self.manager.verify(provider)['ok'])
                 self.assertEqual(len(list((root/'skills').glob('*/SKILL.md'))), 54)
                 self.assertFalse((root/'skills/container-runtime/SKILL.md').exists())
                 self.assertTrue((root/'skills/docs-generator/SKILL.md').exists())
-                self.manager.inject(provider, 'cloud-apk-reverse')
+                self.manager.inject(provider, 'builtin-apk-reverse')
                 content = (root/'skills/apk-reverse/SKILL.md').read_text('utf-8')
                 self.assertIn('JNI', content)
                 self.assertNotIn('云端原文的离线适配版', content)
                 self.assertTrue(self.manager.revoke(provider)['removed'])
                 self.assertEqual(instruction.read_bytes(), original)
 
-    def test_cloud_provenance_hashes_and_entry_dependencies(self):
+    def test_builtin_content_hashes_and_entry_dependencies(self):
         import hashlib
-        for item in self.manager.cloud_catalog:
+        for item in self.manager.builtin_catalog:
             content = self.manager.profile_files(item['id'])['SKILL.md']
-            self.assertEqual(hashlib.sha256(content).hexdigest(), item['offline_sha256'])
-            self.assertEqual(len(item['raw_sha256']), 64)
+            self.assertEqual(hashlib.sha256(content).hexdigest(), item['content_sha256'])
+            self.assertNotIn('raw_sha256', item)
             self.assertNotIn(b'L-SKILL CONTENT-PROTECTION:START', content)
             self.assertNotIn(b'skills-api/redeem', content)
             self.assertNotIn('云端原文的离线适配版', content.decode('utf-8'))
             self.assertNotIn(b'cloud routing entry', content)
             self.assertNotIn(b'No redeem request', content)
-        suite = self.manager.profile_files('cloud-all')['SKILL.md'].decode('utf-8')
+        suite = self.manager.profile_files('builtin')['SKILL.md'].decode('utf-8')
         self.assertNotIn('云端', suite)
         self.assertNotIn('取回', suite)
         self.assertIn('../cloud-k8s/SKILL.md', suite)
-        self.manager.inject('codex', 'cloud-l-reverse')
+        self.manager.inject('codex', 'builtin-l-reverse')
         deployed = {p.parent.name for p in (self.manager.root('codex')/'skills').glob('*/SKILL.md')}
-        entry = self.manager.cloud['cloud-l-reverse']
+        entry = self.manager.builtins['builtin-l-reverse']
         self.assertEqual(deployed, {'l-reverse', *entry['dependencies']})
         self.assertTrue(self.manager.verify('codex')['ok'])
+
+    def test_extension_generation_keeps_metadata_neutral(self):
+        import generate_extensions
+        with patch.object(generate_extensions, 'ROOT', self.root / 'generated'):
+            generate_extensions.build(self.manager.bundle_dir / 'skills/routing-index.json')
+        generated = self.root / 'generated'
+        catalog = json.loads((generated / 'skills/extensions-catalog.json').read_text('utf-8'))
+        self.assertEqual(len(catalog['items']), 50)
+        self.assertNotIn('origin', catalog)
+        for item in catalog['items']:
+            content = (generated / 'skills/extended/library' / item['skill_name'] / 'SKILL.md').read_text('utf-8')
+            self.assertNotIn('本地重建版', content)
+            self.assertNotIn('reconstructed', item)
+        router = (generated / 'skills/extended/SKILL.md').read_text('utf-8')
+        self.assertNotIn('原 EXE', router)
+        self.assertNotIn('原索引', router)
+
+    def test_existing_profile_aliases_install_switch_and_restore(self):
+        root = self.manager.root('codex')
+        root.mkdir(parents=True)
+        instruction = root / 'AGENTS.md'
+        original = b'Existing instructions\r\n'
+        instruction.write_bytes(original)
+        self.manager.inject('codex', 'cloud-all')
+        self.manager.state['installed']['codex']['profile'] = 'cloud-all'
+        self.manager.save()
+        loaded = SkillManager(self.root / 'data', self.root / 'home', use_env=False)
+        self.assertEqual(loaded.status()['providers'][0]['profile'], 'builtin')
+        loaded.inject('codex', 'rebuilt-apk-reverse')
+        self.assertTrue(loaded.verify('codex')['ok'])
+        loaded.revoke('codex')
+        self.assertEqual(instruction.read_bytes(), original)
 
     def test_all_seven_clients_install_switch_verify_and_exact_restore(self):
         for provider, spec in PROVIDERS.items():
@@ -144,13 +176,13 @@ class IntegrationTests(unittest.TestCase):
                 unrelated = root / "skills" / "user-skill" / "SKILL.md"
                 unrelated.parent.mkdir(parents=True)
                 unrelated.write_bytes(b"keep me")
-                result = self.manager.inject(provider, "original")
+                result = self.manager.inject(provider, "basic")
                 self.assertTrue(result["verification"]["ok"])
                 self.assertTrue((Path(result["backup"]) / "snapshot.json").is_file())
                 self.assertTrue(instruction.read_bytes().startswith(original))
-                self.manager.inject(provider, "curated")
+                self.manager.inject(provider, "advanced")
                 self.assertTrue((root / "skills" / "pojia-local" / "references" / "checklist.md").exists())
-                self.manager.inject(provider, "original")
+                self.manager.inject(provider, "basic")
                 self.assertFalse((root / "skills" / "pojia-local" / "references" / "checklist.md").exists())
                 self.assertTrue(self.manager.verify(provider)["ok"])
                 self.assertTrue(self.manager.revoke(provider)["removed"])
@@ -179,7 +211,7 @@ class IntegrationTests(unittest.TestCase):
         path.write_bytes(modified)
         self.assertFalse(self.manager.verify("codex")["ok"])
         with self.assertRaises(LocalError):
-            self.manager.inject("codex", "curated")
+            self.manager.inject("codex", "advanced")
         result = self.manager.revoke("codex")
         self.assertFalse(result["removed"])
         self.assertEqual(path.read_bytes(), modified)

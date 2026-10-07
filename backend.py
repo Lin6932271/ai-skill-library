@@ -1,4 +1,4 @@
-"""Independent local skill manager. No account, network, or original-engine code."""
+"""Skill installation, import, backup, verification and revocation."""
 from __future__ import annotations
 
 import base64
@@ -99,13 +99,13 @@ class SkillManager:
             except (ValueError, OSError) as exc:
                 raise LocalError("本地状态文件损坏，已保留原文件；请从备份恢复") from exc
         self.started = time.time()
-        catalog_path = self.bundle_dir / "skills" / "catalog.json"
+        catalog_path = self.bundle_dir / "skills" / "extensions-catalog.json"
         self.catalog = json.loads(catalog_path.read_text("utf-8"))["items"] if catalog_path.exists() else []
-        self.rebuilt = {item["id"]: item for item in self.catalog}
-        cloud_path = self.bundle_dir / "skills" / "cloud-catalog.json"
-        self.cloud_catalog = json.loads(cloud_path.read_text("utf-8"))["items"] if cloud_path.exists() else []
-        self.cloud = {item["id"]: item for item in self.cloud_catalog}
-        self.indexed = {**self.rebuilt, **self.cloud}
+        self.extensions = {item["id"]: item for item in self.catalog}
+        builtin_path = self.bundle_dir / "skills" / "builtin-catalog.json"
+        self.builtin_catalog = json.loads(builtin_path.read_text("utf-8"))["items"] if builtin_path.exists() else []
+        self.builtins = {item["id"]: item for item in self.builtin_catalog}
+        self.indexed = {**self.extensions, **self.builtins}
 
     def save(self) -> None:
         atomic_write(self.state_file, json.dumps(self.state, ensure_ascii=False, indent=2).encode("utf-8"))
@@ -176,25 +176,37 @@ class SkillManager:
             return {"path": str(self.root(provider))}
 
     def profiles(self) -> list[dict]:
-        result = ([{"id": "rebuilt-all", "name": "扩展技能库 · 50 项", "description": "安装扩展入口与模块，按任务读取", "builtin": True, "reconstructed": True, "category": "整套"}] if self.catalog else []) + [
-            {"id": "original", "name": "基础技能", "description": "通用开发流程、证据与验收规范", "builtin": True},
-            {"id": "curated", "name": "进阶技能", "description": "增加调试、审查与变更交付规范", "builtin": True},
+        result = ([{"id": "extended", "name": "扩展技能库 · 50 项", "description": "安装扩展入口与模块，按任务读取", "builtin": True, "collection": "extension", "category": "整套"}] if self.catalog else []) + [
+            {"id": "basic", "name": "基础技能", "description": "通用开发流程、证据与验收规范", "builtin": True},
+            {"id": "advanced", "name": "进阶技能", "description": "增加调试、审查与变更交付规范", "builtin": True},
         ]
-        if self.cloud_catalog:
-            result.insert(0, {"id": "cloud-all", "name": f"完整技能库 · {len(self.cloud_catalog)} 项", "description": "安装全部入口与模块，按任务读取", "builtin": True, "cloud_original": True, "category": "整套"})
-            result.extend(self.cloud_catalog)
+        if self.builtin_catalog:
+            result.insert(0, {"id": "builtin", "name": f"完整技能库 · {len(self.builtin_catalog)} 项", "description": "安装全部入口与模块，按任务读取", "builtin": True, "collection": "builtin", "category": "整套"})
+            result.extend(self.builtin_catalog)
         result.extend(self.catalog)
         result.extend({"id": key, "name": value["name"], "description": "从本地导入", "builtin": False}
                       for key, value in self.state["custom"].items())
         return result
 
+    @staticmethod
+    def normalize_profile(profile: str) -> str:
+        aliases = {"original": "basic", "curated": "advanced",
+                   "cloud-all": "builtin", "rebuilt-all": "extended"}
+        if profile in aliases:
+            return aliases[profile]
+        for before, after in (("cloud-", "builtin-"), ("rebuilt-", "extension-")):
+            if profile.startswith(before):
+                return after + profile[len(before):]
+        return profile
+
     def profile_root(self, profile: str) -> Path:
-        if profile in ("original", "curated", "rebuilt-all", "cloud-all"):
+        profile = self.normalize_profile(profile)
+        if profile in ("basic", "advanced", "extended", "builtin"):
             return self.bundle_dir / "skills" / profile
-        if profile in self.rebuilt:
-            return self.bundle_dir / "skills" / "rebuilt-all" / "library" / self.rebuilt[profile]["skill_name"]
-        if profile in self.cloud:
-            return self.bundle_dir / "skills" / "cloud-all" / "library" / self.cloud[profile]["skill_name"]
+        if profile in self.extensions:
+            return self.bundle_dir / "skills" / "extended" / "library" / self.extensions[profile]["skill_name"]
+        if profile in self.builtins:
+            return self.bundle_dir / "skills" / "builtin" / "library" / self.builtins[profile]["skill_name"]
         if profile not in self.state["custom"] or not re.fullmatch(r"local-[a-f0-9]{16}", profile):
             raise LocalError("未找到技能方案")
         return self.data_dir / "imports" / profile
@@ -218,25 +230,27 @@ class SkillManager:
         return files
 
     def deployment_files(self, profile: str) -> dict[str, bytes]:
+        profile = self.normalize_profile(profile)
         files = self.profile_files(profile)
-        if profile in ("rebuilt-all", "cloud-all"):
+        if profile in ("extended", "builtin"):
             return {(rel.removeprefix("library/") if rel.startswith("library/") else "pojia-local/" + rel): data
                     for rel, data in files.items()}
         folder = self.indexed[profile]["skill_name"] if profile in self.indexed else "pojia-local"
         deployed = {folder + "/" + rel: data for rel, data in files.items()}
         if profile in self.indexed:
             for dependency in self.indexed[profile].get("dependencies", []):
-                child_files = self.profile_files(("cloud-" if profile in self.cloud else "rebuilt-") + dependency)
+                child_files = self.profile_files(("builtin-" if profile in self.builtins else "extension-") + dependency)
                 deployed.update({dependency + "/" + rel: data for rel, data in child_files.items()})
         return deployed
 
     @staticmethod
     def installed_files(record: dict) -> dict[Path, dict]:
-        # Previous releases stored paths relative to skills/pojia-local.
+        # Records without files_root use the instruction entry directory.
         base = Path(record.get("files_root", str(Path(record["root"]) / "skills" / "pojia-local")))
         return {base / rel: expected for rel, expected in record["files"].items()}
 
     def read_profile(self, profile: str) -> dict:
+        profile = self.normalize_profile(profile)
         files = self.profile_files(profile)
         return {"profile": profile, "content": files["SKILL.md"].decode("utf-8-sig"),
                 "files": [{"name": key, "size": len(value)} for key, value in files.items()]}
@@ -333,12 +347,13 @@ class SkillManager:
             raise LocalError("技能正文不能包含本助手的管理标记")
         folder = self.indexed[profile]["skill_name"] if profile in self.indexed else "pojia-local"
         relative = f"skills/{folder}/SKILL.md"
-        content = (f"\n# 破甲助手 · 本地技能\n\n"
-                   f"此段由本地助手管理。完整技能资源：`{relative}`。\n"
+        content = (f"\n# ai技能库\n\n"
+                   f"此段由 ai技能库 管理。完整技能资源：`{relative}`。\n"
                    "用户发送 `hi` 时，简短报告当前技能已读取；未读取时如实说明。\n\n" + content.strip() + "\n")
         return BEGIN + content.encode("utf-8") + END
 
-    def inject(self, provider: str, profile: str = "original") -> dict:
+    def inject(self, provider: str, profile: str = "basic") -> dict:
+        profile = self.normalize_profile(profile)
         with self.lock:
             root = self.root(provider)
             instruction = root / PROVIDERS[provider][3]
@@ -481,18 +496,19 @@ class SkillManager:
                 verification = self.verify(key)
                 items.append({"key": key, "name": spec[0], "icon": spec[4], "path": str(root),
                               "instruction": spec[3], "exists": root.is_dir(), "installed": bool(record),
-                              "profile": (record or {}).get("profile", "cloud-all" if self.cloud_catalog else "rebuilt-all" if self.catalog else "original"), "verification": verification,
+                              "profile": self.normalize_profile((record or {}).get("profile", "builtin" if self.builtin_catalog else "extended" if self.catalog else "basic")), "verification": verification,
                               "adapter": "客户端的实际读取需要新会话验收"})
             return {"version": VERSION, "mode": "local", "network": "disabled", "providers": items,
                     "profiles": self.profiles(), "data_dir": str(self.data_dir),
-                    "cloud_documents": len(self.cloud_catalog),
+                    "builtin_documents": len(self.builtin_catalog),
                     "events": list(reversed(self.state["events"][-12:]))}
 
     def diagnostics(self) -> dict:
         return {"generated_at": time.strftime("%Y-%m-%d %H:%M:%S"), "version": VERSION,
                 "network": "disabled", "state": self.status(),
-                "limitations": ["只校验本地文件，不证明模型已读取技能", f"已取回 {len(self.cloud_catalog)} 份云端正文并适配离线读取；引用的工具、脚本与附件未完整取回。50 项重建方案另行保留",
-                                "未重写或复用原服务器服务；账号、订阅、反馈已移除"]}
+                "limitations": ["只校验文件，不证明模型已读取技能",
+                                f"包含 {len(self.builtin_catalog)} 项内置技能和 {len(self.catalog)} 项扩展技能；工具、脚本与附件需按本机环境核对",
+                                "客户端实际读取需要在新会话中确认"]}
 
     def dispatch(self, command: str, args: dict | None = None) -> dict:
         args = args or {}
@@ -501,7 +517,7 @@ class SkillManager:
                 if command == "status":
                     data = self.status()
                 elif command == "inject":
-                    data = self.inject(args["provider"], args.get("profile", "original"))
+                    data = self.inject(args["provider"], args.get("profile", "basic"))
                 elif command == "revoke":
                     data = self.revoke(args["provider"])
                 elif command == "verify":
