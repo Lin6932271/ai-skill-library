@@ -1,27 +1,26 @@
-# ai技能库
+# 使用说明
 
-版本 1.3.2。支持七种 AI 客户端的技能安装、切换、导入、自动备份、检查与撤销。
+ai技能库首次公开发布，程序版本 1.3.2。本软件由 AI 开发。
 
-使用用户提供的图片作为程序、窗口与界面图标，将 `3.mp4` 作为启动动画。
-动画约 7 秒，默认静音，完整播放后自动进入控制台，没有跳过按钮。媒体无法播放时自动进入控制台。
-启动时不显示图标封面或图标浮层。视频保持比例铺满软件窗口，超出窗口的边缘居中裁切，不切换全屏。动画期间隐藏系统标题栏，播完后恢复标题栏和最小化、最大化、关闭按钮，保持窗口位置和大小。
-界面与技能正文已清理来源、取回过程和云端返回状态的说明，保留技能流程、模块引用、安装记录、配置目录与导入内容。
+支持 Codex、Claude、DeepSeek Harness、Hermes、ZCode，以及 WorkBuddy 国内版和国际版。
+包含 53 项内置技能、50 项扩展技能，以及基础与进阶方案。
 
-## 使用
+## 运行程序
 
-双击 `ai技能库.exe`。不需要安装 Python、登录或连接原服务器。
-桌面窗口使用 Windows 已安装的 WebView2 Runtime。
+从[发布页面](https://github.com/Lin6932271/ai-skill-library/releases/tag/v1.3.2)下载 `AISkillLibrary-1.3.2-windows-x64.zip`，解压后双击 `ai技能库.exe`。
+也可直接下载 `AISkillLibrary-1.3.2-windows-x64.exe` 运行。
+需要 Windows x64 和 Microsoft Edge WebView2 Runtime，无需安装 Python或注册账户。
 
-1. 确认客户端卡片的配置目录，可用“设置”选择实际目录。
-2. 默认选择“完整技能库 · 53 项”，开启技能；也可选择单个技能、50 项扩展技能、基础、进阶或导入方案。
-3. 写入前自动保存备份。整套方案安装目录入口与对应模块，单个入口同时安装引用的内置模块。
-4. 点击“检查”验证文件。重启实际客户端、新建会话，确认其是否读取技能。
-5. 关闭开关可撤销。外部修改会保留，存在冲突时不会覆盖用户内容。
+启动动画约 7 秒，静音播放并铺满软件窗口，播放完毕自动进入主界面。
+动画期间隐藏标题栏，结束后恢复窗口按钮。界面支持搜索、分类筛选、滚动及浅色与深色主题。
 
-已有安装保留原选择，可从下拉框切换。升级程序本身不会重写客户端的技能文件。
-如果客户端已经安装旧正文，关闭再开启对应技能即可更新，原始备份与撤销方式保持兼容。
-文件检查只代表安装状态，模型读取需要在实际客户端确认。技能引用的工具与附件需核对本机环境。
-Hermes 便携版需选择实际 `data/hermes-home` 或当前 profile 目录，其他客户端版本也可能需调整目录或手动选择技能。
+## 安装与检查
+
+1. 在客户端卡片上确认配置目录，必要时通过“设置”选择实际目录。
+2. 在方案下拉框中选择完整技能库、单个技能、扩展技能、基础、进阶或已导入方案。
+3. 开启对应客户端开关。程序会先备份原内容，再写入技能和目录入口。
+4. 点击“检查”确认文件完整。随后重启对应客户端或新建会话，确认模型读取。
+5. 需要更换方案时选择新的方案；关闭开关可以撤销程序管理的内容。
 
 | 客户端 | 默认目录 / 环境变量 | 指令文件 |
 | --- | --- | --- |
@@ -33,50 +32,33 @@ Hermes 便携版需选择实际 `data/hermes-home` 或当前 profile 目录，�
 | WorkBuddy 国内版 | `~/.workbuddy` / `WORKBUDDY_CONFIG_DIR` | `CODEBUDDY.md` |
 | WorkBuddy 国际版 | `~/.workbuddy-ai` / `WORKBUDDY_AI_CONFIG_DIR` | `CODEBUDDY.md` |
 
-## 导入技能
+Hermes 便携版应选择实际 `data/hermes-home` 或当前 profile 目录。
+如果客户端使用自定义配置位置，请以客户端实际目录为准。
 
-在“技能库”中点击“导入技能”。支持 UTF-8 Markdown、根目录含 `SKILL.md` 的文件夹，或恰含一个 `SKILL.md` 的 ZIP。
-文件夹和 ZIP 可附带 `references/`、`scripts/` 等资源，每次导入一个技能。单个 Markdown 不会收集相邻资源。
-限制为 32 MB 和 2000 个文件，拒绝越界路径、重复 ZIP 路径和链接。
-脚本只作为资源保存，助手不会执行。修改源文件后重新导入，再切换到新方案。
-技能库支持搜索、领域分类，以及内置、扩展和开发与导入集合筛选。
+## 导入自己的技能
 
-## 数据与恢复
+在“技能库”中点击“导入技能”，每次导入一项。支持以下格式：
 
-继续使用 `%LOCALAPPDATA%/PojiaLocal`，兼容旧版本。
-`state.json` 保存安装、目录和技能索引，`backups/` 保存原始快照，`imports/` 保存导入资源。
-只管理助手自身写入的段落和文件，撤销时保留其他内容，外部修改会报告冲突。
-“状态检查”可导出诊断，其中可能包含本机目录，程序不会上传这些数据。
+- UTF-8 Markdown 文件。
+- 根目录包含 `SKILL.md` 的文件夹，可同时包含 `references/`、`scripts/` 等附件。
+- 恰含一个 `SKILL.md` 的 ZIP 文件，可同时包含附件。
 
-界面通过随机端口的 `127.0.0.1` 与后端通信。API 验证 Host、Origin 和随机令牌，页面限制连接为同源。
-账户、订阅、反馈和原服务器调用继续保持移除状态。
+导入限制为 32 MB、2000 个文件。单个 Markdown 不会自动收集相邻附件。
+源文件修改后需重新导入，并选择对应方案。
 
-## 开发与构建
+程序已内置全部技能，日常使用无需另外下载技能集合 ZIP。
+需要手动安装时，把集合中所需的 `skills/<名称>/` 复制到客户端技能目录；同名文件请先备份和比较。
+通过软件导入集合时，应先解压，再选择一个具体技能目录。
 
-入口为 `main.py`、`backend.py` 和 `frontend/app.js`，技能在 `skills/`。
-品牌资源是 `frontend/assets/app-icon.jpg`、`app-icon.ico` 和 `startup.mp4`，窗口与 EXE 共用 ICO。
-`version_info.txt` 设置 Windows 文件属性里的产品名称和版本。
+## 备份与数据
 
-```powershell
-python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe main.py
-.\build.ps1
-```
+数据目录为 `%LOCALAPPDATA%/PojiaLocal`。
+`state.json` 保存安装记录和设置，`backups/` 保存原内容，`imports/` 保存导入资源。
+“状态检查”可以查看安装状态并导出诊断。
 
-构建输出 `dist/AISkillLibrary.exe`，交付时命名为 `ai技能库.exe`。也可直接运行：
+撤销时只处理程序管理的段落和文件。外部修改会保留并报告冲突；遇到冲突请先检查提示和备份，再决定如何处理。
 
-```powershell
-.\.venv\Scripts\python.exe -m PyInstaller --noconfirm --onefile --windowed --name AISkillLibrary --icon frontend/assets/app-icon.ico --version-file version_info.txt --collect-all webview --add-data "frontend;frontend" --add-data "skills;skills" main.py
-```
+## 注意事项
 
-扩展正文生成器 `rebuild_library.py` 会覆盖生成内容，请先保存自己编辑的文件。
-构建只读取现有文件，不需要恢复服务器连接。
-
-```powershell
-python tests/test_local.py
-```
-
-浏览器验收依赖 `requirements-dev.txt` 与本机 Edge，具体步骤见 [BUILD.md](BUILD.md)。
-使用 `--sandbox --home <隔离目录> --data-dir <隔离目录>` 可避免接触实际客户端。
-验收范围见 [VERIFICATION.md](VERIFICATION.md)。
+文件写入成功与模型实际读取需要分别确认。技能里提及的工具和附件不代表已安装或已通过测试。
+完整注意事项见[NOTICE.md](https://github.com/Lin6932271/ai-skill-library/blob/main/NOTICE.md)，[逆向与安全报告](https://github.com/Lin6932271/ai-skill-library/blob/main/docs/security/REVERSE_ANALYSIS.md)包含已发布程序的检查范围与证据。

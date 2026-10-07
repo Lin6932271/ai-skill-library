@@ -1,14 +1,14 @@
-# 资源来源
+# 注意事项
 
-`frontend/assets/original.css` 和客户端/品牌 PNG 从用户提供的 `破甲助手1.9.0.exe` 中提取，用于保留本次本地重写的外观。
-这些资源的原权利归属不因本次重写而改变；此文件不授予额外分发权。
+本软件由 AI 开发。
 
-`main.py`、`backend.py`、`frontend/app.js`、`frontend/index.html`、`frontend/local.css`、重建/开发技能与测试为本次重新编写。
-`skills/cloud-all/library/` 的领域正文来自用户授权连接的原软件云端，规范 frontmatter、移除云端内容保护段并将入口读取模板适配为本地路径。其原权利归属不因备份与适配而改变，原始返回文本另存交付备份。
-运行时没有复用原 EXE、Python 引擎、Cython 模块或原账户/服务端代码。
+- 运行环境为 Windows x64，需要 Microsoft Edge WebView2 Runtime；已打包程序无需安装 Python。
+- 开启技能前确认客户端配置目录。重要配置建议另行备份，程序会在写入前保存原内容。
+- “检查”通过表示技能文件已正确写入；需要在对应客户端重启或新建会话，确认模型实际读取。
+- 技能正文提及的工具、脚本和参考附件需按实际环境核对。导入的脚本只作为附件保存，软件不会自动执行。
+- 撤销技能时会保留外部修改并报告冲突，请按提示检查有关文件。
+- 状态诊断可能包含本机目录，分享诊断文件前请检查其中内容。
+- 第三方组件遵循各自的许可证，相关依赖列在 `requirements.txt` 中。
+- [逆向与安全报告](https://github.com/Lin6932271/ai-skill-library/blob/main/docs/security/REVERSE_ANALYSIS.md)提供程序哈希、源码对照和检查证据；结论限定于报告注明的样本与检查范围。
 
-开发依赖与打包运行库各自保留其原有许可证。PyInstaller 和 pywebview 依赖信息位于 `requirements.txt`。
-
-用户提供的图标图片和启动视频用于本次品牌修改；其权利归属不因格式转换、打包或本次整理而改变。
-
-本软件由 AI 开发与重写。
+操作步骤见[使用说明](https://github.com/Lin6932271/ai-skill-library/blob/main/docs/USAGE.md)。
