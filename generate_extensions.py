@@ -113,7 +113,7 @@ def write_skill(path, skill_name, title, description, body):
     path.mkdir(parents=True, exist_ok=True)
     normalized = re.sub(r"_+", "-", skill_name)
     front = f"---\nname: {normalized}\ndescription: {json.dumps(description, ensure_ascii=False)}\n---\n\n"
-    (path / "SKILL.md").write_text(front + f"# {title}\n\n" + body, encoding="utf-8")
+    (path / "SKILL.md").write_text(front + f"# {title}\n\n" + body, encoding="utf-8", newline="\n")
 
 
 def build(index_path=INDEX):
@@ -155,7 +155,7 @@ def build(index_path=INDEX):
               "## 使用原则\n\n工具、脚本与附件需按实际运行环境核对。\n"
               "遵循用户任务范围与当前工程约定。基于实际文件和运行结果报告，不把技能文件存在当成模型已实际使用。\n")
     write_skill(ROOT / "skills" / "extended", "pojia-local", "扩展技能库", "按任务选择逆向、安全与工程技能模块。", router)
-    (ROOT / "skills" / "extensions-catalog.json").write_text(json.dumps({"schema": 1, "items": catalog}, ensure_ascii=False, indent=2), encoding="utf-8")
+    (ROOT / "skills" / "extensions-catalog.json").write_text(json.dumps({"schema": 1, "items": catalog}, ensure_ascii=False, indent=2), encoding="utf-8", newline="\n")
     print(json.dumps({"skills": len(catalog), "entries": sum(r['kind'] == 'entry' for r in catalog),
                       "modules": sum(r['kind'] == 'module' for r in catalog), "mapping_only": sum(r['kind'] == 'mapping' for r in catalog)}, ensure_ascii=False))
 
