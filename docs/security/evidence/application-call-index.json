@@ -1127,37 +1127,57 @@
   {
     "file": "backend.py",
     "line": 203,
+    "call": "self.normalize_profile"
+  },
+  {
+    "file": "backend.py",
+    "line": 215,
     "call": "self.profile_root"
   },
   {
     "file": "backend.py",
-    "line": 206,
+    "line": 218,
     "call": "sorted"
   },
   {
     "file": "backend.py",
-    "line": 221,
+    "line": 233,
+    "call": "self.normalize_profile"
+  },
+  {
+    "file": "backend.py",
+    "line": 234,
     "call": "self.profile_files"
   },
   {
     "file": "backend.py",
-    "line": 236,
+    "line": 249,
     "call": "Path"
   },
   {
     "file": "backend.py",
-    "line": 240,
+    "line": 253,
+    "call": "self.normalize_profile"
+  },
+  {
+    "file": "backend.py",
+    "line": 254,
     "call": "self.profile_files"
   },
   {
     "file": "backend.py",
-    "line": 326,
+    "line": 340,
     "call": "<expression>.decode"
   },
   {
     "file": "backend.py",
-    "line": 328,
+    "line": 342,
     "call": "content.startswith"
+  },
+  {
+    "file": "backend.py",
+    "line": 356,
+    "call": "self.normalize_profile"
   },
   {
     "file": "backend.py",
@@ -1227,7 +1247,7 @@
   {
     "file": "backend.py",
     "line": 106,
-    "call": "cloud_path.exists"
+    "call": "builtin_path.exists"
   },
   {
     "file": "backend.py",
@@ -1286,172 +1306,177 @@
   },
   {
     "file": "backend.py",
-    "line": 199,
-    "call": "LocalError"
-  },
-  {
-    "file": "backend.py",
-    "line": 206,
-    "call": "root.rglob"
+    "line": 198,
+    "call": "profile.startswith"
   },
   {
     "file": "backend.py",
     "line": 211,
+    "call": "LocalError"
+  },
+  {
+    "file": "backend.py",
+    "line": 218,
+    "call": "root.rglob"
+  },
+  {
+    "file": "backend.py",
+    "line": 223,
     "call": "path.read_bytes"
   },
   {
     "file": "backend.py",
-    "line": 212,
+    "line": 224,
     "call": "len"
   },
   {
     "file": "backend.py",
-    "line": 217,
+    "line": 229,
     "call": "LocalError"
-  },
-  {
-    "file": "backend.py",
-    "line": 228,
-    "call": "<expression>.get"
-  },
-  {
-    "file": "backend.py",
-    "line": 236,
-    "call": "record.get"
   },
   {
     "file": "backend.py",
     "line": 241,
-    "call": "<expression>.decode"
-  },
-  {
-    "file": "backend.py",
-    "line": 246,
-    "call": "Path"
+    "call": "<expression>.get"
   },
   {
     "file": "backend.py",
     "line": 249,
+    "call": "record.get"
+  },
+  {
+    "file": "backend.py",
+    "line": 255,
+    "call": "<expression>.decode"
+  },
+  {
+    "file": "backend.py",
+    "line": 260,
     "call": "Path"
   },
   {
     "file": "backend.py",
-    "line": 329,
-    "call": "re.match"
-  },
-  {
-    "file": "backend.py",
-    "line": 333,
-    "call": "LocalError"
+    "line": 263,
+    "call": "Path"
   },
   {
     "file": "backend.py",
     "line": 343,
-    "call": "self.root"
-  },
-  {
-    "file": "backend.py",
-    "line": 345,
-    "call": "<expression>.get"
-  },
-  {
-    "file": "backend.py",
-    "line": 346,
-    "call": "read_file"
+    "call": "re.match"
   },
   {
     "file": "backend.py",
     "line": 347,
-    "call": "split_block"
+    "call": "LocalError"
   },
   {
     "file": "backend.py",
-    "line": 354,
-    "call": "self.block"
+    "line": 358,
+    "call": "self.root"
   },
   {
     "file": "backend.py",
     "line": 360,
-    "call": "self.deployment_files"
-  },
-  {
-    "file": "backend.py",
-    "line": 366,
-    "call": "sorted"
-  },
-  {
-    "file": "backend.py",
-    "line": 378,
-    "call": "backup.mkdir"
-  },
-  {
-    "file": "backend.py",
-    "line": 379,
-    "call": "atomic_write"
-  },
-  {
-    "file": "backend.py",
-    "line": 414,
-    "call": "self.root"
-  },
-  {
-    "file": "backend.py",
-    "line": 415,
     "call": "<expression>.get"
   },
   {
     "file": "backend.py",
-    "line": 429,
-    "call": "all"
-  },
-  {
-    "file": "backend.py",
-    "line": 436,
-    "call": "self.root"
-  },
-  {
-    "file": "backend.py",
-    "line": 437,
-    "call": "<expression>.get"
-  },
-  {
-    "file": "backend.py",
-    "line": 441,
-    "call": "Path"
-  },
-  {
-    "file": "backend.py",
-    "line": 442,
+    "line": 361,
     "call": "read_file"
   },
   {
     "file": "backend.py",
-    "line": 443,
+    "line": 362,
     "call": "split_block"
   },
   {
     "file": "backend.py",
+    "line": 369,
+    "call": "self.block"
+  },
+  {
+    "file": "backend.py",
+    "line": 375,
+    "call": "self.deployment_files"
+  },
+  {
+    "file": "backend.py",
+    "line": 381,
+    "call": "sorted"
+  },
+  {
+    "file": "backend.py",
+    "line": 393,
+    "call": "backup.mkdir"
+  },
+  {
+    "file": "backend.py",
+    "line": 394,
+    "call": "atomic_write"
+  },
+  {
+    "file": "backend.py",
+    "line": 429,
+    "call": "self.root"
+  },
+  {
+    "file": "backend.py",
+    "line": 430,
+    "call": "<expression>.get"
+  },
+  {
+    "file": "backend.py",
+    "line": 444,
+    "call": "all"
+  },
+  {
+    "file": "backend.py",
+    "line": 451,
+    "call": "self.root"
+  },
+  {
+    "file": "backend.py",
+    "line": 452,
+    "call": "<expression>.get"
+  },
+  {
+    "file": "backend.py",
+    "line": 456,
+    "call": "Path"
+  },
+  {
+    "file": "backend.py",
     "line": 457,
-    "call": "<expression>.items"
+    "call": "read_file"
+  },
+  {
+    "file": "backend.py",
+    "line": 458,
+    "call": "split_block"
   },
   {
     "file": "backend.py",
     "line": 472,
+    "call": "<expression>.items"
+  },
+  {
+    "file": "backend.py",
+    "line": 487,
     "call": "self.event"
   },
   {
     "file": "backend.py",
-    "line": 478,
+    "line": 493,
     "call": "PROVIDERS.items"
   },
   {
     "file": "backend.py",
-    "line": 492,
+    "line": 507,
     "call": "time.strftime"
   },
   {
     "file": "backend.py",
-    "line": 493,
+    "line": 508,
     "call": "self.status"
   },
   {
@@ -1536,272 +1561,272 @@
   },
   {
     "file": "backend.py",
-    "line": 198,
+    "line": 210,
     "call": "re.fullmatch"
   },
   {
     "file": "backend.py",
-    "line": 207,
+    "line": 219,
     "call": "path.is_symlink"
   },
   {
     "file": "backend.py",
-    "line": 208,
+    "line": 220,
     "call": "LocalError"
   },
   {
     "file": "backend.py",
-    "line": 209,
+    "line": 221,
     "call": "path.is_file"
   },
   {
     "file": "backend.py",
-    "line": 214,
+    "line": 226,
     "call": "LocalError"
   },
   {
     "file": "backend.py",
-    "line": 215,
+    "line": 227,
     "call": "<expression>.as_posix"
   },
   {
     "file": "backend.py",
-    "line": 226,
+    "line": 239,
     "call": "files.items"
   },
   {
     "file": "backend.py",
-    "line": 229,
+    "line": 242,
     "call": "self.profile_files"
   },
   {
     "file": "backend.py",
-    "line": 230,
+    "line": 243,
     "call": "deployed.update"
   },
   {
     "file": "backend.py",
-    "line": 236,
+    "line": 249,
     "call": "str"
   },
   {
     "file": "backend.py",
-    "line": 237,
+    "line": 250,
     "call": "<expression>.items"
   },
   {
     "file": "backend.py",
-    "line": 247,
+    "line": 261,
     "call": "path.exists"
   },
   {
     "file": "backend.py",
-    "line": 248,
+    "line": 262,
     "call": "LocalError"
   },
   {
     "file": "backend.py",
-    "line": 249,
+    "line": 263,
     "call": "tempfile.mkdtemp"
   },
   {
     "file": "backend.py",
-    "line": 296,
+    "line": 310,
     "call": "root.rglob"
   },
   {
     "file": "backend.py",
-    "line": 307,
+    "line": 321,
     "call": "<expression>.decode"
   },
   {
     "file": "backend.py",
-    "line": 310,
+    "line": 324,
     "call": "re.search"
   },
   {
     "file": "backend.py",
-    "line": 317,
+    "line": 331,
     "call": "files.items"
   },
   {
     "file": "backend.py",
-    "line": 320,
+    "line": 334,
     "call": "self.event"
   },
   {
     "file": "backend.py",
-    "line": 323,
+    "line": 337,
     "call": "shutil.rmtree"
   },
   {
     "file": "backend.py",
-    "line": 332,
+    "line": 346,
     "call": "BEGIN.decode"
   },
   {
     "file": "backend.py",
-    "line": 332,
+    "line": 346,
     "call": "END.decode"
   },
   {
     "file": "backend.py",
-    "line": 338,
+    "line": 352,
     "call": "content.strip"
   },
   {
     "file": "backend.py",
-    "line": 339,
+    "line": 353,
     "call": "content.encode"
   },
   {
     "file": "backend.py",
-    "line": 349,
+    "line": 364,
     "call": "LocalError"
   },
   {
     "file": "backend.py",
-    "line": 351,
+    "line": 366,
     "call": "LocalError"
-  },
-  {
-    "file": "backend.py",
-    "line": 353,
-    "call": "LocalError"
-  },
-  {
-    "file": "backend.py",
-    "line": 365,
-    "call": "self.installed_files"
-  },
-  {
-    "file": "backend.py",
-    "line": 367,
-    "call": "read_file"
   },
   {
     "file": "backend.py",
     "line": 368,
-    "call": "old_files.get"
+    "call": "LocalError"
   },
   {
     "file": "backend.py",
-    "line": 374,
-    "call": "desired.get"
+    "line": 380,
+    "call": "self.installed_files"
   },
   {
     "file": "backend.py",
-    "line": 379,
-    "call": "<expression>.encode"
-  },
-  {
-    "file": "backend.py",
-    "line": 383,
-    "call": "updates.items"
-  },
-  {
-    "file": "backend.py",
-    "line": 396,
-    "call": "self.event"
-  },
-  {
-    "file": "backend.py",
-    "line": 410,
-    "call": "str"
-  },
-  {
-    "file": "backend.py",
-    "line": 410,
-    "call": "self.verify"
-  },
-  {
-    "file": "backend.py",
-    "line": 420,
-    "call": "Path"
-  },
-  {
-    "file": "backend.py",
-    "line": 421,
-    "call": "split_block"
-  },
-  {
-    "file": "backend.py",
-    "line": 422,
-    "call": "bool"
-  },
-  {
-    "file": "backend.py",
-    "line": 423,
-    "call": "checks.append"
-  },
-  {
-    "file": "backend.py",
-    "line": 424,
-    "call": "<expression>.items"
-  },
-  {
-    "file": "backend.py",
-    "line": 445,
-    "call": "conflicts.append"
-  },
-  {
-    "file": "backend.py",
-    "line": 448,
-    "call": "<expression>.encode"
-  },
-  {
-    "file": "backend.py",
-    "line": 458,
-    "call": "Path"
-  },
-  {
-    "file": "backend.py",
-    "line": 460,
+    "line": 382,
     "call": "read_file"
   },
   {
     "file": "backend.py",
-    "line": 471,
-    "call": "<expression>.pop"
+    "line": 383,
+    "call": "old_files.get"
   },
   {
     "file": "backend.py",
-    "line": 479,
-    "call": "self.root"
+    "line": 389,
+    "call": "desired.get"
   },
   {
     "file": "backend.py",
-    "line": 480,
-    "call": "<expression>.get"
+    "line": 394,
+    "call": "<expression>.encode"
   },
   {
     "file": "backend.py",
-    "line": 481,
-    "call": "self.verify"
+    "line": 398,
+    "call": "updates.items"
   },
   {
     "file": "backend.py",
-    "line": 482,
-    "call": "items.append"
+    "line": 411,
+    "call": "self.event"
   },
   {
     "file": "backend.py",
-    "line": 487,
-    "call": "self.profiles"
-  },
-  {
-    "file": "backend.py",
-    "line": 487,
+    "line": 425,
     "call": "str"
   },
   {
     "file": "backend.py",
-    "line": 488,
+    "line": 425,
+    "call": "self.verify"
+  },
+  {
+    "file": "backend.py",
+    "line": 435,
+    "call": "Path"
+  },
+  {
+    "file": "backend.py",
+    "line": 436,
+    "call": "split_block"
+  },
+  {
+    "file": "backend.py",
+    "line": 437,
+    "call": "bool"
+  },
+  {
+    "file": "backend.py",
+    "line": 438,
+    "call": "checks.append"
+  },
+  {
+    "file": "backend.py",
+    "line": 439,
+    "call": "<expression>.items"
+  },
+  {
+    "file": "backend.py",
+    "line": 460,
+    "call": "conflicts.append"
+  },
+  {
+    "file": "backend.py",
+    "line": 463,
+    "call": "<expression>.encode"
+  },
+  {
+    "file": "backend.py",
+    "line": 473,
+    "call": "Path"
+  },
+  {
+    "file": "backend.py",
+    "line": 475,
+    "call": "read_file"
+  },
+  {
+    "file": "backend.py",
+    "line": 486,
+    "call": "<expression>.pop"
+  },
+  {
+    "file": "backend.py",
+    "line": 494,
+    "call": "self.root"
+  },
+  {
+    "file": "backend.py",
+    "line": 495,
+    "call": "<expression>.get"
+  },
+  {
+    "file": "backend.py",
+    "line": 496,
+    "call": "self.verify"
+  },
+  {
+    "file": "backend.py",
+    "line": 497,
+    "call": "items.append"
+  },
+  {
+    "file": "backend.py",
+    "line": 502,
+    "call": "self.profiles"
+  },
+  {
+    "file": "backend.py",
+    "line": 502,
+    "call": "str"
+  },
+  {
+    "file": "backend.py",
+    "line": 503,
     "call": "len"
   },
   {
     "file": "backend.py",
-    "line": 489,
+    "line": 504,
     "call": "list"
   },
   {
@@ -1837,7 +1862,7 @@
   {
     "file": "backend.py",
     "line": 106,
-    "call": "cloud_path.read_text"
+    "call": "builtin_path.read_text"
   },
   {
     "file": "backend.py",
@@ -1921,242 +1946,242 @@
   },
   {
     "file": "backend.py",
-    "line": 207,
+    "line": 219,
     "call": "hasattr"
   },
   {
     "file": "backend.py",
-    "line": 207,
+    "line": 219,
     "call": "path.is_junction"
   },
   {
     "file": "backend.py",
-    "line": 213,
+    "line": 225,
     "call": "len"
   },
   {
     "file": "backend.py",
-    "line": 223,
+    "line": 236,
     "call": "rel.startswith"
   },
   {
     "file": "backend.py",
-    "line": 223,
+    "line": 236,
     "call": "rel.removeprefix"
   },
   {
     "file": "backend.py",
-    "line": 224,
+    "line": 237,
     "call": "files.items"
   },
   {
     "file": "backend.py",
-    "line": 242,
+    "line": 256,
     "call": "len"
   },
   {
     "file": "backend.py",
-    "line": 242,
+    "line": 256,
     "call": "files.items"
   },
   {
     "file": "backend.py",
-    "line": 251,
+    "line": 265,
     "call": "path.is_file"
   },
   {
     "file": "backend.py",
-    "line": 282,
+    "line": 296,
     "call": "list"
   },
   {
     "file": "backend.py",
-    "line": 286,
+    "line": 300,
     "call": "path.is_dir"
   },
   {
     "file": "backend.py",
-    "line": 299,
+    "line": 313,
     "call": "file.is_file"
   },
   {
     "file": "backend.py",
-    "line": 306,
+    "line": 320,
     "call": "LocalError"
   },
   {
     "file": "backend.py",
-    "line": 308,
+    "line": 322,
     "call": "body.strip"
   },
   {
     "file": "backend.py",
-    "line": 309,
+    "line": 323,
     "call": "LocalError"
   },
   {
     "file": "backend.py",
-    "line": 311,
+    "line": 325,
     "call": "<expression>.strip"
   },
   {
     "file": "backend.py",
-    "line": 313,
+    "line": 327,
     "call": "body.startswith"
   },
   {
     "file": "backend.py",
-    "line": 315,
+    "line": 329,
     "call": "body.encode"
   },
   {
     "file": "backend.py",
-    "line": 318,
+    "line": 332,
     "call": "atomic_write"
   },
   {
     "file": "backend.py",
-    "line": 319,
+    "line": 333,
     "call": "time.time"
   },
   {
     "file": "backend.py",
-    "line": 326,
+    "line": 340,
     "call": "self.profile_files"
   },
   {
     "file": "backend.py",
-    "line": 350,
+    "line": 365,
     "call": "sha"
   },
   {
     "file": "backend.py",
-    "line": 355,
+    "line": 370,
     "call": "original.endswith"
   },
   {
     "file": "backend.py",
-    "line": 362,
+    "line": 377,
     "call": "files.items"
   },
   {
     "file": "backend.py",
-    "line": 366,
+    "line": 381,
     "call": "set"
   },
   {
     "file": "backend.py",
-    "line": 366,
+    "line": 381,
     "call": "set"
   },
   {
     "file": "backend.py",
-    "line": 388,
+    "line": 403,
     "call": "done.append"
   },
   {
     "file": "backend.py",
-    "line": 389,
+    "line": 404,
     "call": "str"
   },
   {
     "file": "backend.py",
-    "line": 389,
+    "line": 404,
     "call": "str"
   },
   {
     "file": "backend.py",
-    "line": 390,
+    "line": 405,
     "call": "sha"
   },
   {
     "file": "backend.py",
-    "line": 390,
+    "line": 405,
     "call": "<expression>.get"
   },
   {
     "file": "backend.py",
-    "line": 391,
+    "line": 406,
     "call": "<expression>.get"
   },
   {
     "file": "backend.py",
-    "line": 392,
+    "line": 407,
     "call": "str"
   },
   {
     "file": "backend.py",
-    "line": 392,
+    "line": 407,
     "call": "time.time"
   },
   {
     "file": "backend.py",
-    "line": 393,
+    "line": 408,
     "call": "str"
   },
   {
     "file": "backend.py",
-    "line": 398,
+    "line": 413,
     "call": "reversed"
   },
   {
     "file": "backend.py",
-    "line": 425,
+    "line": 440,
     "call": "read_file"
   },
   {
     "file": "backend.py",
-    "line": 426,
+    "line": 441,
     "call": "checks.append"
   },
   {
     "file": "backend.py",
-    "line": 428,
+    "line": 443,
     "call": "checks.append"
   },
   {
     "file": "backend.py",
-    "line": 444,
+    "line": 459,
     "call": "sha"
   },
   {
     "file": "backend.py",
-    "line": 445,
+    "line": 460,
     "call": "str"
   },
   {
     "file": "backend.py",
-    "line": 449,
+    "line": 464,
     "call": "left.endswith"
   },
   {
     "file": "backend.py",
-    "line": 453,
+    "line": 468,
     "call": "instruction.unlink"
   },
   {
     "file": "backend.py",
-    "line": 455,
+    "line": 470,
     "call": "atomic_write"
   },
   {
     "file": "backend.py",
-    "line": 458,
+    "line": 473,
     "call": "record.get"
   },
   {
     "file": "backend.py",
-    "line": 462,
+    "line": 477,
     "call": "conflicts.append"
   },
   {
     "file": "backend.py",
-    "line": 489,
+    "line": 504,
     "call": "reversed"
   },
   {
     "file": "backend.py",
-    "line": 502,
+    "line": 518,
     "call": "self.status"
   },
   {
@@ -2216,48 +2241,38 @@
   },
   {
     "file": "backend.py",
-    "line": 215,
+    "line": 227,
     "call": "path.relative_to"
   },
   {
     "file": "backend.py",
-    "line": 251,
+    "line": 265,
     "call": "path.suffix.lower"
   },
   {
     "file": "backend.py",
-    "line": 252,
+    "line": 266,
     "call": "zipfile.ZipFile"
   },
   {
     "file": "backend.py",
-    "line": 256,
+    "line": 270,
     "call": "set"
   },
   {
     "file": "backend.py",
-    "line": 257,
+    "line": 271,
     "call": "archive.infolist"
   },
   {
     "file": "backend.py",
-    "line": 282,
+    "line": 296,
     "call": "staging.rglob"
   },
   {
     "file": "backend.py",
-    "line": 283,
-    "call": "len"
-  },
-  {
-    "file": "backend.py",
-    "line": 284,
-    "call": "LocalError"
-  },
-  {
-    "file": "backend.py",
     "line": 297,
-    "call": "file.is_symlink"
+    "call": "len"
   },
   {
     "file": "backend.py",
@@ -2266,132 +2281,147 @@
   },
   {
     "file": "backend.py",
-    "line": 300,
+    "line": 311,
+    "call": "file.is_symlink"
+  },
+  {
+    "file": "backend.py",
+    "line": 312,
+    "call": "LocalError"
+  },
+  {
+    "file": "backend.py",
+    "line": 314,
     "call": "file.read_bytes"
   },
   {
     "file": "backend.py",
-    "line": 301,
+    "line": 315,
     "call": "len"
   },
   {
     "file": "backend.py",
-    "line": 331,
+    "line": 345,
     "call": "match.end"
   },
   {
     "file": "backend.py",
-    "line": 371,
+    "line": 386,
     "call": "LocalError"
   },
   {
     "file": "backend.py",
-    "line": 373,
+    "line": 388,
     "call": "LocalError"
   },
   {
     "file": "backend.py",
-    "line": 377,
+    "line": 392,
     "call": "time.strftime"
   },
   {
     "file": "backend.py",
-    "line": 379,
+    "line": 394,
     "call": "json.dumps"
   },
   {
     "file": "backend.py",
-    "line": 385,
+    "line": 400,
     "call": "path.unlink"
   },
   {
     "file": "backend.py",
-    "line": 387,
+    "line": 402,
     "call": "atomic_write"
   },
   {
     "file": "backend.py",
-    "line": 390,
+    "line": 405,
     "call": "prefix.decode"
   },
   {
     "file": "backend.py",
-    "line": 408,
+    "line": 423,
     "call": "<expression>.pop"
   },
   {
     "file": "backend.py",
-    "line": 421,
+    "line": 436,
     "call": "read_file"
   },
   {
     "file": "backend.py",
-    "line": 423,
+    "line": 438,
     "call": "str"
   },
   {
     "file": "backend.py",
-    "line": 424,
+    "line": 439,
     "call": "self.installed_files"
   },
   {
     "file": "backend.py",
-    "line": 448,
+    "line": 463,
     "call": "record.get"
   },
   {
     "file": "backend.py",
-    "line": 458,
+    "line": 473,
     "call": "str"
   },
   {
     "file": "backend.py",
-    "line": 461,
+    "line": 476,
     "call": "sha"
   },
   {
     "file": "backend.py",
-    "line": 462,
+    "line": 477,
     "call": "str"
   },
   {
     "file": "backend.py",
-    "line": 465,
+    "line": 480,
     "call": "path.unlink"
   },
   {
     "file": "backend.py",
-    "line": 482,
+    "line": 497,
     "call": "str"
   },
   {
     "file": "backend.py",
-    "line": 483,
+    "line": 498,
     "call": "root.is_dir"
   },
   {
     "file": "backend.py",
-    "line": 483,
+    "line": 498,
     "call": "bool"
   },
   {
     "file": "backend.py",
-    "line": 484,
-    "call": "<expression>.get"
+    "line": 499,
+    "call": "self.normalize_profile"
   },
   {
     "file": "backend.py",
-    "line": 494,
+    "line": 510,
     "call": "len"
   },
   {
     "file": "backend.py",
-    "line": 504,
+    "line": 510,
+    "call": "len"
+  },
+  {
+    "file": "backend.py",
+    "line": 520,
     "call": "self.inject"
   },
   {
     "file": "backend.py",
-    "line": 521,
+    "line": 537,
     "call": "str"
   },
   {
@@ -2441,147 +2471,157 @@
   },
   {
     "file": "backend.py",
-    "line": 230,
-    "call": "child_files.items"
-  },
-  {
-    "file": "backend.py",
-    "line": 236,
-    "call": "Path"
-  },
-  {
-    "file": "backend.py",
-    "line": 254,
+    "line": 199,
     "call": "len"
   },
   {
     "file": "backend.py",
-    "line": 255,
-    "call": "LocalError"
+    "line": 243,
+    "call": "child_files.items"
   },
   {
     "file": "backend.py",
-    "line": 258,
+    "line": 249,
     "call": "Path"
   },
   {
     "file": "backend.py",
-    "line": 266,
-    "call": "<expression>.casefold"
+    "line": 268,
+    "call": "len"
   },
   {
     "file": "backend.py",
     "line": 269,
+    "call": "LocalError"
+  },
+  {
+    "file": "backend.py",
+    "line": 272,
+    "call": "Path"
+  },
+  {
+    "file": "backend.py",
+    "line": 280,
+    "call": "<expression>.casefold"
+  },
+  {
+    "file": "backend.py",
+    "line": 283,
     "call": "names.add"
   },
   {
     "file": "backend.py",
-    "line": 273,
+    "line": 287,
     "call": "item.is_dir"
   },
   {
     "file": "backend.py",
-    "line": 288,
+    "line": 302,
     "call": "path.is_file"
   },
   {
     "file": "backend.py",
-    "line": 289,
+    "line": 303,
     "call": "shutil.copyfile"
   },
   {
     "file": "backend.py",
-    "line": 292,
+    "line": 306,
     "call": "LocalError"
-  },
-  {
-    "file": "backend.py",
-    "line": 297,
-    "call": "hasattr"
-  },
-  {
-    "file": "backend.py",
-    "line": 297,
-    "call": "file.is_junction"
-  },
-  {
-    "file": "backend.py",
-    "line": 303,
-    "call": "LocalError"
-  },
-  {
-    "file": "backend.py",
-    "line": 304,
-    "call": "<expression>.as_posix"
   },
   {
     "file": "backend.py",
     "line": 311,
+    "call": "hasattr"
+  },
+  {
+    "file": "backend.py",
+    "line": 311,
+    "call": "file.is_junction"
+  },
+  {
+    "file": "backend.py",
+    "line": 317,
+    "call": "LocalError"
+  },
+  {
+    "file": "backend.py",
+    "line": 318,
+    "call": "<expression>.as_posix"
+  },
+  {
+    "file": "backend.py",
+    "line": 325,
     "call": "heading.group"
   },
   {
     "file": "backend.py",
-    "line": 312,
+    "line": 326,
     "call": "uuid.uuid4"
   },
   {
     "file": "backend.py",
-    "line": 314,
+    "line": 328,
     "call": "json.dumps"
   },
   {
     "file": "backend.py",
-    "line": 370,
+    "line": 385,
     "call": "sha"
   },
   {
     "file": "backend.py",
-    "line": 377,
+    "line": 392,
     "call": "uuid.uuid4"
   },
   {
     "file": "backend.py",
-    "line": 394,
+    "line": 409,
     "call": "sha"
   },
   {
     "file": "backend.py",
-    "line": 394,
+    "line": 409,
     "call": "files.items"
   },
   {
     "file": "backend.py",
-    "line": 401,
+    "line": 416,
     "call": "path.exists"
   },
   {
     "file": "backend.py",
-    "line": 404,
+    "line": 419,
     "call": "atomic_write"
   },
   {
     "file": "backend.py",
-    "line": 422,
+    "line": 437,
     "call": "sha"
   },
   {
     "file": "backend.py",
-    "line": 426,
+    "line": 441,
     "call": "str"
   },
   {
     "file": "backend.py",
-    "line": 428,
+    "line": 443,
     "call": "str"
   },
   {
     "file": "backend.py",
-    "line": 504,
+    "line": 499,
+    "call": "<expression>.get"
+  },
+  {
+    "file": "backend.py",
+    "line": 520,
     "call": "args.get"
   },
   {
     "file": "backend.py",
-    "line": 506,
+    "line": 522,
     "call": "self.revoke"
   },
   {
@@ -2591,92 +2631,92 @@
   },
   {
     "file": "backend.py",
-    "line": 254,
+    "line": 268,
     "call": "archive.infolist"
   },
   {
     "file": "backend.py",
-    "line": 258,
+    "line": 272,
     "call": "item.filename.replace"
   },
   {
     "file": "backend.py",
-    "line": 259,
+    "line": 273,
     "call": "rel.is_absolute"
   },
   {
     "file": "backend.py",
-    "line": 260,
-    "call": "LocalError"
-  },
-  {
-    "file": "backend.py",
-    "line": 262,
-    "call": "<expression>.is_relative_to"
-  },
-  {
-    "file": "backend.py",
-    "line": 263,
-    "call": "LocalError"
-  },
-  {
-    "file": "backend.py",
-    "line": 265,
-    "call": "LocalError"
-  },
-  {
-    "file": "backend.py",
-    "line": 268,
-    "call": "LocalError"
-  },
-  {
-    "file": "backend.py",
-    "line": 272,
-    "call": "LocalError"
-  },
-  {
-    "file": "backend.py",
     "line": 274,
-    "call": "dest.mkdir"
+    "call": "LocalError"
   },
   {
     "file": "backend.py",
     "line": 276,
-    "call": "dest.parent.mkdir"
+    "call": "<expression>.is_relative_to"
   },
   {
     "file": "backend.py",
-    "line": 281,
-    "call": "dest.write_bytes"
+    "line": 277,
+    "call": "LocalError"
+  },
+  {
+    "file": "backend.py",
+    "line": 279,
+    "call": "LocalError"
+  },
+  {
+    "file": "backend.py",
+    "line": 282,
+    "call": "LocalError"
+  },
+  {
+    "file": "backend.py",
+    "line": 286,
+    "call": "LocalError"
   },
   {
     "file": "backend.py",
     "line": 288,
-    "call": "path.suffix.lower"
+    "call": "dest.mkdir"
+  },
+  {
+    "file": "backend.py",
+    "line": 290,
+    "call": "dest.parent.mkdir"
+  },
+  {
+    "file": "backend.py",
+    "line": 295,
+    "call": "dest.write_bytes"
   },
   {
     "file": "backend.py",
     "line": 302,
+    "call": "path.suffix.lower"
+  },
+  {
+    "file": "backend.py",
+    "line": 316,
     "call": "len"
   },
   {
     "file": "backend.py",
-    "line": 379,
+    "line": 394,
     "call": "str"
   },
   {
     "file": "backend.py",
-    "line": 402,
+    "line": 417,
     "call": "path.unlink"
   },
   {
     "file": "backend.py",
-    "line": 450,
+    "line": 465,
     "call": "len"
   },
   {
     "file": "backend.py",
-    "line": 508,
+    "line": 524,
     "call": "self.verify"
   },
   {
@@ -2686,97 +2726,97 @@
   },
   {
     "file": "backend.py",
-    "line": 262,
+    "line": 276,
     "call": "staging.resolve"
   },
   {
     "file": "backend.py",
-    "line": 266,
+    "line": 280,
     "call": "str"
   },
   {
     "file": "backend.py",
-    "line": 277,
+    "line": 291,
     "call": "archive.open"
   },
   {
     "file": "backend.py",
-    "line": 278,
+    "line": 292,
     "call": "stream.read"
   },
   {
     "file": "backend.py",
-    "line": 279,
+    "line": 293,
     "call": "len"
   },
   {
     "file": "backend.py",
-    "line": 280,
+    "line": 294,
     "call": "LocalError"
   },
   {
     "file": "backend.py",
-    "line": 304,
+    "line": 318,
     "call": "file.relative_to"
   },
   {
     "file": "backend.py",
-    "line": 379,
+    "line": 394,
     "call": "<expression>.decode"
   },
   {
     "file": "backend.py",
-    "line": 380,
+    "line": 395,
     "call": "previous.items"
   },
   {
     "file": "backend.py",
-    "line": 426,
+    "line": 441,
     "call": "sha"
   },
   {
     "file": "backend.py",
-    "line": 458,
+    "line": 473,
     "call": "Path"
   },
   {
     "file": "backend.py",
-    "line": 510,
+    "line": 526,
     "call": "self.set_path"
   },
   {
     "file": "backend.py",
-    "line": 262,
+    "line": 276,
     "call": "dest.resolve"
   },
   {
     "file": "backend.py",
-    "line": 510,
+    "line": 526,
     "call": "args.get"
   },
   {
     "file": "backend.py",
-    "line": 512,
+    "line": 528,
     "call": "self.read_profile"
   },
   {
     "file": "backend.py",
-    "line": 379,
+    "line": 394,
     "call": "base64.b64encode"
   },
   {
     "file": "backend.py",
-    "line": 514,
+    "line": 530,
     "call": "self.import_skill"
   },
   {
     "file": "backend.py",
-    "line": 516,
+    "line": 532,
     "call": "self.diagnostics"
   },
   {
     "file": "backend.py",
-    "line": 518,
+    "line": 534,
     "call": "LocalError"
   }
 ]

@@ -9,7 +9,7 @@ ai技能库首次公开发布，程序版本 1.3.2。本软件由 AI 开发。
 
 从[发布页面](https://github.com/Lin6932271/ai-skill-library/releases/tag/v1.3.2)下载 `AISkillLibrary-1.3.2-windows-x64.zip`，解压后双击 `ai技能库.exe`。
 也可直接下载 `AISkillLibrary-1.3.2-windows-x64.exe` 运行。
-需要 Windows x64 和 Microsoft Edge WebView2 Runtime，无需安装 Python或注册账户。
+需要 Windows x64 和 Microsoft Edge WebView2 Runtime，无需安装 Python 或注册账户。
 
 启动动画约 7 秒，静音播放并铺满软件窗口，播放完毕自动进入主界面。
 动画期间隐藏标题栏，结束后恢复窗口按钮。界面支持搜索、分类筛选、滚动及浅色与深色主题。

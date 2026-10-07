@@ -38,8 +38,8 @@
   {
     "name": "PYZ.pyz",
     "type": "z",
-    "bytes": 5902027,
-    "sha256": "448e293eefe23e5aa4c9b39de47dd8f751c24464f3de3841da80cbae480a723f"
+    "bytes": 5902357,
+    "sha256": "ddcde11132554f278093f425ef071bebaef8c88352f0f8bc120dcdc0ed367f96"
   },
   {
     "name": "VCRUNTIME140.dll",
@@ -405,7 +405,7 @@
     "name": "base_library.zip",
     "type": "b",
     "bytes": 1388164,
-    "sha256": "5aff78d39b33213acc6d6e51593b3bd1b0e8e14e8cd09b2351799be9a47c3d81"
+    "sha256": "59cc35fafc9ca1eb968130f042acc7018dfe7303d6e2de352162605eb65033ed"
   },
   {
     "name": "clr_loader/ffi/dlls/amd64/ClrLoader.dll",
@@ -422,8 +422,8 @@
   {
     "name": "frontend/app.js",
     "type": "b",
-    "bytes": 15265,
-    "sha256": "f2c6670e0527fb73769e691f8e4c1796c9436df7cb8b32de5584732480c0d4d2"
+    "bytes": 15069,
+    "sha256": "b520dcb97fc4c85e5e9667a5965a3d64d487b54781869a88069b797b77a70b4e"
   },
   {
     "name": "frontend/assets/app-icon.ico",
@@ -436,6 +436,12 @@
     "type": "b",
     "bytes": 747413,
     "sha256": "31cfc8731c75049bf500dfd0c448187cd1314596ae341aa5efa62214d6dccac2"
+  },
+  {
+    "name": "frontend/assets/base.css",
+    "type": "b",
+    "bytes": 181643,
+    "sha256": "7932d3a85b3bb2fe53f8611ef3ec318497960473d2d00c5c49a2f6baa939d067"
   },
   {
     "name": "frontend/assets/brand-mark-BgR0MxcD.png",
@@ -480,12 +486,6 @@
     "sha256": "e56ab0bc224c8969462ff956c7d1759984790fc0da619685ce623e2ff0ad8da3"
   },
   {
-    "name": "frontend/assets/original.css",
-    "type": "b",
-    "bytes": 181643,
-    "sha256": "7932d3a85b3bb2fe53f8611ef3ec318497960473d2d00c5c49a2f6baa939d067"
-  },
-  {
     "name": "frontend/assets/startup.mp4",
     "type": "b",
     "bytes": 1856280,
@@ -506,8 +506,8 @@
   {
     "name": "frontend/index.html",
     "type": "b",
-    "bytes": 4356,
-    "sha256": "d7838c31d44fc02566019d88f10a83347855ad73a3f2e1c18920ca78024034ed"
+    "bytes": 4360,
+    "sha256": "7fdc88bc7dfb37423af16de80ffa2ce45ee8722c024cda2ef1b7e9d2cc5afd1e"
   },
   {
     "name": "frontend/local.css",
@@ -536,8 +536,8 @@
   {
     "name": "main",
     "type": "s",
-    "bytes": 33622,
-    "sha256": "adfdd2b571ebe923eef8f8a7b9d368a6203f04f37356561444eaf11868233a7b"
+    "bytes": 33620,
+    "sha256": "cfb7da026e21d2358756907f273c304adf70987c873ac9e4d85f973a9e8bdcef"
   },
   {
     "name": "pyexpat.pyd",
@@ -726,670 +726,670 @@
     "sha256": "37fedcffbf73c4eb9f058f47677cb33203a436ff9390e4d38a8e01c9dad28e0b"
   },
   {
-    "name": "skills/catalog.json",
-    "type": "b",
-    "bytes": 26989,
-    "sha256": "a2c53207ac1d1957523ac2b221baf5e585b065ffdd20f2112f2cf6f7497f12ec"
-  },
-  {
-    "name": "skills/cloud-all/SKILL.md",
-    "type": "b",
-    "bytes": 4894,
-    "sha256": "a63910cc8596385a3059f16c454a1dfddfb6160076abd248799a46b7fbff2f3c"
-  },
-  {
-    "name": "skills/cloud-all/library/api-design/SKILL.md",
-    "type": "b",
-    "bytes": 3124,
-    "sha256": "5be4c6007a1d5f41610f3740aa4131995e9e129fd6ea288e06f9bdf75aac382b"
-  },
-  {
-    "name": "skills/cloud-all/library/api-security/SKILL.md",
-    "type": "b",
-    "bytes": 6357,
-    "sha256": "4246fe31f57fae269bfb0c6f1f8865f2c93fbc26fffee6ce46ba68ff4af867fd"
-  },
-  {
-    "name": "skills/cloud-all/library/apk-reverse/SKILL.md",
-    "type": "b",
-    "bytes": 11897,
-    "sha256": "a711ca1ccdbf8a376caf06f060b52add452be36ac467e711e9b28899ed05b409"
-  },
-  {
-    "name": "skills/cloud-all/library/attack-chain/SKILL.md",
-    "type": "b",
-    "bytes": 30120,
-    "sha256": "826a357e3a476faab2bc28411806d09193b140f47d5238c079cc867500b4baa4"
-  },
-  {
-    "name": "skills/cloud-all/library/binary-diff/SKILL.md",
-    "type": "b",
-    "bytes": 12395,
-    "sha256": "ec386efb067353acefc27cc301e62f4c870d00fb058fadd587abb505cb3863ce"
-  },
-  {
-    "name": "skills/cloud-all/library/browser-automation/SKILL.md",
-    "type": "b",
-    "bytes": 8057,
-    "sha256": "1d49cac456a7517e155f36eebe583f6d5b26d19fa96cc48fab754d79ff744d0a"
-  },
-  {
-    "name": "skills/cloud-all/library/browser-extension-reverse/SKILL.md",
-    "type": "b",
-    "bytes": 2291,
-    "sha256": "eee978f3cbb82bbc19111cb4b54f13cb2e3cf474dd92f37a36777b160822c7b1"
-  },
-  {
-    "name": "skills/cloud-all/library/build-release/SKILL.md",
-    "type": "b",
-    "bytes": 2223,
-    "sha256": "8a0c4c627cbd1fb989d778d0802a1abb8d5200962c9fcfa612f4732065081a8c"
-  },
-  {
-    "name": "skills/cloud-all/library/cloud-k8s/SKILL.md",
-    "type": "b",
-    "bytes": 3100,
-    "sha256": "1a3e4819f5fe5285abbcf212fbd7e6e3e3d2c77c6ba412dd0868942665929021"
-  },
-  {
-    "name": "skills/cloud-all/library/code-audit/SKILL.md",
-    "type": "b",
-    "bytes": 2497,
-    "sha256": "ddf07d801b6ec5ba6cb52634e1dd2084b1691cefd1067fd01541d2ef5e8a1768"
-  },
-  {
-    "name": "skills/cloud-all/library/database-security/SKILL.md",
-    "type": "b",
-    "bytes": 1876,
-    "sha256": "dffa757426eca4ff81f66c21264aff8b1c8e4c09d98aac3dde5bb2de4e02f67b"
-  },
-  {
-    "name": "skills/cloud-all/library/deploy-infra/SKILL.md",
-    "type": "b",
-    "bytes": 2283,
-    "sha256": "f3c878e345dbd7c8293f7239e04e79cc4082ddf7ae7ae95d5bb5b8545411a460"
-  },
-  {
-    "name": "skills/cloud-all/library/diagram-generator/SKILL.md",
-    "type": "b",
-    "bytes": 10035,
-    "sha256": "5848782647e6f2837c81e355eb56963dabf71e4f92d12d2a4721df507f83023d"
-  },
-  {
-    "name": "skills/cloud-all/library/digital-forensics/SKILL.md",
-    "type": "b",
-    "bytes": 2390,
-    "sha256": "2302944d797d25c2722b02ef7be7105debd423c2419849f751ab331311ffa849"
-  },
-  {
-    "name": "skills/cloud-all/library/docs-generator/SKILL.md",
-    "type": "b",
-    "bytes": 7264,
-    "sha256": "7d201b1a7a979afc202628c3ca64bdc489fdac5858626d73c0ba080f39bf3eb2"
-  },
-  {
-    "name": "skills/cloud-all/library/dotnet-reverse/SKILL.md",
-    "type": "b",
-    "bytes": 10034,
-    "sha256": "144c6e22369c17d0876b6d6ab646350d319742b67eeaab66e2f702f74ad5f59a"
-  },
-  {
-    "name": "skills/cloud-all/library/edr-bypass-re/SKILL.md",
-    "type": "b",
-    "bytes": 43805,
-    "sha256": "dbcb093e2c80c94409ade9f85243cba08b2b07603d32152a4b236fd7294729ff"
-  },
-  {
-    "name": "skills/cloud-all/library/email-security/SKILL.md",
-    "type": "b",
-    "bytes": 1858,
-    "sha256": "f90aa7087d9585d71e0f3e5d136f98ca7c5b0a9270d6baf4fe9afafd14275bfc"
-  },
-  {
-    "name": "skills/cloud-all/library/firmware-pentest/SKILL.md",
-    "type": "b",
-    "bytes": 12999,
-    "sha256": "4c1ca669c9542c482351f4fc6e85c19948085aaef1f730d6f59b51a8c4f4f0cd"
-  },
-  {
-    "name": "skills/cloud-all/library/game-hacking/SKILL.md",
-    "type": "b",
-    "bytes": 19420,
-    "sha256": "1cf89ea732e83c7fc5c8d6911c6c6cefd30c287221e78f44bde1671b3ca0b509"
-  },
-  {
-    "name": "skills/cloud-all/library/ghidra-reverse/SKILL.md",
-    "type": "b",
-    "bytes": 2877,
-    "sha256": "4f652d61cb14ad45053b2e967d65012d790dfcf4a09493108c046d304ad6b6f7"
-  },
-  {
-    "name": "skills/cloud-all/library/go-rust-reverse/SKILL.md",
-    "type": "b",
-    "bytes": 2112,
-    "sha256": "bad462c0ffeda7c2c9fca346202cd502e08752a6e0b4c4baf1480a9bb432e574"
-  },
-  {
-    "name": "skills/cloud-all/library/hardware-security/SKILL.md",
-    "type": "b",
-    "bytes": 1752,
-    "sha256": "d6ee63a5c8af9f4948a1f3eb412a42391267583451169e2946b3f7856c4010a0"
-  },
-  {
-    "name": "skills/cloud-all/library/ida-reverse/SKILL.md",
-    "type": "b",
-    "bytes": 16043,
-    "sha256": "0bdba98dcaf2ccac3af77ef3a5bb79a92a9501d1a661b4b63470ccd86dc261b6"
-  },
-  {
-    "name": "skills/cloud-all/library/identity-federation/SKILL.md",
-    "type": "b",
-    "bytes": 1851,
-    "sha256": "4782bfe49fa95e16c9c3cd1018d095cb63b6b2bfbd85d21a3e68d36343da43aa"
-  },
-  {
-    "name": "skills/cloud-all/library/jailbreak-engineering/SKILL.md",
-    "type": "b",
-    "bytes": 2480,
-    "sha256": "e42f4c0181c804b8337a31c4ade54d5607e996f1074811465e80503ed68b1a90"
-  },
-  {
-    "name": "skills/cloud-all/library/js-reverse/SKILL.md",
-    "type": "b",
-    "bytes": 9299,
-    "sha256": "0f37e4c1b4826f026c2d5e778e05ded445aead0d6710b2e6ef7fca0d7470fdb3"
-  },
-  {
-    "name": "skills/cloud-all/library/l-gameassist/SKILL.md",
-    "type": "b",
-    "bytes": 3832,
-    "sha256": "40d2157a371f2b8e00239e37a891abd2ee4ff2852ab99d554ee3226cb04d8c71"
-  },
-  {
-    "name": "skills/cloud-all/library/l-license/SKILL.md",
-    "type": "b",
-    "bytes": 2454,
-    "sha256": "9d29a318d3dac56457607458f00c4814eea907c9f77610738ec11d70ded89fc8"
-  },
-  {
-    "name": "skills/cloud-all/library/l-reverse/SKILL.md",
-    "type": "b",
-    "bytes": 5139,
-    "sha256": "df193ecf263ba1cbbb35f197c43eaa30b83b9d16ec4637d51bf065da45b9200a"
-  },
-  {
-    "name": "skills/cloud-all/library/l-webrecon/SKILL.md",
-    "type": "b",
-    "bytes": 3217,
-    "sha256": "4429e94354fa6a7728cd23e91b9beed71c4d4b80e2fd4ab90e68b4902c5b1596"
-  },
-  {
-    "name": "skills/cloud-all/library/llm-security/SKILL.md",
-    "type": "b",
-    "bytes": 6172,
-    "sha256": "9fb995fc58d0d9662ca124a1c6e384172dac10003677d4ee5186424c5311b924"
-  },
-  {
-    "name": "skills/cloud-all/library/macos-reverse/SKILL.md",
-    "type": "b",
-    "bytes": 1976,
-    "sha256": "63b0b5d652e04c1a58c4c812430624f9cd5b2e40fc621b019efdc10b902995ba"
-  },
-  {
-    "name": "skills/cloud-all/library/malware-analysis/SKILL.md",
-    "type": "b",
-    "bytes": 9387,
-    "sha256": "bfd0eec0a614281ee07cc582940f809a34b0b76c4787e1fd3c37121f0fdd6f6a"
-  },
-  {
-    "name": "skills/cloud-all/library/mobile-reverse/SKILL.md",
-    "type": "b",
-    "bytes": 6540,
-    "sha256": "8e3d7ad7be21d87d2ae21d7628974ff3d99b7e7556be2b8d0c1157e15fbb3fd0"
-  },
-  {
-    "name": "skills/cloud-all/library/network-analysis/SKILL.md",
-    "type": "b",
-    "bytes": 1359,
-    "sha256": "6cb2d256d1b83464b4adc5b8288f39dc29cf5be6f7ade737849633e9adfea3b6"
-  },
-  {
-    "name": "skills/cloud-all/library/ot-ics/SKILL.md",
-    "type": "b",
-    "bytes": 3511,
-    "sha256": "996cf9fe60ea76d0b45e1bca647e560e72638729b14870b28872973a13aec221"
-  },
-  {
-    "name": "skills/cloud-all/library/patch-diff-exploit/SKILL.md",
-    "type": "b",
-    "bytes": 14075,
-    "sha256": "cc882853917516be4309960adccdf32fd17153973bd2e80807ae9c5da47b812c"
-  },
-  {
-    "name": "skills/cloud-all/library/pentest-tools/SKILL.md",
-    "type": "b",
-    "bytes": 114616,
-    "sha256": "2f8fff1ff8bc0fd0cff526bff2999543b28cdd3a9b6ac5930805fdb5a703a919"
-  },
-  {
-    "name": "skills/cloud-all/library/pentest-tools__src-hunter/SKILL.md",
-    "type": "b",
-    "bytes": 12187,
-    "sha256": "02681cc6ddc6294988c1956fb3c25b8dedcb852933ed05cfdbc0311d3894e877"
-  },
-  {
-    "name": "skills/cloud-all/library/protocol-reverse/SKILL.md",
-    "type": "b",
-    "bytes": 4083,
-    "sha256": "96e775156ccf5cc6a1f248af2467c79e990f1c45bea03af687da1b34cd25c1ee"
-  },
-  {
-    "name": "skills/cloud-all/library/pwn-chain/SKILL.md",
-    "type": "b",
-    "bytes": 10236,
-    "sha256": "ce76dc36d323d355bc7e9e633c71726496f382621d9fc92a39ec8c9df7e0c924"
-  },
-  {
-    "name": "skills/cloud-all/library/radare2/SKILL.md",
-    "type": "b",
-    "bytes": 11948,
-    "sha256": "64a3ad91a1703ea4f94a82ddd5407985451dec59d14357682f116e58d7367e33"
-  },
-  {
-    "name": "skills/cloud-all/library/radio-sdr/SKILL.md",
-    "type": "b",
-    "bytes": 1754,
-    "sha256": "4bfe814ca8216fa82cb6c2c92a465c5da68f04941b3684bac61ff10748765e85"
-  },
-  {
-    "name": "skills/cloud-all/library/reverse-engineering/SKILL.md",
-    "type": "b",
-    "bytes": 183640,
-    "sha256": "cb36816437cbb74643f9db6a79fadc262d9055ef74de15649668f36eb8be2dea"
-  },
-  {
-    "name": "skills/cloud-all/library/reverse-engineering__dsl-vm-reverse/SKILL.md",
-    "type": "b",
-    "bytes": 12117,
-    "sha256": "5bc81a39676cda7036cf5c534df956f3fed97a11ecf97c61f3eb285437b9bbfb"
-  },
-  {
-    "name": "skills/cloud-all/library/reverse_flow_skill/SKILL.md",
-    "type": "b",
-    "bytes": 21417,
-    "sha256": "bf56e4d60ad1c8d6136a62f54ba42f950f280d902bd830b688a37d6970a9989c"
-  },
-  {
-    "name": "skills/cloud-all/library/skills/SKILL.md",
-    "type": "b",
-    "bytes": 13848,
-    "sha256": "28722764c784add6775a1c586383808e5d7f2c018cb10d5446addebaf1727354"
-  },
-  {
-    "name": "skills/cloud-all/library/supply-chain-security/SKILL.md",
-    "type": "b",
-    "bytes": 6487,
-    "sha256": "e702e7ae2d70a525773f1beac7c12a020c1a3bc21dc0f31dbd5d6470b4e5d998"
-  },
-  {
-    "name": "skills/cloud-all/library/thick-client/SKILL.md",
-    "type": "b",
-    "bytes": 3161,
-    "sha256": "e3a13e1de348c76fb49e16086636477cc2927ea216ba13a56971a7d95b61dcd8"
-  },
-  {
-    "name": "skills/cloud-all/library/threat-hunting/SKILL.md",
-    "type": "b",
-    "bytes": 2444,
-    "sha256": "a428f95f1d283d258c2219c74998ed1d28dbda61d72024edda8c2aa00236805d"
-  },
-  {
-    "name": "skills/cloud-all/library/wifi-wireless/SKILL.md",
-    "type": "b",
-    "bytes": 1825,
-    "sha256": "8dfdcf355e555c4a405f725de21420579e072ff08fe1c3d44e394c8c8d120b6c"
-  },
-  {
-    "name": "skills/cloud-all/library/windows-ad/SKILL.md",
-    "type": "b",
-    "bytes": 3049,
-    "sha256": "56f1512164340de4d5148be29314777e19133594d32f5064eee93f2674636bfa"
-  },
-  {
-    "name": "skills/cloud-catalog.json",
-    "type": "b",
-    "bytes": 52790,
-    "sha256": "15602f2f7ad8b8f5ce10759267285bb1ade9a8f00d2c11ded6dc4872b2a6f70e"
-  },
-  {
-    "name": "skills/curated/SKILL.md",
+    "name": "skills/advanced/SKILL.md",
     "type": "b",
     "bytes": 946,
     "sha256": "d8c46ab84c34d7188f0dada733467bd7e2050b8eed6a2a6cc5980d11cb2ed2ca"
   },
   {
-    "name": "skills/curated/references/checklist.md",
+    "name": "skills/advanced/references/checklist.md",
     "type": "b",
     "bytes": 286,
     "sha256": "288139bd17ba03e77f677b5a3a374559ee526950d98637736751614d96389ea1"
   },
   {
-    "name": "skills/original/SKILL.md",
+    "name": "skills/basic/SKILL.md",
     "type": "b",
     "bytes": 944,
     "sha256": "c10ed42d5f821ea5ba1777f3b7365fbae5687ec5f51f6f3a123c6a37dddb6cff"
   },
   {
-    "name": "skills/rebuilt-all/SKILL.md",
+    "name": "skills/builtin-catalog.json",
     "type": "b",
-    "bytes": 5228,
-    "sha256": "e44e6adfe454a575009d30c5ed0ee2e7ea09374b352c345079dac70c4003ddf7"
+    "bytes": 34340,
+    "sha256": "2ab31a68ecb575d2701a218b1ca35065f4543033a37aadbe08b4dfa267234ac0"
   },
   {
-    "name": "skills/rebuilt-all/library/api-security/SKILL.md",
+    "name": "skills/builtin/SKILL.md",
     "type": "b",
-    "bytes": 937,
-    "sha256": "d5cfda046b7a28f79fe2af983a2741a539ec609e19681f6c08aa4082f6c7326a"
+    "bytes": 4827,
+    "sha256": "e1cf903f40ceb642a4f271972af52d503a4569b56cdb6029136a314ed0bee830"
   },
   {
-    "name": "skills/rebuilt-all/library/apk-reverse/SKILL.md",
+    "name": "skills/builtin/library/api-design/SKILL.md",
     "type": "b",
-    "bytes": 993,
-    "sha256": "b4d2798151851d342fb5e3d044eebfc0eb1d3c679469c388b3ea6fbcd82c2ca1"
+    "bytes": 3124,
+    "sha256": "5be4c6007a1d5f41610f3740aa4131995e9e129fd6ea288e06f9bdf75aac382b"
   },
   {
-    "name": "skills/rebuilt-all/library/attack-chain/SKILL.md",
+    "name": "skills/builtin/library/api-security/SKILL.md",
     "type": "b",
-    "bytes": 926,
-    "sha256": "36de3c1b0152fcc940b9b1d4bd870b13960d43664a3c449fe3bdce1ad4ccf713"
+    "bytes": 6357,
+    "sha256": "4246fe31f57fae269bfb0c6f1f8865f2c93fbc26fffee6ce46ba68ff4af867fd"
   },
   {
-    "name": "skills/rebuilt-all/library/binary-diff/SKILL.md",
+    "name": "skills/builtin/library/apk-reverse/SKILL.md",
     "type": "b",
-    "bytes": 954,
-    "sha256": "ede26a7ad382e02b6c41dd2f6678462e8fc19a7b3ae52f78757d25f207cf5864"
+    "bytes": 11897,
+    "sha256": "a711ca1ccdbf8a376caf06f060b52add452be36ac467e711e9b28899ed05b409"
   },
   {
-    "name": "skills/rebuilt-all/library/browser-automation/SKILL.md",
+    "name": "skills/builtin/library/attack-chain/SKILL.md",
     "type": "b",
-    "bytes": 952,
-    "sha256": "3687b8f0a15f326ea2363ccbf7d121bfa43653dba653a4b9acca44acb2a133bf"
+    "bytes": 30120,
+    "sha256": "826a357e3a476faab2bc28411806d09193b140f47d5238c079cc867500b4baa4"
   },
   {
-    "name": "skills/rebuilt-all/library/browser-extension-reverse/SKILL.md",
+    "name": "skills/builtin/library/binary-diff/SKILL.md",
     "type": "b",
-    "bytes": 895,
-    "sha256": "fa6a94de73f44cfd9de7529c93eef02b48081e364802b406c2e0a196a3f0c70f"
+    "bytes": 12395,
+    "sha256": "ec386efb067353acefc27cc301e62f4c870d00fb058fadd587abb505cb3863ce"
   },
   {
-    "name": "skills/rebuilt-all/library/build-release/SKILL.md",
+    "name": "skills/builtin/library/browser-automation/SKILL.md",
     "type": "b",
-    "bytes": 929,
-    "sha256": "4fe9f967e088553c5b7febfe2bad1943b30158f4280e5364c4f06556c554137d"
+    "bytes": 8057,
+    "sha256": "1d49cac456a7517e155f36eebe583f6d5b26d19fa96cc48fab754d79ff744d0a"
   },
   {
-    "name": "skills/rebuilt-all/library/cloud-k8s/SKILL.md",
+    "name": "skills/builtin/library/browser-extension-reverse/SKILL.md",
     "type": "b",
-    "bytes": 982,
-    "sha256": "ae6c02b0e0626fd81fce62dbeda6ee64fe94dbbaa2b15a1a189ebd62e020e3cf"
+    "bytes": 2291,
+    "sha256": "eee978f3cbb82bbc19111cb4b54f13cb2e3cf474dd92f37a36777b160822c7b1"
   },
   {
-    "name": "skills/rebuilt-all/library/code-audit/SKILL.md",
+    "name": "skills/builtin/library/build-release/SKILL.md",
     "type": "b",
-    "bytes": 929,
-    "sha256": "721f9e890e5b96d9aedb610667ccf802e14adff7ffb814121194cdb09185b5fa"
+    "bytes": 2223,
+    "sha256": "8a0c4c627cbd1fb989d778d0802a1abb8d5200962c9fcfa612f4732065081a8c"
   },
   {
-    "name": "skills/rebuilt-all/library/container-runtime/SKILL.md",
+    "name": "skills/builtin/library/cloud-k8s/SKILL.md",
     "type": "b",
-    "bytes": 944,
-    "sha256": "ee207e328b6ea9f96b23d6b1e7bc6fa8deb9edbd17271c50d7357466c6b7fea5"
+    "bytes": 3100,
+    "sha256": "1a3e4819f5fe5285abbcf212fbd7e6e3e3d2c77c6ba412dd0868942665929021"
   },
   {
-    "name": "skills/rebuilt-all/library/database-security/SKILL.md",
+    "name": "skills/builtin/library/code-audit/SKILL.md",
     "type": "b",
-    "bytes": 910,
-    "sha256": "2ca6f2fe4d2e3739c0eb220056247c12d2db36305fb4cd75c3b1d94350ddb7a4"
+    "bytes": 2497,
+    "sha256": "ddf07d801b6ec5ba6cb52634e1dd2084b1691cefd1067fd01541d2ef5e8a1768"
   },
   {
-    "name": "skills/rebuilt-all/library/deploy-infra/SKILL.md",
+    "name": "skills/builtin/library/database-security/SKILL.md",
     "type": "b",
-    "bytes": 921,
-    "sha256": "d164f8273a494aaf32cb17ceb49dc5879df96d47a04dc95e70049a33bc7ef78a"
+    "bytes": 1876,
+    "sha256": "dffa757426eca4ff81f66c21264aff8b1c8e4c09d98aac3dde5bb2de4e02f67b"
   },
   {
-    "name": "skills/rebuilt-all/library/digital-forensics/SKILL.md",
+    "name": "skills/builtin/library/deploy-infra/SKILL.md",
     "type": "b",
-    "bytes": 921,
-    "sha256": "3a7cb07f614b9171c4eb169fcb0664b5babe2639f9dd810f8868d438a73e06ef"
+    "bytes": 2283,
+    "sha256": "f3c878e345dbd7c8293f7239e04e79cc4082ddf7ae7ae95d5bb5b8545411a460"
   },
   {
-    "name": "skills/rebuilt-all/library/dotnet-reverse/SKILL.md",
+    "name": "skills/builtin/library/diagram-generator/SKILL.md",
     "type": "b",
-    "bytes": 975,
-    "sha256": "c594e90ff8e42fceb6ca238ef9ba37396c62cc44cf381d766a19f796f7fae3c5"
+    "bytes": 10035,
+    "sha256": "5848782647e6f2837c81e355eb56963dabf71e4f92d12d2a4721df507f83023d"
   },
   {
-    "name": "skills/rebuilt-all/library/edr-bypass-re/SKILL.md",
+    "name": "skills/builtin/library/digital-forensics/SKILL.md",
     "type": "b",
-    "bytes": 1000,
-    "sha256": "cabaa14c6b10c9e143ad788eb59904d68b9259994cd9c9127fbe184d8ee5d330"
+    "bytes": 2390,
+    "sha256": "2302944d797d25c2722b02ef7be7105debd423c2419849f751ab331311ffa849"
   },
   {
-    "name": "skills/rebuilt-all/library/email-security/SKILL.md",
+    "name": "skills/builtin/library/docs-generator/SKILL.md",
     "type": "b",
-    "bytes": 919,
-    "sha256": "540139aa4248cf67a9e0d3a5bba8f69d68e2cbc0f70fa282b63df04f39416b42"
+    "bytes": 7264,
+    "sha256": "7d201b1a7a979afc202628c3ca64bdc489fdac5858626d73c0ba080f39bf3eb2"
   },
   {
-    "name": "skills/rebuilt-all/library/firmware-pentest/SKILL.md",
+    "name": "skills/builtin/library/dotnet-reverse/SKILL.md",
     "type": "b",
-    "bytes": 976,
-    "sha256": "30706ac96397af961c8b1834d21f754e646e26a31e05be1d3ead9bcea3784c48"
+    "bytes": 10034,
+    "sha256": "144c6e22369c17d0876b6d6ab646350d319742b67eeaab66e2f702f74ad5f59a"
   },
   {
-    "name": "skills/rebuilt-all/library/game-hacking/SKILL.md",
+    "name": "skills/builtin/library/edr-bypass-re/SKILL.md",
     "type": "b",
-    "bytes": 1017,
-    "sha256": "4f36145502c7a828a098c219e2ad65de736e5d9be9d2947dbb6ff869eceadcf2"
+    "bytes": 43805,
+    "sha256": "dbcb093e2c80c94409ade9f85243cba08b2b07603d32152a4b236fd7294729ff"
   },
   {
-    "name": "skills/rebuilt-all/library/ghidra-reverse/SKILL.md",
+    "name": "skills/builtin/library/email-security/SKILL.md",
     "type": "b",
-    "bytes": 929,
-    "sha256": "0ce37d23295e57c68112fef27bca62957c735efe5998d6643ddd62e89e4d4cfa"
+    "bytes": 1858,
+    "sha256": "f90aa7087d9585d71e0f3e5d136f98ca7c5b0a9270d6baf4fe9afafd14275bfc"
   },
   {
-    "name": "skills/rebuilt-all/library/go-rust-reverse/SKILL.md",
+    "name": "skills/builtin/library/firmware-pentest/SKILL.md",
     "type": "b",
-    "bytes": 942,
-    "sha256": "97f7c1a1a0e00a732202dba97e67e793626b996e04216208585c22474178b035"
+    "bytes": 12999,
+    "sha256": "4c1ca669c9542c482351f4fc6e85c19948085aaef1f730d6f59b51a8c4f4f0cd"
   },
   {
-    "name": "skills/rebuilt-all/library/hardware-security/SKILL.md",
+    "name": "skills/builtin/library/game-hacking/SKILL.md",
+    "type": "b",
+    "bytes": 19420,
+    "sha256": "1cf89ea732e83c7fc5c8d6911c6c6cefd30c287221e78f44bde1671b3ca0b509"
+  },
+  {
+    "name": "skills/builtin/library/ghidra-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 2877,
+    "sha256": "4f652d61cb14ad45053b2e967d65012d790dfcf4a09493108c046d304ad6b6f7"
+  },
+  {
+    "name": "skills/builtin/library/go-rust-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 2112,
+    "sha256": "bad462c0ffeda7c2c9fca346202cd502e08752a6e0b4c4baf1480a9bb432e574"
+  },
+  {
+    "name": "skills/builtin/library/hardware-security/SKILL.md",
+    "type": "b",
+    "bytes": 1752,
+    "sha256": "d6ee63a5c8af9f4948a1f3eb412a42391267583451169e2946b3f7856c4010a0"
+  },
+  {
+    "name": "skills/builtin/library/ida-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 16043,
+    "sha256": "0bdba98dcaf2ccac3af77ef3a5bb79a92a9501d1a661b4b63470ccd86dc261b6"
+  },
+  {
+    "name": "skills/builtin/library/identity-federation/SKILL.md",
+    "type": "b",
+    "bytes": 1851,
+    "sha256": "4782bfe49fa95e16c9c3cd1018d095cb63b6b2bfbd85d21a3e68d36343da43aa"
+  },
+  {
+    "name": "skills/builtin/library/jailbreak-engineering/SKILL.md",
+    "type": "b",
+    "bytes": 2480,
+    "sha256": "e42f4c0181c804b8337a31c4ade54d5607e996f1074811465e80503ed68b1a90"
+  },
+  {
+    "name": "skills/builtin/library/js-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 9299,
+    "sha256": "0f37e4c1b4826f026c2d5e778e05ded445aead0d6710b2e6ef7fca0d7470fdb3"
+  },
+  {
+    "name": "skills/builtin/library/l-gameassist/SKILL.md",
+    "type": "b",
+    "bytes": 3832,
+    "sha256": "40d2157a371f2b8e00239e37a891abd2ee4ff2852ab99d554ee3226cb04d8c71"
+  },
+  {
+    "name": "skills/builtin/library/l-license/SKILL.md",
+    "type": "b",
+    "bytes": 2454,
+    "sha256": "9d29a318d3dac56457607458f00c4814eea907c9f77610738ec11d70ded89fc8"
+  },
+  {
+    "name": "skills/builtin/library/l-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 5139,
+    "sha256": "df193ecf263ba1cbbb35f197c43eaa30b83b9d16ec4637d51bf065da45b9200a"
+  },
+  {
+    "name": "skills/builtin/library/l-webrecon/SKILL.md",
+    "type": "b",
+    "bytes": 3217,
+    "sha256": "4429e94354fa6a7728cd23e91b9beed71c4d4b80e2fd4ab90e68b4902c5b1596"
+  },
+  {
+    "name": "skills/builtin/library/llm-security/SKILL.md",
+    "type": "b",
+    "bytes": 6172,
+    "sha256": "9fb995fc58d0d9662ca124a1c6e384172dac10003677d4ee5186424c5311b924"
+  },
+  {
+    "name": "skills/builtin/library/macos-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 1976,
+    "sha256": "63b0b5d652e04c1a58c4c812430624f9cd5b2e40fc621b019efdc10b902995ba"
+  },
+  {
+    "name": "skills/builtin/library/malware-analysis/SKILL.md",
+    "type": "b",
+    "bytes": 9387,
+    "sha256": "bfd0eec0a614281ee07cc582940f809a34b0b76c4787e1fd3c37121f0fdd6f6a"
+  },
+  {
+    "name": "skills/builtin/library/mobile-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 6540,
+    "sha256": "8e3d7ad7be21d87d2ae21d7628974ff3d99b7e7556be2b8d0c1157e15fbb3fd0"
+  },
+  {
+    "name": "skills/builtin/library/network-analysis/SKILL.md",
+    "type": "b",
+    "bytes": 1359,
+    "sha256": "6cb2d256d1b83464b4adc5b8288f39dc29cf5be6f7ade737849633e9adfea3b6"
+  },
+  {
+    "name": "skills/builtin/library/ot-ics/SKILL.md",
+    "type": "b",
+    "bytes": 3511,
+    "sha256": "996cf9fe60ea76d0b45e1bca647e560e72638729b14870b28872973a13aec221"
+  },
+  {
+    "name": "skills/builtin/library/patch-diff-exploit/SKILL.md",
+    "type": "b",
+    "bytes": 14075,
+    "sha256": "cc882853917516be4309960adccdf32fd17153973bd2e80807ae9c5da47b812c"
+  },
+  {
+    "name": "skills/builtin/library/pentest-tools/SKILL.md",
+    "type": "b",
+    "bytes": 114616,
+    "sha256": "2f8fff1ff8bc0fd0cff526bff2999543b28cdd3a9b6ac5930805fdb5a703a919"
+  },
+  {
+    "name": "skills/builtin/library/pentest-tools__src-hunter/SKILL.md",
+    "type": "b",
+    "bytes": 12187,
+    "sha256": "02681cc6ddc6294988c1956fb3c25b8dedcb852933ed05cfdbc0311d3894e877"
+  },
+  {
+    "name": "skills/builtin/library/protocol-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 4083,
+    "sha256": "96e775156ccf5cc6a1f248af2467c79e990f1c45bea03af687da1b34cd25c1ee"
+  },
+  {
+    "name": "skills/builtin/library/pwn-chain/SKILL.md",
+    "type": "b",
+    "bytes": 10236,
+    "sha256": "ce76dc36d323d355bc7e9e633c71726496f382621d9fc92a39ec8c9df7e0c924"
+  },
+  {
+    "name": "skills/builtin/library/radare2/SKILL.md",
+    "type": "b",
+    "bytes": 11948,
+    "sha256": "64a3ad91a1703ea4f94a82ddd5407985451dec59d14357682f116e58d7367e33"
+  },
+  {
+    "name": "skills/builtin/library/radio-sdr/SKILL.md",
+    "type": "b",
+    "bytes": 1754,
+    "sha256": "4bfe814ca8216fa82cb6c2c92a465c5da68f04941b3684bac61ff10748765e85"
+  },
+  {
+    "name": "skills/builtin/library/reverse-engineering/SKILL.md",
+    "type": "b",
+    "bytes": 183640,
+    "sha256": "cb36816437cbb74643f9db6a79fadc262d9055ef74de15649668f36eb8be2dea"
+  },
+  {
+    "name": "skills/builtin/library/reverse-engineering__dsl-vm-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 12117,
+    "sha256": "5bc81a39676cda7036cf5c534df956f3fed97a11ecf97c61f3eb285437b9bbfb"
+  },
+  {
+    "name": "skills/builtin/library/reverse_flow_skill/SKILL.md",
+    "type": "b",
+    "bytes": 21417,
+    "sha256": "bf56e4d60ad1c8d6136a62f54ba42f950f280d902bd830b688a37d6970a9989c"
+  },
+  {
+    "name": "skills/builtin/library/skills/SKILL.md",
+    "type": "b",
+    "bytes": 13848,
+    "sha256": "28722764c784add6775a1c586383808e5d7f2c018cb10d5446addebaf1727354"
+  },
+  {
+    "name": "skills/builtin/library/supply-chain-security/SKILL.md",
+    "type": "b",
+    "bytes": 6487,
+    "sha256": "e702e7ae2d70a525773f1beac7c12a020c1a3bc21dc0f31dbd5d6470b4e5d998"
+  },
+  {
+    "name": "skills/builtin/library/thick-client/SKILL.md",
+    "type": "b",
+    "bytes": 3161,
+    "sha256": "e3a13e1de348c76fb49e16086636477cc2927ea216ba13a56971a7d95b61dcd8"
+  },
+  {
+    "name": "skills/builtin/library/threat-hunting/SKILL.md",
+    "type": "b",
+    "bytes": 2444,
+    "sha256": "a428f95f1d283d258c2219c74998ed1d28dbda61d72024edda8c2aa00236805d"
+  },
+  {
+    "name": "skills/builtin/library/wifi-wireless/SKILL.md",
+    "type": "b",
+    "bytes": 1825,
+    "sha256": "8dfdcf355e555c4a405f725de21420579e072ff08fe1c3d44e394c8c8d120b6c"
+  },
+  {
+    "name": "skills/builtin/library/windows-ad/SKILL.md",
+    "type": "b",
+    "bytes": 3049,
+    "sha256": "56f1512164340de4d5148be29314777e19133594d32f5064eee93f2674636bfa"
+  },
+  {
+    "name": "skills/extended/SKILL.md",
+    "type": "b",
+    "bytes": 4929,
+    "sha256": "b2c25c3221d901f5197e83c782c02c39c036ef06fe286b06981465fea364a6dd"
+  },
+  {
+    "name": "skills/extended/library/api-security/SKILL.md",
+    "type": "b",
+    "bytes": 814,
+    "sha256": "249f6a3e15e2dd1e1fc9d3124934472779e6e30dd85462d585f7e1c18f2ffdad"
+  },
+  {
+    "name": "skills/extended/library/apk-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 870,
+    "sha256": "d3c20fca80584f89bb0261e1d628c073065e9ec75d41fa4b57d15ba0211f9e05"
+  },
+  {
+    "name": "skills/extended/library/attack-chain/SKILL.md",
+    "type": "b",
+    "bytes": 803,
+    "sha256": "814a4685a60323a31434223cda6a9d4008057b93a8f1fda5c8c4f552bae1ca82"
+  },
+  {
+    "name": "skills/extended/library/binary-diff/SKILL.md",
+    "type": "b",
+    "bytes": 831,
+    "sha256": "63c6f9a09d692fc4ec9aee57773d0ad92ccfe09b4cdbdc432f58818813900132"
+  },
+  {
+    "name": "skills/extended/library/browser-automation/SKILL.md",
+    "type": "b",
+    "bytes": 829,
+    "sha256": "be4221f3eddbf1add41e664d0fa137a515734aadd56123f30ac7dafcabd8378e"
+  },
+  {
+    "name": "skills/extended/library/browser-extension-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 772,
+    "sha256": "90bbd8ae26df807e6fc3337d85b810c875a8543101fb06154cc02212552ddfe7"
+  },
+  {
+    "name": "skills/extended/library/build-release/SKILL.md",
+    "type": "b",
+    "bytes": 806,
+    "sha256": "a4a006bb5fd34416108529d6b299f44b33205e5a9b21a935b98688999e2889d9"
+  },
+  {
+    "name": "skills/extended/library/cloud-k8s/SKILL.md",
+    "type": "b",
+    "bytes": 859,
+    "sha256": "597ec08dedce43fdea4e1bd566e317287c7bf627ed92fb43db6023c19d698ea0"
+  },
+  {
+    "name": "skills/extended/library/code-audit/SKILL.md",
+    "type": "b",
+    "bytes": 806,
+    "sha256": "324d7594fa036b68a4c4a7050b2aede36bd08669677d83bcdf7e5e910fde4aab"
+  },
+  {
+    "name": "skills/extended/library/container-runtime/SKILL.md",
+    "type": "b",
+    "bytes": 821,
+    "sha256": "fa345e316f807285394fc001df51fa4d6d2cb9f21b95e3a7ce0537f3e42f2fae"
+  },
+  {
+    "name": "skills/extended/library/database-security/SKILL.md",
+    "type": "b",
+    "bytes": 787,
+    "sha256": "609ed139d55006697ae8c08530376e039f5b274d3fe27bea30efd4b166facbca"
+  },
+  {
+    "name": "skills/extended/library/deploy-infra/SKILL.md",
+    "type": "b",
+    "bytes": 798,
+    "sha256": "8063c9845ce3a2c83a32e403335f5327e49d97aed9a9465e01dbbae0fd446124"
+  },
+  {
+    "name": "skills/extended/library/digital-forensics/SKILL.md",
+    "type": "b",
+    "bytes": 798,
+    "sha256": "dccb51d8e96ec992493e28bbebbafd5d2a3ec150f86184eb2890b5886efa13e6"
+  },
+  {
+    "name": "skills/extended/library/dotnet-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 852,
+    "sha256": "42062836d0b57bb796c12baf0de3ff346197f5e3c76b93949868521d36757e4b"
+  },
+  {
+    "name": "skills/extended/library/edr-bypass-re/SKILL.md",
+    "type": "b",
+    "bytes": 877,
+    "sha256": "255580f1a2ef418f5624ab22fffd0a2caa66242340838549a41d1ab2fd34bfdd"
+  },
+  {
+    "name": "skills/extended/library/email-security/SKILL.md",
+    "type": "b",
+    "bytes": 796,
+    "sha256": "a60f28d43a0b33118dc11a0403e31862dcf39e1165f41819575034482e0d8d8f"
+  },
+  {
+    "name": "skills/extended/library/firmware-pentest/SKILL.md",
+    "type": "b",
+    "bytes": 853,
+    "sha256": "85a0981a6f285e902f89b42abbf0df3f1e12b8458056f191b4f80cffb6f34a78"
+  },
+  {
+    "name": "skills/extended/library/game-hacking/SKILL.md",
+    "type": "b",
+    "bytes": 894,
+    "sha256": "31f5b6337a760800667849cdfdaa24940dc1b4b4cc85b40a1a99c022077c62e4"
+  },
+  {
+    "name": "skills/extended/library/ghidra-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 806,
+    "sha256": "bbad4856af17524d16483f21e8e82a74ff6a63dd4bfd5ecd7283ad89f52b3edd"
+  },
+  {
+    "name": "skills/extended/library/go-rust-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 819,
+    "sha256": "a2fa00b3227e3b5a98131a1c570c87d2807246c77c7360dce092af6377b84153"
+  },
+  {
+    "name": "skills/extended/library/hardware-security/SKILL.md",
+    "type": "b",
+    "bytes": 777,
+    "sha256": "5c96d76c47b98efc446daeabdc91fd3fffb8e4ac11bab6460998e3531c9edccf"
+  },
+  {
+    "name": "skills/extended/library/ida-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 820,
+    "sha256": "21ec66137ded1b1a81c560210b598f33e2e32001e68e4303a9c9b6c550c78900"
+  },
+  {
+    "name": "skills/extended/library/identity-federation/SKILL.md",
+    "type": "b",
+    "bytes": 790,
+    "sha256": "19e1067de8e429e78986e02b83dfdd2ebd412862f54383b30e57a96d942cd4b7"
+  },
+  {
+    "name": "skills/extended/library/js-reverse/SKILL.md",
     "type": "b",
     "bytes": 900,
-    "sha256": "a6da8f5d34fac1fd0352401d3ff4604c98fa465eca93385c2d5f81dcfb0b1978"
+    "sha256": "3ac0995b6e17e376a35dd5df7ff20c92812e0a11fee6cd837d83afa19f8683a3"
   },
   {
-    "name": "skills/rebuilt-all/library/ida-reverse/SKILL.md",
-    "type": "b",
-    "bytes": 943,
-    "sha256": "68b2e562bf5afd29244ce302923dad23b0ad1773b658d80c81b36cfa6649343a"
-  },
-  {
-    "name": "skills/rebuilt-all/library/identity-federation/SKILL.md",
-    "type": "b",
-    "bytes": 913,
-    "sha256": "0c6bfbc37cb6d7afc32419b90de180e302e53538f520bfb78a3c2a0644a4c29d"
-  },
-  {
-    "name": "skills/rebuilt-all/library/js-reverse/SKILL.md",
-    "type": "b",
-    "bytes": 1023,
-    "sha256": "c2617a004aed8c9259adebbeee5a1303c135b9797aebd6214da0c2fb6dbee090"
-  },
-  {
-    "name": "skills/rebuilt-all/library/l-gameassist/SKILL.md",
-    "type": "b",
-    "bytes": 1067,
-    "sha256": "357280d47de14d1c05a36598dbebc063f15fb5b308a35baf29cf226ee73cd606"
-  },
-  {
-    "name": "skills/rebuilt-all/library/l-license/SKILL.md",
-    "type": "b",
-    "bytes": 1089,
-    "sha256": "584a1e192f1f1a9a5b9730a673b6ede8e86cf6ad29e0a399c111339157f5d5c7"
-  },
-  {
-    "name": "skills/rebuilt-all/library/l-reverse/SKILL.md",
-    "type": "b",
-    "bytes": 1242,
-    "sha256": "b807465a4413483aefd57d6468cd41551f7859ecebe49aacc2dc045aa17e7a5b"
-  },
-  {
-    "name": "skills/rebuilt-all/library/l-webrecon/SKILL.md",
-    "type": "b",
-    "bytes": 1151,
-    "sha256": "d5a216b1f4e234fe5e8a98e0b18bec588bb4613eb5eb9abd6b8f0d715114d625"
-  },
-  {
-    "name": "skills/rebuilt-all/library/llm-security/SKILL.md",
-    "type": "b",
-    "bytes": 957,
-    "sha256": "56521b5293b8e56837a77f31dbb1f404cf7a6b98ca79170f7b596300030c1364"
-  },
-  {
-    "name": "skills/rebuilt-all/library/macos-reverse/SKILL.md",
-    "type": "b",
-    "bytes": 934,
-    "sha256": "33e76a383efffdf318f5b7838d5eaa42c1239073b93ce5f51f540bb3d4f393fe"
-  },
-  {
-    "name": "skills/rebuilt-all/library/malware-analysis/SKILL.md",
-    "type": "b",
-    "bytes": 1023,
-    "sha256": "432f2ea2d776c4a9b43de096eb990b15db16ecd9f3dc5412da7234077eef8785"
-  },
-  {
-    "name": "skills/rebuilt-all/library/mobile-reverse/SKILL.md",
-    "type": "b",
-    "bytes": 994,
-    "sha256": "9c174fa9cf52081ac95eddc3834f6a7040962d225b78a30bc8130e3ae5588774"
-  },
-  {
-    "name": "skills/rebuilt-all/library/network-analysis/SKILL.md",
-    "type": "b",
-    "bytes": 962,
-    "sha256": "7e95fce68cc7d088cc38833cea3b3a5590c129180cf9ca491618e5c4fd0a8c5f"
-  },
-  {
-    "name": "skills/rebuilt-all/library/ot-ics/SKILL.md",
-    "type": "b",
-    "bytes": 928,
-    "sha256": "267833451bcaaec93208d5c1a39f12b35c84f3396d597f2888542027e33a6b8c"
-  },
-  {
-    "name": "skills/rebuilt-all/library/patch-diff-exploit/SKILL.md",
-    "type": "b",
-    "bytes": 964,
-    "sha256": "5949e91dc624ef5825798d1a5d4e60f4cda2052d981555254e7b5d1c7fac8cd9"
-  },
-  {
-    "name": "skills/rebuilt-all/library/patch-rollback/SKILL.md",
-    "type": "b",
-    "bytes": 927,
-    "sha256": "326ebfd12c1a2918c5c87c670855b8dbd82c4609a0332c8d9db97f0ca87b8a5d"
-  },
-  {
-    "name": "skills/rebuilt-all/library/pentest-tools/SKILL.md",
-    "type": "b",
-    "bytes": 968,
-    "sha256": "742e85b6a90d6f709c507a9af376ad33b82ca510673808a1fa03b3c4afa01023"
-  },
-  {
-    "name": "skills/rebuilt-all/library/pentest-tools__src-hunter/SKILL.md",
+    "name": "skills/extended/library/l-gameassist/SKILL.md",
     "type": "b",
     "bytes": 944,
-    "sha256": "18a477ccc0b51ab637bd1cb6d14d24c31a8bd3b6dfa5f9e2801cd3e10d450dab"
+    "sha256": "2860aaf7417f053e2df5bec5050f0a4bfaf790ef67e92ccd8ba0e04325d157ed"
   },
   {
-    "name": "skills/rebuilt-all/library/protocol-reverse/SKILL.md",
+    "name": "skills/extended/library/l-license/SKILL.md",
     "type": "b",
-    "bytes": 944,
-    "sha256": "59eebbb2c6b763cbb5f0b7808419f0d4a9016d3a87d254679c9e36f8668f6cbe"
+    "bytes": 966,
+    "sha256": "73281eeaba4bff468e1b35f5e6b5d31152b186aa823f7586b8168a9ea171bfd3"
   },
   {
-    "name": "skills/rebuilt-all/library/pwn-chain/SKILL.md",
+    "name": "skills/extended/library/l-reverse/SKILL.md",
     "type": "b",
-    "bytes": 958,
-    "sha256": "100f22af2abc8a9f97687f711111a4e7c875446f5454aae5c8d4c4b13361c6cd"
+    "bytes": 1117,
+    "sha256": "c0bc332e24726c5f99e9c76b99b06281a43cf16cead77cdb8a0815e25e4549eb"
   },
   {
-    "name": "skills/rebuilt-all/library/radare2/SKILL.md",
+    "name": "skills/extended/library/l-webrecon/SKILL.md",
     "type": "b",
-    "bytes": 970,
-    "sha256": "b8b7ce4c8aa1bee4388b7e033d0d3a44eb7fa67b2d110df231d54d58a1cb7a67"
+    "bytes": 1027,
+    "sha256": "7453e1627bc782ce7c71d6371ee697c5cd50c834b46f8f6dd70bcaac945d145c"
   },
   {
-    "name": "skills/rebuilt-all/library/radio-sdr/SKILL.md",
+    "name": "skills/extended/library/llm-security/SKILL.md",
     "type": "b",
-    "bytes": 911,
-    "sha256": "d93382533691997d602407f02a925b4a2a6752d5d8cce3b1bfc26c6db614ddf5"
+    "bytes": 834,
+    "sha256": "ceeb91982fd6cf098dfaf9efe527cb824e2832de99682aa4417cef41163d71ea"
   },
   {
-    "name": "skills/rebuilt-all/library/reverse-engineering/SKILL.md",
+    "name": "skills/extended/library/macos-reverse/SKILL.md",
     "type": "b",
-    "bytes": 927,
-    "sha256": "a654e2a8e4f8af782c5dfaf28c755dd3651ecbab44a935308a835d70438c2fbc"
+    "bytes": 811,
+    "sha256": "55a0216f9318b333b7de16a5b19c9d2f31ac0db7b33a80b8d6651a406a05e8cf"
   },
   {
-    "name": "skills/rebuilt-all/library/reverse_flow_skill/SKILL.md",
-    "type": "b",
-    "bytes": 1001,
-    "sha256": "0331d6a1b215ade6772286703717472d8b9348ff4db4858969d7dbdba7592133"
-  },
-  {
-    "name": "skills/rebuilt-all/library/supply-chain-security/SKILL.md",
-    "type": "b",
-    "bytes": 930,
-    "sha256": "413f94c1231b5b4a4d48e2411e7ae19b4d4ccd350b1883dcc40f1f5d9b6b932b"
-  },
-  {
-    "name": "skills/rebuilt-all/library/thick-client/SKILL.md",
-    "type": "b",
-    "bytes": 903,
-    "sha256": "967e1937be7a85419277a0fe0b189488f55f639281f36bec353ff58e163154e4"
-  },
-  {
-    "name": "skills/rebuilt-all/library/threat-hunting/SKILL.md",
+    "name": "skills/extended/library/malware-analysis/SKILL.md",
     "type": "b",
     "bytes": 900,
-    "sha256": "e12a566acef413a5194a661138ec3c09be87961ff8b9950595b557bf2cac1522"
+    "sha256": "5e1924213f2fbd6d0db5d1cb88b26ed214910af48b41e3efcd612c7c933f7803"
   },
   {
-    "name": "skills/rebuilt-all/library/websocket-runtime/SKILL.md",
+    "name": "skills/extended/library/mobile-reverse/SKILL.md",
     "type": "b",
-    "bytes": 935,
-    "sha256": "0652a4bbbe2701547d7cf8fd1f59c817d55ccc855e5b8e6557a5bf03d5a10059"
+    "bytes": 871,
+    "sha256": "70c269767f7991dad955abd371a230d262794a712d8cb4d1d7e75d642f77acfe"
   },
   {
-    "name": "skills/rebuilt-all/library/wifi-wireless/SKILL.md",
+    "name": "skills/extended/library/network-analysis/SKILL.md",
     "type": "b",
-    "bytes": 913,
-    "sha256": "5643deb57d6d6f9b0dabeab731ae896b4414e602f2da62c205f3e338b16ea452"
+    "bytes": 839,
+    "sha256": "7f85fe3e748abc70d0040982c33248092fa81fb9fb7202b54bbd350f934e3862"
   },
   {
-    "name": "skills/rebuilt-all/library/windows-ad/SKILL.md",
+    "name": "skills/extended/library/ot-ics/SKILL.md",
     "type": "b",
-    "bytes": 934,
-    "sha256": "2c248293b9feb5b966fef996040983ba9f751206cfdad060b2470d164b8c8b35"
+    "bytes": 805,
+    "sha256": "9979536a7b93f2eb3db19ead0ae50f40f33a32632dfb8035d9a204e0067ea83b"
   },
   {
-    "name": "skills/recovered-index.json",
+    "name": "skills/extended/library/patch-diff-exploit/SKILL.md",
     "type": "b",
-    "bytes": 12490,
-    "sha256": "78a929c01579ac6553ef58889fd5d9de1618c8a5f19b4c7cfdf65a171de34292"
+    "bytes": 841,
+    "sha256": "ffdff9ac235561bc354a054612b4f15d7ee2822f73879c6a47d6edd69d712f53"
+  },
+  {
+    "name": "skills/extended/library/patch-rollback/SKILL.md",
+    "type": "b",
+    "bytes": 804,
+    "sha256": "30d82a57eb34193ac49f914e8eacfd4bad32d1b864673e076dfa16f5fd26fce3"
+  },
+  {
+    "name": "skills/extended/library/pentest-tools/SKILL.md",
+    "type": "b",
+    "bytes": 845,
+    "sha256": "af88ec0330c9686f2f0e22909f586d48ebb86759e7a1a86c4aa021be558d1127"
+  },
+  {
+    "name": "skills/extended/library/pentest-tools__src-hunter/SKILL.md",
+    "type": "b",
+    "bytes": 821,
+    "sha256": "6200ab7531f1a9bec319b36b63a64e4d1979073e38c1b6eb258dd4b5226f0c06"
+  },
+  {
+    "name": "skills/extended/library/protocol-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 821,
+    "sha256": "4b34e27f2434dd8f3dbdc245ce6db9f77ee9153b81b25871acd16b1582552706"
+  },
+  {
+    "name": "skills/extended/library/pwn-chain/SKILL.md",
+    "type": "b",
+    "bytes": 835,
+    "sha256": "f234f2ed86390f4e40e02249225d99cf50bea2e8231bef55a1f580a011f836f1"
+  },
+  {
+    "name": "skills/extended/library/radare2/SKILL.md",
+    "type": "b",
+    "bytes": 847,
+    "sha256": "0c82a3d21224013ece79f0abb871b5fddaa015dc7e8eb674d68f437ff36bb8bd"
+  },
+  {
+    "name": "skills/extended/library/radio-sdr/SKILL.md",
+    "type": "b",
+    "bytes": 788,
+    "sha256": "a82d78837b3c4996378512b910de698fded5e12a01f4b595c458c0e0bd47fd0b"
+  },
+  {
+    "name": "skills/extended/library/reverse-engineering/SKILL.md",
+    "type": "b",
+    "bytes": 804,
+    "sha256": "16848b1fe9fd78332b8137a566be1b39dd1323c91342ce816d6990f2f7230d53"
+  },
+  {
+    "name": "skills/extended/library/reverse_flow_skill/SKILL.md",
+    "type": "b",
+    "bytes": 878,
+    "sha256": "cffbc783437c2a6e8c2eebe00d0e134a5d0d25ce29b61ba28713d2b954d0e51a"
+  },
+  {
+    "name": "skills/extended/library/supply-chain-security/SKILL.md",
+    "type": "b",
+    "bytes": 807,
+    "sha256": "8d8329d041315a03f5517c136175162415bbeeb75ac7f0ae50c2af8fc83a8de4"
+  },
+  {
+    "name": "skills/extended/library/thick-client/SKILL.md",
+    "type": "b",
+    "bytes": 780,
+    "sha256": "4b4fb6a95c13e0b03c65c676fabda0a2f543ad83e40d164d61be4f5ac7abd69d"
+  },
+  {
+    "name": "skills/extended/library/threat-hunting/SKILL.md",
+    "type": "b",
+    "bytes": 777,
+    "sha256": "1aff00f0f9541c10bd80867ae39b18ecb20eb61112b03837a9605991aae4e473"
+  },
+  {
+    "name": "skills/extended/library/websocket-runtime/SKILL.md",
+    "type": "b",
+    "bytes": 812,
+    "sha256": "f27be25d50bad5f7f89c0ae35e0d1f7d769660e563bbab2ba4a4778f29f58b00"
+  },
+  {
+    "name": "skills/extended/library/wifi-wireless/SKILL.md",
+    "type": "b",
+    "bytes": 790,
+    "sha256": "f9e21f36c34a72ce08d4daeb5102db174ec8b64bc3cbf982bcdca93ef4627f50"
+  },
+  {
+    "name": "skills/extended/library/windows-ad/SKILL.md",
+    "type": "b",
+    "bytes": 811,
+    "sha256": "bc474881ccf375b999d26f7c848ee5008ace403cc9545018a37cda8ca8663072"
+  },
+  {
+    "name": "skills/extensions-catalog.json",
+    "type": "b",
+    "bytes": 26244,
+    "sha256": "cc3d9e0beb85afdbf6aae1b9d4ea527319459dbe277d487e5cacc125a0930542"
+  },
+  {
+    "name": "skills/routing-index.json",
+    "type": "b",
+    "bytes": 10419,
+    "sha256": "e67d17cbb8c28fc440fa4265996311b5e7faf9b9660c079fb497783db1d7c749"
   },
   {
     "name": "struct",

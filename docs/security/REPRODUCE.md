@@ -20,7 +20,7 @@ python -m venv .audit-venv
 这是短时观察，不是隔离虚拟机或全量抓包；本机代理可以隐藏最终目的地址。
 
 `--native-reference-dir <目录>` 可补充构建时的原生运行库参考目录。
-本次额外 CRT/API-set 的来源由构建清单定位到构建环境的 libheif 原生运行库目录。
+额外 CRT/API-set 参考文件需与构建环境对应。
 不同机器上未安装相同参考文件时，原生库哈希匹配数量会变化；不应把缺少参考文件直接判为恶意。
 核心代码对照需要相同 Python 字节码版本；bootloader 对照需要相同 PyInstaller 版本。
 

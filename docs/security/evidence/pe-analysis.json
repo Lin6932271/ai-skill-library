@@ -12,7 +12,7 @@
     {
       "name": ".rdata",
       "bytes": 84480,
-      "sha256": "9b454d2658680d15523202ee3a2e63cb4b464e27c2e104597e116dc8f286a3e5",
+      "sha256": "9dbe27edbc231a5c361efdf4e585b452c9e2026488448a2ebf936b2547872995",
       "matches_installed_bootloader": false
     },
     {

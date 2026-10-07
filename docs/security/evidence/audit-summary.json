@@ -2,9 +2,9 @@
   "name": "ai技能库",
   "version": "1.3.2",
   "exe_filename": "AISkillLibrary-1.3.2-windows-x64.exe",
-  "exe_bytes": 24850640,
-  "exe_sha256": "90fcc9798625f02eee86e59da6763f1a1144c1048c55d8cb4fc3f132f477026d",
-  "examined_at": "2026-10-07T15:58:33+08:00",
+  "exe_bytes": 24841797,
+  "exe_sha256": "1c46ac529db10ce25d9d90d52f05e8a614495afda57fc8d7b6037f34a6a24b42",
+  "examined_at": "2026-10-07T16:53:37+08:00",
   "python": "3.14.3",
   "platform": "Windows-11-10.0.26200-SP0",
   "tools": {
@@ -18,17 +18,17 @@
     "application_modules": [
       {
         "file": "main.py",
-        "source_sha256": "ba86ca8b225a0ea20f5d848f65520ae7de183eab164b5791490481d8bfa09133",
-        "packed_code_sha256": "37336993cbb2d9e925ea60ea22d0bffc2880be4035fe6bb665fb47cc75e69675",
-        "compiled_source_code_sha256": "37336993cbb2d9e925ea60ea22d0bffc2880be4035fe6bb665fb47cc75e69675",
+        "source_sha256": "0966cf41d87f84c98fa72223380a43ecce10038611dcaa1b58a67128e2d4f137",
+        "packed_code_sha256": "b6b610e30528d85406ba69011d2e3dc91c3a579d1b01073320ddec73aa9426dd",
+        "compiled_source_code_sha256": "b6b610e30528d85406ba69011d2e3dc91c3a579d1b01073320ddec73aa9426dd",
         "matches": true,
         "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
       },
       {
         "file": "backend.py",
-        "source_sha256": "a0e01fe657d27ca9971021ede8a2fab1eeaa586351f1d751426bfac9b68d65f5",
-        "packed_code_sha256": "0feeae9185546fb3cd22afa9d3fa43f39acb99a8caadcdda45e40f6f20f83aef",
-        "compiled_source_code_sha256": "0feeae9185546fb3cd22afa9d3fa43f39acb99a8caadcdda45e40f6f20f83aef",
+        "source_sha256": "470300f249ea85c31be4293f15cee061818a8a690aef0500f35d4641fa035ca6",
+        "packed_code_sha256": "156c057dec864ccf59a1918633bd669bade3f2ba92a48bbbe73721b5b945af50",
+        "compiled_source_code_sha256": "156c057dec864ccf59a1918633bd669bade3f2ba92a48bbbe73721b5b945af50",
         "matches": true,
         "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
       }
@@ -153,7 +153,7 @@
         {
           "name": ".rdata",
           "bytes": 84480,
-          "sha256": "9b454d2658680d15523202ee3a2e63cb4b464e27c2e104597e116dc8f286a3e5",
+          "sha256": "9dbe27edbc231a5c361efdf4e585b452c9e2026488448a2ebf936b2547872995",
           "matches_installed_bootloader": false
         },
         {
@@ -263,12 +263,11 @@
         "SEVERITY.LOW": 2,
         "SEVERITY.MEDIUM": 0,
         "SEVERITY.UNDEFINED": 0,
-        "loc": 848,
+        "loc": 863,
         "nosec": 0,
         "skipped_tests": 0
       }
-    },
-    "native_reference_note": "Build manifest resolves additional Microsoft UCRT/API-set DLLs from the build environment native libheif runtime directory; only file hashes compared, no independent supply-chain certification."
+    }
   },
   "runtime": {
     "native_acceptance_pass": true,
@@ -278,21 +277,21 @@
       "msedgewebview2.exe"
     ],
     "observed_process_count": 9,
-    "duration_seconds": 10.506,
+    "duration_seconds": 10.655,
     "requested_sampling_interval_seconds": 0.1,
-    "mean_sampling_interval_seconds": 0.108,
-    "successful_socket_samples": 98,
+    "mean_sampling_interval_seconds": 0.109,
+    "successful_socket_samples": 99,
     "socket_sampling_errors": 0,
     "connections": [
       {
         "process": "AISkillLibrary-1.3.2-windows-x64.exe",
         "local": [
           "127.0.0.1",
-          51816
+          62735
         ],
         "remote": [
           "127.0.0.1",
-          52973
+          58584
         ],
         "status": "ESTABLISHED",
         "external_remote": false
@@ -301,11 +300,11 @@
         "process": "AISkillLibrary-1.3.2-windows-x64.exe",
         "local": [
           "127.0.0.1",
-          51816
+          62735
         ],
         "remote": [
           "127.0.0.1",
-          53120
+          59340
         ],
         "status": "ESTABLISHED",
         "external_remote": false
@@ -314,11 +313,11 @@
         "process": "AISkillLibrary-1.3.2-windows-x64.exe",
         "local": [
           "127.0.0.1",
-          51816
+          62735
         ],
         "remote": [
           "127.0.0.1",
-          53132
+          65067
         ],
         "status": "ESTABLISHED",
         "external_remote": false
@@ -327,11 +326,11 @@
         "process": "AISkillLibrary-1.3.2-windows-x64.exe",
         "local": [
           "127.0.0.1",
-          51816
+          62735
         ],
         "remote": [
           "127.0.0.1",
-          56061
+          65163
         ],
         "status": "ESTABLISHED",
         "external_remote": false
@@ -340,20 +339,7 @@
         "process": "AISkillLibrary-1.3.2-windows-x64.exe",
         "local": [
           "127.0.0.1",
-          51816
-        ],
-        "remote": [
-          "127.0.0.1",
-          60709
-        ],
-        "status": "ESTABLISHED",
-        "external_remote": false
-      },
-      {
-        "process": "AISkillLibrary-1.3.2-windows-x64.exe",
-        "local": [
-          "127.0.0.1",
-          51816
+          62735
         ],
         "remote": [],
         "status": "LISTEN",
@@ -363,7 +349,7 @@
         "process": "msedgewebview2.exe",
         "local": [
           "127.0.0.1",
-          49499
+          50721
         ],
         "remote": [
           "127.0.0.1",
@@ -376,33 +362,7 @@
         "process": "msedgewebview2.exe",
         "local": [
           "127.0.0.1",
-          49500
-        ],
-        "remote": [
-          "127.0.0.1",
-          7897
-        ],
-        "status": "ESTABLISHED",
-        "external_remote": false
-      },
-      {
-        "process": "msedgewebview2.exe",
-        "local": [
-          "127.0.0.1",
-          49554
-        ],
-        "remote": [
-          "127.0.0.1",
-          7897
-        ],
-        "status": "ESTABLISHED",
-        "external_remote": false
-      },
-      {
-        "process": "msedgewebview2.exe",
-        "local": [
-          "127.0.0.1",
-          49554
+          50721
         ],
         "remote": [
           "127.0.0.1",
@@ -415,46 +375,7 @@
         "process": "msedgewebview2.exe",
         "local": [
           "127.0.0.1",
-          52973
-        ],
-        "remote": [
-          "127.0.0.1",
-          51816
-        ],
-        "status": "ESTABLISHED",
-        "external_remote": false
-      },
-      {
-        "process": "msedgewebview2.exe",
-        "local": [
-          "127.0.0.1",
-          53120
-        ],
-        "remote": [
-          "127.0.0.1",
-          51816
-        ],
-        "status": "ESTABLISHED",
-        "external_remote": false
-      },
-      {
-        "process": "msedgewebview2.exe",
-        "local": [
-          "127.0.0.1",
-          53132
-        ],
-        "remote": [
-          "127.0.0.1",
-          51816
-        ],
-        "status": "ESTABLISHED",
-        "external_remote": false
-      },
-      {
-        "process": "msedgewebview2.exe",
-        "local": [
-          "127.0.0.1",
-          54524
+          52896
         ],
         "remote": [
           "127.0.0.1",
@@ -467,7 +388,59 @@
         "process": "msedgewebview2.exe",
         "local": [
           "127.0.0.1",
-          54524
+          52897
+        ],
+        "remote": [
+          "127.0.0.1",
+          7897
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "msedgewebview2.exe",
+        "local": [
+          "127.0.0.1",
+          58584
+        ],
+        "remote": [
+          "127.0.0.1",
+          62735
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "msedgewebview2.exe",
+        "local": [
+          "127.0.0.1",
+          59340
+        ],
+        "remote": [
+          "127.0.0.1",
+          62735
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "msedgewebview2.exe",
+        "local": [
+          "127.0.0.1",
+          62440
+        ],
+        "remote": [
+          "127.0.0.1",
+          7897
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "msedgewebview2.exe",
+        "local": [
+          "127.0.0.1",
+          62440
         ],
         "remote": [
           "127.0.0.1",
@@ -480,11 +453,11 @@
         "process": "msedgewebview2.exe",
         "local": [
           "127.0.0.1",
-          56061
+          65067
         ],
         "remote": [
           "127.0.0.1",
-          51816
+          62735
         ],
         "status": "ESTABLISHED",
         "external_remote": false
@@ -493,11 +466,11 @@
         "process": "msedgewebview2.exe",
         "local": [
           "127.0.0.1",
-          60709
+          65163
         ],
         "remote": [
           "127.0.0.1",
-          51816
+          62735
         ],
         "status": "ESTABLISHED",
         "external_remote": false
@@ -555,44 +528,27 @@
       }
     },
     "scope": "isolated native startup, automatic animation completion, main UI rendering and page scroll; sampled TCP/UDP tables, not packet capture",
-    "isolation": "explicit temporary home/data paths and --sandbox; no real AI client installs",
-    "system_proxy_enabled": true,
-    "system_proxy_endpoint": "127.0.0.1:7897",
-    "proxy_final_destinations_verified": false
+    "isolation": "explicit temporary home/data paths and --sandbox; no real AI client installs"
   },
   "sample_unchanged_after_analysis": true,
+  "core_source_commit": "4f4aea6d5478d91d3e04e45f8b5309c62191f39e",
+  "review_type": "AI-assisted project self-review, not independent certification",
   "defender": {
     "status": "completed-no-threats-reported",
     "exit_code": 0,
-    "command": "MpCmdRun.exe -Scan -ScanType 3 -File <native-Windows-path-to-release.exe> -DisableRemediation",
-    "finished_at": "2026-10-07T15:54:53.4553809+08:00",
+    "sample_sha256": "1c46ac529db10ce25d9d90d52f05e8a614495afda57fc8d7b6037f34a6a24b42",
+    "sample_unchanged": true,
     "metadata": {
+      "AntivirusSignatureVersion": "1.459.576.0",
       "AMServiceEnabled": true,
-      "AntivirusEnabled": true,
+      "AntivirusSignatureLastUpdated": "2026-10-06T07:12:32.0000000+08:00",
+      "AMProductVersion": "4.18.26080.4",
       "RealTimeProtectionEnabled": true,
       "AMEngineVersion": "1.1.26080.3",
-      "AMProductVersion": "4.18.26080.4",
-      "AntivirusSignatureVersion": "1.459.576.0",
-      "AntivirusSignatureLastUpdated": "2026-10-06T07:12:32+08:00"
+      "AntivirusEnabled": true
     },
-    "sample_sha256": "90fcc9798625f02eee86e59da6763f1a1144c1048c55d8cb4fc3f132f477026d",
-    "sample_unchanged": true,
-    "earlier_attempts": [
-      {
-        "path_form": "forward-slash",
-        "exit_code": 2,
-        "hresult": "0x80508023"
-      },
-      {
-        "path_form": "forward-slash-current-platform",
-        "exit_code": 2,
-        "hresult": "0x80508023"
-      }
-    ],
-    "completed_attempt": "current Defender platform and native absolute Windows path",
-    "scope": "single local Microsoft Defender custom file scan; not a multi-engine certificate"
+    "finished_at": "2026-10-07T16:53:38.8975139+08:00",
+    "command": "MpCmdRun.exe -Scan -ScanType 3 -File <native-Windows-path-to-release.exe> -DisableRemediation"
   },
-  "authenticode_status": "NotSigned",
-  "review_type": "AI-assisted project self-review, not an independent third-party certification",
-  "core_source_commit": "c847ba94ff218ee14a1de78839feca9c632a2aab"
+  "authenticode_status": "NotSigned"
 }
