@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light" class="starting">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="pojia-local-token" content="{{TOKEN}}">
+  <title>ai技能库</title>
+  <link rel="icon" href="/assets/app-icon.ico">
+  <link rel="stylesheet" href="/assets/original.css">
+  <link rel="stylesheet" href="/local.css">
+  <script src="/app.js" defer></script>
+</head>
+<body class="starting">
+  <section id="startup" class="startup" aria-label="启动动画">
+    <video id="startup-video" autoplay muted playsinline preload="auto" src="/assets/startup.mp4"></video>
+  </section>
+  <div id="app-shell" inert>
+  <aside class="local-sidebar">
+    <div class="brand"><img src="/assets/app-icon.jpg" alt="ai技能库"><strong>ai技能库</strong></div>
+    <div class="sidebar-caption">工作台</div>
+    <nav aria-label="主导航">
+      <button class="nav-item active" data-page="console"><span>◈</span>注入控制台</button>
+      <button class="nav-item" data-page="skills"><span>▤</span>技能库</button>
+      <button class="nav-item" data-page="diagnostics"><span>⌘</span>状态检查</button>
+    </nav>
+    <div class="sidebar-bottom"><span class="local-dot"></span>运行正常<span class="version">v1.3.2</span></div>
+  </aside>
+  <main class="local-main">
+    <header class="local-topbar"><span>客户端技能管理</span><div><button id="theme" class="icon-button" aria-label="切换深色模式">◐</button></div></header>
+    <section id="console-page" class="page">
+      <div class="page-heading"><div><div class="eyebrow">WORKSPACE</div><h1>注入控制台</h1><p>为每个客户端配置技能，保留独立的安装与恢复记录。</p></div><div class="heading-actions"><button id="guide" class="button">使用说明</button><button id="refresh" class="button primary">↻ 全部刷新</button></div></div>
+      <div class="local-banner"><span class="banner-symbol">✓</span><div><strong id="library-banner-title">技能库</strong><p id="library-banner-summary">可整套安装、单个选择或导入自己的技能，写入前自动备份。</p></div></div>
+      <div id="service-grid" class="pj-service-grid" aria-live="polite"></div>
+    </section>
+    <section id="skills-page" class="page" hidden>
+      <div class="page-heading"><div><div class="eyebrow">LIBRARY</div><h1>技能库</h1><p>使用内置方案，或导入自己的 Markdown、技能文件夹与 ZIP。</p></div><button id="import" class="button primary">＋ 导入技能</button></div>
+      <div class="library-tools"><input id="skill-search" class="field" type="search" placeholder="搜索名称、用途或关键词" aria-label="搜索技能"><select id="skill-origin" class="field" aria-label="技能集合"><option value="">全部技能</option><option value="cloud">内置技能</option><option value="rebuilt">扩展技能</option><option value="other">开发与导入</option></select><select id="skill-category" class="field" aria-label="技能分类"><option value="">全部分类</option><option>整套</option><option>入口</option><option>逆向</option><option>安全</option><option>工程</option><option>其他</option></select><span id="skill-count" class="footnote"></span></div>
+      <div id="skill-library" class="library-grid"></div>
+      <div class="footnote">导入的脚本只作为资源保存，本助手不会执行。修改导入源文件后需重新导入。</div>
+    </section>
+    <section id="diagnostics-page" class="page" hidden>
+      <div class="page-heading"><div><div class="eyebrow">DIAGNOSTICS</div><h1>状态检查</h1><p>查看安装与操作记录，导出诊断文件。</p></div><button id="export" class="button">导出诊断</button></div>
+      <div class="diagnostic-panel"><h2>运行信息</h2><dl id="runtime-info"></dl></div>
+      <div class="diagnostic-panel"><h2>最近操作</h2><div id="events"></div></div>
+    </section>
+    <footer class="local-footer">自动备份 · 保留原有配置 · 支持撤销</footer>
+  </main>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <dialog id="modal"><div class="modal-heading"><h2 id="modal-title"></h2><button id="modal-close" class="icon-button" aria-label="关闭">×</button></div><div id="modal-body"></div></dialog>
+  </div>
+</body>
+</html>

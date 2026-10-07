@@ -1,0 +1,630 @@
+{
+  "source": "D:\\csy\\破甲\\analysis\\extracted\\engine-0\\_internal\\route_intent.py",
+  "evidence": "static routing names and keywords; not a live cloud inventory",
+  "entries": [
+    {
+      "name": "l-license",
+      "keywords": [
+        "注册机",
+        "keygen",
+        "序列号",
+        "卡密",
+        "去验证",
+        "免激活",
+        "破解",
+        "激活",
+        "授权",
+        "license",
+        "serial",
+        "cdk",
+        "trial",
+        "去授权",
+        "activation"
+      ],
+      "source_line": 276
+    },
+    {
+      "name": "l-gameassist",
+      "keywords": [
+        "外挂",
+        "esp",
+        "自瞄",
+        "修改器",
+        "trainer",
+        "il2cpp",
+        "游戏辅助",
+        "游戏内存",
+        "反作弊",
+        "anti-cheat",
+        "anti cheat",
+        "anticheat",
+        "ue4",
+        "ue5",
+        "游戏封包",
+        "游戏协议",
+        "游戏伤害",
+        "游戏透视",
+        "aimbot",
+        "wallhack",
+        "game hacking",
+        "透视挂",
+        "自瞄挂",
+        "绘挂",
+        "内存挂"
+      ],
+      "source_line": 276
+    },
+    {
+      "name": "l-webrecon",
+      "keywords": [
+        "渗透",
+        "测安全",
+        "挖洞",
+        "sql注入",
+        "sqli",
+        "xss",
+        "ssrf",
+        "idor",
+        "越权",
+        "端口扫描",
+        "nmap",
+        "nuclei",
+        "sqlmap",
+        "加管理员",
+        "web安全",
+        "api安全",
+        "pentest",
+        "漏洞扫描",
+        "安全测试",
+        "安全漏洞",
+        "安全审计",
+        "sql injection",
+        "sql 注入",
+        "penetration testing",
+        "penetration test",
+        "cross-site scripting",
+        "cross site scripting",
+        "server-side request forgery",
+        "server side request forgery",
+        "web security",
+        "api security",
+        "security testing",
+        "security vulnerabilities",
+        "vulnerability scan",
+        "有没有漏洞",
+        "网站漏洞",
+        "web漏洞",
+        "站点漏洞",
+        "拿站",
+        "扫站",
+        "getshell",
+        "webshell",
+        "弱口令",
+        "目录扫描",
+        "目录爆破",
+        "扫目录",
+        "目录遍历",
+        "子域名"
+      ],
+      "source_line": 276
+    },
+    {
+      "name": "l-reverse",
+      "keywords": [
+        "逆向",
+        "反编译",
+        "反汇编",
+        "脱壳",
+        "frida",
+        "hook",
+        "ida",
+        "ghidra",
+        "apk",
+        "smali",
+        "pe",
+        ".exe",
+        ".dll",
+        ".so",
+        ".elf",
+        "协议分析",
+        "微信小程序",
+        "二进制",
+        "malware",
+        "恶意样本",
+        "reverse engineer",
+        "reverse engineering",
+        "decompile",
+        "disassemble",
+        "binary",
+        "radare2"
+      ],
+      "source_line": 276
+    }
+  ],
+  "modules": [
+    {
+      "name": "reverse_flow_skill",
+      "keywords": [
+        "完整流程",
+        "从样本到报告",
+        "一键分析",
+        "深度逆向全流程",
+        "reverse flow",
+        "auto_analyze"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "apk-reverse",
+      "keywords": [
+        "apk",
+        "smali",
+        "jadx",
+        "apktool",
+        "android"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "mobile-reverse",
+      "keywords": [
+        "ipa",
+        "ios",
+        "objection",
+        "mobsf",
+        "越狱",
+        "jailbreak"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "js-reverse",
+      "keywords": [
+        "webpack",
+        "js签名",
+        "前端加密",
+        "js逆向",
+        "混淆js",
+        "wasm",
+        "webassembly",
+        "jsvmp",
+        "webassembly",
+        "instantiate"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "dotnet-reverse",
+      "keywords": [
+        "dnspy",
+        "de4dot",
+        "confuserex",
+        ".net",
+        "csharp"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "binary-diff",
+      "keywords": [
+        "bindiff",
+        "binary diff",
+        "二进制差分",
+        "两个版本对比",
+        "版本对比",
+        "找改动点"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "patch-diff-exploit",
+      "keywords": [
+        "补丁反推",
+        "cve diff",
+        "ndiff",
+        "补丁可利用",
+        "diff漏洞",
+        "patch diff exploit"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "malware-analysis",
+      "keywords": [
+        "yara",
+        "恶意样本",
+        "malware",
+        "病毒分析",
+        "木马"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "network-analysis",
+      "keywords": [
+        "抓包",
+        "wireshark",
+        "流量分析",
+        "packet"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "game-hacking",
+      "keywords": [
+        "游戏外挂",
+        "内存修改",
+        "游戏hook",
+        "ce教程",
+        "反作弊",
+        "anti-cheat",
+        "anti cheat",
+        "anticheat"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "ida-reverse",
+      "keywords": [
+        "ida",
+        "hexrays"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "radare2",
+      "keywords": [
+        "radare2",
+        "rabin",
+        "rabin2"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "ghidra-reverse",
+      "keywords": [
+        "ghidra",
+        "开源反编译"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "firmware-pentest",
+      "keywords": [
+        "binwalk",
+        "固件",
+        "firmware",
+        "iot"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "pentest-tools",
+      "keywords": [
+        "nmap",
+        "sqlmap",
+        "nuclei",
+        "sql注入",
+        "渗透",
+        "端口扫描",
+        "漏洞扫描",
+        "sql injection",
+        "penetration testing",
+        "penetration test"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "api-security",
+      "keywords": [
+        "graphql",
+        "bola",
+        "jwt",
+        "接口安全",
+        "越权"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "supply-chain-security",
+      "keywords": [
+        "sbom",
+        "供应链",
+        "trivy"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "llm-security",
+      "keywords": [
+        "llm",
+        "prompt注入",
+        "提示词注入"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "pwn-chain",
+      "keywords": [
+        "pwn",
+        "rop",
+        "堆利用",
+        "栈溢出",
+        "ret2"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "edr-bypass-re",
+      "keywords": [
+        "edr",
+        "amsi",
+        "syscall",
+        "defender"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "protocol-reverse",
+      "keywords": [
+        "protobuf",
+        "pcap",
+        "协议逆向",
+        "dsl-vm"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "cloud-k8s",
+      "keywords": [
+        "k8s",
+        "kubernetes",
+        "docker",
+        "kubectl"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "windows-ad",
+      "keywords": [
+        "kerberos",
+        "adcs",
+        "ad域",
+        "ntlm",
+        "域控"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "digital-forensics",
+      "keywords": [
+        "取证",
+        "内存转储",
+        "时间线",
+        "volatility"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "code-audit",
+      "keywords": [
+        "代码审计",
+        "sast",
+        "semgrep",
+        "code review"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "threat-hunting",
+      "keywords": [
+        "威胁狩猎",
+        "检测工程",
+        "蓝队"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "ot-ics",
+      "keywords": [
+        "工控",
+        "ics",
+        "scada",
+        "plc"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "wifi-wireless",
+      "keywords": [
+        "wifi",
+        "无线",
+        "aircrack",
+        "wpa"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "macos-reverse",
+      "keywords": [
+        "mach-o",
+        "macos",
+        "darwin"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "go-rust-reverse",
+      "keywords": [
+        "go逆向",
+        "rust逆向",
+        "golang",
+        "rust二进制"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "hardware-security",
+      "keywords": [
+        "uart",
+        "jtag",
+        "硬件调试"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "database-security",
+      "keywords": [
+        "数据库安全",
+        "sqlserver",
+        "mssql"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "email-security",
+      "keywords": [
+        "钓鱼",
+        "邮件",
+        "email",
+        "phishing",
+        "imap"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "identity-federation",
+      "keywords": [
+        "saml",
+        "oidc",
+        "身份联邦"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "radio-sdr",
+      "keywords": [
+        "sdr",
+        "radio",
+        "软件无线电"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "browser-automation",
+      "keywords": [
+        "浏览器自动化",
+        "puppeteer",
+        "playwright",
+        "自动填表"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "browser-extension-reverse",
+      "keywords": [
+        "浏览器扩展",
+        "extension",
+        "crx",
+        "插件逆向"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "thick-client",
+      "keywords": [
+        "厚客户端",
+        "thick client",
+        "桌面客户端安全",
+        "本地存储信任边界"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "reverse-engineering",
+      "keywords": [
+        "脱壳",
+        "加壳",
+        "ollvm",
+        "反调试",
+        "二进制",
+        "反汇编",
+        "反编译",
+        "decompile",
+        "disassemble",
+        "reverse engineering",
+        "reverse engineer",
+        "binary",
+        "frida",
+        "interceptor",
+        "stalker",
+        "manual-map",
+        "manual map",
+        "dll注入",
+        "dll 注入",
+        "手动映射",
+        "dll injection",
+        "加载器",
+        "loader injection",
+        "配置blob",
+        "配置 blob",
+        "配置恢复",
+        "config recovery",
+        "blob解密"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "build-release",
+      "keywords": [
+        "构建",
+        "release",
+        "发布包",
+        "编译"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "deploy-infra",
+      "keywords": [
+        "部署",
+        "基础设施",
+        "terraform",
+        "ansible"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "container-runtime",
+      "keywords": [
+        "容器运行时",
+        "containerd",
+        "docker"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "patch-rollback",
+      "keywords": [
+        "回滚",
+        "补丁",
+        "rollback"
+      ],
+      "source_line": 322
+    },
+    {
+      "name": "websocket-runtime",
+      "keywords": [
+        "sse",
+        "websocket",
+        "实时连接"
+      ],
+      "source_line": 322
+    }
+  ],
+  "extra_mapping_names": [
+    "attack-chain",
+    "pentest-tools__src-hunter"
+  ],
+  "recovered_full_cloud_content": false
+}

@@ -1,0 +1,521 @@
+"""Independent local skill manager. No account, network, or original-engine code."""
+from __future__ import annotations
+
+import base64
+import hashlib
+import json
+import os
+import re
+import shutil
+import tempfile
+import threading
+import time
+import uuid
+import zipfile
+from pathlib import Path
+
+VERSION = "1.3.2"
+BEGIN = b"<!-- POJIA-LOCAL:BEGIN -->"
+END = b"<!-- POJIA-LOCAL:END -->"
+MAX_IMPORT = 32 * 1024 * 1024
+PROVIDERS = {
+    "codex": ("Codex", "CODEX_HOME", ".codex", "AGENTS.md", "codex"),
+    "claude": ("Claude", "CLAUDE_CONFIG_DIR", ".claude", "CLAUDE.md", "claudecode-C-I2ikfH.png"),
+    "deepseek": ("DeepSeek Harness", "DSH_HOME", ".dsh", "AGENTS.md", "deepseek-D7HLyW1e.png"),
+    "hermes": ("Hermes", "HERMES_HOME", ".hermes", "HERMES.md", "hermes-B4tfm5PS.png"),
+    "zcode": ("ZCode", "ZCODE_HOME", ".zcode", "AGENTS.md", "zcode-CpHpZiag.png"),
+    "workbuddy": ("WorkBuddy 国内版", "WORKBUDDY_CONFIG_DIR", ".workbuddy", "CODEBUDDY.md", "workbuddy-bXUtzuef.png"),
+    "workbuddy_ai": ("WorkBuddy 国际版", "WORKBUDDY_AI_CONFIG_DIR", ".workbuddy-ai", "CODEBUDDY.md", "workbuddy-bXUtzuef.png"),
+}
+
+
+class LocalError(Exception):
+    pass
+
+
+def sha(data: bytes) -> str:
+    return hashlib.sha256(data).hexdigest()
+
+
+def atomic_write(path: Path, data: bytes) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, name = tempfile.mkstemp(prefix=".pojia-local-", dir=path.parent)
+    try:
+        with os.fdopen(fd, "wb") as stream:
+            stream.write(data)
+            stream.flush()
+            os.fsync(stream.fileno())
+        os.replace(name, path)
+    finally:
+        if os.path.exists(name):
+            os.unlink(name)
+
+
+def assert_regular_path(path: Path) -> None:
+    # Junctions and symlinks may escape the selected configuration folder.
+    for part in [path, *path.parents]:
+        if part.is_symlink() or (hasattr(part, "is_junction") and part.is_junction()):
+            raise LocalError(f"目录包含链接或目录联接，请选择实际目录：{part}")
+    if path.exists() and not path.is_file():
+        raise LocalError(f"目标不是普通文件：{path}")
+
+
+def read_file(path: Path) -> bytes | None:
+    assert_regular_path(path)
+    return path.read_bytes() if path.exists() else None
+
+
+def split_block(data: bytes) -> tuple[bytes, bytes, bytes] | None:
+    if BEGIN not in data and END not in data:
+        return None
+    if data.count(BEGIN) != 1 or data.count(END) != 1:
+        raise LocalError("指令文件的管理标记异常；请先检查文件，未修改原文")
+    start = data.index(BEGIN)
+    stop = data.index(END) + len(END)
+    if start >= stop - len(END):
+        raise LocalError("指令文件的管理标记顺序异常")
+    return data[:start], data[start:stop], data[stop:]
+
+
+class SkillManager:
+    def __init__(self, data_dir: Path | None = None, home: Path | None = None,
+                 bundle_dir: Path | None = None, use_env: bool = True):
+        self.home = (home or Path.home()).absolute()
+        self.bundle_dir = bundle_dir or Path(__file__).parent
+        self.data_dir = (data_dir or Path(os.environ.get("LOCALAPPDATA", self.home)) / "PojiaLocal").absolute()
+        self.data_dir.mkdir(parents=True, exist_ok=True)
+        self.lock = threading.RLock()
+        self.use_env = use_env
+        self.state_file = self.data_dir / "state.json"
+        self.state = {"schema": 1, "paths": {}, "installed": {}, "custom": {}, "events": []}
+        if self.state_file.exists():
+            try:
+                loaded = json.loads(self.state_file.read_text("utf-8"))
+                if loaded.get("schema") != 1:
+                    raise ValueError("schema")
+                for key in self.state:
+                    if key in loaded:
+                        self.state[key] = loaded[key]
+            except (ValueError, OSError) as exc:
+                raise LocalError("本地状态文件损坏，已保留原文件；请从备份恢复") from exc
+        self.started = time.time()
+        catalog_path = self.bundle_dir / "skills" / "catalog.json"
+        self.catalog = json.loads(catalog_path.read_text("utf-8"))["items"] if catalog_path.exists() else []
+        self.rebuilt = {item["id"]: item for item in self.catalog}
+        cloud_path = self.bundle_dir / "skills" / "cloud-catalog.json"
+        self.cloud_catalog = json.loads(cloud_path.read_text("utf-8"))["items"] if cloud_path.exists() else []
+        self.cloud = {item["id"]: item for item in self.cloud_catalog}
+        self.indexed = {**self.rebuilt, **self.cloud}
+
+    def save(self) -> None:
+        atomic_write(self.state_file, json.dumps(self.state, ensure_ascii=False, indent=2).encode("utf-8"))
+
+    def event(self, action: str, provider: str, detail: str) -> None:
+        self.state["events"].append({"time": time.strftime("%Y-%m-%d %H:%M:%S"),
+                                     "action": action, "provider": provider, "detail": detail})
+        self.state["events"] = self.state["events"][-100:]
+        self.save()
+
+    def root(self, provider: str) -> Path:
+        if provider not in PROVIDERS:
+            raise LocalError("未知客户端")
+        selected = self.state["paths"].get(provider)
+        if selected:
+            return Path(selected)
+        aliases = {
+            "claude": ("CLAUDE_CONFIG_DIR", "CLAUDE_HOME", "ANTHROPIC_CONFIG_DIR"),
+            "deepseek": ("DSH_HOME", "DEEPSEEK_HOME", "DEEPSEEK_CONFIG_DIR"),
+            "hermes": ("HERMES_HOME", "HERMES_CONFIG_DIR"),
+            "workbuddy": ("WORKBUDDY_CONFIG_DIR", "CODEBUDDY_CONFIG_DIR"),
+            "workbuddy_ai": ("WORKBUDDY_AI_CONFIG_DIR",),
+        }
+        env = next((os.environ[key].strip() for key in aliases.get(provider, (PROVIDERS[provider][1],))
+                    if os.environ.get(key, "").strip()), None) if self.use_env else None
+        if env:
+            root = Path(env).expanduser().absolute()
+            if provider == "claude" and root.name.lower() == "claude.md":
+                root = root.parent
+        else:
+            root = self.home / PROVIDERS[provider][2]
+            if provider == "hermes" and self.use_env and os.name == "nt" and not root.is_dir():
+                root = Path(os.environ.get("LOCALAPPDATA", self.home / "AppData" / "Local")) / "hermes"
+        if provider == "hermes" and self.use_env:
+            active = os.environ.get("HERMES_PROFILE", "").strip()
+            if not active and (root / "active_profile").is_file():
+                active = (root / "active_profile").read_text("utf-8-sig").strip()
+            if active and active != "default":
+                if active in (".", "..") or any(c in active for c in "/\\:"):
+                    raise LocalError("Hermes 当前 profile 名称无效，请手动选择配置目录")
+                root = root / "profiles" / active
+        return root
+
+    def set_path(self, provider: str, value: str) -> dict:
+        with self.lock:
+            self.root(provider)
+            if self.state["installed"].get(provider):
+                raise LocalError("请先撤销该客户端的本地技能，再切换目录")
+            if value:
+                if any(ord(c) < 32 for c in value):
+                    raise LocalError("目录不能包含控制字符")
+                path = Path(value).expanduser()
+                if not path.is_absolute() or path == Path(path.anchor):
+                    raise LocalError("请选择完整的客户端目录，不能使用磁盘根目录")
+                for part in [path, *path.parents]:
+                    if part.is_symlink() or (hasattr(part, "is_junction") and part.is_junction()):
+                        raise LocalError("请选择实际目录，不支持链接或目录联接")
+                if path.exists() and not path.is_dir():
+                    raise LocalError("请选择文件夹")
+                for other in ("workbuddy", "workbuddy_ai"):
+                    if provider in ("workbuddy", "workbuddy_ai") and other != provider:
+                        if path.resolve() == self.root(other).resolve():
+                            raise LocalError("WorkBuddy 国内版和国际版须使用不同目录")
+                self.state["paths"][provider] = str(path.absolute())
+            else:
+                self.state["paths"].pop(provider, None)
+            self.save()
+            return {"path": str(self.root(provider))}
+
+    def profiles(self) -> list[dict]:
+        result = ([{"id": "rebuilt-all", "name": "扩展技能库 · 50 项", "description": "安装扩展入口与模块，按任务读取", "builtin": True, "reconstructed": True, "category": "整套"}] if self.catalog else []) + [
+            {"id": "original", "name": "基础技能", "description": "通用开发流程、证据与验收规范", "builtin": True},
+            {"id": "curated", "name": "进阶技能", "description": "增加调试、审查与变更交付规范", "builtin": True},
+        ]
+        if self.cloud_catalog:
+            result.insert(0, {"id": "cloud-all", "name": f"完整技能库 · {len(self.cloud_catalog)} 项", "description": "安装全部入口与模块，按任务读取", "builtin": True, "cloud_original": True, "category": "整套"})
+            result.extend(self.cloud_catalog)
+        result.extend(self.catalog)
+        result.extend({"id": key, "name": value["name"], "description": "从本地导入", "builtin": False}
+                      for key, value in self.state["custom"].items())
+        return result
+
+    def profile_root(self, profile: str) -> Path:
+        if profile in ("original", "curated", "rebuilt-all", "cloud-all"):
+            return self.bundle_dir / "skills" / profile
+        if profile in self.rebuilt:
+            return self.bundle_dir / "skills" / "rebuilt-all" / "library" / self.rebuilt[profile]["skill_name"]
+        if profile in self.cloud:
+            return self.bundle_dir / "skills" / "cloud-all" / "library" / self.cloud[profile]["skill_name"]
+        if profile not in self.state["custom"] or not re.fullmatch(r"local-[a-f0-9]{16}", profile):
+            raise LocalError("未找到技能方案")
+        return self.data_dir / "imports" / profile
+
+    def profile_files(self, profile: str) -> dict[str, bytes]:
+        root = self.profile_root(profile)
+        files = {}
+        total = 0
+        for path in sorted(root.rglob("*")):
+            if path.is_symlink() or (hasattr(path, "is_junction") and path.is_junction()):
+                raise LocalError("技能包含链接，未导入")
+            if not path.is_file():
+                continue
+            data = path.read_bytes()
+            total += len(data)
+            if total > MAX_IMPORT or len(files) >= 2000:
+                raise LocalError("技能资源超过 32 MB 或 2000 个文件")
+            files[path.relative_to(root).as_posix()] = data
+        if "SKILL.md" not in files:
+            raise LocalError("技能目录需要 SKILL.md")
+        return files
+
+    def deployment_files(self, profile: str) -> dict[str, bytes]:
+        files = self.profile_files(profile)
+        if profile in ("rebuilt-all", "cloud-all"):
+            return {(rel.removeprefix("library/") if rel.startswith("library/") else "pojia-local/" + rel): data
+                    for rel, data in files.items()}
+        folder = self.indexed[profile]["skill_name"] if profile in self.indexed else "pojia-local"
+        deployed = {folder + "/" + rel: data for rel, data in files.items()}
+        if profile in self.indexed:
+            for dependency in self.indexed[profile].get("dependencies", []):
+                child_files = self.profile_files(("cloud-" if profile in self.cloud else "rebuilt-") + dependency)
+                deployed.update({dependency + "/" + rel: data for rel, data in child_files.items()})
+        return deployed
+
+    @staticmethod
+    def installed_files(record: dict) -> dict[Path, dict]:
+        # Previous releases stored paths relative to skills/pojia-local.
+        base = Path(record.get("files_root", str(Path(record["root"]) / "skills" / "pojia-local")))
+        return {base / rel: expected for rel, expected in record["files"].items()}
+
+    def read_profile(self, profile: str) -> dict:
+        files = self.profile_files(profile)
+        return {"profile": profile, "content": files["SKILL.md"].decode("utf-8-sig"),
+                "files": [{"name": key, "size": len(value)} for key, value in files.items()]}
+
+    def import_skill(self, source: str) -> dict:
+        with self.lock:
+            path = Path(source)
+            if not path.exists():
+                raise LocalError("技能路径不存在")
+            staging = Path(tempfile.mkdtemp(prefix="skill-", dir=self.data_dir))
+            try:
+                if path.suffix.lower() == ".zip" and path.is_file():
+                    with zipfile.ZipFile(path) as archive:
+                        total = 0
+                        if len(archive.infolist()) > 2000:
+                            raise LocalError("压缩包文件数量超过限制")
+                        names = set()
+                        for item in archive.infolist():
+                            rel = Path(item.filename.replace("\\", "/"))
+                            if rel.is_absolute() or ".." in rel.parts or ":" in item.filename:
+                                raise LocalError("压缩包包含越界路径")
+                            dest = staging / rel
+                            if not dest.resolve().is_relative_to(staging.resolve()):
+                                raise LocalError("压缩包包含越界路径")
+                            if (item.external_attr >> 16) & 0o170000 == 0o120000:
+                                raise LocalError("压缩包包含符号链接")
+                            normalized = str(rel).casefold()
+                            if normalized in names:
+                                raise LocalError("压缩包包含重复路径")
+                            names.add(normalized)
+                            total += item.file_size
+                            if total > MAX_IMPORT:
+                                raise LocalError("解压后的技能资源超过 32 MB")
+                            if item.is_dir():
+                                dest.mkdir(parents=True, exist_ok=True)
+                            else:
+                                dest.parent.mkdir(parents=True, exist_ok=True)
+                                with archive.open(item) as stream:
+                                    data = stream.read(MAX_IMPORT + 1)
+                                if len(data) != item.file_size:
+                                    raise LocalError("压缩包内容大小无效")
+                                dest.write_bytes(data)
+                    candidates = list(staging.rglob("SKILL.md"))
+                    if len(candidates) != 1:
+                        raise LocalError("每次导入一个技能，压缩包中须恰有一个 SKILL.md")
+                    root = candidates[0].parent
+                elif path.is_dir():
+                    root = path
+                elif path.is_file() and path.suffix.lower() == ".md":
+                    shutil.copyfile(path, staging / "SKILL.md")
+                    root = staging
+                else:
+                    raise LocalError("支持 SKILL.md、技能文件夹或 ZIP 文件")
+                # Validate before copying; never execute imported scripts.
+                files = {}
+                size = 0
+                for file in root.rglob("*"):
+                    if file.is_symlink() or (hasattr(file, "is_junction") and file.is_junction()):
+                        raise LocalError("技能包含链接")
+                    if file.is_file():
+                        data = file.read_bytes()
+                        size += len(data)
+                        if size > MAX_IMPORT or len(files) >= 2000:
+                            raise LocalError("技能超过导入限制")
+                        files[file.relative_to(root).as_posix()] = data
+                if "SKILL.md" not in files:
+                    raise LocalError("技能文件夹缺少 SKILL.md")
+                body = files["SKILL.md"].decode("utf-8-sig")
+                if not body.strip():
+                    raise LocalError("技能正文不能为空")
+                heading = re.search(r"(?m)^#\s+(.+)$", body)
+                name = heading.group(1).strip() if heading else path.stem
+                key = "local-" + uuid.uuid4().hex[:16]
+                if not body.startswith("---"):
+                    body = f"---\nname: pojia-local\ndescription: {json.dumps(name, ensure_ascii=False)}\n---\n\n{body}"
+                    files["SKILL.md"] = body.encode("utf-8")
+                dest = self.data_dir / "imports" / key
+                for rel, data in files.items():
+                    atomic_write(dest / rel, data)
+                self.state["custom"][key] = {"name": name, "imported_at": time.time()}
+                self.event("import", "", name)
+                return {"id": key, "name": name}
+            finally:
+                shutil.rmtree(staging)
+
+    def block(self, provider: str, profile: str) -> bytes:
+        content = self.profile_files(profile)["SKILL.md"].decode("utf-8-sig")
+        # Frontmatter belongs to the skill file, not the global instruction file.
+        if content.startswith("---"):
+            match = re.match(r"\A---\s*\n.*?\n---\s*\n", content, re.S)
+            if match:
+                content = content[match.end():]
+        if BEGIN.decode() in content or END.decode() in content:
+            raise LocalError("技能正文不能包含本助手的管理标记")
+        folder = self.indexed[profile]["skill_name"] if profile in self.indexed else "pojia-local"
+        relative = f"skills/{folder}/SKILL.md"
+        content = (f"\n# 破甲助手 · 本地技能\n\n"
+                   f"此段由本地助手管理。完整技能资源：`{relative}`。\n"
+                   "用户发送 `hi` 时，简短报告当前技能已读取；未读取时如实说明。\n\n" + content.strip() + "\n")
+        return BEGIN + content.encode("utf-8") + END
+
+    def inject(self, provider: str, profile: str = "original") -> dict:
+        with self.lock:
+            root = self.root(provider)
+            instruction = root / PROVIDERS[provider][3]
+            old = self.state["installed"].get(provider)
+            original = read_file(instruction)
+            parts = split_block(original or b"")
+            if parts and not old:
+                raise LocalError("发现不属于当前安装记录的管理段；请检查后再安装")
+            if parts and old and sha(parts[1]) != old["block_hash"]:
+                raise LocalError("本地技能管理段被外部修改，已保留；请手动合并或恢复备份")
+            if old and not parts:
+                raise LocalError("原管理段已被外部删除，已保留安装记录；请先撤销")
+            block = self.block(provider, profile)
+            prefix = b"" if not original or original.endswith(b"\n") else b"\n"
+            if parts:
+                new_instruction = parts[0] + block + parts[2]
+            else:
+                new_instruction = (original or b"") + prefix + block
+            files = self.deployment_files(profile)
+            skill_root = root / "skills"
+            desired = {skill_root / rel: data for rel, data in files.items()}
+            updates = {instruction: new_instruction}
+            previous = {}
+            old_files = self.installed_files(old) if old else {}
+            for path in sorted(set(desired) | set(old_files)):
+                current = read_file(path)
+                record = old_files.get(path)
+                if record:
+                    if current is None or sha(current) != record["hash"]:
+                        raise LocalError(f"技能文件被外部修改或删除，未覆盖：{path}")
+                elif current is not None:
+                    raise LocalError(f"同名技能文件已经存在，未覆盖：{path}")
+                updates[path] = desired.get(path)
+                previous[path] = current
+            previous[instruction] = original
+            backup = self.data_dir / "backups" / (time.strftime("%Y%m%d-%H%M%S") + "-" + uuid.uuid4().hex[:8])
+            backup.mkdir(parents=True)
+            atomic_write(backup / "snapshot.json", json.dumps({str(p): None if d is None else base64.b64encode(d).decode()
+                         for p, d in previous.items()}, ensure_ascii=False, indent=2).encode("utf-8"))
+            done = []
+            try:
+                for path, value in updates.items():
+                    if value is None:
+                        path.unlink()
+                    else:
+                        atomic_write(path, value)
+                    done.append(path)
+                record = {"root": str(root), "profile": profile, "instruction": str(instruction),
+                          "block_hash": sha(block), "prefix": (old or {}).get("prefix", prefix.decode()),
+                          "original_instruction_existed": (old or {}).get("original_instruction_existed", original is not None),
+                          "backup": str(backup), "updated_at": time.time(),
+                          "files_root": str(skill_root),
+                          "files": {rel: {"hash": sha(data)} for rel, data in files.items()}}
+                self.state["installed"][provider] = record
+                self.event("inject", provider, profile)
+            except Exception:
+                for path in reversed(done):
+                    data = previous[path]
+                    if data is None:
+                        if path.exists():
+                            path.unlink()
+                    else:
+                        atomic_write(path, data)
+                if old:
+                    self.state["installed"][provider] = old
+                else:
+                    self.state["installed"].pop(provider, None)
+                raise
+            return {"provider": provider, "profile": profile, "backup": str(backup), "verification": self.verify(provider)}
+
+    def verify(self, provider: str) -> dict:
+        with self.lock:
+            root = self.root(provider)
+            record = self.state["installed"].get(provider)
+            if not record:
+                return {"ok": False, "installed": False, "checks": [], "summary": "尚未写入本地技能"}
+            checks = []
+            try:
+                instruction = Path(record["instruction"])
+                parts = split_block(read_file(instruction) or b"")
+                valid = bool(parts and sha(parts[1]) == record["block_hash"])
+                checks.append({"name": "指令管理段", "ok": valid, "path": str(instruction)})
+                for path, expected in self.installed_files(record).items():
+                    data = read_file(path)
+                    checks.append({"name": path.name, "ok": data is not None and sha(data) == expected["hash"], "path": str(path)})
+            except (LocalError, OSError) as exc:
+                checks.append({"name": "文件读取", "ok": False, "detail": str(exc)})
+            ok = all(c["ok"] for c in checks)
+            return {"ok": ok, "installed": True, "checks": checks,
+                    "summary": "本地文件完整；客户端读取待验证" if ok else "检测到文件变更，请检查后恢复",
+                    "model_read_confirmed": False}
+
+    def revoke(self, provider: str) -> dict:
+        with self.lock:
+            self.root(provider)
+            record = self.state["installed"].get(provider)
+            if not record:
+                return {"provider": provider, "removed": True, "conflicts": []}
+            conflicts = []
+            instruction = Path(record["instruction"])
+            data = read_file(instruction)
+            parts = split_block(data or b"")
+            if parts and sha(parts[1]) != record["block_hash"]:
+                conflicts.append(str(instruction))
+            if not conflicts and parts:
+                left = parts[0]
+                prefix = record.get("prefix", "").encode()
+                if prefix and left.endswith(prefix):
+                    left = left[:-len(prefix)]
+                restored = left + parts[2]
+                if not restored and not record["original_instruction_existed"]:
+                    instruction.unlink()
+                else:
+                    atomic_write(instruction, restored)
+            remaining = {}
+            for rel, expected in record["files"].items():
+                base = Path(record.get("files_root", str(Path(record["root"]) / "skills" / "pojia-local")))
+                path = base / rel
+                current = read_file(path)
+                if current is not None and sha(current) != expected["hash"]:
+                    conflicts.append(str(path))
+                    remaining[rel] = expected
+                elif current is not None:
+                    path.unlink()
+            if conflicts:
+                record["files"] = remaining
+                # Preserve the original block identity if the instruction conflicted.
+                self.state["installed"][provider] = record
+            else:
+                self.state["installed"].pop(provider, None)
+            self.event("revoke", provider, "conflicts" if conflicts else "ok")
+            return {"provider": provider, "removed": not conflicts, "conflicts": conflicts}
+
+    def status(self) -> dict:
+        with self.lock:
+            items = []
+            for key, spec in PROVIDERS.items():
+                root = self.root(key)
+                record = self.state["installed"].get(key)
+                verification = self.verify(key)
+                items.append({"key": key, "name": spec[0], "icon": spec[4], "path": str(root),
+                              "instruction": spec[3], "exists": root.is_dir(), "installed": bool(record),
+                              "profile": (record or {}).get("profile", "cloud-all" if self.cloud_catalog else "rebuilt-all" if self.catalog else "original"), "verification": verification,
+                              "adapter": "客户端的实际读取需要新会话验收"})
+            return {"version": VERSION, "mode": "local", "network": "disabled", "providers": items,
+                    "profiles": self.profiles(), "data_dir": str(self.data_dir),
+                    "cloud_documents": len(self.cloud_catalog),
+                    "events": list(reversed(self.state["events"][-12:]))}
+
+    def diagnostics(self) -> dict:
+        return {"generated_at": time.strftime("%Y-%m-%d %H:%M:%S"), "version": VERSION,
+                "network": "disabled", "state": self.status(),
+                "limitations": ["只校验本地文件，不证明模型已读取技能", f"已取回 {len(self.cloud_catalog)} 份云端正文并适配离线读取；引用的工具、脚本与附件未完整取回。50 项重建方案另行保留",
+                                "未重写或复用原服务器服务；账号、订阅、反馈已移除"]}
+
+    def dispatch(self, command: str, args: dict | None = None) -> dict:
+        args = args or {}
+        with self.lock:
+            try:
+                if command == "status":
+                    data = self.status()
+                elif command == "inject":
+                    data = self.inject(args["provider"], args.get("profile", "original"))
+                elif command == "revoke":
+                    data = self.revoke(args["provider"])
+                elif command == "verify":
+                    data = self.verify(args["provider"])
+                elif command == "set_path":
+                    data = self.set_path(args["provider"], args.get("path", ""))
+                elif command == "read_profile":
+                    data = self.read_profile(args["profile"])
+                elif command == "import_skill":
+                    data = self.import_skill(args["path"])
+                elif command == "diagnostics":
+                    data = self.diagnostics()
+                else:
+                    raise LocalError("未知操作")
+                return {"ok": True, "data": data}
+            except (LocalError, OSError, ValueError, KeyError, zipfile.BadZipFile) as exc:
+                return {"ok": False, "error": str(exc)}
