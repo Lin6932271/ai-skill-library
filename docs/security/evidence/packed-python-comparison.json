@@ -1,0 +1,122 @@
+{
+  "application": [
+    {
+      "file": "main.py",
+      "source_sha256": "ba86ca8b225a0ea20f5d848f65520ae7de183eab164b5791490481d8bfa09133",
+      "packed_code_sha256": "37336993cbb2d9e925ea60ea22d0bffc2880be4035fe6bb665fb47cc75e69675",
+      "compiled_source_code_sha256": "37336993cbb2d9e925ea60ea22d0bffc2880be4035fe6bb665fb47cc75e69675",
+      "matches": true,
+      "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+    },
+    {
+      "file": "backend.py",
+      "source_sha256": "a0e01fe657d27ca9971021ede8a2fab1eeaa586351f1d751426bfac9b68d65f5",
+      "packed_code_sha256": "0feeae9185546fb3cd22afa9d3fa43f39acb99a8caadcdda45e40f6f20f83aef",
+      "compiled_source_code_sha256": "0feeae9185546fb3cd22afa9d3fa43f39acb99a8caadcdda45e40f6f20f83aef",
+      "matches": true,
+      "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+    }
+  ],
+  "bootstrap_and_hooks": [
+    {
+      "name": "pyi_rth_inspect",
+      "reference_available": true,
+      "file": "pyi_rth_inspect.py",
+      "source_sha256": "e9db311f97b750a30a422e0bf2bdcff7514da67cd35b0f6189ad786956ff1abc",
+      "packed_code_sha256": "7dd6e9a613ae4ec03d447c016717650dfe12fdcfaf1e01278b1bb8764abda586",
+      "compiled_source_code_sha256": "7dd6e9a613ae4ec03d447c016717650dfe12fdcfaf1e01278b1bb8764abda586",
+      "matches": true,
+      "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+    },
+    {
+      "name": "pyi_rth_multiprocessing",
+      "reference_available": true,
+      "file": "pyi_rth_multiprocessing.py",
+      "source_sha256": "2834a4a14da13d263183426eb7e61eec75cd720fac1bd0794f8ae63878763e20",
+      "packed_code_sha256": "8c409ec89e413e7c90d34dba2a27fa60d91532c710a8ac3ffbfbbfdc397c5a52",
+      "compiled_source_code_sha256": "8c409ec89e413e7c90d34dba2a27fa60d91532c710a8ac3ffbfbbfdc397c5a52",
+      "matches": true,
+      "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+    },
+    {
+      "name": "pyi_rth_pkgutil",
+      "reference_available": true,
+      "file": "pyi_rth_pkgutil.py",
+      "source_sha256": "7d006a9675674b9cc7d8b11ea98ad037adea5dbdb6ebdf9b7a45c861501c4204",
+      "packed_code_sha256": "d34b70d770da08275c6bdadcec94de2bc61dc80bc3ac0306c7abe095b8621cfc",
+      "compiled_source_code_sha256": "d34b70d770da08275c6bdadcec94de2bc61dc80bc3ac0306c7abe095b8621cfc",
+      "matches": true,
+      "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+    },
+    {
+      "name": "pyi_rth_setuptools",
+      "reference_available": true,
+      "file": "pyi_rth_setuptools.py",
+      "source_sha256": "aeb0dc75b5064ae52751e5c3451fc76a5c4cd7e821b4989614880ebce20830fa",
+      "packed_code_sha256": "7b31a51bddd1bcbd8db02e8900f5a611241a786d03a32d824851fc4a97d63aff",
+      "compiled_source_code_sha256": "7b31a51bddd1bcbd8db02e8900f5a611241a786d03a32d824851fc4a97d63aff",
+      "matches": true,
+      "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+    },
+    {
+      "name": "pyiboot01_bootstrap",
+      "reference_available": true,
+      "file": "pyiboot01_bootstrap.py",
+      "source_sha256": "6773bb364344a01f176133f8624ddda9e8f992052eaddad32609b1e90399ef1f",
+      "packed_code_sha256": "661e11c1887e96438fa622647ab0ace2a228988fc9bf4a119d6fd9f30e50e777",
+      "compiled_source_code_sha256": "661e11c1887e96438fa622647ab0ace2a228988fc9bf4a119d6fd9f30e50e777",
+      "matches": true,
+      "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+    },
+    {
+      "name": "pyimod01_archive",
+      "reference_available": true,
+      "file": "pyimod01_archive.py",
+      "source_sha256": "38d2c8b801b6c2165d44bc40f47bc1e230110272003da67d4d4eaa59af4ff397",
+      "packed_code_sha256": "4450a291d67481ffd2c2a3ac14482df9177949aaee4c6f953d6fc8e10bb3cfc3",
+      "compiled_source_code_sha256": "4450a291d67481ffd2c2a3ac14482df9177949aaee4c6f953d6fc8e10bb3cfc3",
+      "matches": true,
+      "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+    },
+    {
+      "name": "pyimod02_importers",
+      "reference_available": true,
+      "file": "pyimod02_importers.py",
+      "source_sha256": "33e786adc20d247cc5acf02eaa021f8629f30b8d3d5bf8a1e651088cca132eef",
+      "packed_code_sha256": "8e424f777ae81969d72152a1f6f360a883d8e36a02035a736068ff30f8c7bf4c",
+      "compiled_source_code_sha256": "8e424f777ae81969d72152a1f6f360a883d8e36a02035a736068ff30f8c7bf4c",
+      "matches": true,
+      "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+    },
+    {
+      "name": "pyimod03_ctypes",
+      "reference_available": true,
+      "file": "pyimod03_ctypes.py",
+      "source_sha256": "a93c2ec1677cc5d77fa4c000136b9da36f61388f9536f2b1a66193b329d1f312",
+      "packed_code_sha256": "cce2158f9e12a3af926124a9fcf6acc52824afc25f7388bcfea19840ab7cd1b3",
+      "compiled_source_code_sha256": "cce2158f9e12a3af926124a9fcf6acc52824afc25f7388bcfea19840ab7cd1b3",
+      "matches": true,
+      "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+    },
+    {
+      "name": "pyimod04_pywin32",
+      "reference_available": true,
+      "file": "pyimod04_pywin32.py",
+      "source_sha256": "bc55444d6745a5922ba1ab63d131a90c4d9f00c800553b3cd08423acd1982aec",
+      "packed_code_sha256": "d34195382e5467eb9632ce15bf30e9e2741daae60780dfc4e3cc4963aec3a6b4",
+      "compiled_source_code_sha256": "d34195382e5467eb9632ce15bf30e9e2741daae60780dfc4e3cc4963aec3a6b4",
+      "matches": true,
+      "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+    },
+    {
+      "name": "struct",
+      "reference_available": true,
+      "file": "struct.py",
+      "source_sha256": "c632708f6b3a7d8a52d875ab11cb93761bfb4ab14efe09cf0fa2c8a174ffdcdc",
+      "packed_code_sha256": "263111aef6f2e4ba2bb6247d960295ce0743ae6c628af3bf1737e1f02c6dbd75",
+      "compiled_source_code_sha256": "263111aef6f2e4ba2bb6247d960295ce0743ae6c628af3bf1737e1f02c6dbd75",
+      "matches": true,
+      "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+    }
+  ]
+}

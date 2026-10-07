@@ -1,0 +1,197 @@
+[
+  {
+    "file": "main.py",
+    "line": 2,
+    "module": "__future__"
+  },
+  {
+    "file": "main.py",
+    "line": 4,
+    "module": "argparse"
+  },
+  {
+    "file": "main.py",
+    "line": 5,
+    "module": "hmac"
+  },
+  {
+    "file": "main.py",
+    "line": 6,
+    "module": "json"
+  },
+  {
+    "file": "main.py",
+    "line": 7,
+    "module": "mimetypes"
+  },
+  {
+    "file": "main.py",
+    "line": 8,
+    "module": "os"
+  },
+  {
+    "file": "main.py",
+    "line": 9,
+    "module": "re"
+  },
+  {
+    "file": "main.py",
+    "line": 10,
+    "module": "secrets"
+  },
+  {
+    "file": "main.py",
+    "line": 11,
+    "module": "sys"
+  },
+  {
+    "file": "main.py",
+    "line": 12,
+    "module": "threading"
+  },
+  {
+    "file": "main.py",
+    "line": 13,
+    "module": "time"
+  },
+  {
+    "file": "main.py",
+    "line": 14,
+    "module": "http.server"
+  },
+  {
+    "file": "main.py",
+    "line": 15,
+    "module": "pathlib"
+  },
+  {
+    "file": "main.py",
+    "line": 16,
+    "module": "urllib.parse"
+  },
+  {
+    "file": "main.py",
+    "line": 18,
+    "module": "backend"
+  },
+  {
+    "file": "main.py",
+    "line": 195,
+    "module": "ctypes"
+  },
+  {
+    "file": "main.py",
+    "line": 196,
+    "module": "ctypes"
+  },
+  {
+    "file": "main.py",
+    "line": 197,
+    "module": "PIL"
+  },
+  {
+    "file": "main.py",
+    "line": 284,
+    "module": "webview"
+  },
+  {
+    "file": "main.py",
+    "line": 261,
+    "module": "msvcrt"
+  },
+  {
+    "file": "main.py",
+    "line": 286,
+    "module": "ctypes"
+  },
+  {
+    "file": "main.py",
+    "line": 36,
+    "module": "webview"
+  },
+  {
+    "file": "main.py",
+    "line": 52,
+    "module": "webview"
+  },
+  {
+    "file": "main.py",
+    "line": 174,
+    "module": "System"
+  },
+  {
+    "file": "main.py",
+    "line": 175,
+    "module": "System.Windows.Forms"
+  },
+  {
+    "file": "main.py",
+    "line": 266,
+    "module": "ctypes"
+  },
+  {
+    "file": "backend.py",
+    "line": 2,
+    "module": "__future__"
+  },
+  {
+    "file": "backend.py",
+    "line": 4,
+    "module": "base64"
+  },
+  {
+    "file": "backend.py",
+    "line": 5,
+    "module": "hashlib"
+  },
+  {
+    "file": "backend.py",
+    "line": 6,
+    "module": "json"
+  },
+  {
+    "file": "backend.py",
+    "line": 7,
+    "module": "os"
+  },
+  {
+    "file": "backend.py",
+    "line": 8,
+    "module": "re"
+  },
+  {
+    "file": "backend.py",
+    "line": 9,
+    "module": "shutil"
+  },
+  {
+    "file": "backend.py",
+    "line": 10,
+    "module": "tempfile"
+  },
+  {
+    "file": "backend.py",
+    "line": 11,
+    "module": "threading"
+  },
+  {
+    "file": "backend.py",
+    "line": 12,
+    "module": "time"
+  },
+  {
+    "file": "backend.py",
+    "line": 13,
+    "module": "uuid"
+  },
+  {
+    "file": "backend.py",
+    "line": 14,
+    "module": "zipfile"
+  },
+  {
+    "file": "backend.py",
+    "line": 15,
+    "module": "pathlib"
+  }
+]

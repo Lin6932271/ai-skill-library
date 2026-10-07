@@ -50,6 +50,12 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\build.ps1
 构建输出为 `dist/AISkillLibrary.exe`。版本由 `backend.py`、`version_info.txt` 与前端显示共同定义。
 [验收记录](docs/VERIFICATION.md) 和 [更新说明](CHANGELOG.md) 说明当前版本的验证范围。
 
+## 逆向与安全分析
+
+[v1.3.2 逆向与安全报告](docs/security/REVERSE_ANALYSIS.md)公开样本 SHA-256、EXE/源码对照、Defender 定点扫描、运行观察与原始证据。
+该报告是 AI 协助的项目自审，结论限定检查范围；本机代理、未签名和第三方依赖限制在正文中说明。
+[复现检查](docs/security/REPRODUCE.md)。
+
 ## 项目结构
 
 ```text

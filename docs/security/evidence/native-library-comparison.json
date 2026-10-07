@@ -1,0 +1,758 @@
+[
+  {
+    "name": "PIL/_avif.cp314-win_amd64.pyd",
+    "sha256": "d8bd3032b72992a8166144a4063bae4a55c0f178d237454f17102301731e912a",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "installed-package"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "PIL/_imaging.cp314-win_amd64.pyd",
+    "sha256": "d823c0e3b54035d08703bb427c553c956c2607b79395f2952e17a5447c5f1105",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "installed-package"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "PIL/_imagingcms.cp314-win_amd64.pyd",
+    "sha256": "dff90929dbeb9d51eebf09f4454d0beb65775f7644145a63d66fa8ca9f5a96fd",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "installed-package"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "PIL/_imagingmath.cp314-win_amd64.pyd",
+    "sha256": "a7b3d6e462d338744694bc332f9f6f9c5717d532b7a74ad2762b3289521d0d9e",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "installed-package"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "PIL/_imagingtk.cp314-win_amd64.pyd",
+    "sha256": "79208042672ff0b9e3669d5078ad35413470861e783feeaf1430458c41036593",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "installed-package"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "PIL/_webp.cp314-win_amd64.pyd",
+    "sha256": "f4d851381d1bd937753ba78e951c96a85f3a6c5ac402beec23fc13fdb6d45198",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "installed-package"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "VCRUNTIME140.dll",
+    "sha256": "052ad6a20d375957e82aa6a3c441ea548d89be0981516ca7eb306e063d5027f4",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "python-installation"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "VCRUNTIME140_1.dll",
+    "sha256": "6a99bc0128e0c7d6cbbf615fcc26909565e17d4ca3451b97f8987f9c6acbc6c8",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "python-installation"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "_asyncio.pyd",
+    "sha256": "48fdd95938c43b8b3e1f6312de651a53d459e8e2c754fbbdf48e99f5caa1f55b",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "python-dlls"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "_bz2.pyd",
+    "sha256": "a4be36fffeefa8b24c1234d548da8f05558aba53c2ea7d1d2614776eaad8fbf4",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "python-dlls"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "_cffi_backend.cp314-win_amd64.pyd",
+    "sha256": "9e99b2184c60f21a88cafc374386ded3559e8694ed7cf111f2869e066d303334",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "installed-package"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "_ctypes.pyd",
+    "sha256": "f8a9f7831e81b2bfba12456e589f8198114f24986bd527ac231a844565afcddb",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "python-dlls"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "_decimal.pyd",
+    "sha256": "04738ee6b96bcc6351446b011b523d831aa88ec3f11d4b64c33414c965b56b80",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "python-dlls"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "_elementtree.pyd",
+    "sha256": "fbb615c3373825d4ffd61fef4698aa5b2bce474bc2c3f75dea4b9a06fff23800",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "python-dlls"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "_hashlib.pyd",
+    "sha256": "d4524b261f09806a828c62fc97e8517328b23d65ab87d20706a4bafd86bbf345",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "python-dlls"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "_lzma.pyd",
+    "sha256": "f7ad11fbbb7aeaf7b6566a532a3243e3ae5f92bac480dbe5c2ef300fe2c1dabe",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "python-dlls"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "_multiprocessing.pyd",
+    "sha256": "84a2e86428dde756e6f3e56369daf558180a30f1f7d4781cce295304e19b6fb8",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "python-dlls"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "_overlapped.pyd",
+    "sha256": "80a2f8feda9255ef611af0a28fd4df311e3cd59c3dc4eaba9a2e97bd42ddbf54",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "python-dlls"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "_queue.pyd",
+    "sha256": "cb529f77bc4665dfa3b66fae3d00ab84de1e9618d0cb94900efbf28527623c0f",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "python-dlls"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "_socket.pyd",
+    "sha256": "ff3e97cd11bdc68798e5b3dcd5295d1efba179b7344142d50d066bbf1c2d79cd",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "python-dlls"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "_ssl.pyd",
+    "sha256": "43e60bbdff2fe41701f39fa25ea6a8251a2b7623ff18f980a209a451eb5e648f",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "python-dlls"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "_uuid.pyd",
+    "sha256": "fc7406772b43caa3b6f41c690753792188b1c14c36a723d49e9276b7457696ce",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "python-dlls"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "_wmi.pyd",
+    "sha256": "5a7f3444f1c2f85fb5573bc330c1aea2c583912bb6f948ff81f8fd89a30e67be",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "python-dlls"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "_zstd.pyd",
+    "sha256": "536a3b521a3c42d2827ece0ccfbe40b83a2fd96a0f5496cd60b943b10e1266d4",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "python-dlls"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-core-console-l1-1-0.dll",
+    "sha256": "015bd08815c7b934a8952c3a7578e9ce59f21136e8a880d42bbd414bec2c6058",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-core-datetime-l1-1-0.dll",
+    "sha256": "5534812cdbdae94ba45cb216e5eb9af686b853948df54365103555abbbaf9d9a",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-core-debug-l1-1-0.dll",
+    "sha256": "837d2b1b2cd03e03fc6ccb050698b6b5763af17c201304872342a5eae9e0a2d2",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-core-errorhandling-l1-1-0.dll",
+    "sha256": "de43b165f568c276c00e95acd454e3092f352a18e95874595f4f4658c06d2ec7",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-core-fibers-l1-1-0.dll",
+    "sha256": "3cebc45bf479ad74cfabf2c6bfd4994d7ad639ed1221025981d19cedf9ce0416",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-core-fibers-l1-1-1.dll",
+    "sha256": "5ef70308bcca628ce6b0e2856b15b1c7ae340c3f9bbbc4c1071d8c191a34a5c3",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-core-file-l1-1-0.dll",
+    "sha256": "250ac829f2617bcac1c6e5b8c4f630462e20765863ba573526a3e11bbfb94a9a",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-core-file-l1-2-0.dll",
+    "sha256": "ae14079a114733f60ce87b92cba42acd8083c2cd67594e53bc37dc0b97a4b465",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-core-file-l2-1-0.dll",
+    "sha256": "914bf26a298713119477ea0a8e7bd43171b91344ebe24fb47ad77c49686e3d87",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-core-handle-l1-1-0.dll",
+    "sha256": "ab5489955e371b15f77906c08ec3c7affe2c7a46a08c514ca628768b4478974b",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-core-heap-l1-1-0.dll",
+    "sha256": "c70f9644d8377fa39c5b71f2e9734c1400d7598904fdeb772e8502099982dcb7",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-core-interlocked-l1-1-0.dll",
+    "sha256": "f8129710188e407bb0e6f46d30aeba277d67b947ece5fe09e883fde2323f3ae6",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-core-kernel32-legacy-l1-1-1.dll",
+    "sha256": "5200b16cb2ddc61cfc07373a9a84aa85a3ab50806ca96c879c883275832944c1",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-core-libraryloader-l1-1-0.dll",
+    "sha256": "48786fb88b001dcd1f63acea903d3ca9cc0b3060d5a325e3f2f3cbc3bfd53166",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-core-localization-l1-2-0.dll",
+    "sha256": "9ec3898f7eba91faa28b51616c211a2689e3a13aeef8de6e13cb674e49d689eb",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-core-memory-l1-1-0.dll",
+    "sha256": "3a6cbc524c99e1cd80d5368f5601402a37ad602528b1ab628093573ef638eb3b",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-core-namedpipe-l1-1-0.dll",
+    "sha256": "97145ef89c44949fcf0f04ac834a8bc7d687ef49ee73ae9fc32f3c11136b7201",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-core-processenvironment-l1-1-0.dll",
+    "sha256": "8bc7c10b1851aea644e9c9f381cdb935e091fee6b0be3d3aedc6fffaac96adb7",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-core-processthreads-l1-1-0.dll",
+    "sha256": "d8030b777617c71f0f94564607699dbf7561487d779db9756aed378c5675213f",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-core-processthreads-l1-1-1.dll",
+    "sha256": "f5e676713340f73a03a3d41a6ec9883b431da7d16c7f07bd0a920fb80e6c0753",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-core-profile-l1-1-0.dll",
+    "sha256": "f023d47e44d3eea6b0743580f57e8c6ba81e79d5ebfa7da26250076c647b980e",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-core-rtlsupport-l1-1-0.dll",
+    "sha256": "9746d8930704153578a628c010638a5f818ffe5a927e25591b108e256dc6afca",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-core-string-l1-1-0.dll",
+    "sha256": "7c53ae24c982d16ffd1bf7f918d115b11b7f30e57bc7feaa18cb9781e4abb926",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-core-synch-l1-1-0.dll",
+    "sha256": "56d9d62ca5dba79a6581b8d574a7d8b2a64a5ecb71e47dcf06ed0285708b1859",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-core-synch-l1-2-0.dll",
+    "sha256": "f6482bbec5612c39ecb4822787a333f2b7570f7a5f922a4059be41ba957bb372",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-core-sysinfo-l1-1-0.dll",
+    "sha256": "272d02765fdd3582618236c2d309abba069642f9bc1062ede069d0c144e17007",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-core-sysinfo-l1-2-0.dll",
+    "sha256": "8a0900788859d0eb51c2f48f50cc6ed376a120b518100fa20e11d7702ccde260",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-core-timezone-l1-1-0.dll",
+    "sha256": "ff35de6c03812b332e140f17dade25c5dd4775156da9eeb1eaae3fddd27236ec",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-core-util-l1-1-0.dll",
+    "sha256": "191ef3e98641a57296f19d572d8eb62489470ff1ef6030d136af170c2f835173",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-crt-conio-l1-1-0.dll",
+    "sha256": "54ee5ec719a051496ff60aa00dbeaa94b9a7d2cdac27fe9b7317f1a666b6a2aa",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-crt-convert-l1-1-0.dll",
+    "sha256": "8b94662429171019fcd63c70bbf2095a075170599704a5e7dcdbe3da13f3a429",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-crt-environment-l1-1-0.dll",
+    "sha256": "39e5929593709e8af3bc9e0a75ec1155778d6f4a247f4cdfc58928ad6db88434",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-crt-filesystem-l1-1-0.dll",
+    "sha256": "5a8ecebac32edf4e1f3c5c6c1c8ea1a1add6cda4f9c9cb26f752fb295bea6865",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-crt-heap-l1-1-0.dll",
+    "sha256": "c71080cbcb43bf1f8f3e391deb12a582eb0abefc80946f340675a2c616e4feb4",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-crt-locale-l1-1-0.dll",
+    "sha256": "6c68648e524187e03c4ad9aaa4a99113c6ee9f29fb39cc0ed93f951975138e63",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-crt-math-l1-1-0.dll",
+    "sha256": "d4fbcccbe29371cbce431e43b2eb4f7ba9a6f04a3d740a071f02457a505e9dc8",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-crt-process-l1-1-0.dll",
+    "sha256": "47c1935942e3ac0812e4dcf18c0e265e565f0194a3349111c299712f5565f7ac",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-crt-runtime-l1-1-0.dll",
+    "sha256": "72adc1b3677e0814d9c4ebf0964000e84bb2acf67336c8963061665e44f78029",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-crt-stdio-l1-1-0.dll",
+    "sha256": "900afc3989673c9bb1a687ed38c192f46db9e6ba6d11a668898a539e7fc23798",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-crt-string-l1-1-0.dll",
+    "sha256": "fcf12466cc12fd3b73611fc0763a5a1f9d44e90349513c34a0c83b0f36421793",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-crt-time-l1-1-0.dll",
+    "sha256": "886e57c4a6adb299b38f02945369f590a67da4e79a798359fc60aaa067212d7c",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "api-ms-win-crt-utility-l1-1-0.dll",
+    "sha256": "5f8f26b216ade615b67a41f6fbbb910972fc6153315a65bb8f09912be50215b1",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "clr_loader/ffi/dlls/amd64/ClrLoader.dll",
+    "sha256": "07f62bcb1b70320f221ffb2cfc5ce6133815195f3e7cdb8d833222506188c2ac",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "installed-package"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "clr_loader/ffi/dlls/x86/ClrLoader.dll",
+    "sha256": "3128381d133f4ff746add70100cfef713ce2d78f2b12c02ec24ec453c5dfab0d",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "installed-package"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "libcrypto-3.dll",
+    "sha256": "e03dd02fdcfb791981c9962827cfcf495f2a47a514c1526efb57f847a9df514a",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "python-dlls"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "libffi-8.dll",
+    "sha256": "eff52743773eb550fcc6ce3efc37c85724502233b6b002a35496d828bd7b280a",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "python-dlls"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "libssl-3.dll",
+    "sha256": "1e4bc0638682bfcbb36f4465d6a2e9944d917a60f05ecc8ddf9e96847e05e13f",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "python-dlls"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "pyexpat.pyd",
+    "sha256": "b6d5142424d161039c25bea00e6acd8f7b1a5331d3994d9f3c28bd083ede159f",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "python-dlls"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "python314.dll",
+    "sha256": "1ac15e2224581fc678bbd17728b9aa538d47b891b72c76499ef07e54cd74f151",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "python-installation"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "pythonnet/runtime/Python.Runtime.dll",
+    "sha256": "254536f83608a89755b2444b595923e913d0a9b53f5b7599a2f47dda435222a2",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "installed-package"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "select.pyd",
+    "sha256": "05734bd352ce60c944d474aa62468cc5eebf400097f1d9d0c453d37aed26fcca",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "python-dlls"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "ucrtbase.dll",
+    "sha256": "3239227d27667ba20d10a880751924e5719de0078f9fce232d149d383f7681f6",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "build-native-runtime-reference"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "unicodedata.pyd",
+    "sha256": "4445b894f836e89a8b9fdcc88b5e59fbc76aca805baaf40aeb69e869978d4e6d",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "python-dlls"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "webview/lib/Microsoft.Web.WebView2.Core.dll",
+    "sha256": "8219a3135436c147f8eb02fb831e99596103eebc18b6d7b794ca93f4c67018a2",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "installed-package"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "webview/lib/Microsoft.Web.WebView2.WinForms.dll",
+    "sha256": "c48f8d729dc531288d2c53a6241effe7922ed1b947850b2442008a945c098c48",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "installed-package"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "webview/lib/WebBrowserInterop.x64.dll",
+    "sha256": "f6a646470f0e1058224a52e8e2e217501dca46939b30bfc9a5dd4dcdd43f088d",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "installed-package"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "webview/lib/WebBrowserInterop.x86.dll",
+    "sha256": "4e527297fbea7c5a0419f3a6af307c2681787beb0bf0ef3fea849a7fd85a08dc",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "installed-package"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "webview/lib/runtimes/win-arm64/native/WebView2Loader.dll",
+    "sha256": "0937030efc718f3da77c5e0978fb5046e381d0bb7b01acaad31a535a1b588a33",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "installed-package"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "webview/lib/runtimes/win-x64/native/WebView2Loader.dll",
+    "sha256": "eb5335edeaa6f2122c044e82aab2351dc8c9b4e0fe5e578c71922fb61be285e7",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "installed-package"
+    ],
+    "reference_available": true
+  },
+  {
+    "name": "webview/lib/runtimes/win-x86/native/WebView2Loader.dll",
+    "sha256": "04814b2c59314c6452d61b821a4a3a5c5f8e8577b55b985f6a7a4b59f8907ec5",
+    "matches_installed_reference": true,
+    "matched_reference_categories": [
+      "installed-package"
+    ],
+    "reference_available": true
+  }
+]

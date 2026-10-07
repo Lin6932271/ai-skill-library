@@ -1,0 +1,1772 @@
+[
+  {
+    "name": "PIL/_avif.cp314-win_amd64.pyd",
+    "type": "b",
+    "bytes": 7890432,
+    "sha256": "d8bd3032b72992a8166144a4063bae4a55c0f178d237454f17102301731e912a"
+  },
+  {
+    "name": "PIL/_imaging.cp314-win_amd64.pyd",
+    "type": "b",
+    "bytes": 2627072,
+    "sha256": "d823c0e3b54035d08703bb427c553c956c2607b79395f2952e17a5447c5f1105"
+  },
+  {
+    "name": "PIL/_imagingcms.cp314-win_amd64.pyd",
+    "type": "b",
+    "bytes": 272384,
+    "sha256": "dff90929dbeb9d51eebf09f4454d0beb65775f7644145a63d66fa8ca9f5a96fd"
+  },
+  {
+    "name": "PIL/_imagingmath.cp314-win_amd64.pyd",
+    "type": "b",
+    "bytes": 21504,
+    "sha256": "a7b3d6e462d338744694bc332f9f6f9c5717d532b7a74ad2762b3289521d0d9e"
+  },
+  {
+    "name": "PIL/_imagingtk.cp314-win_amd64.pyd",
+    "type": "b",
+    "bytes": 14848,
+    "sha256": "79208042672ff0b9e3669d5078ad35413470861e783feeaf1430458c41036593"
+  },
+  {
+    "name": "PIL/_webp.cp314-win_amd64.pyd",
+    "type": "b",
+    "bytes": 416256,
+    "sha256": "f4d851381d1bd937753ba78e951c96a85f3a6c5ac402beec23fc13fdb6d45198"
+  },
+  {
+    "name": "PYZ.pyz",
+    "type": "z",
+    "bytes": 5902027,
+    "sha256": "448e293eefe23e5aa4c9b39de47dd8f751c24464f3de3841da80cbae480a723f"
+  },
+  {
+    "name": "VCRUNTIME140.dll",
+    "type": "b",
+    "bytes": 120400,
+    "sha256": "052ad6a20d375957e82aa6a3c441ea548d89be0981516ca7eb306e063d5027f4"
+  },
+  {
+    "name": "VCRUNTIME140_1.dll",
+    "type": "b",
+    "bytes": 49776,
+    "sha256": "6a99bc0128e0c7d6cbbf615fcc26909565e17d4ca3451b97f8987f9c6acbc6c8"
+  },
+  {
+    "name": "_asyncio.pyd",
+    "type": "b",
+    "bytes": 78168,
+    "sha256": "48fdd95938c43b8b3e1f6312de651a53d459e8e2c754fbbdf48e99f5caa1f55b"
+  },
+  {
+    "name": "_bz2.pyd",
+    "type": "b",
+    "bytes": 87384,
+    "sha256": "a4be36fffeefa8b24c1234d548da8f05558aba53c2ea7d1d2614776eaad8fbf4"
+  },
+  {
+    "name": "_cffi_backend.cp314-win_amd64.pyd",
+    "type": "b",
+    "bytes": 181248,
+    "sha256": "9e99b2184c60f21a88cafc374386ded3559e8694ed7cf111f2869e066d303334"
+  },
+  {
+    "name": "_ctypes.pyd",
+    "type": "b",
+    "bytes": 142680,
+    "sha256": "f8a9f7831e81b2bfba12456e589f8198114f24986bd527ac231a844565afcddb"
+  },
+  {
+    "name": "_decimal.pyd",
+    "type": "b",
+    "bytes": 290648,
+    "sha256": "04738ee6b96bcc6351446b011b523d831aa88ec3f11d4b64c33414c965b56b80"
+  },
+  {
+    "name": "_elementtree.pyd",
+    "type": "b",
+    "bytes": 138584,
+    "sha256": "fbb615c3373825d4ffd61fef4698aa5b2bce474bc2c3f75dea4b9a06fff23800"
+  },
+  {
+    "name": "_hashlib.pyd",
+    "type": "b",
+    "bytes": 69464,
+    "sha256": "d4524b261f09806a828c62fc97e8517328b23d65ab87d20706a4bafd86bbf345"
+  },
+  {
+    "name": "_lzma.pyd",
+    "type": "b",
+    "bytes": 161112,
+    "sha256": "f7ad11fbbb7aeaf7b6566a532a3243e3ae5f92bac480dbe5c2ef300fe2c1dabe"
+  },
+  {
+    "name": "_multiprocessing.pyd",
+    "type": "b",
+    "bytes": 38744,
+    "sha256": "84a2e86428dde756e6f3e56369daf558180a30f1f7d4781cce295304e19b6fb8"
+  },
+  {
+    "name": "_overlapped.pyd",
+    "type": "b",
+    "bytes": 58200,
+    "sha256": "80a2f8feda9255ef611af0a28fd4df311e3cd59c3dc4eaba9a2e97bd42ddbf54"
+  },
+  {
+    "name": "_queue.pyd",
+    "type": "b",
+    "bytes": 36696,
+    "sha256": "cb529f77bc4665dfa3b66fae3d00ab84de1e9618d0cb94900efbf28527623c0f"
+  },
+  {
+    "name": "_socket.pyd",
+    "type": "b",
+    "bytes": 87384,
+    "sha256": "ff3e97cd11bdc68798e5b3dcd5295d1efba179b7344142d50d066bbf1c2d79cd"
+  },
+  {
+    "name": "_ssl.pyd",
+    "type": "b",
+    "bytes": 184664,
+    "sha256": "43e60bbdff2fe41701f39fa25ea6a8251a2b7623ff18f980a209a451eb5e648f"
+  },
+  {
+    "name": "_uuid.pyd",
+    "type": "b",
+    "bytes": 28504,
+    "sha256": "fc7406772b43caa3b6f41c690753792188b1c14c36a723d49e9276b7457696ce"
+  },
+  {
+    "name": "_wmi.pyd",
+    "type": "b",
+    "bytes": 40280,
+    "sha256": "5a7f3444f1c2f85fb5573bc330c1aea2c583912bb6f948ff81f8fd89a30e67be"
+  },
+  {
+    "name": "_zstd.pyd",
+    "type": "b",
+    "bytes": 503640,
+    "sha256": "536a3b521a3c42d2827ece0ccfbe40b83a2fd96a0f5496cd60b943b10e1266d4"
+  },
+  {
+    "name": "api-ms-win-core-console-l1-1-0.dll",
+    "type": "b",
+    "bytes": 22872,
+    "sha256": "015bd08815c7b934a8952c3a7578e9ce59f21136e8a880d42bbd414bec2c6058"
+  },
+  {
+    "name": "api-ms-win-core-datetime-l1-1-0.dll",
+    "type": "b",
+    "bytes": 22896,
+    "sha256": "5534812cdbdae94ba45cb216e5eb9af686b853948df54365103555abbbaf9d9a"
+  },
+  {
+    "name": "api-ms-win-core-debug-l1-1-0.dll",
+    "type": "b",
+    "bytes": 22872,
+    "sha256": "837d2b1b2cd03e03fc6ccb050698b6b5763af17c201304872342a5eae9e0a2d2"
+  },
+  {
+    "name": "api-ms-win-core-errorhandling-l1-1-0.dll",
+    "type": "b",
+    "bytes": 22872,
+    "sha256": "de43b165f568c276c00e95acd454e3092f352a18e95874595f4f4658c06d2ec7"
+  },
+  {
+    "name": "api-ms-win-core-fibers-l1-1-0.dll",
+    "type": "b",
+    "bytes": 22872,
+    "sha256": "3cebc45bf479ad74cfabf2c6bfd4994d7ad639ed1221025981d19cedf9ce0416"
+  },
+  {
+    "name": "api-ms-win-core-fibers-l1-1-1.dll",
+    "type": "b",
+    "bytes": 22872,
+    "sha256": "5ef70308bcca628ce6b0e2856b15b1c7ae340c3f9bbbc4c1071d8c191a34a5c3"
+  },
+  {
+    "name": "api-ms-win-core-file-l1-1-0.dll",
+    "type": "b",
+    "bytes": 27008,
+    "sha256": "250ac829f2617bcac1c6e5b8c4f630462e20765863ba573526a3e11bbfb94a9a"
+  },
+  {
+    "name": "api-ms-win-core-file-l1-2-0.dll",
+    "type": "b",
+    "bytes": 22888,
+    "sha256": "ae14079a114733f60ce87b92cba42acd8083c2cd67594e53bc37dc0b97a4b465"
+  },
+  {
+    "name": "api-ms-win-core-file-l2-1-0.dll",
+    "type": "b",
+    "bytes": 22912,
+    "sha256": "914bf26a298713119477ea0a8e7bd43171b91344ebe24fb47ad77c49686e3d87"
+  },
+  {
+    "name": "api-ms-win-core-handle-l1-1-0.dll",
+    "type": "b",
+    "bytes": 22896,
+    "sha256": "ab5489955e371b15f77906c08ec3c7affe2c7a46a08c514ca628768b4478974b"
+  },
+  {
+    "name": "api-ms-win-core-heap-l1-1-0.dll",
+    "type": "b",
+    "bytes": 22872,
+    "sha256": "c70f9644d8377fa39c5b71f2e9734c1400d7598904fdeb772e8502099982dcb7"
+  },
+  {
+    "name": "api-ms-win-core-interlocked-l1-1-0.dll",
+    "type": "b",
+    "bytes": 22888,
+    "sha256": "f8129710188e407bb0e6f46d30aeba277d67b947ece5fe09e883fde2323f3ae6"
+  },
+  {
+    "name": "api-ms-win-core-kernel32-legacy-l1-1-1.dll",
+    "type": "b",
+    "bytes": 22888,
+    "sha256": "5200b16cb2ddc61cfc07373a9a84aa85a3ab50806ca96c879c883275832944c1"
+  },
+  {
+    "name": "api-ms-win-core-libraryloader-l1-1-0.dll",
+    "type": "b",
+    "bytes": 22872,
+    "sha256": "48786fb88b001dcd1f63acea903d3ca9cc0b3060d5a325e3f2f3cbc3bfd53166"
+  },
+  {
+    "name": "api-ms-win-core-localization-l1-2-0.dll",
+    "type": "b",
+    "bytes": 22872,
+    "sha256": "9ec3898f7eba91faa28b51616c211a2689e3a13aeef8de6e13cb674e49d689eb"
+  },
+  {
+    "name": "api-ms-win-core-memory-l1-1-0.dll",
+    "type": "b",
+    "bytes": 22896,
+    "sha256": "3a6cbc524c99e1cd80d5368f5601402a37ad602528b1ab628093573ef638eb3b"
+  },
+  {
+    "name": "api-ms-win-core-namedpipe-l1-1-0.dll",
+    "type": "b",
+    "bytes": 22888,
+    "sha256": "97145ef89c44949fcf0f04ac834a8bc7d687ef49ee73ae9fc32f3c11136b7201"
+  },
+  {
+    "name": "api-ms-win-core-processenvironment-l1-1-0.dll",
+    "type": "b",
+    "bytes": 22872,
+    "sha256": "8bc7c10b1851aea644e9c9f381cdb935e091fee6b0be3d3aedc6fffaac96adb7"
+  },
+  {
+    "name": "api-ms-win-core-processthreads-l1-1-0.dll",
+    "type": "b",
+    "bytes": 22912,
+    "sha256": "d8030b777617c71f0f94564607699dbf7561487d779db9756aed378c5675213f"
+  },
+  {
+    "name": "api-ms-win-core-processthreads-l1-1-1.dll",
+    "type": "b",
+    "bytes": 22872,
+    "sha256": "f5e676713340f73a03a3d41a6ec9883b431da7d16c7f07bd0a920fb80e6c0753"
+  },
+  {
+    "name": "api-ms-win-core-profile-l1-1-0.dll",
+    "type": "b",
+    "bytes": 22872,
+    "sha256": "f023d47e44d3eea6b0743580f57e8c6ba81e79d5ebfa7da26250076c647b980e"
+  },
+  {
+    "name": "api-ms-win-core-rtlsupport-l1-1-0.dll",
+    "type": "b",
+    "bytes": 22888,
+    "sha256": "9746d8930704153578a628c010638a5f818ffe5a927e25591b108e256dc6afca"
+  },
+  {
+    "name": "api-ms-win-core-string-l1-1-0.dll",
+    "type": "b",
+    "bytes": 22896,
+    "sha256": "7c53ae24c982d16ffd1bf7f918d115b11b7f30e57bc7feaa18cb9781e4abb926"
+  },
+  {
+    "name": "api-ms-win-core-synch-l1-1-0.dll",
+    "type": "b",
+    "bytes": 22896,
+    "sha256": "56d9d62ca5dba79a6581b8d574a7d8b2a64a5ecb71e47dcf06ed0285708b1859"
+  },
+  {
+    "name": "api-ms-win-core-synch-l1-2-0.dll",
+    "type": "b",
+    "bytes": 22888,
+    "sha256": "f6482bbec5612c39ecb4822787a333f2b7570f7a5f922a4059be41ba957bb372"
+  },
+  {
+    "name": "api-ms-win-core-sysinfo-l1-1-0.dll",
+    "type": "b",
+    "bytes": 22896,
+    "sha256": "272d02765fdd3582618236c2d309abba069642f9bc1062ede069d0c144e17007"
+  },
+  {
+    "name": "api-ms-win-core-sysinfo-l1-2-0.dll",
+    "type": "b",
+    "bytes": 22912,
+    "sha256": "8a0900788859d0eb51c2f48f50cc6ed376a120b518100fa20e11d7702ccde260"
+  },
+  {
+    "name": "api-ms-win-core-timezone-l1-1-0.dll",
+    "type": "b",
+    "bytes": 22896,
+    "sha256": "ff35de6c03812b332e140f17dade25c5dd4775156da9eeb1eaae3fddd27236ec"
+  },
+  {
+    "name": "api-ms-win-core-util-l1-1-0.dll",
+    "type": "b",
+    "bytes": 22896,
+    "sha256": "191ef3e98641a57296f19d572d8eb62489470ff1ef6030d136af170c2f835173"
+  },
+  {
+    "name": "api-ms-win-crt-conio-l1-1-0.dll",
+    "type": "b",
+    "bytes": 22872,
+    "sha256": "54ee5ec719a051496ff60aa00dbeaa94b9a7d2cdac27fe9b7317f1a666b6a2aa"
+  },
+  {
+    "name": "api-ms-win-crt-convert-l1-1-0.dll",
+    "type": "b",
+    "bytes": 26992,
+    "sha256": "8b94662429171019fcd63c70bbf2095a075170599704a5e7dcdbe3da13f3a429"
+  },
+  {
+    "name": "api-ms-win-crt-environment-l1-1-0.dll",
+    "type": "b",
+    "bytes": 22912,
+    "sha256": "39e5929593709e8af3bc9e0a75ec1155778d6f4a247f4cdfc58928ad6db88434"
+  },
+  {
+    "name": "api-ms-win-crt-filesystem-l1-1-0.dll",
+    "type": "b",
+    "bytes": 22872,
+    "sha256": "5a8ecebac32edf4e1f3c5c6c1c8ea1a1add6cda4f9c9cb26f752fb295bea6865"
+  },
+  {
+    "name": "api-ms-win-crt-heap-l1-1-0.dll",
+    "type": "b",
+    "bytes": 22872,
+    "sha256": "c71080cbcb43bf1f8f3e391deb12a582eb0abefc80946f340675a2c616e4feb4"
+  },
+  {
+    "name": "api-ms-win-crt-locale-l1-1-0.dll",
+    "type": "b",
+    "bytes": 22896,
+    "sha256": "6c68648e524187e03c4ad9aaa4a99113c6ee9f29fb39cc0ed93f951975138e63"
+  },
+  {
+    "name": "api-ms-win-crt-math-l1-1-0.dll",
+    "type": "b",
+    "bytes": 31064,
+    "sha256": "d4fbcccbe29371cbce431e43b2eb4f7ba9a6f04a3d740a071f02457a505e9dc8"
+  },
+  {
+    "name": "api-ms-win-crt-process-l1-1-0.dll",
+    "type": "b",
+    "bytes": 22896,
+    "sha256": "47c1935942e3ac0812e4dcf18c0e265e565f0194a3349111c299712f5565f7ac"
+  },
+  {
+    "name": "api-ms-win-crt-runtime-l1-1-0.dll",
+    "type": "b",
+    "bytes": 26968,
+    "sha256": "72adc1b3677e0814d9c4ebf0964000e84bb2acf67336c8963061665e44f78029"
+  },
+  {
+    "name": "api-ms-win-crt-stdio-l1-1-0.dll",
+    "type": "b",
+    "bytes": 26968,
+    "sha256": "900afc3989673c9bb1a687ed38c192f46db9e6ba6d11a668898a539e7fc23798"
+  },
+  {
+    "name": "api-ms-win-crt-string-l1-1-0.dll",
+    "type": "b",
+    "bytes": 26968,
+    "sha256": "fcf12466cc12fd3b73611fc0763a5a1f9d44e90349513c34a0c83b0f36421793"
+  },
+  {
+    "name": "api-ms-win-crt-time-l1-1-0.dll",
+    "type": "b",
+    "bytes": 22912,
+    "sha256": "886e57c4a6adb299b38f02945369f590a67da4e79a798359fc60aaa067212d7c"
+  },
+  {
+    "name": "api-ms-win-crt-utility-l1-1-0.dll",
+    "type": "b",
+    "bytes": 22912,
+    "sha256": "5f8f26b216ade615b67a41f6fbbb910972fc6153315a65bb8f09912be50215b1"
+  },
+  {
+    "name": "base_library.zip",
+    "type": "b",
+    "bytes": 1388164,
+    "sha256": "5aff78d39b33213acc6d6e51593b3bd1b0e8e14e8cd09b2351799be9a47c3d81"
+  },
+  {
+    "name": "clr_loader/ffi/dlls/amd64/ClrLoader.dll",
+    "type": "b",
+    "bytes": 10752,
+    "sha256": "07f62bcb1b70320f221ffb2cfc5ce6133815195f3e7cdb8d833222506188c2ac"
+  },
+  {
+    "name": "clr_loader/ffi/dlls/x86/ClrLoader.dll",
+    "type": "b",
+    "bytes": 10752,
+    "sha256": "3128381d133f4ff746add70100cfef713ce2d78f2b12c02ec24ec453c5dfab0d"
+  },
+  {
+    "name": "frontend/app.js",
+    "type": "b",
+    "bytes": 15265,
+    "sha256": "f2c6670e0527fb73769e691f8e4c1796c9436df7cb8b32de5584732480c0d4d2"
+  },
+  {
+    "name": "frontend/assets/app-icon.ico",
+    "type": "b",
+    "bytes": 114390,
+    "sha256": "e6df02140c666ed9998b459a5277a9716753e856736d858d54ffe94a0e9764f1"
+  },
+  {
+    "name": "frontend/assets/app-icon.jpg",
+    "type": "b",
+    "bytes": 747413,
+    "sha256": "31cfc8731c75049bf500dfd0c448187cd1314596ae341aa5efa62214d6dccac2"
+  },
+  {
+    "name": "frontend/assets/brand-mark-BgR0MxcD.png",
+    "type": "b",
+    "bytes": 32843,
+    "sha256": "c8df033d1c95da33ea6237b32fd0366d00da09dc2273faa3156048183f512ad5"
+  },
+  {
+    "name": "frontend/assets/claude-j3qmYznB.png",
+    "type": "b",
+    "bytes": 25023,
+    "sha256": "44311c32054a7e5145f88c68769ef386c0a5c5b5c4ad62db063fee14bae8b939"
+  },
+  {
+    "name": "frontend/assets/claudecode-C-I2ikfH.png",
+    "type": "b",
+    "bytes": 202722,
+    "sha256": "2ead1f4ab0be0fe5e7a67f238339159b118f9b8aa082837e1825722fafac99ef"
+  },
+  {
+    "name": "frontend/assets/deepseek-B0lT1NZt.png",
+    "type": "b",
+    "bytes": 204320,
+    "sha256": "24edf4746edd7f32a6bd2260ae9ac9da68b5a27bcd4ffa335e02e2881f391ee0"
+  },
+  {
+    "name": "frontend/assets/deepseek-D7HLyW1e.png",
+    "type": "b",
+    "bytes": 23590,
+    "sha256": "1b6b86731f09108a2e72c729e19b12ebed4d4346b2ffc0db070dea9bbc2d342a"
+  },
+  {
+    "name": "frontend/assets/hermes-B4tfm5PS.png",
+    "type": "b",
+    "bytes": 24142,
+    "sha256": "07fb744c433ea2e948a942586db09da637d1c484e488ca2090899db68f335ae5"
+  },
+  {
+    "name": "frontend/assets/hermes-CKNOfZce.png",
+    "type": "b",
+    "bytes": 541053,
+    "sha256": "e56ab0bc224c8969462ff956c7d1759984790fc0da619685ce623e2ff0ad8da3"
+  },
+  {
+    "name": "frontend/assets/original.css",
+    "type": "b",
+    "bytes": 181643,
+    "sha256": "7932d3a85b3bb2fe53f8611ef3ec318497960473d2d00c5c49a2f6baa939d067"
+  },
+  {
+    "name": "frontend/assets/startup.mp4",
+    "type": "b",
+    "bytes": 1856280,
+    "sha256": "beabf5956e0b467e9f06f467b3f5b7a682abb6555c1b16aee1c27f7e5b334a58"
+  },
+  {
+    "name": "frontend/assets/workbuddy-bXUtzuef.png",
+    "type": "b",
+    "bytes": 21173,
+    "sha256": "f73f198de88b600c88e9fea7f14a602ce8162ce9f40445f8519462042217c36d"
+  },
+  {
+    "name": "frontend/assets/zcode-CpHpZiag.png",
+    "type": "b",
+    "bytes": 9193,
+    "sha256": "c5c921a9fc91339f357715feb5eb30adc05b2ffbdac13fa095d645a5df622037"
+  },
+  {
+    "name": "frontend/index.html",
+    "type": "b",
+    "bytes": 4356,
+    "sha256": "d7838c31d44fc02566019d88f10a83347855ad73a3f2e1c18920ca78024034ed"
+  },
+  {
+    "name": "frontend/local.css",
+    "type": "b",
+    "bytes": 11417,
+    "sha256": "8ab90458ef5374b6f45798346add9f76dd0b08a61b64909c1853d60c0082b987"
+  },
+  {
+    "name": "libcrypto-3.dll",
+    "type": "b",
+    "bytes": 5229424,
+    "sha256": "e03dd02fdcfb791981c9962827cfcf495f2a47a514c1526efb57f847a9df514a"
+  },
+  {
+    "name": "libffi-8.dll",
+    "type": "b",
+    "bytes": 39696,
+    "sha256": "eff52743773eb550fcc6ce3efc37c85724502233b6b002a35496d828bd7b280a"
+  },
+  {
+    "name": "libssl-3.dll",
+    "type": "b",
+    "bytes": 794992,
+    "sha256": "1e4bc0638682bfcbb36f4465d6a2e9944d917a60f05ecc8ddf9e96847e05e13f"
+  },
+  {
+    "name": "main",
+    "type": "s",
+    "bytes": 33622,
+    "sha256": "adfdd2b571ebe923eef8f8a7b9d368a6203f04f37356561444eaf11868233a7b"
+  },
+  {
+    "name": "pyexpat.pyd",
+    "type": "b",
+    "bytes": 218968,
+    "sha256": "b6d5142424d161039c25bea00e6acd8f7b1a5331d3994d9f3c28bd083ede159f"
+  },
+  {
+    "name": "pyi_rth_inspect",
+    "type": "s",
+    "bytes": 2835,
+    "sha256": "bce33ad21566e31689c257facd3b9d3acbf26679842e0a2fd22ba52fda6197ee"
+  },
+  {
+    "name": "pyi_rth_multiprocessing",
+    "type": "s",
+    "bytes": 2393,
+    "sha256": "ef53391e3795ee2b477c62f8d6cd13a3df8a53dcde6d674a298881c355b255ab"
+  },
+  {
+    "name": "pyi_rth_pkgutil",
+    "type": "s",
+    "bytes": 1568,
+    "sha256": "f2c4681599071667907ec2fe04b4cfcbeebf3835199f7c2201a9a517fdcbbe5f"
+  },
+  {
+    "name": "pyi_rth_setuptools",
+    "type": "s",
+    "bytes": 1023,
+    "sha256": "4be5875f47295b50e8fc9da691334da0278d929f45aa4279d915428a6f96285c"
+  },
+  {
+    "name": "pyiboot01_bootstrap",
+    "type": "s",
+    "bytes": 2048,
+    "sha256": "234ac0279e39e67c9a03ca09eaf91df234926ceaa497dec26448f8d0f1a9e6a9"
+  },
+  {
+    "name": "pyimod01_archive",
+    "type": "m",
+    "bytes": 5038,
+    "sha256": "2f1074d6b969d902e92b8addecb7e4fdec2f1bceb060348805e9250dcc0eaff5"
+  },
+  {
+    "name": "pyimod02_importers",
+    "type": "m",
+    "bytes": 32319,
+    "sha256": "256c10c1f4543e7f593d71523107b2fbf6a4ba5be42cdb23ff027f80cb76a79c"
+  },
+  {
+    "name": "pyimod03_ctypes",
+    "type": "m",
+    "bytes": 6619,
+    "sha256": "c8deab179ed81927d37cbc936a847a095c4e597e6f77ac9fc3aa8110019e1ab3"
+  },
+  {
+    "name": "pyimod04_pywin32",
+    "type": "m",
+    "bytes": 1689,
+    "sha256": "2f2af5db444803d63d3450b1d478694c9f4267160b4d24a25dcb47bf5f7d67f4"
+  },
+  {
+    "name": "python314.dll",
+    "type": "b",
+    "bytes": 6753112,
+    "sha256": "1ac15e2224581fc678bbd17728b9aa538d47b891b72c76499ef07e54cd74f151"
+  },
+  {
+    "name": "pythonnet/runtime/Python.Runtime.deps.json",
+    "type": "b",
+    "bytes": 5984,
+    "sha256": "724e8b451f3c27a12b1fbe58a65a83f9f9b07edc5cc4e14e260cacd2d27ed1ab"
+  },
+  {
+    "name": "pythonnet/runtime/Python.Runtime.dll",
+    "type": "b",
+    "bytes": 451072,
+    "sha256": "254536f83608a89755b2444b595923e913d0a9b53f5b7599a2f47dda435222a2"
+  },
+  {
+    "name": "pythonnet/runtime/Python.Runtime.xml",
+    "type": "b",
+    "bytes": 189214,
+    "sha256": "e4f896b8c692f79c55a766c4269c74d0bb2149a7fcef327c4eaf9faff8d28677"
+  },
+  {
+    "name": "pywebview-6.2.1.dist-info/INSTALLER",
+    "type": "b",
+    "bytes": 4,
+    "sha256": "ceebae7b8927a3227e5303cf5e0f1f7b34bb542ad7250ac03fbcde36ec2f1508"
+  },
+  {
+    "name": "pywebview-6.2.1.dist-info/METADATA",
+    "type": "b",
+    "bytes": 4937,
+    "sha256": "8e7f87b5e50b992bc44d9f1dc03fb5218f0b6da5d6c4b9f21f93916bf44569c7"
+  },
+  {
+    "name": "pywebview-6.2.1.dist-info/RECORD",
+    "type": "b",
+    "bytes": 8531,
+    "sha256": "9e2f7076906a976495e478180719d301bd1ba10674b9b6efa42861e24d7fd323"
+  },
+  {
+    "name": "pywebview-6.2.1.dist-info/REQUESTED",
+    "type": "b",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "pywebview-6.2.1.dist-info/WHEEL",
+    "type": "b",
+    "bytes": 91,
+    "sha256": "69e6228a0d35958183cc1812f07c565ce837b95eb51bd8a33acba9fa4f68d6c9"
+  },
+  {
+    "name": "pywebview-6.2.1.dist-info/entry_points.txt",
+    "type": "b",
+    "bytes": 64,
+    "sha256": "f4b0b8e4f0af704f8a11ff469c43a04689bf75e2ec0b1a215163ac5dfe34287f"
+  },
+  {
+    "name": "pywebview-6.2.1.dist-info/licenses/LICENSE",
+    "type": "b",
+    "bytes": 1518,
+    "sha256": "4a988dd3598832cd3653de20dc33cb677d0fb53ab5551c879ca31280ae653675"
+  },
+  {
+    "name": "pywebview-6.2.1.dist-info/top_level.txt",
+    "type": "b",
+    "bytes": 8,
+    "sha256": "7794a9695d720645a4ded6abf95ac4397f9b04cf635cf955755369379150af10"
+  },
+  {
+    "name": "select.pyd",
+    "type": "b",
+    "bytes": 33624,
+    "sha256": "05734bd352ce60c944d474aa62468cc5eebf400097f1d9d0c453d37aed26fcca"
+  },
+  {
+    "name": "setuptools/_vendor/importlib_metadata-8.7.1.dist-info/INSTALLER",
+    "type": "b",
+    "bytes": 2,
+    "sha256": "e6184ce10e266134fdcfa401e8f1a95005bcd4f18d16b62b757323e2833fe9a9"
+  },
+  {
+    "name": "setuptools/_vendor/importlib_metadata-8.7.1.dist-info/METADATA",
+    "type": "b",
+    "bytes": 4670,
+    "sha256": "a3e38b9ee4326289d4864704f30e299ee769e2309ce9f4a75f0de1a50ad0a356"
+  },
+  {
+    "name": "setuptools/_vendor/importlib_metadata-8.7.1.dist-info/RECORD",
+    "type": "b",
+    "bytes": 1868,
+    "sha256": "52a6b8ee0de15cf7fd99625f43b97cd2e3942ac86f16054ea90de48e66f29355"
+  },
+  {
+    "name": "setuptools/_vendor/importlib_metadata-8.7.1.dist-info/REQUESTED",
+    "type": "b",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "setuptools/_vendor/importlib_metadata-8.7.1.dist-info/WHEEL",
+    "type": "b",
+    "bytes": 91,
+    "sha256": "ff309ddcdd65ebd02bc724dbf2bcc4a0ff53a5b61792a44548d383e4ebb19d3b"
+  },
+  {
+    "name": "setuptools/_vendor/importlib_metadata-8.7.1.dist-info/licenses/LICENSE",
+    "type": "b",
+    "bytes": 10278,
+    "sha256": "458502e12d97bbf64438606a20044aa85eb05fb0a8a807bb35dbec253fd1fc04"
+  },
+  {
+    "name": "setuptools/_vendor/importlib_metadata-8.7.1.dist-info/top_level.txt",
+    "type": "b",
+    "bytes": 19,
+    "sha256": "08eddf0fdcb29403625e4acca38a872d5fe6a972f6b02e4914a82dd725804fe0"
+  },
+  {
+    "name": "setuptools/_vendor/jaraco/text/Lorem ipsum.txt",
+    "type": "b",
+    "bytes": 1335,
+    "sha256": "37fedcffbf73c4eb9f058f47677cb33203a436ff9390e4d38a8e01c9dad28e0b"
+  },
+  {
+    "name": "skills/catalog.json",
+    "type": "b",
+    "bytes": 26989,
+    "sha256": "a2c53207ac1d1957523ac2b221baf5e585b065ffdd20f2112f2cf6f7497f12ec"
+  },
+  {
+    "name": "skills/cloud-all/SKILL.md",
+    "type": "b",
+    "bytes": 4894,
+    "sha256": "a63910cc8596385a3059f16c454a1dfddfb6160076abd248799a46b7fbff2f3c"
+  },
+  {
+    "name": "skills/cloud-all/library/api-design/SKILL.md",
+    "type": "b",
+    "bytes": 3124,
+    "sha256": "5be4c6007a1d5f41610f3740aa4131995e9e129fd6ea288e06f9bdf75aac382b"
+  },
+  {
+    "name": "skills/cloud-all/library/api-security/SKILL.md",
+    "type": "b",
+    "bytes": 6357,
+    "sha256": "4246fe31f57fae269bfb0c6f1f8865f2c93fbc26fffee6ce46ba68ff4af867fd"
+  },
+  {
+    "name": "skills/cloud-all/library/apk-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 11897,
+    "sha256": "a711ca1ccdbf8a376caf06f060b52add452be36ac467e711e9b28899ed05b409"
+  },
+  {
+    "name": "skills/cloud-all/library/attack-chain/SKILL.md",
+    "type": "b",
+    "bytes": 30120,
+    "sha256": "826a357e3a476faab2bc28411806d09193b140f47d5238c079cc867500b4baa4"
+  },
+  {
+    "name": "skills/cloud-all/library/binary-diff/SKILL.md",
+    "type": "b",
+    "bytes": 12395,
+    "sha256": "ec386efb067353acefc27cc301e62f4c870d00fb058fadd587abb505cb3863ce"
+  },
+  {
+    "name": "skills/cloud-all/library/browser-automation/SKILL.md",
+    "type": "b",
+    "bytes": 8057,
+    "sha256": "1d49cac456a7517e155f36eebe583f6d5b26d19fa96cc48fab754d79ff744d0a"
+  },
+  {
+    "name": "skills/cloud-all/library/browser-extension-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 2291,
+    "sha256": "eee978f3cbb82bbc19111cb4b54f13cb2e3cf474dd92f37a36777b160822c7b1"
+  },
+  {
+    "name": "skills/cloud-all/library/build-release/SKILL.md",
+    "type": "b",
+    "bytes": 2223,
+    "sha256": "8a0c4c627cbd1fb989d778d0802a1abb8d5200962c9fcfa612f4732065081a8c"
+  },
+  {
+    "name": "skills/cloud-all/library/cloud-k8s/SKILL.md",
+    "type": "b",
+    "bytes": 3100,
+    "sha256": "1a3e4819f5fe5285abbcf212fbd7e6e3e3d2c77c6ba412dd0868942665929021"
+  },
+  {
+    "name": "skills/cloud-all/library/code-audit/SKILL.md",
+    "type": "b",
+    "bytes": 2497,
+    "sha256": "ddf07d801b6ec5ba6cb52634e1dd2084b1691cefd1067fd01541d2ef5e8a1768"
+  },
+  {
+    "name": "skills/cloud-all/library/database-security/SKILL.md",
+    "type": "b",
+    "bytes": 1876,
+    "sha256": "dffa757426eca4ff81f66c21264aff8b1c8e4c09d98aac3dde5bb2de4e02f67b"
+  },
+  {
+    "name": "skills/cloud-all/library/deploy-infra/SKILL.md",
+    "type": "b",
+    "bytes": 2283,
+    "sha256": "f3c878e345dbd7c8293f7239e04e79cc4082ddf7ae7ae95d5bb5b8545411a460"
+  },
+  {
+    "name": "skills/cloud-all/library/diagram-generator/SKILL.md",
+    "type": "b",
+    "bytes": 10035,
+    "sha256": "5848782647e6f2837c81e355eb56963dabf71e4f92d12d2a4721df507f83023d"
+  },
+  {
+    "name": "skills/cloud-all/library/digital-forensics/SKILL.md",
+    "type": "b",
+    "bytes": 2390,
+    "sha256": "2302944d797d25c2722b02ef7be7105debd423c2419849f751ab331311ffa849"
+  },
+  {
+    "name": "skills/cloud-all/library/docs-generator/SKILL.md",
+    "type": "b",
+    "bytes": 7264,
+    "sha256": "7d201b1a7a979afc202628c3ca64bdc489fdac5858626d73c0ba080f39bf3eb2"
+  },
+  {
+    "name": "skills/cloud-all/library/dotnet-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 10034,
+    "sha256": "144c6e22369c17d0876b6d6ab646350d319742b67eeaab66e2f702f74ad5f59a"
+  },
+  {
+    "name": "skills/cloud-all/library/edr-bypass-re/SKILL.md",
+    "type": "b",
+    "bytes": 43805,
+    "sha256": "dbcb093e2c80c94409ade9f85243cba08b2b07603d32152a4b236fd7294729ff"
+  },
+  {
+    "name": "skills/cloud-all/library/email-security/SKILL.md",
+    "type": "b",
+    "bytes": 1858,
+    "sha256": "f90aa7087d9585d71e0f3e5d136f98ca7c5b0a9270d6baf4fe9afafd14275bfc"
+  },
+  {
+    "name": "skills/cloud-all/library/firmware-pentest/SKILL.md",
+    "type": "b",
+    "bytes": 12999,
+    "sha256": "4c1ca669c9542c482351f4fc6e85c19948085aaef1f730d6f59b51a8c4f4f0cd"
+  },
+  {
+    "name": "skills/cloud-all/library/game-hacking/SKILL.md",
+    "type": "b",
+    "bytes": 19420,
+    "sha256": "1cf89ea732e83c7fc5c8d6911c6c6cefd30c287221e78f44bde1671b3ca0b509"
+  },
+  {
+    "name": "skills/cloud-all/library/ghidra-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 2877,
+    "sha256": "4f652d61cb14ad45053b2e967d65012d790dfcf4a09493108c046d304ad6b6f7"
+  },
+  {
+    "name": "skills/cloud-all/library/go-rust-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 2112,
+    "sha256": "bad462c0ffeda7c2c9fca346202cd502e08752a6e0b4c4baf1480a9bb432e574"
+  },
+  {
+    "name": "skills/cloud-all/library/hardware-security/SKILL.md",
+    "type": "b",
+    "bytes": 1752,
+    "sha256": "d6ee63a5c8af9f4948a1f3eb412a42391267583451169e2946b3f7856c4010a0"
+  },
+  {
+    "name": "skills/cloud-all/library/ida-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 16043,
+    "sha256": "0bdba98dcaf2ccac3af77ef3a5bb79a92a9501d1a661b4b63470ccd86dc261b6"
+  },
+  {
+    "name": "skills/cloud-all/library/identity-federation/SKILL.md",
+    "type": "b",
+    "bytes": 1851,
+    "sha256": "4782bfe49fa95e16c9c3cd1018d095cb63b6b2bfbd85d21a3e68d36343da43aa"
+  },
+  {
+    "name": "skills/cloud-all/library/jailbreak-engineering/SKILL.md",
+    "type": "b",
+    "bytes": 2480,
+    "sha256": "e42f4c0181c804b8337a31c4ade54d5607e996f1074811465e80503ed68b1a90"
+  },
+  {
+    "name": "skills/cloud-all/library/js-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 9299,
+    "sha256": "0f37e4c1b4826f026c2d5e778e05ded445aead0d6710b2e6ef7fca0d7470fdb3"
+  },
+  {
+    "name": "skills/cloud-all/library/l-gameassist/SKILL.md",
+    "type": "b",
+    "bytes": 3832,
+    "sha256": "40d2157a371f2b8e00239e37a891abd2ee4ff2852ab99d554ee3226cb04d8c71"
+  },
+  {
+    "name": "skills/cloud-all/library/l-license/SKILL.md",
+    "type": "b",
+    "bytes": 2454,
+    "sha256": "9d29a318d3dac56457607458f00c4814eea907c9f77610738ec11d70ded89fc8"
+  },
+  {
+    "name": "skills/cloud-all/library/l-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 5139,
+    "sha256": "df193ecf263ba1cbbb35f197c43eaa30b83b9d16ec4637d51bf065da45b9200a"
+  },
+  {
+    "name": "skills/cloud-all/library/l-webrecon/SKILL.md",
+    "type": "b",
+    "bytes": 3217,
+    "sha256": "4429e94354fa6a7728cd23e91b9beed71c4d4b80e2fd4ab90e68b4902c5b1596"
+  },
+  {
+    "name": "skills/cloud-all/library/llm-security/SKILL.md",
+    "type": "b",
+    "bytes": 6172,
+    "sha256": "9fb995fc58d0d9662ca124a1c6e384172dac10003677d4ee5186424c5311b924"
+  },
+  {
+    "name": "skills/cloud-all/library/macos-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 1976,
+    "sha256": "63b0b5d652e04c1a58c4c812430624f9cd5b2e40fc621b019efdc10b902995ba"
+  },
+  {
+    "name": "skills/cloud-all/library/malware-analysis/SKILL.md",
+    "type": "b",
+    "bytes": 9387,
+    "sha256": "bfd0eec0a614281ee07cc582940f809a34b0b76c4787e1fd3c37121f0fdd6f6a"
+  },
+  {
+    "name": "skills/cloud-all/library/mobile-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 6540,
+    "sha256": "8e3d7ad7be21d87d2ae21d7628974ff3d99b7e7556be2b8d0c1157e15fbb3fd0"
+  },
+  {
+    "name": "skills/cloud-all/library/network-analysis/SKILL.md",
+    "type": "b",
+    "bytes": 1359,
+    "sha256": "6cb2d256d1b83464b4adc5b8288f39dc29cf5be6f7ade737849633e9adfea3b6"
+  },
+  {
+    "name": "skills/cloud-all/library/ot-ics/SKILL.md",
+    "type": "b",
+    "bytes": 3511,
+    "sha256": "996cf9fe60ea76d0b45e1bca647e560e72638729b14870b28872973a13aec221"
+  },
+  {
+    "name": "skills/cloud-all/library/patch-diff-exploit/SKILL.md",
+    "type": "b",
+    "bytes": 14075,
+    "sha256": "cc882853917516be4309960adccdf32fd17153973bd2e80807ae9c5da47b812c"
+  },
+  {
+    "name": "skills/cloud-all/library/pentest-tools/SKILL.md",
+    "type": "b",
+    "bytes": 114616,
+    "sha256": "2f8fff1ff8bc0fd0cff526bff2999543b28cdd3a9b6ac5930805fdb5a703a919"
+  },
+  {
+    "name": "skills/cloud-all/library/pentest-tools__src-hunter/SKILL.md",
+    "type": "b",
+    "bytes": 12187,
+    "sha256": "02681cc6ddc6294988c1956fb3c25b8dedcb852933ed05cfdbc0311d3894e877"
+  },
+  {
+    "name": "skills/cloud-all/library/protocol-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 4083,
+    "sha256": "96e775156ccf5cc6a1f248af2467c79e990f1c45bea03af687da1b34cd25c1ee"
+  },
+  {
+    "name": "skills/cloud-all/library/pwn-chain/SKILL.md",
+    "type": "b",
+    "bytes": 10236,
+    "sha256": "ce76dc36d323d355bc7e9e633c71726496f382621d9fc92a39ec8c9df7e0c924"
+  },
+  {
+    "name": "skills/cloud-all/library/radare2/SKILL.md",
+    "type": "b",
+    "bytes": 11948,
+    "sha256": "64a3ad91a1703ea4f94a82ddd5407985451dec59d14357682f116e58d7367e33"
+  },
+  {
+    "name": "skills/cloud-all/library/radio-sdr/SKILL.md",
+    "type": "b",
+    "bytes": 1754,
+    "sha256": "4bfe814ca8216fa82cb6c2c92a465c5da68f04941b3684bac61ff10748765e85"
+  },
+  {
+    "name": "skills/cloud-all/library/reverse-engineering/SKILL.md",
+    "type": "b",
+    "bytes": 183640,
+    "sha256": "cb36816437cbb74643f9db6a79fadc262d9055ef74de15649668f36eb8be2dea"
+  },
+  {
+    "name": "skills/cloud-all/library/reverse-engineering__dsl-vm-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 12117,
+    "sha256": "5bc81a39676cda7036cf5c534df956f3fed97a11ecf97c61f3eb285437b9bbfb"
+  },
+  {
+    "name": "skills/cloud-all/library/reverse_flow_skill/SKILL.md",
+    "type": "b",
+    "bytes": 21417,
+    "sha256": "bf56e4d60ad1c8d6136a62f54ba42f950f280d902bd830b688a37d6970a9989c"
+  },
+  {
+    "name": "skills/cloud-all/library/skills/SKILL.md",
+    "type": "b",
+    "bytes": 13848,
+    "sha256": "28722764c784add6775a1c586383808e5d7f2c018cb10d5446addebaf1727354"
+  },
+  {
+    "name": "skills/cloud-all/library/supply-chain-security/SKILL.md",
+    "type": "b",
+    "bytes": 6487,
+    "sha256": "e702e7ae2d70a525773f1beac7c12a020c1a3bc21dc0f31dbd5d6470b4e5d998"
+  },
+  {
+    "name": "skills/cloud-all/library/thick-client/SKILL.md",
+    "type": "b",
+    "bytes": 3161,
+    "sha256": "e3a13e1de348c76fb49e16086636477cc2927ea216ba13a56971a7d95b61dcd8"
+  },
+  {
+    "name": "skills/cloud-all/library/threat-hunting/SKILL.md",
+    "type": "b",
+    "bytes": 2444,
+    "sha256": "a428f95f1d283d258c2219c74998ed1d28dbda61d72024edda8c2aa00236805d"
+  },
+  {
+    "name": "skills/cloud-all/library/wifi-wireless/SKILL.md",
+    "type": "b",
+    "bytes": 1825,
+    "sha256": "8dfdcf355e555c4a405f725de21420579e072ff08fe1c3d44e394c8c8d120b6c"
+  },
+  {
+    "name": "skills/cloud-all/library/windows-ad/SKILL.md",
+    "type": "b",
+    "bytes": 3049,
+    "sha256": "56f1512164340de4d5148be29314777e19133594d32f5064eee93f2674636bfa"
+  },
+  {
+    "name": "skills/cloud-catalog.json",
+    "type": "b",
+    "bytes": 52790,
+    "sha256": "15602f2f7ad8b8f5ce10759267285bb1ade9a8f00d2c11ded6dc4872b2a6f70e"
+  },
+  {
+    "name": "skills/curated/SKILL.md",
+    "type": "b",
+    "bytes": 946,
+    "sha256": "d8c46ab84c34d7188f0dada733467bd7e2050b8eed6a2a6cc5980d11cb2ed2ca"
+  },
+  {
+    "name": "skills/curated/references/checklist.md",
+    "type": "b",
+    "bytes": 286,
+    "sha256": "288139bd17ba03e77f677b5a3a374559ee526950d98637736751614d96389ea1"
+  },
+  {
+    "name": "skills/original/SKILL.md",
+    "type": "b",
+    "bytes": 944,
+    "sha256": "c10ed42d5f821ea5ba1777f3b7365fbae5687ec5f51f6f3a123c6a37dddb6cff"
+  },
+  {
+    "name": "skills/rebuilt-all/SKILL.md",
+    "type": "b",
+    "bytes": 5228,
+    "sha256": "e44e6adfe454a575009d30c5ed0ee2e7ea09374b352c345079dac70c4003ddf7"
+  },
+  {
+    "name": "skills/rebuilt-all/library/api-security/SKILL.md",
+    "type": "b",
+    "bytes": 937,
+    "sha256": "d5cfda046b7a28f79fe2af983a2741a539ec609e19681f6c08aa4082f6c7326a"
+  },
+  {
+    "name": "skills/rebuilt-all/library/apk-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 993,
+    "sha256": "b4d2798151851d342fb5e3d044eebfc0eb1d3c679469c388b3ea6fbcd82c2ca1"
+  },
+  {
+    "name": "skills/rebuilt-all/library/attack-chain/SKILL.md",
+    "type": "b",
+    "bytes": 926,
+    "sha256": "36de3c1b0152fcc940b9b1d4bd870b13960d43664a3c449fe3bdce1ad4ccf713"
+  },
+  {
+    "name": "skills/rebuilt-all/library/binary-diff/SKILL.md",
+    "type": "b",
+    "bytes": 954,
+    "sha256": "ede26a7ad382e02b6c41dd2f6678462e8fc19a7b3ae52f78757d25f207cf5864"
+  },
+  {
+    "name": "skills/rebuilt-all/library/browser-automation/SKILL.md",
+    "type": "b",
+    "bytes": 952,
+    "sha256": "3687b8f0a15f326ea2363ccbf7d121bfa43653dba653a4b9acca44acb2a133bf"
+  },
+  {
+    "name": "skills/rebuilt-all/library/browser-extension-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 895,
+    "sha256": "fa6a94de73f44cfd9de7529c93eef02b48081e364802b406c2e0a196a3f0c70f"
+  },
+  {
+    "name": "skills/rebuilt-all/library/build-release/SKILL.md",
+    "type": "b",
+    "bytes": 929,
+    "sha256": "4fe9f967e088553c5b7febfe2bad1943b30158f4280e5364c4f06556c554137d"
+  },
+  {
+    "name": "skills/rebuilt-all/library/cloud-k8s/SKILL.md",
+    "type": "b",
+    "bytes": 982,
+    "sha256": "ae6c02b0e0626fd81fce62dbeda6ee64fe94dbbaa2b15a1a189ebd62e020e3cf"
+  },
+  {
+    "name": "skills/rebuilt-all/library/code-audit/SKILL.md",
+    "type": "b",
+    "bytes": 929,
+    "sha256": "721f9e890e5b96d9aedb610667ccf802e14adff7ffb814121194cdb09185b5fa"
+  },
+  {
+    "name": "skills/rebuilt-all/library/container-runtime/SKILL.md",
+    "type": "b",
+    "bytes": 944,
+    "sha256": "ee207e328b6ea9f96b23d6b1e7bc6fa8deb9edbd17271c50d7357466c6b7fea5"
+  },
+  {
+    "name": "skills/rebuilt-all/library/database-security/SKILL.md",
+    "type": "b",
+    "bytes": 910,
+    "sha256": "2ca6f2fe4d2e3739c0eb220056247c12d2db36305fb4cd75c3b1d94350ddb7a4"
+  },
+  {
+    "name": "skills/rebuilt-all/library/deploy-infra/SKILL.md",
+    "type": "b",
+    "bytes": 921,
+    "sha256": "d164f8273a494aaf32cb17ceb49dc5879df96d47a04dc95e70049a33bc7ef78a"
+  },
+  {
+    "name": "skills/rebuilt-all/library/digital-forensics/SKILL.md",
+    "type": "b",
+    "bytes": 921,
+    "sha256": "3a7cb07f614b9171c4eb169fcb0664b5babe2639f9dd810f8868d438a73e06ef"
+  },
+  {
+    "name": "skills/rebuilt-all/library/dotnet-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 975,
+    "sha256": "c594e90ff8e42fceb6ca238ef9ba37396c62cc44cf381d766a19f796f7fae3c5"
+  },
+  {
+    "name": "skills/rebuilt-all/library/edr-bypass-re/SKILL.md",
+    "type": "b",
+    "bytes": 1000,
+    "sha256": "cabaa14c6b10c9e143ad788eb59904d68b9259994cd9c9127fbe184d8ee5d330"
+  },
+  {
+    "name": "skills/rebuilt-all/library/email-security/SKILL.md",
+    "type": "b",
+    "bytes": 919,
+    "sha256": "540139aa4248cf67a9e0d3a5bba8f69d68e2cbc0f70fa282b63df04f39416b42"
+  },
+  {
+    "name": "skills/rebuilt-all/library/firmware-pentest/SKILL.md",
+    "type": "b",
+    "bytes": 976,
+    "sha256": "30706ac96397af961c8b1834d21f754e646e26a31e05be1d3ead9bcea3784c48"
+  },
+  {
+    "name": "skills/rebuilt-all/library/game-hacking/SKILL.md",
+    "type": "b",
+    "bytes": 1017,
+    "sha256": "4f36145502c7a828a098c219e2ad65de736e5d9be9d2947dbb6ff869eceadcf2"
+  },
+  {
+    "name": "skills/rebuilt-all/library/ghidra-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 929,
+    "sha256": "0ce37d23295e57c68112fef27bca62957c735efe5998d6643ddd62e89e4d4cfa"
+  },
+  {
+    "name": "skills/rebuilt-all/library/go-rust-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 942,
+    "sha256": "97f7c1a1a0e00a732202dba97e67e793626b996e04216208585c22474178b035"
+  },
+  {
+    "name": "skills/rebuilt-all/library/hardware-security/SKILL.md",
+    "type": "b",
+    "bytes": 900,
+    "sha256": "a6da8f5d34fac1fd0352401d3ff4604c98fa465eca93385c2d5f81dcfb0b1978"
+  },
+  {
+    "name": "skills/rebuilt-all/library/ida-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 943,
+    "sha256": "68b2e562bf5afd29244ce302923dad23b0ad1773b658d80c81b36cfa6649343a"
+  },
+  {
+    "name": "skills/rebuilt-all/library/identity-federation/SKILL.md",
+    "type": "b",
+    "bytes": 913,
+    "sha256": "0c6bfbc37cb6d7afc32419b90de180e302e53538f520bfb78a3c2a0644a4c29d"
+  },
+  {
+    "name": "skills/rebuilt-all/library/js-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 1023,
+    "sha256": "c2617a004aed8c9259adebbeee5a1303c135b9797aebd6214da0c2fb6dbee090"
+  },
+  {
+    "name": "skills/rebuilt-all/library/l-gameassist/SKILL.md",
+    "type": "b",
+    "bytes": 1067,
+    "sha256": "357280d47de14d1c05a36598dbebc063f15fb5b308a35baf29cf226ee73cd606"
+  },
+  {
+    "name": "skills/rebuilt-all/library/l-license/SKILL.md",
+    "type": "b",
+    "bytes": 1089,
+    "sha256": "584a1e192f1f1a9a5b9730a673b6ede8e86cf6ad29e0a399c111339157f5d5c7"
+  },
+  {
+    "name": "skills/rebuilt-all/library/l-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 1242,
+    "sha256": "b807465a4413483aefd57d6468cd41551f7859ecebe49aacc2dc045aa17e7a5b"
+  },
+  {
+    "name": "skills/rebuilt-all/library/l-webrecon/SKILL.md",
+    "type": "b",
+    "bytes": 1151,
+    "sha256": "d5a216b1f4e234fe5e8a98e0b18bec588bb4613eb5eb9abd6b8f0d715114d625"
+  },
+  {
+    "name": "skills/rebuilt-all/library/llm-security/SKILL.md",
+    "type": "b",
+    "bytes": 957,
+    "sha256": "56521b5293b8e56837a77f31dbb1f404cf7a6b98ca79170f7b596300030c1364"
+  },
+  {
+    "name": "skills/rebuilt-all/library/macos-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 934,
+    "sha256": "33e76a383efffdf318f5b7838d5eaa42c1239073b93ce5f51f540bb3d4f393fe"
+  },
+  {
+    "name": "skills/rebuilt-all/library/malware-analysis/SKILL.md",
+    "type": "b",
+    "bytes": 1023,
+    "sha256": "432f2ea2d776c4a9b43de096eb990b15db16ecd9f3dc5412da7234077eef8785"
+  },
+  {
+    "name": "skills/rebuilt-all/library/mobile-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 994,
+    "sha256": "9c174fa9cf52081ac95eddc3834f6a7040962d225b78a30bc8130e3ae5588774"
+  },
+  {
+    "name": "skills/rebuilt-all/library/network-analysis/SKILL.md",
+    "type": "b",
+    "bytes": 962,
+    "sha256": "7e95fce68cc7d088cc38833cea3b3a5590c129180cf9ca491618e5c4fd0a8c5f"
+  },
+  {
+    "name": "skills/rebuilt-all/library/ot-ics/SKILL.md",
+    "type": "b",
+    "bytes": 928,
+    "sha256": "267833451bcaaec93208d5c1a39f12b35c84f3396d597f2888542027e33a6b8c"
+  },
+  {
+    "name": "skills/rebuilt-all/library/patch-diff-exploit/SKILL.md",
+    "type": "b",
+    "bytes": 964,
+    "sha256": "5949e91dc624ef5825798d1a5d4e60f4cda2052d981555254e7b5d1c7fac8cd9"
+  },
+  {
+    "name": "skills/rebuilt-all/library/patch-rollback/SKILL.md",
+    "type": "b",
+    "bytes": 927,
+    "sha256": "326ebfd12c1a2918c5c87c670855b8dbd82c4609a0332c8d9db97f0ca87b8a5d"
+  },
+  {
+    "name": "skills/rebuilt-all/library/pentest-tools/SKILL.md",
+    "type": "b",
+    "bytes": 968,
+    "sha256": "742e85b6a90d6f709c507a9af376ad33b82ca510673808a1fa03b3c4afa01023"
+  },
+  {
+    "name": "skills/rebuilt-all/library/pentest-tools__src-hunter/SKILL.md",
+    "type": "b",
+    "bytes": 944,
+    "sha256": "18a477ccc0b51ab637bd1cb6d14d24c31a8bd3b6dfa5f9e2801cd3e10d450dab"
+  },
+  {
+    "name": "skills/rebuilt-all/library/protocol-reverse/SKILL.md",
+    "type": "b",
+    "bytes": 944,
+    "sha256": "59eebbb2c6b763cbb5f0b7808419f0d4a9016d3a87d254679c9e36f8668f6cbe"
+  },
+  {
+    "name": "skills/rebuilt-all/library/pwn-chain/SKILL.md",
+    "type": "b",
+    "bytes": 958,
+    "sha256": "100f22af2abc8a9f97687f711111a4e7c875446f5454aae5c8d4c4b13361c6cd"
+  },
+  {
+    "name": "skills/rebuilt-all/library/radare2/SKILL.md",
+    "type": "b",
+    "bytes": 970,
+    "sha256": "b8b7ce4c8aa1bee4388b7e033d0d3a44eb7fa67b2d110df231d54d58a1cb7a67"
+  },
+  {
+    "name": "skills/rebuilt-all/library/radio-sdr/SKILL.md",
+    "type": "b",
+    "bytes": 911,
+    "sha256": "d93382533691997d602407f02a925b4a2a6752d5d8cce3b1bfc26c6db614ddf5"
+  },
+  {
+    "name": "skills/rebuilt-all/library/reverse-engineering/SKILL.md",
+    "type": "b",
+    "bytes": 927,
+    "sha256": "a654e2a8e4f8af782c5dfaf28c755dd3651ecbab44a935308a835d70438c2fbc"
+  },
+  {
+    "name": "skills/rebuilt-all/library/reverse_flow_skill/SKILL.md",
+    "type": "b",
+    "bytes": 1001,
+    "sha256": "0331d6a1b215ade6772286703717472d8b9348ff4db4858969d7dbdba7592133"
+  },
+  {
+    "name": "skills/rebuilt-all/library/supply-chain-security/SKILL.md",
+    "type": "b",
+    "bytes": 930,
+    "sha256": "413f94c1231b5b4a4d48e2411e7ae19b4d4ccd350b1883dcc40f1f5d9b6b932b"
+  },
+  {
+    "name": "skills/rebuilt-all/library/thick-client/SKILL.md",
+    "type": "b",
+    "bytes": 903,
+    "sha256": "967e1937be7a85419277a0fe0b189488f55f639281f36bec353ff58e163154e4"
+  },
+  {
+    "name": "skills/rebuilt-all/library/threat-hunting/SKILL.md",
+    "type": "b",
+    "bytes": 900,
+    "sha256": "e12a566acef413a5194a661138ec3c09be87961ff8b9950595b557bf2cac1522"
+  },
+  {
+    "name": "skills/rebuilt-all/library/websocket-runtime/SKILL.md",
+    "type": "b",
+    "bytes": 935,
+    "sha256": "0652a4bbbe2701547d7cf8fd1f59c817d55ccc855e5b8e6557a5bf03d5a10059"
+  },
+  {
+    "name": "skills/rebuilt-all/library/wifi-wireless/SKILL.md",
+    "type": "b",
+    "bytes": 913,
+    "sha256": "5643deb57d6d6f9b0dabeab731ae896b4414e602f2da62c205f3e338b16ea452"
+  },
+  {
+    "name": "skills/rebuilt-all/library/windows-ad/SKILL.md",
+    "type": "b",
+    "bytes": 934,
+    "sha256": "2c248293b9feb5b966fef996040983ba9f751206cfdad060b2470d164b8c8b35"
+  },
+  {
+    "name": "skills/recovered-index.json",
+    "type": "b",
+    "bytes": 12490,
+    "sha256": "78a929c01579ac6553ef58889fd5d9de1618c8a5f19b4c7cfdf65a171de34292"
+  },
+  {
+    "name": "struct",
+    "type": "m",
+    "bytes": 291,
+    "sha256": "97bb8aad7c1879275ba0aa0705c99759cd23178593fa66d0acdaf15854fdab5b"
+  },
+  {
+    "name": "ucrtbase.dll",
+    "type": "b",
+    "bytes": 1362264,
+    "sha256": "3239227d27667ba20d10a880751924e5719de0078f9fce232d149d383f7681f6"
+  },
+  {
+    "name": "unicodedata.pyd",
+    "type": "b",
+    "bytes": 758104,
+    "sha256": "4445b894f836e89a8b9fdcc88b5e59fbc76aca805baaf40aeb69e869978d4e6d"
+  },
+  {
+    "name": "webview/__init__.py",
+    "type": "b",
+    "bytes": 16979,
+    "sha256": "53a631a579ce342fb45efbe4ef024b28deabb34f061bcf058fd818ce27aa7e80"
+  },
+  {
+    "name": "webview/__pyinstaller/__init__.py",
+    "type": "b",
+    "bytes": 72,
+    "sha256": "f9ce19a3c9d018a026f3073f2c3b1cc4cb4aef3aff6216704670bd08caee5011"
+  },
+  {
+    "name": "webview/__pyinstaller/hook-webview.py",
+    "type": "b",
+    "bytes": 295,
+    "sha256": "d231eec5173e6327b138d17e27d4d61333c88a5b51de29144d4c1c8b916637ba"
+  },
+  {
+    "name": "webview/_version.py",
+    "type": "b",
+    "bytes": 520,
+    "sha256": "41462c31d385085b195788f1583cff83d60dbdb0a928210a41a9f301f63fc039"
+  },
+  {
+    "name": "webview/dom/__init__.py",
+    "type": "b",
+    "bytes": 1162,
+    "sha256": "515e69981ea8ba2efea32d473a9f9061854501475c18c33d863501aca99e6fb5"
+  },
+  {
+    "name": "webview/dom/classlist.py",
+    "type": "b",
+    "bytes": 1495,
+    "sha256": "d44075bd70b819fd3de1fbbccbe0cd66a1b02f6615fb7c6dca682dc9ce73c814"
+  },
+  {
+    "name": "webview/dom/dom.py",
+    "type": "b",
+    "bytes": 2628,
+    "sha256": "9eb42c3fcf53d958a138cfda2f0950310f1d81528ebcb70dd6bf9024e4865b26"
+  },
+  {
+    "name": "webview/dom/element.py",
+    "type": "b",
+    "bytes": 15292,
+    "sha256": "b131a7e777187a057eb79f3950aede5dec6303aee213b9cc7f58465717621837"
+  },
+  {
+    "name": "webview/dom/event.py",
+    "type": "b",
+    "bytes": 1089,
+    "sha256": "d10e8bf78b1ec61bc09f4f2e0dedbeb3ef0af320bd6277e32df2d0d9bade8b03"
+  },
+  {
+    "name": "webview/dom/propsdict.py",
+    "type": "b",
+    "bytes": 6178,
+    "sha256": "0e70dd71a9d69e0cd9a4d5c9c25e65ce14eed66b849368cc9c3fe4409d54e4ce"
+  },
+  {
+    "name": "webview/errors.py",
+    "type": "b",
+    "bytes": 93,
+    "sha256": "b319289c54650e4fe92313f798837858c567ddee39bc0cef49056ca528acc11f"
+  },
+  {
+    "name": "webview/event.py",
+    "type": "b",
+    "bytes": 2462,
+    "sha256": "8af7dc603131e0ab3605ceb9d4545b749e052e0eb5ae9131a50b380e61f8babc"
+  },
+  {
+    "name": "webview/guilib.py",
+    "type": "b",
+    "bytes": 3823,
+    "sha256": "ac780f92dae8761dd77c4d30306b2d899b7596e6b16875a9d280c7ec17f82ff0"
+  },
+  {
+    "name": "webview/http.py",
+    "type": "b",
+    "bytes": 8192,
+    "sha256": "e2c1ba12e560b95918536991ec08ba4f468012527f396c435da27e8b5b902b28"
+  },
+  {
+    "name": "webview/js/api.js",
+    "type": "b",
+    "bytes": 8612,
+    "sha256": "cb68b8bed427fa356aea26376e497552f55d91329c093c026a65230d074e2b27"
+  },
+  {
+    "name": "webview/js/customize.js",
+    "type": "b",
+    "bytes": 4443,
+    "sha256": "ed14d0b594266dfe3834cc8565b44a8157420432aeef4f733ab505bd6ed89b8a"
+  },
+  {
+    "name": "webview/js/finish.js",
+    "type": "b",
+    "bytes": 357,
+    "sha256": "751443083dd1d2b2ef4142692f25bc4f6e04f8de4d82c455c73473700f00c8cb"
+  },
+  {
+    "name": "webview/js/lib/dom_json.js",
+    "type": "b",
+    "bytes": 26097,
+    "sha256": "70fae2a8a8ebc790dc616aa7976074cedd802275c173c90ad4bf3bd14163f9c4"
+  },
+  {
+    "name": "webview/js/lib/polyfill.js",
+    "type": "b",
+    "bytes": 27434,
+    "sha256": "481a08f5337a770acf49b38c2f58dd0c95f92bf9dbd92bf82b596836ea343ab5"
+  },
+  {
+    "name": "webview/js/state.js",
+    "type": "b",
+    "bytes": 1828,
+    "sha256": "68ee87ec01563cbcab77a57704a32f19b47436c9d5e254bfba9675a51c132075"
+  },
+  {
+    "name": "webview/lib/Microsoft.Web.WebView2.Core.dll",
+    "type": "b",
+    "bytes": 649800,
+    "sha256": "8219a3135436c147f8eb02fb831e99596103eebc18b6d7b794ca93f4c67018a2"
+  },
+  {
+    "name": "webview/lib/Microsoft.Web.WebView2.WinForms.dll",
+    "type": "b",
+    "bytes": 39016,
+    "sha256": "c48f8d729dc531288d2c53a6241effe7922ed1b947850b2442008a945c098c48"
+  },
+  {
+    "name": "webview/lib/WebBrowserInterop.x64.dll",
+    "type": "b",
+    "bytes": 7168,
+    "sha256": "f6a646470f0e1058224a52e8e2e217501dca46939b30bfc9a5dd4dcdd43f088d"
+  },
+  {
+    "name": "webview/lib/WebBrowserInterop.x86.dll",
+    "type": "b",
+    "bytes": 7168,
+    "sha256": "4e527297fbea7c5a0419f3a6af307c2681787beb0bf0ef3fea849a7fd85a08dc"
+  },
+  {
+    "name": "webview/lib/pywebview-android.jar",
+    "type": "b",
+    "bytes": 14309,
+    "sha256": "3f9d3eeeda09ce58badbd742a981a463c067c339c8b4e70b404c00ebb4ec73a3"
+  },
+  {
+    "name": "webview/lib/runtimes/win-arm64/native/WebView2Loader.dll",
+    "type": "b",
+    "bytes": 147016,
+    "sha256": "0937030efc718f3da77c5e0978fb5046e381d0bb7b01acaad31a535a1b588a33"
+  },
+  {
+    "name": "webview/lib/runtimes/win-x64/native/WebView2Loader.dll",
+    "type": "b",
+    "bytes": 161864,
+    "sha256": "eb5335edeaa6f2122c044e82aab2351dc8c9b4e0fe5e578c71922fb61be285e7"
+  },
+  {
+    "name": "webview/lib/runtimes/win-x86/native/WebView2Loader.dll",
+    "type": "b",
+    "bytes": 121928,
+    "sha256": "04814b2c59314c6452d61b821a4a3a5c5f8e8577b55b985f6a7a4b59f8907ec5"
+  },
+  {
+    "name": "webview/localization.py",
+    "type": "b",
+    "bytes": 926,
+    "sha256": "310feaf4c4a0a99c72eae4c992e9745990ee24400169e1bc8a6b8ffd93ea96be"
+  },
+  {
+    "name": "webview/menu.py",
+    "type": "b",
+    "bytes": 721,
+    "sha256": "a37d9a6b24c84d9df989c113d8f4516203c1eba5f5f885ff6dd1c602186879e0"
+  },
+  {
+    "name": "webview/models.py",
+    "type": "b",
+    "bytes": 568,
+    "sha256": "1edc757df94f4cfc5902e93b7a6c1ba9c161747ab46334d747e9af484a5beaf5"
+  },
+  {
+    "name": "webview/platforms/__init__.py",
+    "type": "b",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "webview/platforms/android/__init__.py",
+    "type": "b",
+    "bytes": 18631,
+    "sha256": "e12c5ce7e96ee78bc5c6a81e5beae80a7bc74e2b99c8f18df06b98447ea22766"
+  },
+  {
+    "name": "webview/platforms/android/app.py",
+    "type": "b",
+    "bytes": 2352,
+    "sha256": "29bf3fa9be26b206e57b33c9c253ab88d4ece7ef398d7bb7f4ebc227b8a39607"
+  },
+  {
+    "name": "webview/platforms/android/base.py",
+    "type": "b",
+    "bytes": 1789,
+    "sha256": "bcd3f7db74594f98e62e384871b365c806f745b6df0c44171ff752013274da38"
+  },
+  {
+    "name": "webview/platforms/android/event.py",
+    "type": "b",
+    "bytes": 2840,
+    "sha256": "433969d3942f19f10cb73d467584e57bc87e01f61f7311a6c7bd6ec9adfee203"
+  },
+  {
+    "name": "webview/platforms/android/jclass/__init__.py",
+    "type": "b",
+    "bytes": 989,
+    "sha256": "ade3d200e0b23ce260a43b1208ce2b00eaf4d0d1d4834a042dad16100ed61c92"
+  },
+  {
+    "name": "webview/platforms/android/jclass/app.py",
+    "type": "b",
+    "bytes": 11819,
+    "sha256": "003403da223832fc31ab44ccf1b22cdcbb4301a71fe3279683d78068181d4df1"
+  },
+  {
+    "name": "webview/platforms/android/jclass/content.py",
+    "type": "b",
+    "bytes": 901,
+    "sha256": "e416b0d4ed6f8e318516679ad927da7a01517674b4080ffd4e2d24f39e09ab26"
+  },
+  {
+    "name": "webview/platforms/android/jclass/net.py",
+    "type": "b",
+    "bytes": 1140,
+    "sha256": "0711d68118e2deb19a7bc746816bdf7dfb0d71189a199d2da748c3948d4acec4"
+  },
+  {
+    "name": "webview/platforms/android/jclass/os.py",
+    "type": "b",
+    "bytes": 976,
+    "sha256": "124a6342d24a38b7de7a6aca39d0bb741108e4e2f8c3652de1cb504d0a358547"
+  },
+  {
+    "name": "webview/platforms/android/jclass/view.py",
+    "type": "b",
+    "bytes": 3822,
+    "sha256": "fb02c0d3b2dc041132cf31cfe1f1ead52b1f0bcab5fc82726eaf8e8c375e3ef2"
+  },
+  {
+    "name": "webview/platforms/android/jclass/webkit.py",
+    "type": "b",
+    "bytes": 18777,
+    "sha256": "a7ee2c6d997d49a8ec90eb2af8dfe6f48c5718a444494ca4eb3f732166e2a662"
+  },
+  {
+    "name": "webview/platforms/android/jinterface/__init__.py",
+    "type": "b",
+    "bytes": 510,
+    "sha256": "f564b500241ac452ea6383c394d639e44dca59adc2e7904d75e2babedccfcc9a"
+  },
+  {
+    "name": "webview/platforms/android/jinterface/pywebview.py",
+    "type": "b",
+    "bytes": 3598,
+    "sha256": "cc6d34094efd7e161b8879c96f88dbaffb182b76df69a0bf454ab2748135a831"
+  },
+  {
+    "name": "webview/platforms/android/jinterface/view.py",
+    "type": "b",
+    "bytes": 1793,
+    "sha256": "822bb2ea730f4cffb3b0e09795e9a0e2ed03d9eb47e41642501752865c34d631"
+  },
+  {
+    "name": "webview/platforms/android/jinterface/webkit.py",
+    "type": "b",
+    "bytes": 2434,
+    "sha256": "58301b16344cfa9126c204bbde84a20d1ad25710b62becf59a6b20ac5dcb7e9e"
+  },
+  {
+    "name": "webview/platforms/cef.py",
+    "type": "b",
+    "bytes": 10786,
+    "sha256": "a9ea3e5e3f597d645d3e237dd43a6d553845160e86b26e3524fe212bd3ee56e4"
+  },
+  {
+    "name": "webview/platforms/cocoa.py",
+    "type": "b",
+    "bytes": 61743,
+    "sha256": "27a5e95be0816f0bba7bed910eeda11b92de4598419a275f9346023e24ba27af"
+  },
+  {
+    "name": "webview/platforms/edgechromium.py",
+    "type": "b",
+    "bytes": 14174,
+    "sha256": "f3f9168ecb39f7447566112fd14c5ec55830eddf02053eafef0d86fac509a3a4"
+  },
+  {
+    "name": "webview/platforms/gtk.py",
+    "type": "b",
+    "bytes": 35877,
+    "sha256": "27803c780847139cb6230aae16ef2b9eed3f7944ca863f6a3f9751aa53ee648f"
+  },
+  {
+    "name": "webview/platforms/mshtml.py",
+    "type": "b",
+    "bytes": 8989,
+    "sha256": "27ee660d6485d75245e65e7f0be5b631b11d593023d40500a3b991eff44b5328"
+  },
+  {
+    "name": "webview/platforms/qt.py",
+    "type": "b",
+    "bytes": 39176,
+    "sha256": "0d78b132be416e9df3c562645e958d1be83e11e4518a19a861a2c573d4b0b61c"
+  },
+  {
+    "name": "webview/platforms/win32.py",
+    "type": "b",
+    "bytes": 2932,
+    "sha256": "c24de9c92278c9d4e48e13045d47225b6d3d6629b0898f2530883a74a5e522e2"
+  },
+  {
+    "name": "webview/platforms/winforms.py",
+    "type": "b",
+    "bytes": 37327,
+    "sha256": "e3962a59e74532d9266f08d1efb086519877b2d322ea83900036f59794db4b4d"
+  },
+  {
+    "name": "webview/py.typed",
+    "type": "b",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "webview/screen.py",
+    "type": "b",
+    "bytes": 1228,
+    "sha256": "a6920538487256b022e726ebe87902cf60d6aa0c1471cc4bd9c979f8b6892479"
+  },
+  {
+    "name": "webview/state.py",
+    "type": "b",
+    "bytes": 4347,
+    "sha256": "79a47b4b6ec17c8ea3c377c3c6d3600c04227208bb737c0fa839cfbe087b862d"
+  },
+  {
+    "name": "webview/util.py",
+    "type": "b",
+    "bytes": 17225,
+    "sha256": "a652bd05bfb9a7a9521e8ab52f10425161fa6a84077a92ca5dcd255359b836a4"
+  },
+  {
+    "name": "webview/window.py",
+    "type": "b",
+    "bytes": 19106,
+    "sha256": "00de0b2155308a29e0af42d3e5c40221cd1ea1fb30d2be55a408ab1b314d5b03"
+  }
+]

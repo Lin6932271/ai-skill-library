@@ -1,0 +1,65 @@
+{
+  "machine": "0x8664",
+  "subsystem": 2,
+  "authenticode_certificate_bytes": 0,
+  "sections": [
+    {
+      "name": ".text",
+      "bytes": 204800,
+      "sha256": "67bdc7f5eeccf01180cd5b3621be7d0265efa6a44742496a7a6c6f9076ef4b1f",
+      "matches_installed_bootloader": true
+    },
+    {
+      "name": ".rdata",
+      "bytes": 84480,
+      "sha256": "9b454d2658680d15523202ee3a2e63cb4b464e27c2e104597e116dc8f286a3e5",
+      "matches_installed_bootloader": false
+    },
+    {
+      "name": ".data",
+      "bytes": 3584,
+      "sha256": "f999ee89612700ed57df416c1025d22e69bf061e54903f34ecf2398e8d8b0627",
+      "matches_installed_bootloader": true
+    },
+    {
+      "name": ".pdata",
+      "bytes": 10240,
+      "sha256": "f33be2799dafcdfb77a394fd72134a9a838822f9fa500e5381029f152423c278",
+      "matches_installed_bootloader": true
+    },
+    {
+      "name": ".fptable",
+      "bytes": 512,
+      "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560",
+      "matches_installed_bootloader": true
+    },
+    {
+      "name": ".rsrc",
+      "bytes": 117248,
+      "sha256": "19d3bfe713c32adab5d1016f41ec8f78d96c609b2ce58aa4486d05521ebb3c29",
+      "matches_installed_bootloader": false
+    },
+    {
+      "name": ".reloc",
+      "bytes": 2048,
+      "sha256": "f10e5c9b3cca6292a947f527a24f91802bd207c348624b01187ef083a85a07ed",
+      "matches_installed_bootloader": true
+    }
+  ],
+  "requested_execution_level": "asInvoker",
+  "import_count": 150,
+  "embedded_manifest": [
+    "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<assembly xmlns=\"urn:schemas-microsoft-com:asm.v1\" manifestVersion=\"1.0\">\n  <trustInfo xmlns=\"urn:schemas-microsoft-com:asm.v3\">\n    <security>\n      <requestedPrivileges>\n        <requestedExecutionLevel level=\"asInvoker\" uiAccess=\"false\"/>\n      </requestedPrivileges>\n    </security>\n  </trustInfo>\n  <compatibility xmlns=\"urn:schemas-microsoft-com:compatibility.v1\">\n    <application>\n      <supportedOS Id=\"{e2011457-1546-43c5-a5fe-008deee3d3f0}\"/>\n      <supportedOS Id=\"{35138b9a-5d96-4fbd-8e2d-a2440225f93a}\"/>\n      <supportedOS Id=\"{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}\"/>\n      <supportedOS Id=\"{1f676c76-80e1-4239-95bb-83d0f6d0da78}\"/>\n      <supportedOS Id=\"{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}\"/>\n    </application>\n  </compatibility>\n  <application xmlns=\"urn:schemas-microsoft-com:asm.v3\">\n    <windowsSettings>\n      <longPathAware xmlns=\"http://schemas.microsoft.com/SMI/2016/WindowsSettings\">true</longPathAware>\n    </windowsSettings>\n  </application>\n  <dependency>\n    <dependentAssembly>\n      <assemblyIdentity type=\"win32\" name=\"Microsoft.Windows.Common-Controls\" version=\"6.0.0.0\" processorArchitecture=\"*\" publicKeyToken=\"6595b64144ccf1df\" language=\"*\"/>\n    </dependentAssembly>\n  </dependency>\n</assembly>"
+  ],
+  "rdata_matches_after_debug_timestamp_normalization": true,
+  "debug_timestamp_offsets_in_rdata": [
+    67252
+  ],
+  "resource_type_ids": [
+    3,
+    14,
+    16,
+    24
+  ],
+  "bootloader_reference": "PyInstaller 6.22.3 stock Windows-64bit-intel/runw.exe"
+}

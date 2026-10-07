@@ -1,0 +1,598 @@
+{
+  "name": "ai技能库",
+  "version": "1.3.2",
+  "exe_filename": "AISkillLibrary-1.3.2-windows-x64.exe",
+  "exe_bytes": 24850640,
+  "exe_sha256": "90fcc9798625f02eee86e59da6763f1a1144c1048c55d8cb4fc3f132f477026d",
+  "examined_at": "2026-10-07T15:58:33+08:00",
+  "python": "3.14.3",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "tools": {
+    "pyinstaller": "6.22.3",
+    "pefile": "2024.8.26",
+    "psutil": "7.2.2",
+    "bandit": "1.9.4"
+  },
+  "static": {
+    "application_code_matches_source": true,
+    "application_modules": [
+      {
+        "file": "main.py",
+        "source_sha256": "ba86ca8b225a0ea20f5d848f65520ae7de183eab164b5791490481d8bfa09133",
+        "packed_code_sha256": "37336993cbb2d9e925ea60ea22d0bffc2880be4035fe6bb665fb47cc75e69675",
+        "compiled_source_code_sha256": "37336993cbb2d9e925ea60ea22d0bffc2880be4035fe6bb665fb47cc75e69675",
+        "matches": true,
+        "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+      },
+      {
+        "file": "backend.py",
+        "source_sha256": "a0e01fe657d27ca9971021ede8a2fab1eeaa586351f1d751426bfac9b68d65f5",
+        "packed_code_sha256": "0feeae9185546fb3cd22afa9d3fa43f39acb99a8caadcdda45e40f6f20f83aef",
+        "compiled_source_code_sha256": "0feeae9185546fb3cd22afa9d3fa43f39acb99a8caadcdda45e40f6f20f83aef",
+        "matches": true,
+        "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+      }
+    ],
+    "bootstrap_hook_checks": [
+      {
+        "name": "pyi_rth_inspect",
+        "reference_available": true,
+        "file": "pyi_rth_inspect.py",
+        "source_sha256": "e9db311f97b750a30a422e0bf2bdcff7514da67cd35b0f6189ad786956ff1abc",
+        "packed_code_sha256": "7dd6e9a613ae4ec03d447c016717650dfe12fdcfaf1e01278b1bb8764abda586",
+        "compiled_source_code_sha256": "7dd6e9a613ae4ec03d447c016717650dfe12fdcfaf1e01278b1bb8764abda586",
+        "matches": true,
+        "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+      },
+      {
+        "name": "pyi_rth_multiprocessing",
+        "reference_available": true,
+        "file": "pyi_rth_multiprocessing.py",
+        "source_sha256": "2834a4a14da13d263183426eb7e61eec75cd720fac1bd0794f8ae63878763e20",
+        "packed_code_sha256": "8c409ec89e413e7c90d34dba2a27fa60d91532c710a8ac3ffbfbbfdc397c5a52",
+        "compiled_source_code_sha256": "8c409ec89e413e7c90d34dba2a27fa60d91532c710a8ac3ffbfbbfdc397c5a52",
+        "matches": true,
+        "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+      },
+      {
+        "name": "pyi_rth_pkgutil",
+        "reference_available": true,
+        "file": "pyi_rth_pkgutil.py",
+        "source_sha256": "7d006a9675674b9cc7d8b11ea98ad037adea5dbdb6ebdf9b7a45c861501c4204",
+        "packed_code_sha256": "d34b70d770da08275c6bdadcec94de2bc61dc80bc3ac0306c7abe095b8621cfc",
+        "compiled_source_code_sha256": "d34b70d770da08275c6bdadcec94de2bc61dc80bc3ac0306c7abe095b8621cfc",
+        "matches": true,
+        "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+      },
+      {
+        "name": "pyi_rth_setuptools",
+        "reference_available": true,
+        "file": "pyi_rth_setuptools.py",
+        "source_sha256": "aeb0dc75b5064ae52751e5c3451fc76a5c4cd7e821b4989614880ebce20830fa",
+        "packed_code_sha256": "7b31a51bddd1bcbd8db02e8900f5a611241a786d03a32d824851fc4a97d63aff",
+        "compiled_source_code_sha256": "7b31a51bddd1bcbd8db02e8900f5a611241a786d03a32d824851fc4a97d63aff",
+        "matches": true,
+        "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+      },
+      {
+        "name": "pyiboot01_bootstrap",
+        "reference_available": true,
+        "file": "pyiboot01_bootstrap.py",
+        "source_sha256": "6773bb364344a01f176133f8624ddda9e8f992052eaddad32609b1e90399ef1f",
+        "packed_code_sha256": "661e11c1887e96438fa622647ab0ace2a228988fc9bf4a119d6fd9f30e50e777",
+        "compiled_source_code_sha256": "661e11c1887e96438fa622647ab0ace2a228988fc9bf4a119d6fd9f30e50e777",
+        "matches": true,
+        "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+      },
+      {
+        "name": "pyimod01_archive",
+        "reference_available": true,
+        "file": "pyimod01_archive.py",
+        "source_sha256": "38d2c8b801b6c2165d44bc40f47bc1e230110272003da67d4d4eaa59af4ff397",
+        "packed_code_sha256": "4450a291d67481ffd2c2a3ac14482df9177949aaee4c6f953d6fc8e10bb3cfc3",
+        "compiled_source_code_sha256": "4450a291d67481ffd2c2a3ac14482df9177949aaee4c6f953d6fc8e10bb3cfc3",
+        "matches": true,
+        "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+      },
+      {
+        "name": "pyimod02_importers",
+        "reference_available": true,
+        "file": "pyimod02_importers.py",
+        "source_sha256": "33e786adc20d247cc5acf02eaa021f8629f30b8d3d5bf8a1e651088cca132eef",
+        "packed_code_sha256": "8e424f777ae81969d72152a1f6f360a883d8e36a02035a736068ff30f8c7bf4c",
+        "compiled_source_code_sha256": "8e424f777ae81969d72152a1f6f360a883d8e36a02035a736068ff30f8c7bf4c",
+        "matches": true,
+        "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+      },
+      {
+        "name": "pyimod03_ctypes",
+        "reference_available": true,
+        "file": "pyimod03_ctypes.py",
+        "source_sha256": "a93c2ec1677cc5d77fa4c000136b9da36f61388f9536f2b1a66193b329d1f312",
+        "packed_code_sha256": "cce2158f9e12a3af926124a9fcf6acc52824afc25f7388bcfea19840ab7cd1b3",
+        "compiled_source_code_sha256": "cce2158f9e12a3af926124a9fcf6acc52824afc25f7388bcfea19840ab7cd1b3",
+        "matches": true,
+        "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+      },
+      {
+        "name": "pyimod04_pywin32",
+        "reference_available": true,
+        "file": "pyimod04_pywin32.py",
+        "source_sha256": "bc55444d6745a5922ba1ab63d131a90c4d9f00c800553b3cd08423acd1982aec",
+        "packed_code_sha256": "d34195382e5467eb9632ce15bf30e9e2741daae60780dfc4e3cc4963aec3a6b4",
+        "compiled_source_code_sha256": "d34195382e5467eb9632ce15bf30e9e2741daae60780dfc4e3cc4963aec3a6b4",
+        "matches": true,
+        "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+      },
+      {
+        "name": "struct",
+        "reference_available": true,
+        "file": "struct.py",
+        "source_sha256": "c632708f6b3a7d8a52d875ab11cb93761bfb4ab14efe09cf0fa2c8a174ffdcdc",
+        "packed_code_sha256": "263111aef6f2e4ba2bb6247d960295ce0743ae6c628af3bf1737e1f02c6dbd75",
+        "compiled_source_code_sha256": "263111aef6f2e4ba2bb6247d960295ce0743ae6c628af3bf1737e1f02c6dbd75",
+        "matches": true,
+        "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+      }
+    ],
+    "archive_entries": 295,
+    "pyz_modules": 673,
+    "bundled_resources_checked": 127,
+    "all_bundled_resources_match": true,
+    "pe": {
+      "machine": "0x8664",
+      "subsystem": 2,
+      "authenticode_certificate_bytes": 0,
+      "sections": [
+        {
+          "name": ".text",
+          "bytes": 204800,
+          "sha256": "67bdc7f5eeccf01180cd5b3621be7d0265efa6a44742496a7a6c6f9076ef4b1f",
+          "matches_installed_bootloader": true
+        },
+        {
+          "name": ".rdata",
+          "bytes": 84480,
+          "sha256": "9b454d2658680d15523202ee3a2e63cb4b464e27c2e104597e116dc8f286a3e5",
+          "matches_installed_bootloader": false
+        },
+        {
+          "name": ".data",
+          "bytes": 3584,
+          "sha256": "f999ee89612700ed57df416c1025d22e69bf061e54903f34ecf2398e8d8b0627",
+          "matches_installed_bootloader": true
+        },
+        {
+          "name": ".pdata",
+          "bytes": 10240,
+          "sha256": "f33be2799dafcdfb77a394fd72134a9a838822f9fa500e5381029f152423c278",
+          "matches_installed_bootloader": true
+        },
+        {
+          "name": ".fptable",
+          "bytes": 512,
+          "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560",
+          "matches_installed_bootloader": true
+        },
+        {
+          "name": ".rsrc",
+          "bytes": 117248,
+          "sha256": "19d3bfe713c32adab5d1016f41ec8f78d96c609b2ce58aa4486d05521ebb3c29",
+          "matches_installed_bootloader": false
+        },
+        {
+          "name": ".reloc",
+          "bytes": 2048,
+          "sha256": "f10e5c9b3cca6292a947f527a24f91802bd207c348624b01187ef083a85a07ed",
+          "matches_installed_bootloader": true
+        }
+      ],
+      "requested_execution_level": "asInvoker",
+      "import_count": 150,
+      "embedded_manifest": [
+        "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<assembly xmlns=\"urn:schemas-microsoft-com:asm.v1\" manifestVersion=\"1.0\">\n  <trustInfo xmlns=\"urn:schemas-microsoft-com:asm.v3\">\n    <security>\n      <requestedPrivileges>\n        <requestedExecutionLevel level=\"asInvoker\" uiAccess=\"false\"/>\n      </requestedPrivileges>\n    </security>\n  </trustInfo>\n  <compatibility xmlns=\"urn:schemas-microsoft-com:compatibility.v1\">\n    <application>\n      <supportedOS Id=\"{e2011457-1546-43c5-a5fe-008deee3d3f0}\"/>\n      <supportedOS Id=\"{35138b9a-5d96-4fbd-8e2d-a2440225f93a}\"/>\n      <supportedOS Id=\"{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}\"/>\n      <supportedOS Id=\"{1f676c76-80e1-4239-95bb-83d0f6d0da78}\"/>\n      <supportedOS Id=\"{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}\"/>\n    </application>\n  </compatibility>\n  <application xmlns=\"urn:schemas-microsoft-com:asm.v3\">\n    <windowsSettings>\n      <longPathAware xmlns=\"http://schemas.microsoft.com/SMI/2016/WindowsSettings\">true</longPathAware>\n    </windowsSettings>\n  </application>\n  <dependency>\n    <dependentAssembly>\n      <assemblyIdentity type=\"win32\" name=\"Microsoft.Windows.Common-Controls\" version=\"6.0.0.0\" processorArchitecture=\"*\" publicKeyToken=\"6595b64144ccf1df\" language=\"*\"/>\n    </dependentAssembly>\n  </dependency>\n</assembly>"
+      ],
+      "rdata_matches_after_debug_timestamp_normalization": true,
+      "debug_timestamp_offsets_in_rdata": [
+        67252
+      ],
+      "resource_type_ids": [
+        3,
+        14,
+        16,
+        24
+      ],
+      "bootloader_reference": "PyInstaller 6.22.3 stock Windows-64bit-intel/runw.exe"
+    },
+    "native_library_comparison": {
+      "checked": 84,
+      "matching": 84,
+      "unmatched": []
+    },
+    "bandit": {
+      "version": "1.9.4",
+      "results": [
+        {
+          "code": "46                 return {\"ok\": False, \"error\": \"目录尚不存在，开启技能后会创建\"}\n47             os.startfile(str(root))\n48             return {\"ok\": True, \"data\": {\"path\": str(root)}}\n",
+          "col_offset": 12,
+          "end_col_offset": 35,
+          "filename": "main.py",
+          "issue_confidence": "MEDIUM",
+          "issue_cwe": {
+            "id": 78,
+            "link": "https://cwe.mitre.org/data/definitions/78.html"
+          },
+          "issue_severity": "LOW",
+          "issue_text": "Starting a process without a shell.",
+          "line_number": 47,
+          "line_range": [
+            47
+          ],
+          "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b606_start_process_with_no_shell.html",
+          "test_id": "B606",
+          "test_name": "start_process_with_no_shell"
+        },
+        {
+          "code": "299         def native_acceptance():\n300             result = {\"pass\": False, \"pid\": os.getpid(), \"runtime\": \"WebView2 desktop\"}\n301             try:\n",
+          "col_offset": 22,
+          "end_col_offset": 28,
+          "filename": "main.py",
+          "issue_confidence": "MEDIUM",
+          "issue_cwe": {
+            "id": 259,
+            "link": "https://cwe.mitre.org/data/definitions/259.html"
+          },
+          "issue_severity": "LOW",
+          "issue_text": "Possible hardcoded password: 'False'",
+          "line_number": 300,
+          "line_range": [
+            300
+          ],
+          "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html",
+          "test_id": "B105",
+          "test_name": "hardcoded_password_string"
+        }
+      ],
+      "errors": [],
+      "metrics": {
+        "CONFIDENCE.HIGH": 0,
+        "CONFIDENCE.LOW": 0,
+        "CONFIDENCE.MEDIUM": 2,
+        "CONFIDENCE.UNDEFINED": 0,
+        "SEVERITY.HIGH": 0,
+        "SEVERITY.LOW": 2,
+        "SEVERITY.MEDIUM": 0,
+        "SEVERITY.UNDEFINED": 0,
+        "loc": 848,
+        "nosec": 0,
+        "skipped_tests": 0
+      }
+    },
+    "native_reference_note": "Build manifest resolves additional Microsoft UCRT/API-set DLLs from the build environment native libheif runtime directory; only file hashes compared, no independent supply-chain certification."
+  },
+  "runtime": {
+    "native_acceptance_pass": true,
+    "closed_naturally": true,
+    "process_names": [
+      "AISkillLibrary-1.3.2-windows-x64.exe",
+      "msedgewebview2.exe"
+    ],
+    "observed_process_count": 9,
+    "duration_seconds": 10.506,
+    "requested_sampling_interval_seconds": 0.1,
+    "mean_sampling_interval_seconds": 0.108,
+    "successful_socket_samples": 98,
+    "socket_sampling_errors": 0,
+    "connections": [
+      {
+        "process": "AISkillLibrary-1.3.2-windows-x64.exe",
+        "local": [
+          "127.0.0.1",
+          51816
+        ],
+        "remote": [
+          "127.0.0.1",
+          52973
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "AISkillLibrary-1.3.2-windows-x64.exe",
+        "local": [
+          "127.0.0.1",
+          51816
+        ],
+        "remote": [
+          "127.0.0.1",
+          53120
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "AISkillLibrary-1.3.2-windows-x64.exe",
+        "local": [
+          "127.0.0.1",
+          51816
+        ],
+        "remote": [
+          "127.0.0.1",
+          53132
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "AISkillLibrary-1.3.2-windows-x64.exe",
+        "local": [
+          "127.0.0.1",
+          51816
+        ],
+        "remote": [
+          "127.0.0.1",
+          56061
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "AISkillLibrary-1.3.2-windows-x64.exe",
+        "local": [
+          "127.0.0.1",
+          51816
+        ],
+        "remote": [
+          "127.0.0.1",
+          60709
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "AISkillLibrary-1.3.2-windows-x64.exe",
+        "local": [
+          "127.0.0.1",
+          51816
+        ],
+        "remote": [],
+        "status": "LISTEN",
+        "external_remote": false
+      },
+      {
+        "process": "msedgewebview2.exe",
+        "local": [
+          "127.0.0.1",
+          49499
+        ],
+        "remote": [
+          "127.0.0.1",
+          7897
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "msedgewebview2.exe",
+        "local": [
+          "127.0.0.1",
+          49500
+        ],
+        "remote": [
+          "127.0.0.1",
+          7897
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "msedgewebview2.exe",
+        "local": [
+          "127.0.0.1",
+          49554
+        ],
+        "remote": [
+          "127.0.0.1",
+          7897
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "msedgewebview2.exe",
+        "local": [
+          "127.0.0.1",
+          49554
+        ],
+        "remote": [
+          "127.0.0.1",
+          7897
+        ],
+        "status": "FIN_WAIT2",
+        "external_remote": false
+      },
+      {
+        "process": "msedgewebview2.exe",
+        "local": [
+          "127.0.0.1",
+          52973
+        ],
+        "remote": [
+          "127.0.0.1",
+          51816
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "msedgewebview2.exe",
+        "local": [
+          "127.0.0.1",
+          53120
+        ],
+        "remote": [
+          "127.0.0.1",
+          51816
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "msedgewebview2.exe",
+        "local": [
+          "127.0.0.1",
+          53132
+        ],
+        "remote": [
+          "127.0.0.1",
+          51816
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "msedgewebview2.exe",
+        "local": [
+          "127.0.0.1",
+          54524
+        ],
+        "remote": [
+          "127.0.0.1",
+          7897
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "msedgewebview2.exe",
+        "local": [
+          "127.0.0.1",
+          54524
+        ],
+        "remote": [
+          "127.0.0.1",
+          7897
+        ],
+        "status": "FIN_WAIT2",
+        "external_remote": false
+      },
+      {
+        "process": "msedgewebview2.exe",
+        "local": [
+          "127.0.0.1",
+          56061
+        ],
+        "remote": [
+          "127.0.0.1",
+          51816
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "msedgewebview2.exe",
+        "local": [
+          "127.0.0.1",
+          60709
+        ],
+        "remote": [
+          "127.0.0.1",
+          51816
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      }
+    ],
+    "external_remote_connections_observed": 0,
+    "persistence_snapshots": {
+      "HKCU:64:Run": {
+        "available": true,
+        "unchanged": true
+      },
+      "HKCU:64:RunOnce": {
+        "available": true,
+        "unchanged": true
+      },
+      "HKCU:32:Run": {
+        "available": true,
+        "unchanged": true
+      },
+      "HKCU:32:RunOnce": {
+        "available": true,
+        "unchanged": true
+      },
+      "HKLM:64:Run": {
+        "available": true,
+        "unchanged": true
+      },
+      "HKLM:64:RunOnce": {
+        "available": true,
+        "unchanged": true
+      },
+      "HKLM:32:Run": {
+        "available": true,
+        "unchanged": true
+      },
+      "HKLM:32:RunOnce": {
+        "available": true,
+        "unchanged": true
+      },
+      "startup-folder-0": {
+        "available": true,
+        "unchanged": true
+      },
+      "startup-folder-1": {
+        "available": true,
+        "unchanged": true
+      },
+      "service-names": {
+        "available": true,
+        "unchanged": true
+      },
+      "scheduled-task-definitions": {
+        "available": true,
+        "unchanged": true
+      }
+    },
+    "scope": "isolated native startup, automatic animation completion, main UI rendering and page scroll; sampled TCP/UDP tables, not packet capture",
+    "isolation": "explicit temporary home/data paths and --sandbox; no real AI client installs",
+    "system_proxy_enabled": true,
+    "system_proxy_endpoint": "127.0.0.1:7897",
+    "proxy_final_destinations_verified": false
+  },
+  "sample_unchanged_after_analysis": true,
+  "defender": {
+    "status": "completed-no-threats-reported",
+    "exit_code": 0,
+    "command": "MpCmdRun.exe -Scan -ScanType 3 -File <native-Windows-path-to-release.exe> -DisableRemediation",
+    "finished_at": "2026-10-07T15:54:53.4553809+08:00",
+    "metadata": {
+      "AMServiceEnabled": true,
+      "AntivirusEnabled": true,
+      "RealTimeProtectionEnabled": true,
+      "AMEngineVersion": "1.1.26080.3",
+      "AMProductVersion": "4.18.26080.4",
+      "AntivirusSignatureVersion": "1.459.576.0",
+      "AntivirusSignatureLastUpdated": "2026-10-06T07:12:32+08:00"
+    },
+    "sample_sha256": "90fcc9798625f02eee86e59da6763f1a1144c1048c55d8cb4fc3f132f477026d",
+    "sample_unchanged": true,
+    "earlier_attempts": [
+      {
+        "path_form": "forward-slash",
+        "exit_code": 2,
+        "hresult": "0x80508023"
+      },
+      {
+        "path_form": "forward-slash-current-platform",
+        "exit_code": 2,
+        "hresult": "0x80508023"
+      }
+    ],
+    "completed_attempt": "current Defender platform and native absolute Windows path",
+    "scope": "single local Microsoft Defender custom file scan; not a multi-engine certificate"
+  },
+  "authenticode_status": "NotSigned",
+  "review_type": "AI-assisted project self-review, not an independent third-party certification",
+  "core_source_commit": "c847ba94ff218ee14a1de78839feca9c632a2aab"
+}
