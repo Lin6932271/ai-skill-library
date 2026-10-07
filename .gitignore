@@ -13,6 +13,7 @@ artifacts/
 .env.*
 !.env.example
 *.log
+!docs/security/evidence/defender-scan.log
 Thumbs.db
 .DS_Store
 
