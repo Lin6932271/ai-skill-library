@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "rea_version": "6.1.0",
+  "node_version": "v24.19.0",
+  "platform": "win32-x64",
+  "archive": "rea-windows-x64.zip",
+  "sha256": "e0d430658952113b23c0099e21131af6d554e2bac6742cf36af16389fb46d494",
+  "file_count": 8140,
+  "unpacked_bytes": 195068705,
+  "critical_files": {
+    "node/node.exe": "3602f2bb1a10f2cbab4c36886218a33c1ab3db87290e73b033c46c77147d0237",
+    "cli/node_modules/rea-agents/scripts/rea.mjs": "51c10d06c6c277a7c482001096e4c35ba341246977cb9097920d2268a0270b22",
+    "cli/node_modules/rea-agents/package.json": "8abaccdb625deeb142abbb7e428dc2be5392a99b63034a7c8afb353c9105d9ae"
+  },
+  "origins": [
+    "https://nodejs.org",
+    "https://registry.npmjs.org/rea-agents"
+  ],
+  "license_paths": [
+    "node/LICENSE",
+    "cli/node_modules/rea-agents/LICENSE"
+  ]
+}

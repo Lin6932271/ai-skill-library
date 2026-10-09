@@ -67,8 +67,8 @@ $('#modal').addEventListener('click', event => { if (event.target === $('#modal'
 
 function render() {
   if (!state) return;
-  $('#library-banner-title').textContent = state.cloud_documents ? `${state.cloud_documents} 项技能，随时可用` : '技能库已就绪';
-  $('#library-banner-summary').textContent = '可整套安装、单个选择或导入自己的技能，写入前自动备份。';
+  $('#library-banner-title').textContent = `${state.builtin_documents} 项技能，REA 已内置`;
+  $('#library-banner-summary').textContent = '开启技能时自动准备 REA 和连接；告诉 AI“使用技能”即可，无需自己配置。';
   $('#service-grid').innerHTML = state.providers.map(p => {
     const healthy = p.installed && p.verification.ok;
     const icon = p.icon === 'codex' ? '<span class="codex-icon">✺</span>' : `<img src="/assets/${esc(p.icon)}" class="pj-service-image-mark" alt="">`;
@@ -79,11 +79,11 @@ function render() {
       <div class="path-row"><span class="path-label">配置目录</span><span class="path-value" title="${esc(p.path)}">${esc(p.path)}</span><button class="path-button" data-action="directory" data-provider="${p.key}" ${disabled}>设置</button></div>
       <div class="profile-row"><label for="profile-${p.key}">技能方案</label><select id="profile-${p.key}" class="profile-select" data-provider="${p.key}" ${disabled}>${state.profiles.map(profile => `<option value="${profile.id}" ${profile.id === p.profile ? 'selected' : ''}>${esc(profile.name)}</option>`).join('')}</select></div>
       <div class="card-action"><div class="switch-group"><button class="switch ${p.installed ? 'on' : ''}" role="switch" aria-checked="${p.installed}" aria-label="${esc(p.name)} 技能" data-action="toggle" data-provider="${p.key}" ${disabled}></button><span>${busy.has(p.key) ? '处理中…' : p.installed ? '技能已开启' : '开启技能'}</span></div><div class="card-links"><button class="text-button" data-action="verify" data-provider="${p.key}" ${disabled}>检查</button><button class="text-button" data-action="open" data-provider="${p.key}" ${disabled}>打开目录</button></div></div>
-      <div class="card-note">${esc(p.installed ? p.verification.summary : '首次写入自动备份，保留目录内其他技能。')}</div>
+      <div class="card-note">${esc(p.installed ? p.verification.summary : '开启后自动准备 REA，首次写入自动备份。')}${p.installed && !p.rea ? ` <button class="text-button" data-action="prepare-rea" data-provider="${p.key}" ${disabled}>启用 REA</button>` : ''}</div>
     </article>`;
   }).join('');
   renderLibrary();
-  $('#runtime-info').innerHTML = `<dt>引擎版本</dt><dd>${esc(state.version)}</dd><dt>网络模式</dt><dd>离线 · 仅本机界面通信</dd><dt>技能方案</dt><dd>${state.profiles.length} 个</dd><dt>数据目录</dt><dd>${esc(state.data_dir)}</dd><dt>验收范围</dt><dd>本地文件写入、完整性检查和撤销；模型读取需在客户端确认</dd>`;
+  $('#runtime-info').innerHTML = `<dt>程序版本</dt><dd>${esc(state.version)}</dd><dt>REA</dt><dd>${esc(state.rea_runtime?.version || '未内置')} · 开启技能时自动准备</dd><dt>网络模式</dt><dd>安装过程离线完成 · 仅本机界面通信</dd><dt>技能方案</dt><dd>${state.profiles.length} 个</dd><dt>数据目录</dt><dd>${esc(state.data_dir)}</dd><dt>验收范围</dt><dd>文件和 REA 启动测试；客户端连接需重启后确认</dd>`;
   const actions = {inject: '写入技能', revoke: '撤销技能', import: '导入技能'};
   $('#events').innerHTML = state.events.length ? state.events.map(event => `<div class="event"><time>${esc(event.time)}</time><span>${esc(actions[event.action] || event.action)}</span><span>${esc(state.providers.find(p => p.key === event.provider)?.name || event.detail)}</span></div>`).join('') : '<p class="footnote">暂无操作记录</p>';
 }
@@ -108,8 +108,15 @@ async function refresh() {
 async function runProvider(key, action) {
   if (busy.has(key)) return;
   busy.add(key); render();
+  const progressTimer = setInterval(async () => {
+    try {
+      const progress = await api('rea_progress');
+      const note = $(`#service-card-${key} .card-note`);
+      if (note && busy.has(key) && progress.message) note.textContent = `${progress.message} ${progress.percent ? progress.percent + '%' : ''}`;
+    } catch (_) { /* The main action reports failures. */ }
+  }, 500);
   try { await action(); await refresh(); } catch (error) { toast(error.message); }
-  finally { busy.delete(key); render(); }
+  finally { clearInterval(progressTimer); busy.delete(key); render(); }
 }
 async function toggle(key) {
   const p = state.providers.find(p => p.key === key);
@@ -118,7 +125,7 @@ async function toggle(key) {
     $('#confirm-revoke').onclick = () => { $('#modal').close(); runProvider(key, async () => { const result = await api('revoke', {provider: key}); toast(result.removed ? '已撤销，原有配置已保留' : `存在外部修改，已保留：${result.conflicts.join('；')}`); }); };
   } else {
     const profile = $(`#profile-${key}`).value;
-    await runProvider(key, async () => { await api('inject', {provider: key, profile}); toast('技能已写入并校验；请在客户端新会话确认读取'); });
+    await runProvider(key, async () => { await api('inject', {provider: key, profile}); toast('技能和 REA 已准备好，重启客户端后即可使用'); });
   }
 }
 function directory(key) {
@@ -132,7 +139,7 @@ function directory(key) {
 async function verify(key) {
   const p = state.providers.find(p => p.key === key);
   const result = await api('verify', {provider: key});
-  modal(`${p.name} · 状态检查`, `<div class="modal-content"><p>${esc(result.summary)}</p>${result.checks.map(check => `<div class="check ${check.ok ? '' : 'failed'}"><b>${check.ok ? '✓' : '!'}</b><div>${esc(check.name)}<small>${esc(check.path || check.detail || '')}</small></div></div>`).join('')}<p>本检查只验证磁盘文件。请重启客户端、新建会话，并发送 hi 确认实际读取；不同客户端版本可能需要手动选择技能或调整目录。</p></div>`);
+  modal(`${p.name} · 状态检查`, `<div class="modal-content"><p>${esc(result.summary)}</p>${result.checks.map(check => `<div class="check ${check.ok ? '' : 'failed'}"><b>${check.ok ? '✓' : '!'}</b><div>${esc(check.name)}<small>${esc(check.path || check.detail || '')}</small></div></div>`).join('')}<p>重启客户端后，直接说“使用技能”并描述任务即可，无需记住技能名称。REA 启动测试通过还不代表当前聊天已经连接；EXE/DLL 深度反编译仍需要相应分析引擎。</p></div>`);
 }
 document.addEventListener('click', async event => {
   const button = event.target.closest('[data-action]');
@@ -141,6 +148,7 @@ document.addEventListener('click', async event => {
   try {
     switch (button.dataset.action) {
       case 'toggle': await toggle(key); break;
+      case 'prepare-rea': await runProvider(key, async () => { await api('inject', {provider: key, profile: state.providers.find(p => p.key === key).profile}); toast('REA 已准备好，请退出并重新打开 AI 客户端'); }); break;
       case 'directory': directory(key); break;
       case 'verify': await verify(key); break;
       case 'open': await api('open_directory', {provider: key}); break;
@@ -163,7 +171,7 @@ document.querySelectorAll('[data-page]').forEach(button => { button.onclick = ()
 $('#refresh').onclick = async () => { try { await refresh(); toast('状态已刷新'); } catch (e) { toast(e.message); } };
 $('#theme').onclick = () => { const theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'; document.documentElement.dataset.theme = theme; localStorage.setItem('pojia-local-theme', theme); };
 document.documentElement.dataset.theme = localStorage.getItem('pojia-local-theme') || 'light';
-$('#guide').onclick = () => modal('使用技能', '<div class="modal-content"><p>1. 确认卡片的配置目录，默认选择“完整技能库 · 53 项”，也可选单个技能、扩展技能或导入方案。</p><p>2. 开启技能。助手先保存备份，再写入指令管理段与技能文件。单个入口技能会同时安装它引用的内置模块。</p><p>3. 在实际客户端新建会话，确认技能是否读取；需要时手动选择技能。</p><p>4. 关闭开关即可撤销。外部改动会保留，冲突时不会覆盖用户内容。</p><p>技能引用的工具与附件需按本机实际情况核对。</p></div>');
+$('#guide').onclick = () => modal('使用技能', '<div class="modal-content"><p>1. 找到你使用的 AI 客户端，保留默认的“完整技能库”，点击开启技能。</p><p>2. 等待“REA 已就绪”。首次开启会自动释放内置环境、写入连接并完成启动测试，无需安装 Node 或配置 MCP。</p><p>3. 退出并重新打开 AI 客户端，直接说“使用技能分析这个软件”或“使用技能修复这个问题”，再说明文件位置和目标。</p><p>4. AI 会自动选择相关技能，你不用知道技能名称。关闭开关可以撤销技能和本软件的 REA 连接；原有配置和外部修改会保留。</p><p>REA 基础工具已内置；EXE/DLL 深度反编译需要另有 IDA/Ghidra，Android 等分析也有各自运行条件。不同客户端版本的实际加载需要在新会话确认。</p></div>');
 $('#import').onclick = () => {
   modal('导入技能', '<div class="modal-content"><p>支持 Markdown 文件、含 SKILL.md 的文件夹或 ZIP。文件夹/ZIP 可包含 references/ 与 scripts/；每次导入一个技能。</p><input id="import-path" class="field" placeholder="填写技能文件或文件夹的完整路径" aria-label="技能路径"></div><div class="modal-actions"><button id="browse-skill-folder" class="button">选择文件夹</button><button id="browse-skill-file" class="button">选择文件</button><button id="confirm-import" class="button primary">导入</button></div>');
   const browse = async command => { try { const result = await api(command); if (result.path) $('#import-path').value = result.path; } catch (e) { toast(e.message); } };

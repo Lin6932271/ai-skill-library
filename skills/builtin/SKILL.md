@@ -5,7 +5,7 @@ description: "按任务选择相关技能模块。"
 
 # 技能库
 
-本库包含 53 项技能，按任务选择相关模块读取。
+本库包含 54 项技能，按任务选择相关模块读取。
 
 文档位于当前客户端配置目录 `skills/<名称>/SKILL.md`。只加载当前任务相关模块。正文里提到的脚本、参考附件、MCP 与工具需要按本机实际可用情况核对，不能仅凭文档声称安装或通过测试。
 
@@ -65,3 +65,5 @@ description: "按任务选择相关技能模块。"
 | `docs-generator` | 技术文档生成 | [读取](../docs-generator/SKILL.md) |
 | `diagram-generator` | 图表生成 | [读取](../diagram-generator/SKILL.md) |
 
+
+| `reverse-engineer-anything` | REA 应用与二进制统一分析 | [读取](../reverse-engineer-anything/SKILL.md) |

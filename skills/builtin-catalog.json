@@ -1127,6 +1127,27 @@
       "builtin": true,
       "collection": "builtin",
       "content_sha256": "5848782647e6f2837c81e355eb56963dabf71e4f92d12d2a4721df507f83023d"
+    },
+    {
+      "id": "builtin-reverse-engineer-anything",
+      "skill_name": "reverse-engineer-anything",
+      "name": "REA 自动分析工具",
+      "description": "统一分析应用、二进制和资源；开启技能时自动准备环境与连接",
+      "category": "逆向",
+      "kind": "module",
+      "dependencies": [],
+      "keywords": [
+        "rea",
+        "使用技能",
+        "Electron",
+        "JavaScript",
+        "ASAR",
+        "反编译",
+        "版本对比"
+      ],
+      "builtin": true,
+      "collection": "builtin",
+      "content_sha256": "40ae3adca5d8f3ab86c7364a31b811c86dcdfe1874aef83ccf06c6c17152ab0e"
     }
   ]
 }

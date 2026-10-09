@@ -13,8 +13,10 @@ import time
 import uuid
 import zipfile
 from pathlib import Path
+from rea_config import McpConfig, ReaError
+from rea_runtime import ReaRuntime
 
-VERSION = "1.3.2"
+VERSION = "1.4.0"
 BEGIN = b"<!-- POJIA-LOCAL:BEGIN -->"
 END = b"<!-- POJIA-LOCAL:END -->"
 MAX_IMPORT = 32 * 1024 * 1024
@@ -106,6 +108,7 @@ class SkillManager:
         self.builtin_catalog = json.loads(builtin_path.read_text("utf-8"))["items"] if builtin_path.exists() else []
         self.builtins = {item["id"]: item for item in self.builtin_catalog}
         self.indexed = {**self.extensions, **self.builtins}
+        self.rea = ReaRuntime(self.bundle_dir, self.data_dir)
 
     def save(self) -> None:
         atomic_write(self.state_file, json.dumps(self.state, ensure_ascii=False, indent=2).encode("utf-8"))
@@ -229,7 +232,7 @@ class SkillManager:
             raise LocalError("技能目录需要 SKILL.md")
         return files
 
-    def deployment_files(self, profile: str) -> dict[str, bytes]:
+    def _profile_deployment_files(self, profile: str) -> dict[str, bytes]:
         profile = self.normalize_profile(profile)
         files = self.profile_files(profile)
         if profile in ("extended", "builtin"):
@@ -242,6 +245,12 @@ class SkillManager:
                 child_files = self.profile_files(("builtin-" if profile in self.builtins else "extension-") + dependency)
                 deployed.update({dependency + "/" + rel: data for rel, data in child_files.items()})
         return deployed
+
+    def deployment_files(self, profile: str) -> dict[str, bytes]:
+        files = self._profile_deployment_files(profile)
+        for rel, data in self.profile_files("builtin-reverse-engineer-anything").items():
+            files["reverse-engineer-anything/" + rel] = data
+        return files
 
     @staticmethod
     def installed_files(record: dict) -> dict[Path, dict]:
@@ -336,7 +345,7 @@ class SkillManager:
             finally:
                 shutil.rmtree(staging)
 
-    def block(self, provider: str, profile: str) -> bytes:
+    def block(self, provider: str, profile: str, runtime: dict | None = None) -> bytes:
         content = self.profile_files(profile)["SKILL.md"].decode("utf-8-sig")
         # Frontmatter belongs to the skill file, not the global instruction file.
         if content.startswith("---"):
@@ -350,6 +359,16 @@ class SkillManager:
         content = (f"\n# ai技能库\n\n"
                    f"此段由 ai技能库 管理。完整技能资源：`{relative}`。\n"
                    "用户发送 `hi` 时，简短报告当前技能已读取；未读取时如实说明。\n\n" + content.strip() + "\n")
+        content += ("\n## 自动选择技能与 REA\n\n"
+                    "用户只说‘使用技能’时，根据目标和任务自行选择、组合相关技能；不要求用户知道技能名称或配置 MCP。\n"
+                    "涉及打包应用、二进制、Electron/JavaScript 或版本行为对比时，按需读取 "
+                    "`skills/reverse-engineer-anything/SKILL.md`。普通源码开发按对应工程技能处理。\n"
+                    "REA 连接由客户端自动启动。工具未出现在当前会话时，提示重启客户端；不重复安装已配置的 REA。\n"
+                    "环境准备和 MCP 启动测试通过不等于客户端已连接，也不等于全部反编译引擎可用。\n")
+        if runtime:
+            content += (f"\n已配置的 REA MCP 名称：`ai_skill_library_rea`。"
+                        f"无 MCP 工具时，可通过已内置的 CLI：`{runtime['cli']}` 使用支持的命令；"
+                        "先查看 `--help`，无需安装 npm 包。\n")
         return BEGIN + content.encode("utf-8") + END
 
     def inject(self, provider: str, profile: str = "basic") -> dict:
@@ -389,6 +408,26 @@ class SkillManager:
                 updates[path] = desired.get(path)
                 previous[path] = current
             previous[instruction] = original
+            # Prepare only our bundled executable. Imported skill scripts are never executed.
+            try:
+                adapter = McpConfig(provider, root, self.home)
+                mcp_original = read_file(adapter.path)
+                adapter.parse(mcp_original)
+                runtime = self.rea.ensure()
+                mcp_value, mcp_record = adapter.prepare(mcp_original, runtime, (old or {}).get("rea", {}).get("config"), sha)
+                probe = self.rea.probe(runtime)
+                block = self.block(provider, profile, runtime)
+                updates[instruction] = parts[0] + block + parts[2] if parts else (original or b"") + prefix + block
+                updates[adapter.path] = mcp_value
+                previous[adapter.path] = mcp_original
+            except ReaError as exc:
+                self.rea.update(str(exc), 0, "failed")
+                raise LocalError(str(exc)) from exc
+            # Runtime preparation can take seconds; do not overwrite edits made in that interval.
+            for path, expected in previous.items():
+                if read_file(path) != expected:
+                    self.rea.update("配置在准备期间发生变化，未覆盖", 0, "failed")
+                    raise LocalError(f"文件在 REA 准备期间被修改，请刷新后重试：{path}")
             backup = self.data_dir / "backups" / (time.strftime("%Y%m%d-%H%M%S") + "-" + uuid.uuid4().hex[:8])
             backup.mkdir(parents=True)
             atomic_write(backup / "snapshot.json", json.dumps({str(p): None if d is None else base64.b64encode(d).decode()
@@ -406,10 +445,12 @@ class SkillManager:
                           "original_instruction_existed": (old or {}).get("original_instruction_existed", original is not None),
                           "backup": str(backup), "updated_at": time.time(),
                           "files_root": str(skill_root),
+                          "rea": {"runtime": runtime, "probe": probe, "config": mcp_record},
                           "files": {rel: {"hash": sha(data)} for rel, data in files.items()}}
                 self.state["installed"][provider] = record
                 self.event("inject", provider, profile)
             except Exception:
+                self.rea.update("写入未完成，正在恢复原配置", 0, "failed")
                 for path in reversed(done):
                     data = previous[path]
                     if data is None:
@@ -424,7 +465,7 @@ class SkillManager:
                 raise
             return {"provider": provider, "profile": profile, "backup": str(backup), "verification": self.verify(provider)}
 
-    def verify(self, provider: str) -> dict:
+    def verify(self, provider: str, live: bool = False) -> dict:
         with self.lock:
             root = self.root(provider)
             record = self.state["installed"].get(provider)
@@ -439,11 +480,24 @@ class SkillManager:
                 for path, expected in self.installed_files(record).items():
                     data = read_file(path)
                     checks.append({"name": path.name, "ok": data is not None and sha(data) == expected["hash"], "path": str(path)})
+                rea = record.get("rea")
+                if rea:
+                    adapter = McpConfig(provider, Path(record["root"]), self.home)
+                    checks.append({"name": "REA 自动连接配置", "ok": adapter.check(read_file(adapter.path), rea["config"]), "path": str(adapter.path)})
+                    ready = self.rea.ready(rea["runtime"])
+                    checks.append({"name": "REA 内置运行环境", "ok": ready, "path": rea["runtime"]["root"]})
+                    if live and ready:
+                        try:
+                            probe = self.rea.probe(rea["runtime"])
+                            checks.append({"name": "REA CLI/MCP 启动测试", "ok": probe["ok"], "detail": f"REA {probe['version']}，{probe['tool_count']} 个工具；客户端连接待确认"})
+                        except ReaError as exc:
+                            checks.append({"name": "REA CLI/MCP 启动测试", "ok": False, "detail": str(exc)})
             except (LocalError, OSError) as exc:
                 checks.append({"name": "文件读取", "ok": False, "detail": str(exc)})
             ok = all(c["ok"] for c in checks)
             return {"ok": ok, "installed": True, "checks": checks,
-                    "summary": "本地文件完整；客户端读取待验证" if ok else "检测到文件变更，请检查后恢复",
+                    "summary": ("本地文件完整；REA 已就绪，重启客户端后自动连接" if record.get("rea") else "本地文件完整；请重新开启技能以配置 REA") if ok else "检测到文件变更，请检查后恢复",
+                    "rea": record.get("rea", {}).get("probe"),
                     "model_read_confirmed": False}
 
     def revoke(self, provider: str) -> dict:
@@ -453,6 +507,18 @@ class SkillManager:
             if not record:
                 return {"provider": provider, "removed": True, "conflicts": []}
             conflicts = []
+            rea = record.get("rea")
+            if rea:
+                adapter = McpConfig(provider, Path(record["root"]), self.home)
+                try:
+                    restored_mcp = adapter.restore(read_file(adapter.path), rea["config"], sha)
+                    if restored_mcp is None:
+                        if adapter.path.exists():
+                            adapter.path.unlink()
+                    else:
+                        atomic_write(adapter.path, restored_mcp)
+                except (ReaError, LocalError, OSError):
+                    conflicts.append(str(adapter.path))
             instruction = Path(record["instruction"])
             data = read_file(instruction)
             parts = split_block(data or b"")
@@ -497,10 +563,12 @@ class SkillManager:
                 items.append({"key": key, "name": spec[0], "icon": spec[4], "path": str(root),
                               "instruction": spec[3], "exists": root.is_dir(), "installed": bool(record),
                               "profile": self.normalize_profile((record or {}).get("profile", "builtin" if self.builtin_catalog else "extended" if self.catalog else "basic")), "verification": verification,
+                              "rea": (record or {}).get("rea", {}).get("probe"),
                               "adapter": "客户端的实际读取需要新会话验收"})
             return {"version": VERSION, "mode": "local", "network": "disabled", "providers": items,
                     "profiles": self.profiles(), "data_dir": str(self.data_dir),
                     "builtin_documents": len(self.builtin_catalog),
+                    "rea_runtime": self.rea.summary(),
                     "events": list(reversed(self.state["events"][-12:]))}
 
     def diagnostics(self) -> dict:
@@ -512,6 +580,8 @@ class SkillManager:
 
     def dispatch(self, command: str, args: dict | None = None) -> dict:
         args = args or {}
+        if command == "rea_progress":
+            return {"ok": True, "data": self.rea.progress_status()}
         with self.lock:
             try:
                 if command == "status":
@@ -521,7 +591,7 @@ class SkillManager:
                 elif command == "revoke":
                     data = self.revoke(args["provider"])
                 elif command == "verify":
-                    data = self.verify(args["provider"])
+                    data = self.verify(args["provider"], live=True)
                 elif command == "set_path":
                     data = self.set_path(args["provider"], args.get("path", ""))
                 elif command == "read_profile":

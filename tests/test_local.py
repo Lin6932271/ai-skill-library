@@ -17,6 +17,14 @@ class IntegrationTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.root = Path(self.temp.name)
         self.manager = SkillManager(self.root / "data", self.root / "home", use_env=False)
+        runtime = {"root": str(self.root / "rea"), "node": str(self.root / "rea/node.exe"),
+                   "entry": str(self.root / "rea/rea.mjs"), "cli": str(self.root / "rea/rea.cmd"), "version": "6.1.0"}
+        self.runtime_patches = [patch('rea_runtime.ReaRuntime.ensure', return_value=runtime),
+            patch('rea_runtime.ReaRuntime.probe', return_value={"ok": True, "version": "6.1.0", "tool_count": 138, "client_connected": False}),
+            patch('rea_runtime.ReaRuntime.ready', return_value=True)]
+        for runtime_patch in self.runtime_patches:
+            runtime_patch.start()
+            self.addCleanup(runtime_patch.stop)
 
     def tearDown(self):
         self.temp.cleanup()
@@ -34,7 +42,7 @@ class IntegrationTests(unittest.TestCase):
                 original = b'\xef\xbb\xbfExisting instructions\r\n'
                 instruction.write_bytes(original)
                 self.manager.inject(provider, 'extended')
-                self.assertEqual(len(self.manager.verify(provider)['checks']), 52)
+                self.assertEqual(len(self.manager.verify(provider)['checks']), 60)
                 self.assertTrue(self.manager.verify(provider)['ok'])
                 for name in names:
                     skill = root / 'skills' / name / 'SKILL.md'
@@ -62,6 +70,18 @@ class IntegrationTests(unittest.TestCase):
     def test_previous_release_record_migrates_without_losing_files(self):
         self.manager.inject('codex', 'advanced')
         record = self.manager.state['installed']['codex']
+        # The legacy format predates REA and contains only the pojia-local folder.
+        from rea_config import McpConfig
+        adapter = McpConfig('codex', self.manager.root('codex'), self.manager.home)
+        restored = adapter.restore(adapter.path.read_bytes(), record.pop('rea')['config'], __import__('backend').sha)
+        if restored is None:
+            adapter.path.unlink()
+        else:
+            adapter.path.write_bytes(restored)
+        for name in list(record['files']):
+            if name.startswith('reverse-engineer-anything/'):
+                (self.manager.root('codex') / 'skills' / name).unlink()
+                record['files'].pop(name)
         record.pop('files_root')
         record['files'] = {name.removeprefix('pojia-local/'): value for name, value in record['files'].items()}
         self.manager.save()
@@ -77,21 +97,23 @@ class IntegrationTests(unittest.TestCase):
         files = self.manager.deployment_files('extended')
         for rel, content in files.items():
             for target in re.findall(r'\]\(([^)]+)\)', content.decode('utf-8')):
+                if target.startswith(('https://', 'http://', '#')):
+                    continue
                 resolved = (Path('/skills') / rel).parent / target
                 import posixpath
                 normalized = posixpath.normpath(resolved.as_posix()).removeprefix('/skills/')
-                self.assertIn(normalized, files, (rel, target))
+                self.assertTrue(normalized in files, (rel, target))
 
     def test_single_entry_installs_referenced_modules(self):
         self.manager.inject('claude', 'extension-l-license')
         root = self.manager.root('claude') / 'skills'
-        expected = {'l-license', 'reverse-engineering', 'dotnet-reverse', 'apk-reverse', 'thick-client'}
+        expected = {'l-license', 'reverse-engineering', 'dotnet-reverse', 'apk-reverse', 'thick-client', 'reverse-engineer-anything'}
         self.assertEqual({p.parent.name for p in root.glob('*/SKILL.md')}, expected)
         self.assertTrue(self.manager.verify('claude')['ok'])
         self.assertTrue(self.manager.revoke('claude')['removed'])
 
     def test_builtin_suite_all_clients_switch_and_restore(self):
-        self.assertEqual(len(self.manager.builtin_catalog), 53)
+        self.assertEqual(len(self.manager.builtin_catalog), 54)
         for provider, spec in PROVIDERS.items():
             with self.subTest(provider=provider):
                 root = self.manager.root(provider)
@@ -102,7 +124,7 @@ class IntegrationTests(unittest.TestCase):
                 self.manager.inject(provider, 'extended')
                 self.manager.inject(provider, 'builtin')
                 self.assertTrue(self.manager.verify(provider)['ok'])
-                self.assertEqual(len(list((root/'skills').glob('*/SKILL.md'))), 54)
+                self.assertEqual(len(list((root/'skills').glob('*/SKILL.md'))), 55)
                 self.assertFalse((root/'skills/container-runtime/SKILL.md').exists())
                 self.assertTrue((root/'skills/docs-generator/SKILL.md').exists())
                 self.manager.inject(provider, 'builtin-apk-reverse')
@@ -130,7 +152,7 @@ class IntegrationTests(unittest.TestCase):
         self.manager.inject('codex', 'builtin-l-reverse')
         deployed = {p.parent.name for p in (self.manager.root('codex')/'skills').glob('*/SKILL.md')}
         entry = self.manager.builtins['builtin-l-reverse']
-        self.assertEqual(deployed, {'l-reverse', *entry['dependencies']})
+        self.assertEqual(deployed, {'l-reverse', *entry['dependencies'], 'reverse-engineer-anything'})
         self.assertTrue(self.manager.verify('codex')['ok'])
 
     def test_extension_generation_keeps_metadata_neutral(self):

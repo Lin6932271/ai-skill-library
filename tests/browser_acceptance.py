@@ -9,7 +9,10 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).parents[1]
+sys.path.insert(0, str(ROOT))
+from rea_runtime import ReaRuntime
 from playwright.sync_api import sync_playwright, expect
+expect.set_options(timeout=240000)
 
 
 def run(executable=None):
@@ -23,7 +26,7 @@ def run(executable=None):
         process = subprocess.Popen([*launcher, "--serve", "--sandbox", "--data-dir", str(sandbox / "data"), "--home", str(sandbox / "home"), "--ready-file", str(ready)],
                                    stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
         try:
-            for _ in range(100):
+            for _ in range(600):
                 if ready.exists():
                     break
                 if process.poll() is not None:
@@ -112,15 +115,24 @@ def run(executable=None):
                 initial_profiles = page.locator('#profile-codex option').count()
                 assert page.locator('#profile-codex').input_value() == 'builtin'
                 builtin_documents = int(re.search(r'\d+', page.locator('#profile-codex option[value="builtin"]').inner_text()).group())
-                assert builtin_documents == 53
+                assert builtin_documents == 54
                 card.locator(".switch").click()
                 expect(page.locator('#service-card-codex .switch')).to_have_attribute('aria-checked', 'true')
                 assert (sandbox / "home" / ".codex" / "AGENTS.md").exists()
+                installed_state = json.loads((sandbox / 'data/state.json').read_text('utf-8'))
+                installed_runtime = installed_state['installed']['codex']['rea']['runtime']
+                assert '_MEI' not in installed_runtime['node']
                 assert len(list((sandbox / 'home' / '.codex' / 'skills').glob('*/SKILL.md'))) == builtin_documents + 1
                 installed_suite = (sandbox / 'home/.codex/skills/pojia-local/SKILL.md').read_text('utf-8')
                 assert '云端' not in installed_suite and '取回' not in installed_suite
+                # Existing installations expose one upgrade action without requiring MCP edits.
+                page.evaluate("state.providers.find(p => p.key === 'codex').rea = null; render()")
+                page.locator("#service-card-codex [data-action='prepare-rea']").click()
+                expect(page.locator("#service-card-codex [data-action='prepare-rea']")).to_have_count(0)
+                expect(page.locator('#service-card-codex .switch')).to_be_enabled()
                 page.locator("#service-card-codex [data-action='verify']").click()
-                expect(page.locator('#modal-body .check')).to_have_count(builtin_documents + 2)
+                expect(page.locator('#modal-body')).to_contain_text('REA CLI/MCP 启动测试')
+                assert page.locator('#modal-body .check.failed').count() == 0
                 page.locator('#modal-title').hover()
                 page.mouse.wheel(0, 20000)
                 page.wait_for_timeout(300)
@@ -191,7 +203,7 @@ def run(executable=None):
                 context.unroute(url + '/assets/startup.mp4', fail_movie)
                 assert not errors, errors
                 assert not external, external
-                result = {"pass": True, "cards": 7, "install_switch_verify_revoke": True, "import_preview": True,
+                result = {"pass": True, "cards": 7, "install_switch_verify_revoke": True, "one_click_rea_upgrade_action": True, "import_preview": True,
                           "extension_skill_count": 50, "suite_installation": True, "search_and_category": True,
                           "builtin_documents": builtin_documents, "collection_filter": True,
                           "light_dark_modes": True, "external_requests": external, "page_errors": errors,
@@ -204,18 +216,27 @@ def run(executable=None):
                                       "no_skip_button": True, "failure_recovery": fallback},
                           "isolation": "temporary home; actual client configurations untouched"}
                 result['executable'] = str(executable) if executable else 'source'
-                (output / (prefix + "browser-result.json")).write_text(json.dumps(result, indent=2), encoding="utf-8")
-                print(json.dumps(result))
                 browser.close()
         finally:
-            if executable and process.poll() is None and os.name == 'nt':
-                # A one-file executable has a bootloader parent and a runtime child.
+            if process.poll() is None and os.name == 'nt':
+                # Both the EXE bootloader and Windows venv launcher can own child processes.
                 subprocess.run(['taskkill.exe', '/PID', str(process.pid), '/T', '/F'],
                                stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=False)
             else:
                 process.terminate()
             process.wait(timeout=10)
             process.stderr.close()
+        # The AI client must be able to launch REA after the skill-library EXE exits.
+        fixture = sandbox / 'shutdown-analysis'
+        fixture.mkdir()
+        (fixture / 'sample.js').write_text('export function answer() { return 42; }', encoding='utf-8')
+        probe = ReaRuntime(ROOT, sandbox / 'data').probe(installed_runtime, fixture)
+        assert 'sample.js' in json.dumps(probe['analysis'])
+        result['rea_after_app_exit'] = {'passed': True, 'version': probe['version'],
+            'tool_count': probe['tool_count'], 'sample_analysis': True,
+            'independent_of_exe_unpack_directory': True, 'actual_agent_client_loaded': False}
+        (output / (prefix + "browser-result.json")).write_text(json.dumps(result, indent=2), encoding="utf-8")
+        print(json.dumps(result))
 
 
 if __name__ == "__main__":

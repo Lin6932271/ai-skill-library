@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-09",
+  "client": "Codex",
+  "server_registration": "ai_skill_library_rea",
+  "source": "Live MCP tool invocation in an actual Codex conversation after installation",
+  "operation": "binary_session",
+  "expected_package_version": "6.1.0",
+  "reported_package_version": "6.1.0",
+  "server_version": "6.1.0",
+  "alignment": "aligned",
+  "catalog_counts": {
+    "cli_commands": 94,
+    "mcp_tools": 138,
+    "mcp_prompts": 6
+  },
+  "catalog_digests": {
+    "tools_sha256": "35487b43394b2482fb84d37ab7fb20c0315671f40a49c4c39b8d048a2c3db5a6",
+    "prompts_sha256": "4ece2a2b148ed1a5de34083f6a3e9f6cbe43507e97f6373e7af725147b21ba8c",
+    "combined_sha256": "6ea58c1f9f2c0727a4dd390980ec4fe5213a4d4c8f3b4d152b61601aabc0a5bb"
+  },
+  "persistent_runtime_confirmed": true,
+  "actual_agent_client_loaded": true,
+  "other_actual_clients_verified": false,
+  "all_tools_functionally_verified": false
+}
