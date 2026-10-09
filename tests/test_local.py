@@ -17,8 +17,10 @@ class IntegrationTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.root = Path(self.temp.name)
         self.manager = SkillManager(self.root / "data", self.root / "home", use_env=False)
-        runtime = {"root": str(self.root / "rea"), "node": str(self.root / "rea/node.exe"),
-                   "entry": str(self.root / "rea/rea.mjs"), "cli": str(self.root / "rea/rea.cmd"), "version": "6.1.0"}
+        manifest = self.manager.rea.manifest
+        runtime_root = self.root / ('rea-' + manifest['rea_version'] + '-' + manifest['sha256'][:12])
+        runtime = {"root": str(runtime_root), "node": str(runtime_root / "node.exe"),
+                   "entry": str(runtime_root / "rea.mjs"), "cli": str(runtime_root / "rea.cmd"), "version": "6.1.0"}
         self.runtime_patches = [patch('rea_runtime.ReaRuntime.ensure', return_value=runtime),
             patch('rea_runtime.ReaRuntime.probe', return_value={"ok": True, "version": "6.1.0", "tool_count": 138, "client_connected": False}),
             patch('rea_runtime.ReaRuntime.ready', return_value=True)]
@@ -42,7 +44,7 @@ class IntegrationTests(unittest.TestCase):
                 original = b'\xef\xbb\xbfExisting instructions\r\n'
                 instruction.write_bytes(original)
                 self.manager.inject(provider, 'extended')
-                self.assertEqual(len(self.manager.verify(provider)['checks']), 60)
+                self.assertEqual(len(self.manager.verify(provider)['checks']), 61)
                 self.assertTrue(self.manager.verify(provider)['ok'])
                 for name in names:
                     skill = root / 'skills' / name / 'SKILL.md'

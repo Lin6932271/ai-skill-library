@@ -6,6 +6,7 @@ import json
 import os
 from pathlib import Path, PurePosixPath
 import queue
+import re
 import shutil
 import stat
 import subprocess
@@ -16,6 +17,45 @@ import uuid
 import zipfile
 
 from rea_config import ReaError
+
+
+def iter_schema_patterns(schema):
+    """Walk schema positions, excluding examples/defaults and property names."""
+    if not isinstance(schema, dict):
+        return
+    if 'pattern' in schema:
+        yield schema['pattern']
+    for key in ('properties', 'patternProperties', '$defs', 'definitions', 'dependentSchemas'):
+        mapping = schema.get(key, {})
+        if isinstance(mapping, dict):
+            if key == 'patternProperties':
+                yield from mapping.keys()
+            for child in mapping.values():
+                yield from iter_schema_patterns(child)
+    for key in ('anyOf', 'oneOf', 'allOf', 'prefixItems'):
+        for child in schema.get(key, []):
+            yield from iter_schema_patterns(child)
+    for key in ('items', 'additionalProperties', 'contains', 'propertyNames', 'not', 'if', 'then', 'else',
+                'unevaluatedProperties', 'unevaluatedItems'):
+        child = schema.get(key)
+        for item in child if isinstance(child, list) else [child]:
+            yield from iter_schema_patterns(item)
+
+
+def validate_tool_schemas(tools):
+    """Reject malformed patterns and nonportable NUL escapes before deployment."""
+    count = 0
+    for tool in tools:
+        for pattern in iter_schema_patterns(tool.get('inputSchema', {})):
+            if (not isinstance(pattern, str) or re.search(r'(?<!\\)(?:\\\\)*\\0(?![0-9])', pattern)
+                    or any(token in pattern for token in ('(?=', '(?!', '(?<=', '(?<!'))):
+                raise ReaError('REA 工具参数包含不兼容正则，请使用修复版运行包')
+            try:
+                re.compile(pattern)
+            except re.error as exc:
+                raise ReaError('REA 工具参数正则格式异常，未写入客户端连接') from exc
+            count += 1
+    return count
 
 
 def digest_file(path):
@@ -51,6 +91,40 @@ class ReaRuntime:
     def summary(self):
         return {"bundled": bool(self.manifest), "version": (self.manifest or {}).get("rea_version"),
                 "offline": True, "message": "内置 REA；开启技能时自动准备环境和连接" if self.manifest else "缺少内置 REA 环境"}
+
+    def is_current(self, runtime):
+        if not self.manifest or not runtime:
+            return False
+        expected = 'rea-' + self.manifest['rea_version'] + '-' + self.manifest['sha256'][:12]
+        return Path(runtime.get('root', '')).name == expected
+
+    def owned_runtime(self, launch):
+        """Recognize only unchanged executables previously released by this app."""
+        try:
+            node = Path(launch['command'])
+            root = node.parent.parent
+            safe_directory(root)
+            if root.resolve().parent != (self.data_dir / 'rea').resolve():
+                return None
+            marker = json.loads((root / '.ready.json').read_text('utf-8'))
+            archive_hash = marker['archive_sha256']
+            if archive_hash == self.manifest['sha256']:
+                critical = self.manifest['critical_files']
+            elif archive_hash == self.manifest.get('upstream_archive_sha256'):
+                critical = self.manifest['upstream_critical_files']
+            else:
+                return None
+            if root.name != 'rea-' + self.manifest['rea_version'] + '-' + archive_hash[:12]:
+                return None
+            entry = root / 'cli/node_modules/rea-agents/scripts/rea.mjs'
+            if node != root / 'node/node.exe' or launch.get('args') != [str(entry), 'mcp']:
+                return None
+            if not all(digest_file(root / rel) == expected for rel, expected in critical.items()):
+                return None
+            return {'root':str(root), 'node':str(node), 'entry':str(entry),
+                    'cli':str(root / 'rea.cmd'), 'version':self.manifest['rea_version']}
+        except (OSError, ValueError, KeyError, TypeError, ReaError):
+            return None
 
     def ready(self, runtime):
         try:
@@ -144,7 +218,7 @@ class ReaRuntime:
         env["PATH"] = str(Path(runtime["node"]).parent) + os.pathsep + env.get("PATH", "")
         return {"env": env, "creationflags": subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0}
 
-    def probe(self, runtime, analyze_path=None):
+    def probe(self, runtime, analyze_path=None, schema_output=None):
         self.update("正在测试 REA CLI 和 MCP 连接", 85, "testing")
         options = self.process_options(runtime)
         try:
@@ -202,7 +276,7 @@ class ReaRuntime:
 
         try:
             initialized = request("initialize", {"protocolVersion": "2025-06-18", "capabilities": {},
-                "clientInfo": {"name": "ai-skill-library", "version": "1.4.0"}})
+                "clientInfo": {"name": "ai-skill-library", "version": "1.4.1"}})
             send({"jsonrpc": "2.0", "method": "notifications/initialized"})
             tools, cursor = [], None
             while True:
@@ -211,10 +285,15 @@ class ReaRuntime:
                 cursor = page.get("nextCursor")
                 if not cursor:
                     break
+            pattern_count = validate_tool_schemas(tools)
+            if schema_output is not None:
+                Path(schema_output).write_text(json.dumps(tools, ensure_ascii=False, indent=2), encoding='utf-8')
             if not tools or initialized.get("serverInfo", {}).get("version") != runtime["version"]:
                 raise ReaError("REA MCP 工具或版本校验失败")
             result = {"ok": True, "version": runtime["version"], "tool_count": len(tools),
-                      "checked_at": time.time(), "client_connected": False}
+                      "checked_at": time.time(), "client_connected": False,
+                      "schema_patterns_checked": pattern_count,
+                      "compatibility_patch": self.manifest.get('compatibility_patch')}
             if analyze_path is not None:
                 tool = next(t for t in tools if t["name"] == "analyze_javascript_application")
                 if "input_path" not in tool["inputSchema"]["properties"]:

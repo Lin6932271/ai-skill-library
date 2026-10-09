@@ -1,14 +1,14 @@
 # 使用说明
 
-ai技能库程序版本 1.4.0。本软件由 AI 开发。
+ai技能库程序版本 1.4.1。本软件由 AI 开发。
 
 支持 Codex、Claude、DeepSeek Harness、Hermes、ZCode，以及 WorkBuddy 国内版和国际版。
 包含 54 项内置技能、50 项扩展技能，以及基础与进阶方案。
 
 ## 运行程序
 
-在 [1.4.0 发布页面](https://github.com/Lin6932271/ai-skill-library/releases/tag/v1.4.0)下载 `AISkillLibrary-1.4.0-windows-x64.exe`，双击即可运行。
-也可下载 `AISkillLibrary-1.4.0-windows-x64.zip`，解压后双击 `ai技能库.exe`。本地交付文件名为 `ai技能库-1.4.0.exe`，与公开 EXE 内容相同。
+在 [1.4.1 发布页面](https://github.com/Lin6932271/ai-skill-library/releases/tag/v1.4.1)下载 `AISkillLibrary-1.4.1-windows-x64.exe`，双击即可运行。
+也可下载 `AISkillLibrary-1.4.1-windows-x64.zip`，解压后双击 `ai技能库.exe`。本地交付文件名为 `ai技能库-1.4.1.exe`，与公开 EXE 内容相同。
 需要 Windows x64 和 Microsoft Edge WebView2 Runtime，无需安装 Python 或注册账户。
 
 启动动画约 7 秒，静音播放并铺满软件窗口，播放完毕自动进入主界面。
@@ -62,6 +62,12 @@ REA 的后台进程由 AI 客户端在读取 MCP 配置时启动；本软件的�
 七个客户端的配置格式和撤销逻辑经过隔离测试；2026-10-09 已在实际 Codex 会话中确认 REA 工具响应。其他客户端版本的实际工具加载仍需在各自的新会话确认。
 
 内置 REA 不等于内置所有反编译器：EXE/DLL 深度反编译需 IDA/Ghidra，Android 和固件等分析也有工具和平台要求。
+
+## 1.4.1 的更新与恢复
+
+已安装 REA 的用户点击卡片上的“更新 REA”。显示遗留连接时点击“修复并开启技能”，程序先备份，再恢复经过来源校验的托管连接。完成后完全退出并重新打开 AI 客户端。
+
+DeepSeek 的正则报错和安装记录缺失的处理见 [修复说明](https://github.com/Lin6932271/ai-skill-library/blob/main/docs/REA_COMPATIBILITY.md)。
 
 ## 遇到问题
 

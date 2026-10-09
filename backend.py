@@ -16,7 +16,7 @@ from pathlib import Path
 from rea_config import McpConfig, ReaError
 from rea_runtime import ReaRuntime
 
-VERSION = "1.4.0"
+VERSION = "1.4.1"
 BEGIN = b"<!-- POJIA-LOCAL:BEGIN -->"
 END = b"<!-- POJIA-LOCAL:END -->"
 MAX_IMPORT = 32 * 1024 * 1024
@@ -465,6 +465,77 @@ class SkillManager:
                 raise
             return {"provider": provider, "profile": profile, "backup": str(backup), "verification": self.verify(provider)}
 
+    def recoverable_rea(self, provider):
+        if self.state['installed'].get(provider):
+            return None
+        adapter = McpConfig(provider, self.root(provider), self.home)
+        data = read_file(adapter.path)
+        entry = adapter.entry(adapter.parse(data))
+        if not entry:
+            return None
+        launch = entry.get('config', {}) if provider == 'deepseek' else entry
+        runtime = self.rea.owned_runtime(launch)
+        if runtime is None or entry != adapter.make_entry(runtime):
+            return None
+        return adapter, data, runtime
+
+    def repair_rea(self, provider, profile='builtin'):
+        """Recover an intact managed installation or replace a verified orphan entry."""
+        with self.lock:
+            if self.state['installed'].get(provider):
+                return self.inject(provider, profile)
+            recovery = self.recoverable_rea(provider)
+            if recovery is None:
+                raise LocalError('无法确认这是本软件遗留的 REA 连接，已保留原配置；请导出诊断')
+            adapter, original, runtime = recovery
+            root = self.root(provider)
+            instruction = root / PROVIDERS[provider][3]
+            instruction_data = read_file(instruction)
+            parts = split_block(instruction_data or b'')
+            baseline = adapter.parse(original)
+            adapter.set_entry(baseline, None)
+            baseline_data = adapter.dump(baseline) if baseline else None
+            if parts:
+                matched = next((item['id'] for item in self.profiles()
+                                if self.block(provider, item['id'], runtime) == parts[1]), None)
+                if matched is None:
+                    raise LocalError('遗留指令已被修改，未覆盖；请导出诊断')
+                files = self.deployment_files(matched)
+                for rel, expected in files.items():
+                    if read_file(root / 'skills' / rel) != expected:
+                        raise LocalError('遗留技能被修改或缺失，未覆盖；请导出诊断')
+            else:
+                matched, files = None, {}
+            backup = self.data_dir / 'backups' / ('recovery-' + time.strftime('%Y%m%d-%H%M%S') + '-' + uuid.uuid4().hex[:8])
+            backup.mkdir(parents=True)
+            snapshot = {str(adapter.path):base64.b64encode(original).decode(),
+                        str(instruction):None if instruction_data is None else base64.b64encode(instruction_data).decode()}
+            snapshot.update({str(root / 'skills' / rel):base64.b64encode(data).decode() for rel,data in files.items()})
+            atomic_write(backup / 'snapshot.json', json.dumps(snapshot, ensure_ascii=False, indent=2).encode('utf-8'))
+            if read_file(adapter.path) != original or read_file(instruction) != instruction_data:
+                raise LocalError('恢复期间配置被修改，未覆盖；请刷新后重试')
+            if matched:
+                self.state['installed'][provider] = {
+                    'root':str(root), 'profile':matched, 'instruction':str(instruction),
+                    'block_hash':sha(parts[1]), 'prefix':'', 'original_instruction_existed':bool(parts[0] or parts[2]),
+                    'backup':str(backup), 'updated_at':time.time(), 'files_root':str(root / 'skills'),
+                    'files':{rel:{'hash':sha(data)} for rel,data in files.items()},
+                    'rea':{'runtime':runtime, 'probe':{'ok':True, 'recovered':True, 'client_connected':False},
+                           'config':{'path':str(adapter.path), 'installed_entry':adapter.make_entry(runtime),
+                                     'hash':sha(original), 'original':None if baseline_data is None else base64.b64encode(baseline_data).decode()}}}
+                self.event('recover', provider, 'installation record recovered from verified files')
+                return self.inject(provider, profile)
+            # No managed skill block remains: back up and replace only the verified row.
+            try:
+                if baseline_data is None:
+                    adapter.path.unlink()
+                else:
+                    atomic_write(adapter.path, baseline_data)
+                return self.inject(provider, profile)
+            except Exception:
+                atomic_write(adapter.path, original)
+                raise
+
     def verify(self, provider: str, live: bool = False) -> dict:
         with self.lock:
             root = self.root(provider)
@@ -484,7 +555,9 @@ class SkillManager:
                 if rea:
                     adapter = McpConfig(provider, Path(record["root"]), self.home)
                     checks.append({"name": "REA 自动连接配置", "ok": adapter.check(read_file(adapter.path), rea["config"]), "path": str(adapter.path)})
-                    ready = self.rea.ready(rea["runtime"])
+                    current = self.rea.is_current(rea["runtime"])
+                    checks.append({"name": "REA 运行包版本", "ok": current, "detail": "已安装当前运行包" if current else "运行包需要升级，请点击更新 REA"})
+                    ready = current and self.rea.ready(rea["runtime"])
                     checks.append({"name": "REA 内置运行环境", "ok": ready, "path": rea["runtime"]["root"]})
                     if live and ready:
                         try:
@@ -496,7 +569,7 @@ class SkillManager:
                 checks.append({"name": "文件读取", "ok": False, "detail": str(exc)})
             ok = all(c["ok"] for c in checks)
             return {"ok": ok, "installed": True, "checks": checks,
-                    "summary": ("本地文件完整；REA 已就绪，重启客户端后自动连接" if record.get("rea") else "本地文件完整；请重新开启技能以配置 REA") if ok else "检测到文件变更，请检查后恢复",
+                    "summary": ("本地文件完整；REA 已就绪，重启客户端后自动连接" if record.get("rea") else "本地文件完整；请重新开启技能以配置 REA") if ok else ("REA 运行包需要升级，请点击更新 REA" if record.get("rea") and not self.rea.is_current(record['rea']['runtime']) else "检测到文件变更，请检查后恢复"),
                     "rea": record.get("rea", {}).get("probe"),
                     "model_read_confirmed": False}
 
@@ -560,10 +633,16 @@ class SkillManager:
                 root = self.root(key)
                 record = self.state["installed"].get(key)
                 verification = self.verify(key)
+                try:
+                    recoverable = not record and self.recoverable_rea(key) is not None
+                except (ReaError, LocalError, OSError):
+                    recoverable = False
                 items.append({"key": key, "name": spec[0], "icon": spec[4], "path": str(root),
                               "instruction": spec[3], "exists": root.is_dir(), "installed": bool(record),
                               "profile": self.normalize_profile((record or {}).get("profile", "builtin" if self.builtin_catalog else "extended" if self.catalog else "basic")), "verification": verification,
                               "rea": (record or {}).get("rea", {}).get("probe"),
+                              "rea_needs_update": bool(record and record.get('rea') and not self.rea.is_current(record['rea']['runtime'])),
+                              "rea_recovery_available": bool(recoverable),
                               "adapter": "客户端的实际读取需要新会话验收"})
             return {"version": VERSION, "mode": "local", "network": "disabled", "providers": items,
                     "profiles": self.profiles(), "data_dir": str(self.data_dir),
@@ -588,6 +667,8 @@ class SkillManager:
                     data = self.status()
                 elif command == "inject":
                     data = self.inject(args["provider"], args.get("profile", "basic"))
+                elif command == "repair_rea":
+                    data = self.repair_rea(args['provider'], args.get('profile', 'builtin'))
                 elif command == "revoke":
                     data = self.revoke(args["provider"])
                 elif command == "verify":

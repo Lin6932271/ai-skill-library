@@ -130,6 +130,32 @@ def run(executable=None):
                 page.locator("#service-card-codex [data-action='prepare-rea']").click()
                 expect(page.locator("#service-card-codex [data-action='prepare-rea']")).to_have_count(0)
                 expect(page.locator('#service-card-codex .switch')).to_be_enabled()
+                # Reproduce the screenshot: connection exists but installation record is absent.
+                from backend import SkillManager
+                from rea_config import McpConfig
+                helper = SkillManager(sandbox / 'data', sandbox / 'home', use_env=False)
+                deepseek = McpConfig('deepseek', helper.root('deepseek'), helper.home)
+                deepseek.path.parent.mkdir(parents=True, exist_ok=True)
+                keep = [{'insert':[{'id':'keep-user-plugin','name':'user-plugin'}]}]
+                deepseek.set_entry(keep, deepseek.make_entry(installed_runtime))
+                deepseek.path.write_bytes(deepseek.dump(keep))
+                page.evaluate('refresh()')
+                repair = page.locator("#service-card-deepseek [data-action='repair-rea']")
+                expect(repair).to_have_text('修复并开启技能')
+                repair.click()
+                expect(page.locator('#service-card-deepseek .switch')).to_have_attribute('aria-checked', 'true')
+                expect(page.locator("#service-card-deepseek [data-action='repair-rea']")).to_have_count(0)
+                deepseek_value = deepseek.path.read_bytes()
+                assert b'keep-user-plugin' in deepseek_value
+                page.locator('#service-card-deepseek .switch').click()
+                page.locator('#confirm-revoke').click()
+                expect(page.locator('#service-card-deepseek .switch')).to_have_attribute('aria-checked', 'false')
+                assert b'keep-user-plugin' in deepseek.path.read_bytes()
+                assert deepseek.entry(deepseek.parse(deepseek.path.read_bytes())) is None
+                page.evaluate("state.providers.find(p => p.key === 'codex').rea_needs_update = true; render()")
+                expect(page.locator("#service-card-codex [data-action='prepare-rea']")).to_have_text('更新 REA')
+                page.locator("#service-card-codex [data-action='prepare-rea']").click()
+                expect(page.locator("#service-card-codex [data-action='prepare-rea']")).to_have_count(0)
                 page.locator("#service-card-codex [data-action='verify']").click()
                 expect(page.locator('#modal-body')).to_contain_text('REA CLI/MCP 启动测试')
                 assert page.locator('#modal-body .check.failed').count() == 0
@@ -203,7 +229,7 @@ def run(executable=None):
                 context.unroute(url + '/assets/startup.mp4', fail_movie)
                 assert not errors, errors
                 assert not external, external
-                result = {"pass": True, "cards": 7, "install_switch_verify_revoke": True, "one_click_rea_upgrade_action": True, "import_preview": True,
+                result = {"pass": True, "app_version":page.evaluate('state.version'), "cards": 7, "install_switch_verify_revoke": True, "one_click_rea_upgrade_action": True, "one_click_rea_update_action": True, "orphan_deepseek_repair_preserves_plugins": True, "import_preview": True,
                           "extension_skill_count": 50, "suite_installation": True, "search_and_category": True,
                           "builtin_documents": builtin_documents, "collection_filter": True,
                           "light_dark_modes": True, "external_requests": external, "page_errors": errors,
@@ -230,7 +256,7 @@ def run(executable=None):
         fixture = sandbox / 'shutdown-analysis'
         fixture.mkdir()
         (fixture / 'sample.js').write_text('export function answer() { return 42; }', encoding='utf-8')
-        probe = ReaRuntime(ROOT, sandbox / 'data').probe(installed_runtime, fixture)
+        probe = ReaRuntime(ROOT, sandbox / 'data').probe(installed_runtime, fixture, output / 'patched-tool-schemas.json')
         assert 'sample.js' in json.dumps(probe['analysis'])
         result['rea_after_app_exit'] = {'passed': True, 'version': probe['version'],
             'tool_count': probe['tool_count'], 'sample_analysis': True,

@@ -27,6 +27,11 @@ def add_folder(archive, folder, prefix):
 
 
 def build():
+    import sys
+    sys.path.insert(0, str(ROOT))
+    from backend import VERSION as current_version
+    if current_version != VERSION:
+        raise ValueError('旧交付脚本仅用于 1.4.0；当前版本请使用 tools/package_release.py')
     original_sha256 = digest(DELIVERY / 'ai技能库-1.3.2.exe')
     ui = json.loads((ROOT / 'artifacts/acceptance/exe-browser-result.json').read_text('utf-8'))
     native = json.loads((ROOT / 'artifacts/rea-native.json').read_text('utf-8'))

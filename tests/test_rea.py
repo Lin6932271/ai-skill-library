@@ -10,6 +10,7 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).parents[1]))
 from backend import SkillManager, LocalError, PROVIDERS, sha
 from rea_config import McpConfig, ReaError, SERVER_NAME
+from rea_runtime import ReaRuntime, validate_tool_schemas
 
 
 class ReaConfigurationTests(unittest.TestCase):
@@ -86,6 +87,61 @@ class ReaConfigurationTests(unittest.TestCase):
         updated = dict(self.runtime, entry=str(self.home / 'new/rea.mjs'))
         data2, record2 = adapter.prepare(data, updated, record, sha)
         self.assertEqual(adapter.restore(data2, record2, sha), original)
+
+    def test_current_runtime_detection_and_upgrade_status(self):
+        manager = SkillManager(self.home / 'data', self.home, use_env=False)
+        manifest = manager.rea.manifest
+        current = dict(self.runtime, root=str(self.home / ('rea-' + manifest['rea_version'] + '-' + manifest['sha256'][:12])))
+        self.assertTrue(manager.rea.is_current(current))
+        self.assertFalse(manager.rea.is_current(self.runtime))
+        with patch.object(manager.rea, 'ensure', return_value=self.runtime), patch.object(manager.rea, 'probe', return_value={'ok':True}):
+            manager.inject('deepseek', 'builtin')
+        provider = next(p for p in manager.status()['providers'] if p['key'] == 'deepseek')
+        self.assertTrue(provider['rea_needs_update'])
+        self.assertIn('更新 REA', provider['verification']['summary'])
+
+    def test_schema_preflight_rejects_reported_and_lookahead_patterns(self):
+        for pattern in (r'^[^\0]*$', r'^(?!reserved)[a-z]+$'):
+            with self.assertRaises(ReaError):
+                validate_tool_schemas([{'inputSchema': {'type':'string', 'pattern':pattern}}])
+        self.assertEqual(validate_tool_schemas([{'inputSchema': {'type':'string', 'pattern':r'^[^\x00]*$'}}]), 1)
+
+    def test_schema_preflight_ignores_property_names_and_example_values(self):
+        schema = {'type':'object', 'properties': {'pattern': {'type':'string'},
+                  'value': {'type':'string', 'pattern':r'^[^\x00]*$'}},
+                  'examples': [{'pattern':r'\0'}], 'default': {'pattern':r'\0'}}
+        self.assertEqual(validate_tool_schemas([{'inputSchema':schema}]), 1)
+
+    def test_missing_record_recovery_preserves_other_plugins_and_revoke(self):
+        manager = SkillManager(self.home / 'data', self.home, use_env=False)
+        adapter = self.adapter('deepseek')
+        adapter.path.parent.mkdir(parents=True)
+        original = self.original('deepseek')
+        adapter.path.write_bytes(original)
+        with patch.object(manager.rea, 'ensure', return_value=self.runtime), patch.object(manager.rea, 'probe', return_value={'ok':True}), patch.object(manager.rea, 'owned_runtime', return_value=self.runtime):
+            manager.inject('deepseek', 'builtin')
+            manager.state['installed'].clear()
+            manager.save()
+            self.assertTrue(next(p for p in manager.status()['providers'] if p['key']=='deepseek')['rea_recovery_available'])
+            manager.repair_rea('deepseek', 'builtin')
+            self.assertTrue(manager.revoke('deepseek')['removed'])
+        self.assertIn(b'!!js', adapter.path.read_bytes())
+        self.assertIn(b'custom-plugin', adapter.path.read_bytes())
+        self.assertIsNone(adapter.entry(adapter.parse(adapter.path.read_bytes())))
+
+    def test_recovery_rejects_changed_skills_and_external_registration(self):
+        manager = SkillManager(self.home / 'data', self.home, use_env=False)
+        with patch.object(manager.rea, 'ensure', return_value=self.runtime), patch.object(manager.rea, 'probe', return_value={'ok':True}), patch.object(manager.rea, 'owned_runtime', return_value=self.runtime):
+            manager.inject('deepseek', 'builtin')
+            manager.state['installed'].clear()
+            adapter = self.adapter('deepseek')
+            original = adapter.path.read_bytes()
+            (manager.root('deepseek') / 'skills/pojia-local/SKILL.md').write_bytes(b'user edits')
+            with self.assertRaises(LocalError):
+                manager.repair_rea('deepseek')
+            self.assertEqual(adapter.path.read_bytes(), original)
+        with patch.object(manager.rea, 'owned_runtime', return_value=None):
+            self.assertIsNone(manager.recoverable_rea('deepseek'))
 
     def test_malformed_configuration_is_rejected(self):
         for provider, source in [('codex', b'[broken'), ('claude', b'{broken'), ('hermes', b'a: [')]:

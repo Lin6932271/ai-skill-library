@@ -79,7 +79,7 @@ function render() {
       <div class="path-row"><span class="path-label">配置目录</span><span class="path-value" title="${esc(p.path)}">${esc(p.path)}</span><button class="path-button" data-action="directory" data-provider="${p.key}" ${disabled}>设置</button></div>
       <div class="profile-row"><label for="profile-${p.key}">技能方案</label><select id="profile-${p.key}" class="profile-select" data-provider="${p.key}" ${disabled}>${state.profiles.map(profile => `<option value="${profile.id}" ${profile.id === p.profile ? 'selected' : ''}>${esc(profile.name)}</option>`).join('')}</select></div>
       <div class="card-action"><div class="switch-group"><button class="switch ${p.installed ? 'on' : ''}" role="switch" aria-checked="${p.installed}" aria-label="${esc(p.name)} 技能" data-action="toggle" data-provider="${p.key}" ${disabled}></button><span>${busy.has(p.key) ? '处理中…' : p.installed ? '技能已开启' : '开启技能'}</span></div><div class="card-links"><button class="text-button" data-action="verify" data-provider="${p.key}" ${disabled}>检查</button><button class="text-button" data-action="open" data-provider="${p.key}" ${disabled}>打开目录</button></div></div>
-      <div class="card-note">${esc(p.installed ? p.verification.summary : '开启后自动准备 REA，首次写入自动备份。')}${p.installed && !p.rea ? ` <button class="text-button" data-action="prepare-rea" data-provider="${p.key}" ${disabled}>启用 REA</button>` : ''}</div>
+      <div class="card-note">${esc(p.rea_recovery_available ? '发现本软件遗留的 REA 连接，可先备份再修复。' : p.installed ? p.verification.summary : '开启后自动准备 REA，首次写入自动备份。')}${p.rea_recovery_available ? ` <button class="text-button" data-action="repair-rea" data-provider="${p.key}" ${disabled}>修复并开启技能</button>` : p.installed && (!p.rea || p.rea_needs_update) ? ` <button class="text-button" data-action="prepare-rea" data-provider="${p.key}" ${disabled}>${p.rea_needs_update ? '更新 REA' : '启用 REA'}</button>` : ''}</div>
     </article>`;
   }).join('');
   renderLibrary();
@@ -149,6 +149,7 @@ document.addEventListener('click', async event => {
     switch (button.dataset.action) {
       case 'toggle': await toggle(key); break;
       case 'prepare-rea': await runProvider(key, async () => { await api('inject', {provider: key, profile: state.providers.find(p => p.key === key).profile}); toast('REA 已准备好，请退出并重新打开 AI 客户端'); }); break;
+      case 'repair-rea': await runProvider(key, async () => { await api('repair_rea', {provider: key, profile: $(`#profile-${key}`).value}); toast('已备份并修复，请退出并重新打开 AI 客户端'); }); break;
       case 'directory': directory(key); break;
       case 'verify': await verify(key); break;
       case 'open': await api('open_directory', {provider: key}); break;
