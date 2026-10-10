@@ -95,5 +95,5 @@ Windows x64，Python 3.14.3。安装 `requirements.txt` 的依赖后运行 `buil
 实际离线测试：`python tests/rea_acceptance.py`。
 EXE 界面测试：`python tests/browser_acceptance.py dist/AISkillLibrary.exe`，需要开发测试依赖和本机 Edge。
 
-程序、源码与验收证据通过 [v1.4.0 Release](https://github.com/Lin6932271/ai-skill-library/releases/tag/v1.4.0) 分发；下载后可以对照同页 `SHA256SUMS.txt` 检查完整性。
+本页保留 1.4.0 集成时的验证记录。1.4.0、1.4.1 因正则兼容问题已撤下；当前程序、源码与验收证据请从 [v1.4.2 Release](https://github.com/Lin6932271/ai-skill-library/releases/tag/v1.4.2) 下载，并对照同页 `SHA256SUMS.txt` 检查完整性。1.4.2 的补充验证见 [兼容性修复说明](REA_COMPATIBILITY.md)。
 旧安全报告针对其中注明的 1.3.2 样本，不能作为新版 EXE 的安全检查结论。
