@@ -1,4 +1,4 @@
-"""Apply the pinned REA 6.1.0 NUL-regex interoperability patch offline."""
+"""Apply the pinned REA 6.1.0 cross-engine regex interoperability patch offline."""
 import hashlib
 import json
 from pathlib import Path
@@ -6,7 +6,7 @@ import shutil
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-PATCH_ID = 'portable-regex-v1'
+PATCH_ID = 'portable-regex-v2'
 UPSTREAM_SHA = 'e0d430658952113b23c0099e21131af6d554e2bac6742cf36af16389fb46d494'
 PREFIX = 'cli/node_modules/rea-agents/dist/'
 TARGETS = {
@@ -36,6 +36,18 @@ def patch():
         print('REA compatibility patch already applied')
         return
     assert manifest['rea_version'] == '6.1.0'
+    previous_runtimes = list(manifest.get('previous_runtimes', []))
+    if manifest.get('compatibility_patch') == 'portable-regex-v1':
+        assert digest(archive.read_bytes()) == manifest['sha256']
+        previous = {'rea_version':manifest['rea_version'], 'sha256':manifest['sha256'],
+                    'critical_files':dict(manifest['critical_files'])}
+        if previous not in previous_runtimes:
+            previous_runtimes.append(previous)
+        previous_backup = ROOT.parent / 'rea-compatibility-20261010/original-v1'
+        previous_backup.mkdir(parents=True, exist_ok=True)
+        for source in (archive, manifest_path):
+            if not (previous_backup / source.name).exists():
+                shutil.copy2(source, previous_backup / source.name)
     backup = ROOT.parent / 'rea-compatibility-20261009/original'
     backup.mkdir(parents=True, exist_ok=True)
     for source in (archive, manifest_path):
@@ -71,23 +83,30 @@ def patch():
                         needle = 'z.string().min(1).regex(ROOT_RELATIVE_PATH)'
                         assert needle in text
                         text = text.replace(needle, r'z.string().min(1).regex(/^[^\\\x00]+$/u).refine((path) => ROOT_RELATIVE_PATH.test(path), "Expected a normalized path below the analyzed root")', 1)
+                    elif relative == 'domain/native/nativeCallObservation.js':
+                        # JS/Python accept the unescaped inner '['; Rust regex treats it
+                        # as a nested class. Hex literals preserve the exact exclusions.
+                        needle = r'/^[^\s[\]]+$/u'
+                        assert text.count(needle) == 1
+                        text = text.replace(needle, r'/^[^\s\x5b\x5d]+$/u', 1)
                     data = text.encode('utf-8')
                     index[member.filename] = digest(data)
                     changes.append({'path': member.filename, 'before_sha256': before,
-                                    'after_sha256': digest(data), 'replacements': count})
+                                    'after_sha256': digest(data), 'replacements': count + int(relative == 'domain/native/nativeCallObservation.js')})
                 output.writestr(member, data)
             output.writestr('files.json', json.dumps(index, sort_keys=True).encode('utf-8'))
-    assert len(changes) == len(TARGETS) and sum(c['replacements'] for c in changes) == 9
+    assert len(changes) == len(TARGETS) and sum(c['replacements'] for c in changes) == 10
     with zipfile.ZipFile(replacement) as patched:
         assert patched.testzip() is None
         manifest['unpacked_bytes'] = sum(item.file_size for item in patched.infolist() if item.filename != 'files.json')
     replacement.replace(archive)
     manifest.update({'sha256': digest(archive.read_bytes()), 'compatibility_patch': PATCH_ID,
                      'upstream_archive_sha256': UPSTREAM_SHA, 'patched_files': changes,
+                     'previous_runtimes': previous_runtimes,
                      'upstream_critical_files': dict(upstream_manifest['critical_files'])})
     manifest['critical_files'].update({change['path']: change['after_sha256'] for change in changes})
     manifest_path.write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
-    print(json.dumps({'patch': PATCH_ID, 'files': len(changes), 'replacements': 9,
+    print(json.dumps({'patch': PATCH_ID, 'files': len(changes), 'replacements': 10,
                       'archive_sha256': manifest['sha256']}))
 
 

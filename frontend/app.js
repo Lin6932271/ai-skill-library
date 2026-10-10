@@ -67,6 +67,7 @@ $('#modal').addEventListener('click', event => { if (event.target === $('#modal'
 
 function render() {
   if (!state) return;
+  $('.version').textContent = `v${state.version}`;
   $('#library-banner-title').textContent = `${state.builtin_documents} 项技能，REA 已内置`;
   $('#library-banner-summary').textContent = '开启技能时自动准备 REA 和连接；告诉 AI“使用技能”即可，无需自己配置。';
   $('#service-grid').innerHTML = state.providers.map(p => {

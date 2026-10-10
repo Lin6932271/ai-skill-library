@@ -87,6 +87,7 @@ def run(executable=None):
                 assert page.locator('.brand img').get_attribute('src') == '/assets/app-icon.jpg'
                 page.locator(".pj-service-card").last.wait_for()
                 assert page.locator(".pj-service-card").count() == 7
+                expect(page.locator('.version')).to_have_text('v' + page.evaluate('state.version'))
                 assert not any(x in page.locator("body").inner_text() for x in ["账户", "订阅", "反馈"])
                 scroll_checks = []
                 def check_wheel_scroll(label, bottom_selector):

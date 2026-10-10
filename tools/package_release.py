@@ -43,16 +43,20 @@ def main(logs):
     ui = json.loads((ROOT / 'artifacts/acceptance/exe-browser-result.json').read_text('utf-8'))
     real = json.loads((ROOT / 'artifacts/rea-acceptance/result.json').read_text('utf-8'))
     schema = json.loads((logs / 'schema-regression.json').read_text('utf-8'))
+    native = json.loads((logs / 'native-result.json').read_text('utf-8'))
     assert ui['pass'] and ui['app_version'] == VERSION and ui['orphan_deepseek_repair_preserves_plugins']
-    assert real['passed'] and len(real['matrix']) == 7 and schema['passed']
+    assert real['passed'] and len(real['matrix']) == 7 and schema['passed'] and native['pass']
     tests = (logs / 'unit-tests.log').read_text('utf-8-sig')
-    assert tests.rstrip().endswith('OK')
+    assert re.search(r'(?m)^OK\s*$', tests) and not re.search(r'(?m)^FAILED\b', tests)
     unit_count = int(re.search(r'Ran (\d+) tests', tests).group(1))
     manifest = json.loads((ROOT / 'runtime/manifest.json').read_text('utf-8'))
     assert digest(ROOT / 'runtime' / manifest['archive']) == manifest['sha256']
     exe = out / f'AISkillLibrary-{VERSION}-windows-x64.exe'
     shutil.copy2(ROOT / 'dist/AISkillLibrary.exe', exe)
-    shutil.copy2(exe, delivery / f'ai技能库-{VERSION}.exe')
+    delivered_exe = delivery / f'ai技能库-{VERSION}.exe'
+    # A user may be running the already accepted delivery EXE while docs are refreshed.
+    if not delivered_exe.is_file() or digest(delivered_exe) != digest(exe):
+        shutil.copy2(exe, delivered_exe)
     notes = out / f'AISkillLibrary-{VERSION}-rea-verification.md'
     shutil.copy2(ROOT / 'docs/REA_COMPATIBILITY.md', notes)
     portable = out / f'AISkillLibrary-{VERSION}-windows-x64.zip'
@@ -74,7 +78,8 @@ def main(logs):
         for name in ('frontend', 'skills', 'runtime', 'docs', 'tests', 'tools'):
             add_folder(archive, ROOT / name, 'ai技能库-源码/' + name)
     evidence = out / f'AISkillLibrary-{VERSION}-evidence.zip'
-    evidence_paths = [*logs.glob('*.log'), logs / 'schema-regression.json',
+    evidence_paths = [*logs.glob('*.log'), logs / 'schema-regression.json', logs / 'native-result.json',
+        logs / 'rust-regex-before.json', logs / 'rust-regex-after.json',
         ROOT / 'artifacts/acceptance/exe-browser-result.json', ROOT / 'artifacts/acceptance/patched-tool-schemas.json',
         ROOT / 'artifacts/rea-acceptance/result.json', ROOT / 'artifacts/rea-acceptance/analysis.json']
     with zipfile.ZipFile(evidence, 'w', zipfile.ZIP_DEFLATED, compresslevel=6) as archive:
@@ -83,6 +88,7 @@ def main(logs):
             archive.writestr(path.name, sanitize(path.read_bytes()))
         for path in (ROOT / 'artifacts/acceptance').glob('exe-*.png'):
             archive.write(path, 'images/' + path.name)
+        archive.write(logs / 'native-result.png', 'images/native-result.png')
         archive.write(ROOT / 'runtime/manifest.json', 'runtime-manifest.json')
         archive.write(notes, '修复说明.md')
     files = [exe, portable, source, evidence, notes]
@@ -95,6 +101,8 @@ def main(logs):
     assets.append({'name':sums.name, 'bytes':sums.stat().st_size, 'sha256':digest(sums)})
     result = {'version':VERSION, 'repo':'Lin6932271/ai-skill-library', 'unit_tests':unit_count,
               'configuration_matrix':7, 'mcp_tools':138, 'schema_patterns':schema['patterns'],
+              'regex_engines':schema['engines'], 'compatibility_patch':manifest.get('compatibility_patch'),
+              'native_desktop_smoke_passed':native['pass'],
               'deepseek_official_api_chat_verified':False, 'assets':assets, 'published_remotely':False}
     (out / 'preparation.json').write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding='utf-8')
     for path in (portable, source, evidence, notes):

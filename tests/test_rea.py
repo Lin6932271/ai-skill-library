@@ -101,10 +101,33 @@ class ReaConfigurationTests(unittest.TestCase):
         self.assertIn('更新 REA', provider['verification']['summary'])
 
     def test_schema_preflight_rejects_reported_and_lookahead_patterns(self):
-        for pattern in (r'^[^\0]*$', r'^(?!reserved)[a-z]+$'):
+        for pattern in (r'^[^\0]*$', r'^(?!reserved)[a-z]+$', r'^[^\s[\]]+$'):
             with self.assertRaises(ReaError):
                 validate_tool_schemas([{'inputSchema': {'type':'string', 'pattern':pattern}}])
         self.assertEqual(validate_tool_schemas([{'inputSchema': {'type':'string', 'pattern':r'^[^\x00]*$'}}]), 1)
+
+    def test_schema_preflight_accepts_explicit_bracket_literals(self):
+        for pattern in (r'^[^\s\x5b\x5d]+$', r'^[^\s\[\]]+$', r'^\[[a-z]+\]$'):
+            self.assertEqual(validate_tool_schemas([{'inputSchema':{'type':'string','pattern':pattern}}]),1)
+
+    def test_previous_patched_runtime_is_recoverable_only_when_unchanged(self):
+        manager = SkillManager(self.home / 'data', self.home, use_env=False)
+        previous_hash = sha(b'previous trusted runtime')
+        root = manager.data_dir / 'rea' / ('rea-6.1.0-' + previous_hash[:12])
+        files = {'node/node.exe':b'original node',
+                 'cli/node_modules/rea-agents/scripts/rea.mjs':b'original entry'}
+        for name,data in files.items():
+            (root/name).parent.mkdir(parents=True,exist_ok=True)
+            (root/name).write_bytes(data)
+        (root/'.ready.json').write_text(json.dumps({'archive_sha256':previous_hash}),encoding='utf-8')
+        manager.rea.manifest = {'rea_version':'6.1.0','sha256':sha(b'current runtime'),
+                               'previous_runtimes':[{'rea_version':'6.1.0','sha256':previous_hash,
+                                                    'critical_files':{name:sha(data) for name,data in files.items()}}]}
+        launch = {'command':str(root/'node/node.exe'),
+                  'args':[str(root/'cli/node_modules/rea-agents/scripts/rea.mjs'),'mcp']}
+        self.assertIsNotNone(manager.rea.owned_runtime(launch))
+        (root/'node/node.exe').write_bytes(b'externally modified')
+        self.assertIsNone(manager.rea.owned_runtime(launch))
 
     def test_schema_preflight_ignores_property_names_and_example_values(self):
         schema = {'type':'object', 'properties': {'pattern': {'type':'string'},

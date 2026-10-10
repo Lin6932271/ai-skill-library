@@ -43,12 +43,13 @@ def iter_schema_patterns(schema):
 
 
 def validate_tool_schemas(tools):
-    """Reject malformed patterns and nonportable NUL escapes before deployment."""
+    """Reject malformed patterns and known cross-engine incompatibilities."""
     count = 0
     for tool in tools:
         for pattern in iter_schema_patterns(tool.get('inputSchema', {})):
             if (not isinstance(pattern, str) or re.search(r'(?<!\\)(?:\\\\)*\\0(?![0-9])', pattern)
-                    or any(token in pattern for token in ('(?=', '(?!', '(?<=', '(?<!'))):
+                    or any(token in pattern for token in ('(?=', '(?!', '(?<=', '(?<!'))
+                    or has_nested_character_class(pattern)):
                 raise ReaError('REA 工具参数包含不兼容正则，请使用修复版运行包')
             try:
                 re.compile(pattern)
@@ -56,6 +57,27 @@ def validate_tool_schemas(tools):
                 raise ReaError('REA 工具参数正则格式异常，未写入客户端连接') from exc
             count += 1
     return count
+
+
+def has_nested_character_class(pattern):
+    """Exclude nested/literal unescaped '[' from the advertised regex subset.
+
+    Different engines interpret it as either a literal or a nested character set.
+    An escaped bracket or its hexadecimal notation is portable.
+    """
+    inside = escaped = False
+    for char in pattern:
+        if escaped:
+            escaped = False
+        elif char == '\\':
+            escaped = True
+        elif char == '[':
+            if inside:
+                return True
+            inside = True
+        elif char == ']':
+            inside = False
+    return False
 
 
 def digest_file(path):
@@ -113,7 +135,11 @@ class ReaRuntime:
             elif archive_hash == self.manifest.get('upstream_archive_sha256'):
                 critical = self.manifest['upstream_critical_files']
             else:
-                return None
+                previous = next((item for item in self.manifest.get('previous_runtimes', [])
+                                 if item.get('sha256') == archive_hash and item.get('rea_version') == self.manifest['rea_version']), None)
+                if previous is None:
+                    return None
+                critical = previous['critical_files']
             if root.name != 'rea-' + self.manifest['rea_version'] + '-' + archive_hash[:12]:
                 return None
             entry = root / 'cli/node_modules/rea-agents/scripts/rea.mjs'
@@ -276,7 +302,7 @@ class ReaRuntime:
 
         try:
             initialized = request("initialize", {"protocolVersion": "2025-06-18", "capabilities": {},
-                "clientInfo": {"name": "ai-skill-library", "version": "1.4.1"}})
+                "clientInfo": {"name": "ai-skill-library", "version": "1.4.2"}})
             send({"jsonrpc": "2.0", "method": "notifications/initialized"})
             tools, cursor = [], None
             while True:

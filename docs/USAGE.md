@@ -1,14 +1,14 @@
 # 使用说明
 
-ai技能库程序版本 1.4.1。本软件由 AI 开发。
+ai技能库程序版本 1.4.2。本软件由 AI 开发。
 
 支持 Codex、Claude、DeepSeek Harness、Hermes、ZCode，以及 WorkBuddy 国内版和国际版。
 包含 54 项内置技能、50 项扩展技能，以及基础与进阶方案。
 
 ## 运行程序
 
-在 [1.4.1 发布页面](https://github.com/Lin6932271/ai-skill-library/releases/tag/v1.4.1)下载 `AISkillLibrary-1.4.1-windows-x64.exe`，双击即可运行。
-也可下载 `AISkillLibrary-1.4.1-windows-x64.zip`，解压后双击 `ai技能库.exe`。本地交付文件名为 `ai技能库-1.4.1.exe`，与公开 EXE 内容相同。
+从 [1.4.2 发布页面](https://github.com/Lin6932271/ai-skill-library/releases/tag/v1.4.2)下载 EXE 直接运行，或将 `AISkillLibrary-1.4.2-windows-x64.zip` 解压后双击 `ai技能库.exe`。
+1.4.0、1.4.1 因 REA 正则兼容问题已撤下，请使用 1.4.2。
 需要 Windows x64 和 Microsoft Edge WebView2 Runtime，无需安装 Python 或注册账户。
 
 启动动画约 7 秒，静音播放并铺满软件窗口，播放完毕自动进入主界面。
@@ -42,7 +42,7 @@ Hermes 便携版应选择实际 `data/hermes-home` 或当前 profile 目录。
 等待卡片显示“REA 已就绪”，退出并重新打开 AI 客户端即可加载连接。
 直接告诉 AI“使用技能分析这个软件”并提供路径，AI 会自行选择技能。
 
-从旧版升级、技能开关已经开启的用户，点击卡片上的“启用 REA”即可补齐环境和连接，无需先撤销技能。
+从旧版升级、技能开关已经开启的用户，点击卡片上的“更新 REA”；尚未配置 REA 时点击“启用 REA”即可补齐环境和连接，无需先撤销技能。
 
 REA 的后台进程由 AI 客户端在读取 MCP 配置时启动；本软件的启动测试会在结束后关闭测试进程。
 因此不需要保持技能库窗口打开，REA 路径也不依赖 EXE 的临时解压目录。
@@ -63,7 +63,7 @@ REA 的后台进程由 AI 客户端在读取 MCP 配置时启动；本软件的�
 
 内置 REA 不等于内置所有反编译器：EXE/DLL 深度反编译需 IDA/Ghidra，Android 和固件等分析也有工具和平台要求。
 
-## 1.4.1 的更新与恢复
+## 1.4.2 的更新与恢复
 
 已安装 REA 的用户点击卡片上的“更新 REA”。显示遗留连接时点击“修复并开启技能”，程序先备份，再恢复经过来源校验的托管连接。完成后完全退出并重新打开 AI 客户端。
 

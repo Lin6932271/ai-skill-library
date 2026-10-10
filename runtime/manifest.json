@@ -4,9 +4,9 @@
   "node_version": "v24.19.0",
   "platform": "win32-x64",
   "archive": "rea-windows-x64.zip",
-  "sha256": "615dbb38a1caa98e62ef3acdaa4a6c3b6057aec0e984a9c30cec2c7ba5950566",
+  "sha256": "9cd0c75832af6d61af86947e2a6f10cdc1d3240a8d6822affd7ab3921d7dcdbb",
   "file_count": 8140,
-  "unpacked_bytes": 195068916,
+  "unpacked_bytes": 195068921,
   "critical_files": {
     "node/node.exe": "3602f2bb1a10f2cbab4c36886218a33c1ab3db87290e73b033c46c77147d0237",
     "cli/node_modules/rea-agents/scripts/rea.mjs": "51c10d06c6c277a7c482001096e4c35ba341246977cb9097920d2268a0270b22",
@@ -15,7 +15,7 @@
     "cli/node_modules/rea-agents/dist/domain/apple/dylibResolution.js": "865dc8785dc687276eb4f9e962233298650fb0ae0e5579f3117b5937bc975747",
     "cli/node_modules/rea-agents/dist/domain/javascript/electronActiveObservation.js": "25ffcfee148223ba2d425204a2129508cee2d68984f78ee7816c706e9e57df69",
     "cli/node_modules/rea-agents/dist/domain/localPath.js": "bdbef86c114f03ef8cacf27620950f395cf51951c3af412a9c25b3c67a37603c",
-    "cli/node_modules/rea-agents/dist/domain/native/nativeCallObservation.js": "6edc3f4e3dddbcfa14b55b84c9de534d3fdcf1dcac437eaef26ac260aab1d67b",
+    "cli/node_modules/rea-agents/dist/domain/native/nativeCallObservation.js": "7098bea419203ec4c0924f310bb6fa33a683ab918af136de3e538b980aa01997",
     "cli/node_modules/rea-agents/dist/domain/process/processScenario.js": "4de8ec4423e6d2d51eb16c6b7e0094f1cd5df2f385a810d2595ecd889ef33993"
   },
   "origins": [
@@ -26,7 +26,7 @@
     "node/LICENSE",
     "cli/node_modules/rea-agents/LICENSE"
   ],
-  "compatibility_patch": "portable-regex-v1",
+  "compatibility_patch": "portable-regex-v2",
   "upstream_archive_sha256": "e0d430658952113b23c0099e21131af6d554e2bac6742cf36af16389fb46d494",
   "patched_files": [
     {
@@ -56,14 +56,31 @@
     {
       "path": "cli/node_modules/rea-agents/dist/domain/native/nativeCallObservation.js",
       "before_sha256": "9c2ac6eb0fab1c84428235a3f98d07610ca29e5966254761730f1c84847f6bf6",
-      "after_sha256": "6edc3f4e3dddbcfa14b55b84c9de534d3fdcf1dcac437eaef26ac260aab1d67b",
-      "replacements": 3
+      "after_sha256": "7098bea419203ec4c0924f310bb6fa33a683ab918af136de3e538b980aa01997",
+      "replacements": 4
     },
     {
       "path": "cli/node_modules/rea-agents/dist/domain/process/processScenario.js",
       "before_sha256": "ddd1455d6434c900364e9b1fb8373885185fd4c1ec727cdd40d2284787f76d9a",
       "after_sha256": "4de8ec4423e6d2d51eb16c6b7e0094f1cd5df2f385a810d2595ecd889ef33993",
       "replacements": 2
+    }
+  ],
+  "previous_runtimes": [
+    {
+      "rea_version": "6.1.0",
+      "sha256": "615dbb38a1caa98e62ef3acdaa4a6c3b6057aec0e984a9c30cec2c7ba5950566",
+      "critical_files": {
+        "node/node.exe": "3602f2bb1a10f2cbab4c36886218a33c1ab3db87290e73b033c46c77147d0237",
+        "cli/node_modules/rea-agents/scripts/rea.mjs": "51c10d06c6c277a7c482001096e4c35ba341246977cb9097920d2268a0270b22",
+        "cli/node_modules/rea-agents/package.json": "8abaccdb625deeb142abbb7e428dc2be5392a99b63034a7c8afb353c9105d9ae",
+        "cli/node_modules/rea-agents/dist/contracts/native/nativeToolContracts.js": "f02af933cc9b9d192ee28ba7aa1d47482a497d38636bb302cab99002043f7f13",
+        "cli/node_modules/rea-agents/dist/domain/apple/dylibResolution.js": "865dc8785dc687276eb4f9e962233298650fb0ae0e5579f3117b5937bc975747",
+        "cli/node_modules/rea-agents/dist/domain/javascript/electronActiveObservation.js": "25ffcfee148223ba2d425204a2129508cee2d68984f78ee7816c706e9e57df69",
+        "cli/node_modules/rea-agents/dist/domain/localPath.js": "bdbef86c114f03ef8cacf27620950f395cf51951c3af412a9c25b3c67a37603c",
+        "cli/node_modules/rea-agents/dist/domain/native/nativeCallObservation.js": "6edc3f4e3dddbcfa14b55b84c9de534d3fdcf1dcac437eaef26ac260aab1d67b",
+        "cli/node_modules/rea-agents/dist/domain/process/processScenario.js": "4de8ec4423e6d2d51eb16c6b7e0094f1cd5df2f385a810d2595ecd889ef33993"
+      }
     }
   ],
   "upstream_critical_files": {

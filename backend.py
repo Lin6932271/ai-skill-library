@@ -16,7 +16,7 @@ from pathlib import Path
 from rea_config import McpConfig, ReaError
 from rea_runtime import ReaRuntime
 
-VERSION = "1.4.1"
+VERSION = "1.4.2"
 BEGIN = b"<!-- POJIA-LOCAL:BEGIN -->"
 END = b"<!-- POJIA-LOCAL:END -->"
 MAX_IMPORT = 32 * 1024 * 1024
