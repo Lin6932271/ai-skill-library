@@ -114,7 +114,9 @@ def run(executable=None):
                 page.screenshot(path=str(output / (prefix + "console-light.png")), full_page=True)
                 card = page.locator("#service-card-codex")
                 initial_profiles = page.locator('#profile-codex option').count()
-                assert page.locator('#profile-codex').input_value() == 'builtin'
+                assert page.locator('#profile-codex').input_value() == 'premium'
+                assert not page.locator('#profile-codex').is_visible()
+                recommended_documents = int(re.search(r'\d+', page.locator('#profile-codex option[value="premium"]').inner_text()).group())
                 builtin_documents = int(re.search(r'\d+', page.locator('#profile-codex option[value="builtin"]').inner_text()).group())
                 assert builtin_documents == 54
                 card.locator(".switch").click()
@@ -123,7 +125,7 @@ def run(executable=None):
                 installed_state = json.loads((sandbox / 'data/state.json').read_text('utf-8'))
                 installed_runtime = installed_state['installed']['codex']['rea']['runtime']
                 assert '_MEI' not in installed_runtime['node']
-                assert len(list((sandbox / 'home' / '.codex' / 'skills').glob('*/SKILL.md'))) == builtin_documents + 1
+                assert len(list((sandbox / 'home' / '.codex' / 'skills').glob('*/SKILL.md'))) == recommended_documents + 1
                 installed_suite = (sandbox / 'home/.codex/skills/pojia-local/SKILL.md').read_text('utf-8')
                 assert '云端' not in installed_suite and '取回' not in installed_suite
                 # Existing installations expose one upgrade action without requiring MCP edits.
@@ -167,6 +169,7 @@ def run(executable=None):
                 expect(page.locator('#modal-body p').last).to_be_in_viewport()
                 page.locator('#modal').evaluate('(element) => element.scrollTop = 0')
                 page.locator('#modal-close').click()
+                page.locator('#service-card-codex .profile-advanced summary').click()
                 page.locator("#profile-codex").select_option("advanced")
                 expect(page.locator('#service-card-codex .switch')).to_be_enabled()
                 assert (sandbox / "home" / ".codex" / "skills" / "pojia-local" / "references" / "checklist.md").exists()
@@ -180,6 +183,7 @@ def run(executable=None):
                 page.locator("[data-page='skills']").click()
                 expect(page.locator('.library-card')).to_have_count(initial_profiles)
                 check_wheel_scroll('skills', '#skills-page > .footnote')
+                page.locator('#skill-collection').select_option('builtin')
                 page.locator('[data-profile="builtin"]').click()
                 directory_text = page.locator('.skill-content').text_content().replace('\r\n', '\n')
                 assert directory_text == (ROOT / 'skills/builtin/SKILL.md').read_text('utf-8')

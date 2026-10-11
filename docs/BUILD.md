@@ -1,6 +1,6 @@
 # 从源码构建
 
-普通用户从 [1.4.2 发布页面](https://github.com/Lin6932271/ai-skill-library/releases/tag/v1.4.2)下载 Windows 程序即可，无需执行本页命令。
+普通用户从 [1.5.2 发布页面](https://github.com/Lin6932271/ai-skill-library/releases/tag/v1.5.2)下载 Windows 程序即可，无需执行本页命令。
 
 ## 环境与步骤
 
@@ -18,7 +18,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\build.ps1
 ```
 
 产物为 `dist/AISkillLibrary.exe`。`build.ps1` 优先使用项目已有的运行环境，其次使用 `.venv`，最后使用 PATH 中的 Python。
-发布 EXE 的 SHA-256 见同版本 Release 的 `SHA256SUMS.txt`；本机重新构建的二进制可能因环境和构建时间而有不同哈希。
+交付 EXE 的 SHA-256 见 `AISkillLibrary-1.5.2-SHA256SUMS.txt`；本机重新构建的二进制可能因环境和构建时间而有不同哈希。
 
 ## 额外验收
 

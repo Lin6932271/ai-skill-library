@@ -61,6 +61,12 @@ h1 { margin: 0; font-size: 25px; font-weight: 690; letter-spacing: -.6px; }
 .path-value { font: 10px Consolas, monospace; color: #6b7280; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; min-width: 0; }
 .path-button { margin-left: auto; border: 0; background: transparent; color: #6d84af; font-size: 11px; white-space: nowrap; padding: 0; }
 .profile-row { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #edf0f3; padding-bottom: 12px; gap: 8px; }
+.profile-summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: var(--main); font-size: 12px; }
+.recommended-badge { color: #007c70; background: #e9f7f1; padding: 3px 8px; border-radius: 6px; font-size: 10px; white-space: nowrap; }
+.profile-advanced { border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+.profile-advanced summary { color: var(--muted); cursor: pointer; font-size: 11px; }
+.profile-advanced[open] summary { margin-bottom: 10px; }
+.profile-advanced .profile-row { border-bottom: 0; padding-bottom: 0; }
 .profile-row label { color: var(--muted); font-size: 11px; }
 .profile-select { border: 1px solid var(--border); border-radius: 6px; padding: 4px 7px; color: #55616e; background: var(--surface); font-size: 11px; max-width: 55%; }
 .card-action { display: flex; justify-content: space-between; align-items: center; }

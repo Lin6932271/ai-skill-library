@@ -29,12 +29,12 @@
     <header class="local-topbar"><span>客户端技能管理</span><div><button id="theme" class="icon-button" aria-label="切换深色模式">◐</button></div></header>
     <section id="console-page" class="page">
       <div class="page-heading"><div><div class="eyebrow">WORKSPACE</div><h1>注入控制台</h1><p>为每个客户端配置技能，保留独立的安装与恢复记录。</p></div><div class="heading-actions"><button id="guide" class="button">使用说明</button><button id="refresh" class="button primary">↻ 全部刷新</button></div></div>
-      <div class="local-banner"><span class="banner-symbol">✓</span><div><strong id="library-banner-title">技能库</strong><p id="library-banner-summary">可整套安装、单个选择或导入自己的技能，写入前自动备份。</p></div></div>
+      <div class="local-banner"><span class="banner-symbol">✓</span><div><strong id="library-banner-title">推荐技能库</strong><p id="library-banner-summary">直接开启，AI 按任务自动选择相关技能，写入前自动备份。</p></div></div>
       <div id="service-grid" class="pj-service-grid" aria-live="polite"></div>
     </section>
     <section id="skills-page" class="page" hidden>
       <div class="page-heading"><div><div class="eyebrow">LIBRARY</div><h1>技能库</h1><p>使用内置方案，或导入自己的 Markdown、技能文件夹与 ZIP。</p></div><button id="import" class="button primary">＋ 导入技能</button></div>
-      <div class="library-tools"><input id="skill-search" class="field" type="search" placeholder="搜索名称、用途或关键词" aria-label="搜索技能"><select id="skill-collection" class="field" aria-label="技能集合"><option value="">全部技能</option><option value="builtin">内置技能</option><option value="extension">扩展技能</option><option value="other">开发与导入</option></select><select id="skill-category" class="field" aria-label="技能分类"><option value="">全部分类</option><option>整套</option><option>入口</option><option>逆向</option><option>安全</option><option>工程</option><option>其他</option></select><span id="skill-count" class="footnote"></span></div>
+      <div class="library-tools"><input id="skill-search" class="field" type="search" placeholder="搜索名称、用途或关键词" aria-label="搜索技能"><select id="skill-collection" class="field" aria-label="技能集合"><option value="recommended">推荐技能库</option><option value="">全部技能</option><option value="builtin">兼容技能</option><option value="premium">增强模块</option><option value="extension">扩展技能</option><option value="other">开发与导入</option></select><select id="skill-category" class="field" aria-label="技能分类"><option value="">全部分类</option><option>整套</option><option>入口</option><option>逆向</option><option>安全</option><option>工程</option><option>工具</option><option>其他</option></select><span id="skill-count" class="footnote"></span></div>
       <div id="skill-library" class="library-grid"></div>
       <div class="footnote">导入的脚本只作为资源保存，本助手不会执行。修改导入源文件后需重新导入。</div>
     </section>

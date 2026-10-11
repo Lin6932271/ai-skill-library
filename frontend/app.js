@@ -4,6 +4,7 @@ const esc = (value) => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':
 const token = $('meta[name="pojia-local-token"]').content;
 let state = null;
 let busy = new Set();
+const advancedProfiles = new Set();
 let toastTimer;
 
 // The supplied movie plays once; decoding failures cannot trap the app on startup.
@@ -68,23 +69,27 @@ $('#modal').addEventListener('click', event => { if (event.target === $('#modal'
 function render() {
   if (!state) return;
   $('.version').textContent = `v${state.version}`;
-  $('#library-banner-title').textContent = `${state.builtin_documents} 项技能，REA 已内置`;
-  $('#library-banner-summary').textContent = '开启技能时自动准备 REA 和连接；告诉 AI“使用技能”即可，无需自己配置。';
+  const recommended = state.profiles.find(profile => profile.id === state.default_profile);
+  $('#library-banner-title').textContent = `${recommended.name}，REA 已内置`;
+  $('#library-banner-summary').textContent = '直接开启，AI 会按任务自动选择相关技能；需要自定义时再展开高级选项。';
   $('#service-grid').innerHTML = state.providers.map(p => {
     const healthy = p.installed && p.verification.ok;
     const icon = p.icon === 'codex' ? '<span class="codex-icon">✺</span>' : `<img src="/assets/${esc(p.icon)}" class="pj-service-image-mark" alt="">`;
     const disabled = busy.has(p.key) ? 'disabled' : '';
+    const selected = state.profiles.find(profile => profile.id === p.profile);
+    const selectedName = selected?.name || p.profile;
     return `<article class="pj-service-card" id="service-card-${p.key}">
       <header class="pj-service-head"><div class="pj-service-mark pj-service-mark--${p.key.split('_')[0]}">${icon}</div><div class="pj-service-title"><h3>${esc(p.name)}</h3><p>${p.instruction}</p></div><span class="status-badge ${healthy ? 'good' : p.installed ? 'warning' : ''}">${healthy ? '已写入' : p.installed ? '需检查' : '未安装'}</span></header>
       <div class="pj-service-activation"><span class="pj-activation-word">hi</span><span class="pj-activation-arrow">→</span><span class="pj-activation-reply">在新会话确认技能读取</span></div>
       <div class="path-row"><span class="path-label">配置目录</span><span class="path-value" title="${esc(p.path)}">${esc(p.path)}</span><button class="path-button" data-action="directory" data-provider="${p.key}" ${disabled}>设置</button></div>
-      <div class="profile-row"><label for="profile-${p.key}">技能方案</label><select id="profile-${p.key}" class="profile-select" data-provider="${p.key}" ${disabled}>${state.profiles.map(profile => `<option value="${profile.id}" ${profile.id === p.profile ? 'selected' : ''}>${esc(profile.name)}</option>`).join('')}</select></div>
+      <div class="profile-summary"><span>${p.profile === state.default_profile ? esc(recommended.name) : `${p.installed ? '当前使用' : '待启用'}：${esc(selectedName)}`}</span>${p.profile !== state.default_profile ? `<button class="text-button" data-action="use-recommended" data-provider="${p.key}" ${disabled}>${p.installed ? '更新到推荐技能库' : '使用推荐技能库'}</button>` : '<span class="recommended-badge">推荐</span>'}</div>
+      <details class="profile-advanced" data-provider="${p.key}" ${advancedProfiles.has(p.key) ? 'open' : ''}><summary>高级选项</summary><div class="profile-row"><label for="profile-${p.key}">自定义方案</label><select id="profile-${p.key}" class="profile-select" data-provider="${p.key}" ${disabled}>${state.profiles.map(profile => `<option value="${profile.id}" ${profile.id === p.profile ? 'selected' : ''}>${esc(profile.name)}</option>`).join('')}</select></div></details>
       <div class="card-action"><div class="switch-group"><button class="switch ${p.installed ? 'on' : ''}" role="switch" aria-checked="${p.installed}" aria-label="${esc(p.name)} 技能" data-action="toggle" data-provider="${p.key}" ${disabled}></button><span>${busy.has(p.key) ? '处理中…' : p.installed ? '技能已开启' : '开启技能'}</span></div><div class="card-links"><button class="text-button" data-action="verify" data-provider="${p.key}" ${disabled}>检查</button><button class="text-button" data-action="open" data-provider="${p.key}" ${disabled}>打开目录</button></div></div>
       <div class="card-note">${esc(p.rea_recovery_available ? '发现本软件遗留的 REA 连接，可先备份再修复。' : p.installed ? p.verification.summary : '开启后自动准备 REA，首次写入自动备份。')}${p.rea_recovery_available ? ` <button class="text-button" data-action="repair-rea" data-provider="${p.key}" ${disabled}>修复并开启技能</button>` : p.installed && (!p.rea || p.rea_needs_update) ? ` <button class="text-button" data-action="prepare-rea" data-provider="${p.key}" ${disabled}>${p.rea_needs_update ? '更新 REA' : '启用 REA'}</button>` : ''}</div>
     </article>`;
   }).join('');
   renderLibrary();
-  $('#runtime-info').innerHTML = `<dt>程序版本</dt><dd>${esc(state.version)}</dd><dt>REA</dt><dd>${esc(state.rea_runtime?.version || '未内置')} · 开启技能时自动准备</dd><dt>网络模式</dt><dd>安装过程离线完成 · 仅本机界面通信</dd><dt>技能方案</dt><dd>${state.profiles.length} 个</dd><dt>数据目录</dt><dd>${esc(state.data_dir)}</dd><dt>验收范围</dt><dd>文件和 REA 启动测试；客户端连接需重启后确认</dd>`;
+  $('#runtime-info').innerHTML = `<dt>程序版本</dt><dd>${esc(state.version)}</dd><dt>REA</dt><dd>${esc(state.rea_runtime?.version || '未内置')} · 开启技能时自动准备</dd><dt>网络模式</dt><dd>安装过程离线完成 · 仅本机界面通信</dd><dt>默认技能库</dt><dd>${esc(recommended.name)} · 按任务自动选择</dd><dt>数据目录</dt><dd>${esc(state.data_dir)}</dd><dt>验收范围</dt><dd>文件和 REA 启动测试；客户端连接需重启后确认</dd>`;
   const actions = {inject: '写入技能', revoke: '撤销技能', import: '导入技能'};
   $('#events').innerHTML = state.events.length ? state.events.map(event => `<div class="event"><time>${esc(event.time)}</time><span>${esc(actions[event.action] || event.action)}</span><span>${esc(state.providers.find(p => p.key === event.provider)?.name || event.detail)}</span></div>`).join('') : '<p class="footnote">暂无操作记录</p>';
 }
@@ -93,11 +98,18 @@ function renderLibrary() {
   const query = $('#skill-search').value.trim().toLowerCase();
   const category = $('#skill-category').value;
   const collection = $('#skill-collection').value;
-  const profiles = state.profiles.filter(p => (!category || (p.category || '其他') === category) &&
-    (!collection || (collection === 'other' ? !p.collection : p.collection === collection)) &&
+  const recommended = new Map();
+  for (const profile of state.profiles) {
+    if (profile.skill_name && (state.default_profile === 'extended' ? profile.collection === 'extension' : profile.collection === 'builtin' || (state.default_profile === 'premium' && profile.collection === 'premium'))) recommended.set(profile.skill_name, profile);
+  }
+  const candidates = collection === 'recommended'
+    ? [state.profiles.find(profile => profile.id === state.default_profile), ...recommended.values()]
+    : state.profiles;
+  const profiles = candidates.filter(p => (!category || (p.category || '其他') === category) &&
+    (collection === 'recommended' || !collection || (collection === 'other' ? !p.collection : p.collection === collection)) &&
     [p.name, p.skill_name || '', p.description, ...(p.keywords || [])].join(' ').toLowerCase().includes(query));
   $('#skill-library').innerHTML = profiles.map(profile => `<article class="library-card"><span class="chip">${profile.collection === 'extension' ? '扩展技能 · ' + esc(profile.category) : profile.builtin ? esc(profile.category || '内置方案') : '已导入'}</span><h2>${esc(profile.name)}</h2>${profile.skill_name ? `<code>${esc(profile.skill_name)}</code>` : ''}<p>${esc(profile.description)}</p><button class="button" data-action="preview" data-profile="${esc(profile.id)}">查看技能正文</button></article>`).join('');
-  $('#skill-count').textContent = `显示 ${profiles.length} / ${state.profiles.length} 项`;
+  $('#skill-count').textContent = `显示 ${profiles.length} / ${candidates.length} 项`;
 }
 $('#skill-search').oninput = renderLibrary;
 $('#skill-category').onchange = renderLibrary;
@@ -149,6 +161,12 @@ document.addEventListener('click', async event => {
   try {
     switch (button.dataset.action) {
       case 'toggle': await toggle(key); break;
+      case 'use-recommended': {
+        const provider = state.providers.find(p => p.key === key);
+        if (provider.installed) await runProvider(key, async () => { await api('inject', {provider: key, profile: state.default_profile}); toast('已更新到推荐技能库，请新建客户端会话'); });
+        else { provider.profile = state.default_profile; render(); }
+        break;
+      }
       case 'prepare-rea': await runProvider(key, async () => { await api('inject', {provider: key, profile: state.providers.find(p => p.key === key).profile}); toast('REA 已准备好，请退出并重新打开 AI 客户端'); }); break;
       case 'repair-rea': await runProvider(key, async () => { await api('repair_rea', {provider: key, profile: $(`#profile-${key}`).value}); toast('已备份并修复，请退出并重新打开 AI 客户端'); }); break;
       case 'directory': directory(key); break;
@@ -164,7 +182,14 @@ document.addEventListener('change', async event => {
   const profile = event.target.value;
   const p = state.providers.find(p => p.key === key);
   if (p.installed) await runProvider(key, async () => { await api('inject', {provider: key, profile}); toast('技能方案已切换，请新建客户端会话'); });
+  else { p.profile = profile; render(); }
 });
+document.addEventListener('toggle', event => {
+  const details = event.target;
+  if (!details.matches?.('.profile-advanced') || !details.isConnected) return;
+  if (details.open) advancedProfiles.add(details.dataset.provider);
+  else advancedProfiles.delete(details.dataset.provider);
+}, true);
 document.querySelectorAll('[data-page]').forEach(button => { button.onclick = () => {
   document.querySelectorAll('[data-page]').forEach(b => b.classList.toggle('active', b === button));
   document.querySelectorAll('.page').forEach(page => { page.hidden = page.id !== `${button.dataset.page}-page`; });
@@ -173,7 +198,7 @@ document.querySelectorAll('[data-page]').forEach(button => { button.onclick = ()
 $('#refresh').onclick = async () => { try { await refresh(); toast('状态已刷新'); } catch (e) { toast(e.message); } };
 $('#theme').onclick = () => { const theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'; document.documentElement.dataset.theme = theme; localStorage.setItem('pojia-local-theme', theme); };
 document.documentElement.dataset.theme = localStorage.getItem('pojia-local-theme') || 'light';
-$('#guide').onclick = () => modal('使用技能', '<div class="modal-content"><p>1. 找到你使用的 AI 客户端，保留默认的“完整技能库”，点击开启技能。</p><p>2. 等待“REA 已就绪”。首次开启会自动释放内置环境、写入连接并完成启动测试，无需安装 Node 或配置 MCP。</p><p>3. 退出并重新打开 AI 客户端，直接说“使用技能分析这个软件”或“使用技能修复这个问题”，再说明文件位置和目标。</p><p>4. AI 会自动选择相关技能，你不用知道技能名称。关闭开关可以撤销技能和本软件的 REA 连接；原有配置和外部修改会保留。</p><p>REA 基础工具已内置；EXE/DLL 深度反编译需要另有 IDA/Ghidra，Android 等分析也有各自运行条件。不同客户端版本的实际加载需要在新会话确认。</p></div>');
+$('#guide').onclick = () => modal('使用技能', '<div class="modal-content"><p>1. 找到你使用的 AI 客户端，直接点击开启技能。推荐技能库已默认选择，AI 会按任务自动选择相关模块。</p><p>2. 旧版已开启的用户，点击“更新到推荐技能库”即可升级。只有需要自定义方案时才展开“高级选项”。</p><p>3. 等待“REA 已就绪”，退出并重新打开 AI 客户端，再新建会话。首次开启会自动准备内置环境和连接，无需安装 Node 或配置 MCP。</p><p>4. 直接说“使用技能”并描述目标与文件位置。关闭开关可以撤销；原有配置和外部修改会保留。</p><p>REA 基础工具已内置；EXE/DLL 深度反编译需要相应分析引擎。实际加载需要在新会话确认。</p></div>');
 $('#import').onclick = () => {
   modal('导入技能', '<div class="modal-content"><p>支持 Markdown 文件、含 SKILL.md 的文件夹或 ZIP。文件夹/ZIP 可包含 references/ 与 scripts/；每次导入一个技能。</p><input id="import-path" class="field" placeholder="填写技能文件或文件夹的完整路径" aria-label="技能路径"></div><div class="modal-actions"><button id="browse-skill-folder" class="button">选择文件夹</button><button id="browse-skill-file" class="button">选择文件</button><button id="confirm-import" class="button primary">导入</button></div>');
   const browse = async command => { try { const result = await api(command); if (result.path) $('#import-path').value = result.path; } catch (e) { toast(e.message); } };
