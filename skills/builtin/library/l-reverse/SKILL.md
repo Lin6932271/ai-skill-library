@@ -1,11 +1,11 @@
 ---
 name: l-reverse
-description: "MUST on 逆向/脱壳/反编译/Frida/IDA/PE/APK/Hook/协议/微信小程序. Local router to detailed modules."
+description: "按样本格式路由二进制、移动端、JS 和协议逆向任务"
 ---
 
 # l-reverse Local Entry
 
-Scope: reversing / unpacking / decompilation / Frida / IDA / protocols / firmware / malware samples / forensics. Detailed modules are installed beside this entry.
+Scope: reversing / unpacking / decompilation / Frida / IDA / protocols / firmware / malware samples / forensics. This skill is a local routing entry; the detailed capabilities live in local modules.
 
 ## Selection Rules (avoid mis-picking)
 1. First read the "Module List" below.
@@ -13,10 +13,6 @@ Scope: reversing / unpacking / decompilation / Frida / IDA / protocols / firmwar
    When multiple capabilities are needed, stack at most 3, with entries higher up taking priority.
 3. Read the selected local module from `../<MODULE_ID>/SKILL.md`, then apply its task guidance.
 4. When none matches exactly, fall through to the "Fallback" at the bottom of this page.
-
-## Local Module Reading
-
-Read the selected module from the adjacent directory `<MODULE_ID>/SKILL.md`. Use the existing local file directly.
 
 ## Module List (with hit/exclude boundaries for precise routing)
 
@@ -46,6 +42,31 @@ Read the selected module from the adjacent directory `<MODULE_ID>/SKILL.md`. Use
 - `pwn-chain` — Pwn exploit chain. [命中: 栈/堆溢出/rop/漏洞已明确要写利用/pwntools] [排除: 还在理解目标怎么跑→reverse-engineering]
 
 ## Fallback
-When none of the above matches exactly: for reversing tasks read `reverse_flow_skill`, for pentest tasks read `pentest-tools`, then continue per its body; if still unsure read `skills` for a second routing pass.
+When no listed method matches, return to the installed edition's local directory and choose a relevant available module.
 
-<!-- skill-trace:a48bc6437259cbbeb612cd109f3c5959 -->
+## 本版可用模块
+
+| 模块 | 用途 | 正文 |
+| --- | --- | --- |
+| `reverse_flow_skill` | 需要从样本识别、静态分析到验证和报告的完整逆向流程 | [读取](../reverse_flow_skill/SKILL.md) |
+| `reverse-engineering` | 分析 PE/ELF、壳、混淆、加载器或配置恢复 | [读取](../reverse-engineering/SKILL.md) |
+| `ida-reverse` | 使用 IDA 类分析结果建立函数语义和调用链 | [读取](../ida-reverse/SKILL.md) |
+| `ghidra-reverse` | 基于 Ghidra 的程序结构、伪代码和数据类型分析 | [读取](../ghidra-reverse/SKILL.md) |
+| `radare2` | 使用命令行二进制分析结果检查格式、函数、字符串和引用 | [读取](../radare2/SKILL.md) |
+| `apk-reverse` | 分析 APK、DEX、Smali、Android 组件与 JNI 边界 | [读取](../apk-reverse/SKILL.md) |
+| `mobile-reverse` | 分析 iOS/IPA 或跨平台移动客户端、存储与运行时边界 | [读取](../mobile-reverse/SKILL.md) |
+| `macos-reverse` | 分析 Mach-O、签名、权限、动态链接与 macOS 客户端逻辑 | [读取](../macos-reverse/SKILL.md) |
+| `dotnet-reverse` | 分析托管程序集、IL、资源、混淆和托管/native 交互 | [读取](../dotnet-reverse/SKILL.md) |
+| `go-rust-reverse` | 识别 Go/Rust 程序的运行时、元数据与业务代码 | [读取](../go-rust-reverse/SKILL.md) |
+| `js-reverse` | 理解压缩 JS、Webpack、签名算法、混淆代码或 WASM 模块 | [读取](../js-reverse/SKILL.md) |
+| `reverse-engineering__dsl-vm-reverse` | Reverse JavaScript-based custom DSL/VM interpreters, non-standard WASM-like runtimes, and risk-control engines. Use when analyzing IIFE or switch-based opcode dispatchers, extracting instruction tables, recovering bytecode semantics, capturing VM state at runtime, or reconstructing execution flow. | [读取](../reverse-engineering__dsl-vm-reverse/SKILL.md) |
+| `protocol-reverse` | 从实现或样本流量还原消息帧、字段和状态机 | [读取](../protocol-reverse/SKILL.md) |
+| `binary-diff` | 比较两个版本的二进制并定位行为变化 | [读取](../binary-diff/SKILL.md) |
+| `patch-diff-exploit` | 通过补丁差分理解漏洞根因和修复完整性 | [读取](../patch-diff-exploit/SKILL.md) |
+| `malware-analysis` | 分析未知程序、行为指标、持久化痕迹和检测线索 | [读取](../malware-analysis/SKILL.md) |
+| `digital-forensics` | 分析磁盘、内存、日志与事件时间线并保留证据链 | [读取](../digital-forensics/SKILL.md) |
+| `edr-bypass-re` | 逆向理解终端防护的可观测性、检测边界与回归缺口 | [读取](../edr-bypass-re/SKILL.md) |
+| `hardware-security` | 分析自有硬件的 UART/JTAG、启动与调试接口 | [读取](../hardware-security/SKILL.md) |
+| `radio-sdr` | 分析已获准的无线信号、采样与协议特征 | [读取](../radio-sdr/SKILL.md) |
+| `firmware-pentest` | 分析固件文件系统、服务暴露、更新与设备信任边界 | [读取](../firmware-pentest/SKILL.md) |
+| `pwn-chain` | 分析本地练习样本的内存损坏、崩溃与防护机制 | [读取](../pwn-chain/SKILL.md) |

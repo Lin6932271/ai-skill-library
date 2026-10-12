@@ -53,7 +53,7 @@ description: "按目标架构、模式与地址映射解码有界机器码，输
 
 ## 相关本地方法
 
-- [reverse-engineering](../reverse-engineering/SKILL.md)
+- reverse-engineering（本版正文未取得）
 
 ## 使用与验证
 

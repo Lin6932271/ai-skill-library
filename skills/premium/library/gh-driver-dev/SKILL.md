@@ -523,8 +523,8 @@ PVOID get_kernel_function(const char* function_name) {
 
 ## 相关本地方法
 
-- [build-release](../build-release/SKILL.md)
-- [reverse-engineer-anything](../reverse-engineer-anything/SKILL.md)
+- build-release（本版正文未取得）
+- reverse-engineer-anything（本版正文未取得）
 
 ## 使用与验证
 

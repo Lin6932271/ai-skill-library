@@ -16,3 +16,8 @@
 *.mp4 binary
 *.zip binary
 *.exe binary
+
+# Resource checksums require preserving the packaged bytes on every checkout.
+frontend/** -text
+skills/** -text
+runtime/** -text

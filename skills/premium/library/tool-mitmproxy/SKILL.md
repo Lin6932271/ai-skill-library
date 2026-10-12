@@ -54,9 +54,9 @@ description: "用 flow、addon 和时间线复核 HTTP/TLS/WebSocket 流量，�
 
 ## 相关本地方法
 
-- [network-analysis](../network-analysis/SKILL.md)
+- network-analysis（本版正文未取得）
 - [browser-automation](../browser-automation/SKILL.md)
-- [build-release](../build-release/SKILL.md)
+- build-release（本版正文未取得）
 
 ## 使用与验证
 

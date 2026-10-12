@@ -28,7 +28,7 @@ Return evidence table with columns: feature, URL input type, validation method, 
 
 - [code-audit](../code-audit/SKILL.md)
 - [api-security](../api-security/SKILL.md)
-- [network-analysis](../network-analysis/SKILL.md)
+- network-analysis（本版正文未取得）
 
 ## 使用与验证
 

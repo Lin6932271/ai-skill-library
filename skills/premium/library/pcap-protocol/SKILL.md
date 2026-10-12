@@ -26,9 +26,9 @@ Return evidence table with columns: Session | Protocol | Packets | Finding | Art
 
 ## 相关本地方法
 
-- [network-analysis](../network-analysis/SKILL.md)
+- network-analysis（本版正文未取得）
 - [protocol-reverse](../protocol-reverse/SKILL.md)
-- [digital-forensics](../digital-forensics/SKILL.md)
+- digital-forensics（本版正文未取得）
 
 ## 使用与验证
 

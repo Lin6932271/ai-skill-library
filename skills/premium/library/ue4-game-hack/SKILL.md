@@ -690,7 +690,7 @@ end)
 ## 相关本地方法
 
 - [gh-game-engines](../gh-game-engines/SKILL.md)
-- [build-release](../build-release/SKILL.md)
+- build-release（本版正文未取得）
 
 ## 使用与验证
 

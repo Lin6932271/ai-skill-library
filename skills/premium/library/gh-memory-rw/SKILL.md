@@ -362,7 +362,7 @@ def find_pattern_and_read(pm, module, pattern, offsets):
 
 ## 相关本地方法
 
-- [reverse-engineering](../reverse-engineering/SKILL.md)
+- reverse-engineering（本版正文未取得）
 
 ## 使用与验证
 

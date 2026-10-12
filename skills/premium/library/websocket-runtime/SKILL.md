@@ -26,7 +26,7 @@ Provide a handshake-and-frame timeline, authorization checks by stage, minimal r
 ## 相关本地方法
 
 - [api-security](../api-security/SKILL.md)
-- [network-analysis](../network-analysis/SKILL.md)
+- network-analysis（本版正文未取得）
 - [browser-automation](../browser-automation/SKILL.md)
 
 ## 使用与验证

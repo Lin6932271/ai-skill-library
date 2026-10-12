@@ -383,7 +383,7 @@ dump_so("libil2cpp.so");
 ## 相关本地方法
 
 - [apk-reverse](../apk-reverse/SKILL.md)
-- [mobile-reverse](../mobile-reverse/SKILL.md)
+- mobile-reverse（本版正文未取得）
 - [tool-il2cpp-static](../tool-il2cpp-static/SKILL.md)
 - [tool-il2cpp-bridge](../tool-il2cpp-bridge/SKILL.md)
 - [tool-unitypy](../tool-unitypy/SKILL.md)

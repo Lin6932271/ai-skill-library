@@ -25,7 +25,7 @@ Produce a contract matrix showing source, version, operation, authorization expe
 
 ## 相关本地方法
 
-- [api-design](../api-design/SKILL.md)
+- api-design（本版正文未取得）
 - [api-security](../api-security/SKILL.md)
 - [bundle-sourcemap-recovery](../bundle-sourcemap-recovery/SKILL.md)
 

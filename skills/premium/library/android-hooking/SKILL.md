@@ -88,7 +88,7 @@ Java.perform(function () {
 | 行为与恢复 | 原参数/返回/异常保持情况、卸载与基线复测 |
 | 业务效果 | 当前用户请求对应的独立成功证据；未测时明确未验证 |
 
-静态定位和 APK 结构核对使用 [APK 分析](../apk-reverse/SKILL.md)；跨 Android/iOS 的平台流程使用 [移动应用分析](../mobile-reverse/SKILL.md)。本文补充细粒度观测，不取代它们，也不自动启动设备或执行示例。
+静态定位和 APK 结构核对使用 [APK 分析](../apk-reverse/SKILL.md)；跨 Android/iOS 的平台流程使用 移动应用分析（本版正文未取得）。本文补充细粒度观测，不取代它们，也不自动启动设备或执行示例。
 
 ## 接入前专项检查
 
@@ -99,7 +99,7 @@ Java.perform(function () {
 ## 相关本地方法
 
 - [apk-reverse](../apk-reverse/SKILL.md)
-- [mobile-reverse](../mobile-reverse/SKILL.md)
+- mobile-reverse（本版正文未取得）
 - [tool-perfetto](../tool-perfetto/SKILL.md)
 - [tool-breakpad](../tool-breakpad/SKILL.md)
 

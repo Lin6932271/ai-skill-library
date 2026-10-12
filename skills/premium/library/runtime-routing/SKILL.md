@@ -25,8 +25,8 @@ Return a route map, configuration/runtime differences, the minimal benign reprod
 
 ## 相关本地方法
 
-- [deploy-infra](../deploy-infra/SKILL.md)
-- [network-analysis](../network-analysis/SKILL.md)
+- deploy-infra（本版正文未取得）
+- network-analysis（本版正文未取得）
 - [api-security](../api-security/SKILL.md)
 
 ## 使用与验证

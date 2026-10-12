@@ -1,6 +1,6 @@
 # 从源码构建
 
-普通用户从 [1.5.2 发布页面](https://github.com/Lin6932271/ai-skill-library/releases/tag/v1.5.2)下载 Windows 程序即可，无需执行本页命令。
+普通用户从 [1.5.4 发布页面](https://github.com/Lin6932271/ai-skill-library/releases/tag/v1.5.4)下载 Windows 程序即可，无需执行本页命令。
 
 ## 环境与步骤
 
@@ -18,14 +18,14 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\build.ps1
 ```
 
 产物为 `dist/AISkillLibrary.exe`。`build.ps1` 优先使用项目已有的运行环境，其次使用 `.venv`，最后使用 PATH 中的 Python。
-交付 EXE 的 SHA-256 见 `AISkillLibrary-1.5.2-SHA256SUMS.txt`；本机重新构建的二进制可能因环境和构建时间而有不同哈希。
+交付 EXE 的 SHA-256 见 Release 附件 `SHA256SUMS.txt`；本机重新构建的二进制可能因环境和构建时间而有不同哈希。
 
 ## 额外验收
 
 ```powershell
 & .\.venv\Scripts\python.exe tests/rea_acceptance.py
 & .\.venv\Scripts\python.exe -m pip install -r requirements-dev.txt
-& .\.venv\Scripts\python.exe tests/browser_acceptance.py dist/AISkillLibrary.exe
+& .\.venv\Scripts\python.exe tests/profile_switch_acceptance.py --exe dist/AISkillLibrary.exe
 ```
 
 REA 验收使用隔离配置和数据目录，测试内置包解压、七种连接配置、CLI/MCP 启动及样例分析。

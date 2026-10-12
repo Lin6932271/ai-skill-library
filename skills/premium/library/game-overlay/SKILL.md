@@ -600,7 +600,7 @@ void DrawESP() {
 
 - [gh-hook-techniques](../gh-hook-techniques/SKILL.md)
 - [gh-memory-rw](../gh-memory-rw/SKILL.md)
-- [build-release](../build-release/SKILL.md)
+- build-release（本版正文未取得）
 
 ## 使用与验证
 

@@ -26,7 +26,7 @@ Return evidence table with columns: layer pair, differential type, request sampl
 
 ## 相关本地方法
 
-- [network-analysis](../network-analysis/SKILL.md)
+- network-analysis（本版正文未取得）
 - [api-security](../api-security/SKILL.md)
 
 ## 使用与验证

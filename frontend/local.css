@@ -62,6 +62,11 @@ h1 { margin: 0; font-size: 25px; font-weight: 690; letter-spacing: -.6px; }
 .path-button { margin-left: auto; border: 0; background: transparent; color: #6d84af; font-size: 11px; white-space: nowrap; padding: 0; }
 .profile-row { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #edf0f3; padding-bottom: 12px; gap: 8px; }
 .profile-summary { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: var(--main); font-size: 12px; }
+.edition-control { display: flex; align-items: center; gap: 6px; margin-left: auto; flex-shrink: 0; font-size: 11px; white-space: nowrap; color: var(--main); }
+.edition-control .switch { flex-shrink: 0; }
+.edition-hint { color: var(--muted); font-size: 10px; white-space: nowrap; }
+.pj-service-head { flex-wrap: wrap; gap: 8px; }
+.switch:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .recommended-badge { color: #007c70; background: #e9f7f1; padding: 3px 8px; border-radius: 6px; font-size: 10px; white-space: nowrap; }
 .profile-advanced { border-bottom: 1px solid var(--border); padding-bottom: 10px; }
 .profile-advanced summary { color: var(--muted); cursor: pointer; font-size: 11px; }

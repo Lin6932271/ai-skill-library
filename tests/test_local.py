@@ -115,7 +115,7 @@ class IntegrationTests(unittest.TestCase):
         self.assertTrue(self.manager.revoke('claude')['removed'])
 
     def test_builtin_suite_all_clients_switch_and_restore(self):
-        self.assertEqual(len(self.manager.builtin_catalog), 54)
+        self.assertEqual(len(self.manager.builtin_catalog), 49)
         for provider, spec in PROVIDERS.items():
             with self.subTest(provider=provider):
                 root = self.manager.root(provider)
@@ -126,9 +126,9 @@ class IntegrationTests(unittest.TestCase):
                 self.manager.inject(provider, 'extended')
                 self.manager.inject(provider, 'builtin')
                 self.assertTrue(self.manager.verify(provider)['ok'])
-                self.assertEqual(len(list((root/'skills').glob('*/SKILL.md'))), 55)
+                self.assertEqual(len(list((root/'skills').glob('*/SKILL.md'))), 51)
                 self.assertFalse((root/'skills/container-runtime/SKILL.md').exists())
-                self.assertTrue((root/'skills/docs-generator/SKILL.md').exists())
+                self.assertTrue((root/'skills/cloud-k8s/SKILL.md').exists())
                 self.manager.inject(provider, 'builtin-apk-reverse')
                 content = (root/'skills/apk-reverse/SKILL.md').read_text('utf-8')
                 self.assertIn('JNI', content)
@@ -154,7 +154,8 @@ class IntegrationTests(unittest.TestCase):
         self.manager.inject('codex', 'builtin-l-reverse')
         deployed = {p.parent.name for p in (self.manager.root('codex')/'skills').glob('*/SKILL.md')}
         entry = self.manager.builtins['builtin-l-reverse']
-        self.assertEqual(deployed, {'l-reverse', *entry['dependencies'], 'reverse-engineer-anything'})
+        dependency_names = {self.manager.indexed[item]['skill_name'] if item in self.manager.indexed else item for item in entry['dependencies']}
+        self.assertEqual(deployed, {'l-reverse', *dependency_names, 'reverse-engineer-anything'})
         self.assertTrue(self.manager.verify('codex')['ok'])
 
     def test_extension_generation_keeps_metadata_neutral(self):

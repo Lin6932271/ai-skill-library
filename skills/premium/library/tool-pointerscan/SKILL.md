@@ -85,7 +85,7 @@ PointerScan 主要提供：
 ## 相关本地方法
 
 - [gh-memory-rw](../gh-memory-rw/SKILL.md)
-- [build-release](../build-release/SKILL.md)
+- build-release（本版正文未取得）
 
 ## 使用与验证
 

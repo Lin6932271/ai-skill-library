@@ -676,7 +676,7 @@ AddVectoredExceptionHandler(1, vectored_handler);
 
 ## 相关本地方法
 
-- [reverse-engineering](../reverse-engineering/SKILL.md)
+- reverse-engineering（本版正文未取得）
 - [tool-dobby](../tool-dobby/SKILL.md)
 
 ## 使用与验证

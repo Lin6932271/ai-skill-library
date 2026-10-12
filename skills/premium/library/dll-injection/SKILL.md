@@ -735,7 +735,7 @@ eject.exe --process game.exe --module payload.dll
 ## 相关本地方法
 
 - [gh-hook-techniques](../gh-hook-techniques/SKILL.md)
-- [build-release](../build-release/SKILL.md)
+- build-release（本版正文未取得）
 
 ## 使用与验证
 

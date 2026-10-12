@@ -413,7 +413,7 @@ def encrypt_password(password):
 - [ida-reverse](../ida-reverse/SKILL.md)
 - [ghidra-reverse](../ghidra-reverse/SKILL.md)
 - [dotnet-reverse](../dotnet-reverse/SKILL.md)
-- [reverse-engineer-anything](../reverse-engineer-anything/SKILL.md)
+- reverse-engineer-anything（本版正文未取得）
 
 ## 使用与验证
 

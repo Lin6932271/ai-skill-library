@@ -726,7 +726,7 @@ Interceptor.replace(setGrassAddr, new NativeCallback(function(thisPtr, visible) 
 ## 相关本地方法
 
 - [apk-reverse](../apk-reverse/SKILL.md)
-- [mobile-reverse](../mobile-reverse/SKILL.md)
+- mobile-reverse（本版正文未取得）
 - [gh-game-engines](../gh-game-engines/SKILL.md)
 - [protocol-reverse](../protocol-reverse/SKILL.md)
 - [tool-scrcpy](../tool-scrcpy/SKILL.md)

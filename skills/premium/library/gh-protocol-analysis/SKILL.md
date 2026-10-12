@@ -445,7 +445,7 @@ class AutoBattle:
 ## 相关本地方法
 
 - [protocol-reverse](../protocol-reverse/SKILL.md)
-- [network-analysis](../network-analysis/SKILL.md)
+- network-analysis（本版正文未取得）
 
 ## 使用与验证
 

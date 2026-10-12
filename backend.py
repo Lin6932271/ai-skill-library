@@ -16,7 +16,7 @@ from pathlib import Path
 from rea_config import McpConfig, ReaError
 from rea_runtime import ReaRuntime
 
-VERSION = "1.5.2"
+VERSION = "1.5.4"
 BEGIN = b"<!-- POJIA-LOCAL:BEGIN -->"
 END = b"<!-- POJIA-LOCAL:END -->"
 MAX_IMPORT = 32 * 1024 * 1024
@@ -89,7 +89,7 @@ class SkillManager:
         self.lock = threading.RLock()
         self.use_env = use_env
         self.state_file = self.data_dir / "state.json"
-        self.state = {"schema": 1, "paths": {}, "installed": {}, "custom": {}, "events": []}
+        self.state = {"schema": 1, "paths": {}, "installed": {}, "selected_profiles": {}, "custom": {}, "events": []}
         if self.state_file.exists():
             try:
                 loaded = json.loads(self.state_file.read_text("utf-8"))
@@ -108,9 +108,11 @@ class SkillManager:
         self.builtin_catalog = json.loads(builtin_path.read_text("utf-8"))["items"] if builtin_path.exists() else []
         self.builtins = {item["id"]: item for item in self.builtin_catalog}
         premium_path = self.bundle_dir / "skills" / "premium-catalog.json"
-        self.premium_catalog = json.loads(premium_path.read_text("utf-8"))["items"] if premium_path.exists() else []
+        premium_manifest = json.loads(premium_path.read_text("utf-8")) if premium_path.exists() else {}
+        self.premium_catalog = premium_manifest.get("items", [])
+        self.premium_missing = premium_manifest.get("missing_items", [])
         self.premiums = {item["id"]: item for item in self.premium_catalog}
-        self.premium_suite_documents = len({item["skill_name"] for item in self.builtin_catalog + self.premium_catalog})
+        self.premium_suite_documents = premium_manifest.get("expected_documents", len(self.premium_catalog))
         self.indexed = {**self.extensions, **self.builtins, **self.premiums}
         self.rea = ReaRuntime(self.bundle_dir, self.data_dir)
 
@@ -183,7 +185,32 @@ class SkillManager:
             return {"path": str(self.root(provider))}
 
     def default_profile(self) -> str:
-        return "premium" if self.premium_catalog else "builtin" if self.builtin_catalog else "extended" if self.catalog else "basic"
+        return "builtin" if self.builtin_catalog else "premium" if self.premium_catalog else "extended" if self.catalog else "basic"
+
+    def selected_profile(self, provider: str) -> str:
+        record = self.state["installed"].get(provider) or {}
+        return self.normalize_profile(record.get("profile") or self.state["selected_profiles"].get(provider) or self.default_profile())
+
+    def select_profile(self, provider: str, profile: str) -> dict:
+        """Persist an idle choice, or atomically switch an installed client."""
+        with self.lock:
+            self.root(provider)
+            profile = self.normalize_profile(profile)
+            if profile not in {item["id"] for item in self.profiles()}:
+                raise LocalError("未找到技能方案")
+            if self.state["installed"].get(provider):
+                return self.inject(provider, profile)
+            previous = self.state["selected_profiles"].get(provider)
+            self.state["selected_profiles"][provider] = profile
+            try:
+                self.save()
+            except Exception:
+                if previous is None:
+                    self.state["selected_profiles"].pop(provider, None)
+                else:
+                    self.state["selected_profiles"][provider] = previous
+                raise
+            return {"provider": provider, "profile": profile, "installed": False}
 
     def profiles(self) -> list[dict]:
         result = ([{"id": "extended", "name": "扩展技能库 · 50 项", "description": "安装扩展入口与模块，按任务读取", "builtin": True, "collection": "extension", "category": "整套"}] if self.catalog else []) + [
@@ -191,12 +218,12 @@ class SkillManager:
             {"id": "advanced", "name": "进阶技能", "description": "增加调试、审查与变更交付规范", "builtin": True},
         ]
         if self.builtin_catalog:
-            result.insert(0, {"id": "builtin", "name": f"兼容技能库 · {len(self.builtin_catalog)} 项" if self.premium_catalog else f"推荐技能库 · {len(self.builtin_catalog)} 项", "description": "保留原有模块，可在高级选项中使用" if self.premium_catalog else "按任务自动选择相关技能，直接开启即可", "builtin": True, "collection": "builtin", "category": "整套"})
+            result.insert(0, {"id": "builtin", "name": f"原版技能 · {len(self.builtin_catalog)} 项", "description": "原版技能方案，按任务选择模块", "builtin": True, "collection": "builtin", "category": "整套"})
             result.extend(self.builtin_catalog)
         if self.premium_catalog:
             result.insert(0, {
-                "id": "premium", "name": f"推荐技能库 · {self.premium_suite_documents} 项",
-                "description": "包含完整技能库与增强模块，AI 按任务自动选择，直接开启即可",
+                "id": "premium", "name": f"精品技能 · {self.premium_suite_documents} 项",
+                "description": f"独立精品技能方案，已取回 {len(self.premium_catalog)} 项" + (f"，待取回 {len(self.premium_missing)} 项" if self.premium_missing else ""),
                 "builtin": True, "collection": "premium", "category": "整套"})
             result.extend(self.premium_catalog)
         result.extend(self.catalog)
@@ -217,6 +244,9 @@ class SkillManager:
 
     def profile_root(self, profile: str) -> Path:
         profile = self.normalize_profile(profile)
+        if profile == "builtin-reverse-engineer-anything":
+            shared = self.bundle_dir / "skills" / "shared" / "reverse-engineer-anything"
+            return shared if shared.is_dir() else self.bundle_dir / "skills" / "builtin" / "library" / "reverse-engineer-anything"
         if profile in ("basic", "advanced", "extended", "builtin", "premium"):
             return self.bundle_dir / "skills" / profile
         if profile in self.extensions:
@@ -246,13 +276,6 @@ class SkillManager:
             files[path.relative_to(root).as_posix()] = data
         if "SKILL.md" not in files:
             raise LocalError("技能目录需要 SKILL.md")
-        if profile == "premium":
-            merged = {rel: data for rel, data in self.profile_files("builtin").items()
-                      if rel.startswith("library/")}
-            merged.update(files)
-            if sum(map(len, merged.values())) > MAX_IMPORT or len(merged) > 2000:
-                raise LocalError("技能资源超过 32 MB 或 2000 个文件")
-            files = merged
         return files
 
     def _profile_deployment_files(self, profile: str) -> dict[str, bytes]:
@@ -401,11 +424,12 @@ class SkillManager:
         return BEGIN + content.encode("utf-8") + END
 
     def inject(self, provider: str, profile: str | None = None) -> dict:
-        profile = self.normalize_profile(profile or self.default_profile())
+        profile = self.normalize_profile(profile or self.selected_profile(provider))
         with self.lock:
             root = self.root(provider)
             instruction = root / PROVIDERS[provider][3]
             old = self.state["installed"].get(provider)
+            previous_choice = self.state["selected_profiles"].get(provider)
             original = read_file(instruction)
             parts = split_block(original or b"")
             if parts and not old:
@@ -477,6 +501,7 @@ class SkillManager:
                           "rea": {"runtime": runtime, "probe": probe, "config": mcp_record},
                           "files": {rel: {"hash": sha(data)} for rel, data in files.items()}}
                 self.state["installed"][provider] = record
+                self.state["selected_profiles"][provider] = profile
                 self.event("inject", provider, profile)
             except Exception:
                 self.rea.update("写入未完成，正在恢复原配置", 0, "failed")
@@ -491,6 +516,10 @@ class SkillManager:
                     self.state["installed"][provider] = old
                 else:
                     self.state["installed"].pop(provider, None)
+                if previous_choice is None:
+                    self.state["selected_profiles"].pop(provider, None)
+                else:
+                    self.state["selected_profiles"][provider] = previous_choice
                 raise
             return {"provider": provider, "profile": profile, "backup": str(backup), "verification": self.verify(provider)}
 
@@ -663,13 +692,21 @@ class SkillManager:
                 root = self.root(key)
                 record = self.state["installed"].get(key)
                 verification = self.verify(key)
+                needs_skill_update = False
+                if record:
+                    try:
+                        desired = {rel: sha(content) for rel, content in self.deployment_files(self.selected_profile(key)).items()}
+                        needs_skill_update = desired != {rel: row["hash"] for rel, row in record["files"].items()}
+                    except (LocalError, OSError, KeyError):
+                        pass
                 try:
                     recoverable = not record and self.recoverable_rea(key) is not None
                 except (ReaError, LocalError, OSError):
                     recoverable = False
                 items.append({"key": key, "name": spec[0], "icon": spec[4], "path": str(root),
                               "instruction": spec[3], "exists": root.is_dir(), "installed": bool(record),
-                              "profile": self.normalize_profile((record or {}).get("profile", self.default_profile())), "verification": verification,
+                              "profile": self.selected_profile(key), "verification": verification,
+                              "needs_skill_update": needs_skill_update,
                               "rea": (record or {}).get("rea", {}).get("probe"),
                               "rea_needs_update": bool(record and record.get('rea') and not self.rea.is_current(record['rea']['runtime'])),
                               "rea_recovery_available": bool(recoverable),
@@ -679,6 +716,7 @@ class SkillManager:
                     "builtin_documents": len(self.builtin_catalog),
                     "premium_documents": len(self.premium_catalog),
                     "premium_suite_documents": self.premium_suite_documents if self.premium_catalog else 0,
+                    "premium_missing": self.premium_missing,
                     "rea_runtime": self.rea.summary(),
                     "events": list(reversed(self.state["events"][-12:]))}
 
@@ -699,6 +737,8 @@ class SkillManager:
                     data = self.status()
                 elif command == "inject":
                     data = self.inject(args["provider"], args.get("profile"))
+                elif command == "select_profile":
+                    data = self.select_profile(args["provider"], args["profile"])
                 elif command == "repair_rea":
                     data = self.repair_rea(args['provider'], args.get('profile'))
                 elif command == "revoke":

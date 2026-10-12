@@ -1,6 +1,6 @@
 ---
 name: tool-mumu
-description: "Mumu模拟器专用技能（MuMu Python API）技能卡\r"
+description: "Mumu模拟器专用技能（MuMu Python API）技能卡"
 ---
 
 # Mumu模拟器专用技能（MuMu Python API）技能卡
