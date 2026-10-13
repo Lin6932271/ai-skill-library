@@ -1,0 +1,2648 @@
+{
+  "schema": 1,
+  "application_version": "1.5.5",
+  "generated_utc": "2026-10-13T02:44:43.419306+00:00",
+  "python_runtime": "3.14.3",
+  "node_runtime": "v24.19.0",
+  "rea_version": "6.1.0",
+  "python_components": 11,
+  "npm_components": 282,
+  "components": [
+    {
+      "name": "bottle",
+      "version": "0.13.4",
+      "ecosystem": "PyPI",
+      "dependencies": [],
+      "evidence": "Build-environment metadata of declared application dependency closure"
+    },
+    {
+      "name": "cffi",
+      "version": "2.1.1",
+      "ecosystem": "PyPI",
+      "dependencies": [
+        "pycparser; implementation_name != \"PyPy\""
+      ],
+      "evidence": "Build-environment metadata of declared application dependency closure"
+    },
+    {
+      "name": "clr_loader",
+      "version": "0.3.1",
+      "ecosystem": "PyPI",
+      "dependencies": [
+        "cffi>=1.17"
+      ],
+      "evidence": "Build-environment metadata of declared application dependency closure"
+    },
+    {
+      "name": "pillow",
+      "version": "12.3.0",
+      "ecosystem": "PyPI",
+      "dependencies": [],
+      "evidence": "Build-environment metadata of declared application dependency closure"
+    },
+    {
+      "name": "proxy_tools",
+      "version": "0.1.0",
+      "ecosystem": "PyPI",
+      "dependencies": [],
+      "evidence": "Build-environment metadata of declared application dependency closure"
+    },
+    {
+      "name": "pycparser",
+      "version": "3.0",
+      "ecosystem": "PyPI",
+      "dependencies": [],
+      "evidence": "Build-environment metadata of declared application dependency closure"
+    },
+    {
+      "name": "pythonnet",
+      "version": "3.2.0",
+      "ecosystem": "PyPI",
+      "dependencies": [
+        "clr_loader<0.4.0,>=0.3.1"
+      ],
+      "evidence": "Build-environment metadata of declared application dependency closure"
+    },
+    {
+      "name": "pywebview",
+      "version": "6.2.1",
+      "ecosystem": "PyPI",
+      "dependencies": [
+        "pythonnet; sys_platform == \"win32\"",
+        "proxy_tools",
+        "bottle",
+        "typing_extensions"
+      ],
+      "evidence": "Build-environment metadata of declared application dependency closure"
+    },
+    {
+      "name": "ruamel.yaml",
+      "version": "0.19.1",
+      "ecosystem": "PyPI",
+      "dependencies": [],
+      "evidence": "Build-environment metadata of declared application dependency closure"
+    },
+    {
+      "name": "tomlkit",
+      "version": "0.13.3",
+      "ecosystem": "PyPI",
+      "dependencies": [],
+      "evidence": "Build-environment metadata of declared application dependency closure"
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.16.0",
+      "ecosystem": "PyPI",
+      "dependencies": [],
+      "evidence": "Build-environment metadata of declared application dependency closure"
+    },
+    {
+      "name": "@babel/helper-string-parser",
+      "version": "8.0.6",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/@babel/helper-string-parser/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@babel/helper-validator-identifier",
+      "version": "8.0.6",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/@babel/helper-validator-identifier/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@babel/parser",
+      "version": "8.0.4",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/@babel/parser/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@babel/types",
+      "version": "8.0.4",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/@babel/types/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@cfworker/json-schema",
+      "version": "4.1.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/@cfworker/json-schema/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@clack/core",
+      "version": "1.4.3",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/@clack/core/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@clack/prompts",
+      "version": "1.7.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/@clack/prompts/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@electron/asar",
+      "version": "4.2.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/@electron/asar/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@gar/promise-retry",
+      "version": "1.0.3",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/@gar/promise-retry/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@isaacs/fs-minipass",
+      "version": "4.0.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/@isaacs/fs-minipass/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@isaacs/string-locale-compare",
+      "version": "1.1.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/@isaacs/string-locale-compare/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@jridgewell/resolve-uri",
+      "version": "3.1.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/@jridgewell/resolve-uri/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@jridgewell/sourcemap-codec",
+      "version": "1.6.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/@jridgewell/sourcemap-codec/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@jridgewell/trace-mapping",
+      "version": "0.3.31",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/@jridgewell/trace-mapping/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@lydell/node-pty",
+      "version": "1.1.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/@lydell/node-pty/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@lydell/node-pty-win32-x64",
+      "version": "1.1.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/@lydell/node-pty-win32-x64/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@modelcontextprotocol/client",
+      "version": "2.3.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/@modelcontextprotocol/client/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@modelcontextprotocol/core",
+      "version": "2.3.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/@modelcontextprotocol/core/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@modelcontextprotocol/server",
+      "version": "2.0.0-alpha.4",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/incur/node_modules/@modelcontextprotocol/server/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@modelcontextprotocol/server",
+      "version": "2.3.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/@modelcontextprotocol/server/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@npmcli/agent",
+      "version": "4.0.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/@npmcli/agent/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@npmcli/arborist",
+      "version": "9.8.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/@npmcli/arborist/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@npmcli/config",
+      "version": "10.11.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/@npmcli/config/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@npmcli/fs",
+      "version": "5.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/@npmcli/fs/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@npmcli/git",
+      "version": "7.0.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/@npmcli/git/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@npmcli/installed-package-contents",
+      "version": "4.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/@npmcli/installed-package-contents/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@npmcli/map-workspaces",
+      "version": "5.0.3",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/@npmcli/map-workspaces/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@npmcli/metavuln-calculator",
+      "version": "9.0.3",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/@npmcli/metavuln-calculator/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@npmcli/name-from-folder",
+      "version": "4.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/@npmcli/name-from-folder/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@npmcli/node-gyp",
+      "version": "5.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/@npmcli/node-gyp/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@npmcli/package-json",
+      "version": "7.0.5",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/@npmcli/package-json/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@npmcli/promise-spawn",
+      "version": "9.0.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/@npmcli/promise-spawn/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@npmcli/query",
+      "version": "5.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/@npmcli/query/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@npmcli/redact",
+      "version": "4.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/@npmcli/redact/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@npmcli/run-script",
+      "version": "10.0.4",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/@npmcli/run-script/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@pinojs/redact",
+      "version": "0.4.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/@pinojs/redact/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@scalar/openapi-types",
+      "version": "0.8.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/@scalar/openapi-types/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@sigstore/bundle",
+      "version": "4.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/@sigstore/bundle/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@sigstore/core",
+      "version": "3.2.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/@sigstore/core/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@sigstore/protobuf-specs",
+      "version": "0.5.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/@sigstore/protobuf-specs/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@sigstore/sign",
+      "version": "4.1.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/@sigstore/sign/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@sigstore/tuf",
+      "version": "4.0.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/@sigstore/tuf/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@sigstore/verify",
+      "version": "3.1.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/@sigstore/verify/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@toon-format/toon",
+      "version": "2.3.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/@toon-format/toon/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@tufjs/canonical-json",
+      "version": "2.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/@tufjs/canonical-json/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@tufjs/models",
+      "version": "4.1.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/@tufjs/models/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@xmldom/xmldom",
+      "version": "0.9.12",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/@xmldom/xmldom/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@xterm/addon-serialize",
+      "version": "0.14.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/@xterm/addon-serialize/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@xterm/headless",
+      "version": "6.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/@xterm/headless/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "@zip.js/zip.js",
+      "version": "2.15.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/@zip.js/zip.js/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "abbrev",
+      "version": "4.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/abbrev/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "abort-controller",
+      "version": "3.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/abort-controller/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "agent-base",
+      "version": "7.1.4",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/agent-base/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "ajv",
+      "version": "8.20.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/ajv/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "ajv-formats",
+      "version": "3.0.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/ajv-formats/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "aproba",
+      "version": "2.1.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/aproba/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "archy",
+      "version": "1.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/archy/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "async-lock",
+      "version": "1.4.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/async-lock/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "atomic-sleep",
+      "version": "1.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/atomic-sleep/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "available-typed-arrays",
+      "version": "1.0.7",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/available-typed-arrays/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "balanced-match",
+      "version": "4.0.4",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/balanced-match/package.json",
+        "cli/node_modules/rea-agents/node_modules/balanced-match/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "base64-js",
+      "version": "1.5.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/base64-js/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "bin-links",
+      "version": "6.0.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/bin-links/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "binary-extensions",
+      "version": "3.1.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/binary-extensions/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "brace-expansion",
+      "version": "5.0.12",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/brace-expansion/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "brace-expansion",
+      "version": "5.0.6",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/brace-expansion/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "buffer",
+      "version": "6.0.3",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/buffer/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "cacache",
+      "version": "20.0.4",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/cacache/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "call-bind",
+      "version": "1.0.9",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/call-bind/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "call-bind-apply-helpers",
+      "version": "1.0.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/call-bind-apply-helpers/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "call-bound",
+      "version": "1.0.4",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/call-bound/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "canonicalize",
+      "version": "3.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/canonicalize/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "chalk",
+      "version": "5.6.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/chalk/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "chownr",
+      "version": "3.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/chownr/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "ci-info",
+      "version": "4.4.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/ci-info/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "cidr-regex",
+      "version": "5.0.5",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/cidr-regex/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "clean-git-ref",
+      "version": "2.0.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/clean-git-ref/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "cmd-shim",
+      "version": "8.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/cmd-shim/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "commander",
+      "version": "13.1.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/commander/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "common-ancestor-path",
+      "version": "2.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/common-ancestor-path/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "corepack",
+      "version": "0.35.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/corepack/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "crc-32",
+      "version": "1.2.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/crc-32/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "cross-spawn",
+      "version": "7.0.6",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/cross-spawn/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "cssesc",
+      "version": "3.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/cssesc/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "debug",
+      "version": "4.4.3",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/debug/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "decompress-response",
+      "version": "6.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/decompress-response/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "define-data-property",
+      "version": "1.1.4",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/define-data-property/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "diff",
+      "version": "8.0.4",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/diff/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "diff",
+      "version": "9.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/diff/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "diff3",
+      "version": "0.0.3",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/diff3/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "dunder-proto",
+      "version": "1.0.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/dunder-proto/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "entities",
+      "version": "8.1.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/entities/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "env-paths",
+      "version": "2.2.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/env-paths/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "es-define-property",
+      "version": "1.0.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/es-define-property/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "es-errors",
+      "version": "1.3.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/es-errors/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "es-object-atoms",
+      "version": "1.1.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/es-object-atoms/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "event-target-shim",
+      "version": "5.0.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/event-target-shim/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "events",
+      "version": "3.3.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/events/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "eventsource",
+      "version": "3.0.7",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/eventsource/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "eventsource-parser",
+      "version": "3.1.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/eventsource-parser/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "evmole",
+      "version": "0.9.3",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/evmole/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "exponential-backoff",
+      "version": "3.1.3",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/exponential-backoff/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "fast-deep-equal",
+      "version": "3.1.3",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/fast-deep-equal/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "fast-string-truncated-width",
+      "version": "3.0.3",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/fast-string-truncated-width/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "fast-string-width",
+      "version": "3.0.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/fast-string-width/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "fast-uri",
+      "version": "3.1.8",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/fast-uri/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "fast-wrap-ansi",
+      "version": "0.2.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/fast-wrap-ansi/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "fastest-levenshtein",
+      "version": "1.0.16",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/fastest-levenshtein/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "fdir",
+      "version": "6.5.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/tinyglobby/node_modules/fdir/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "for-each",
+      "version": "0.3.5",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/for-each/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "fs-minipass",
+      "version": "3.0.3",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/fs-minipass/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "function-bind",
+      "version": "1.1.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/function-bind/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "get-intrinsic",
+      "version": "1.3.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/get-intrinsic/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "get-proto",
+      "version": "1.0.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/get-proto/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "glob",
+      "version": "13.0.6",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/glob/package.json",
+        "cli/node_modules/rea-agents/node_modules/glob/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "gopd",
+      "version": "1.2.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/gopd/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "graceful-fs",
+      "version": "4.2.11",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/graceful-fs/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "har-schema",
+      "version": "2.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/har-schema/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "has-property-descriptors",
+      "version": "1.0.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/has-property-descriptors/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "has-symbols",
+      "version": "1.1.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/has-symbols/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "has-tostringtag",
+      "version": "1.0.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/has-tostringtag/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "hasown",
+      "version": "2.0.4",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/hasown/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "hosted-git-info",
+      "version": "9.0.3",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/hosted-git-info/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "http-cache-semantics",
+      "version": "4.2.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/http-cache-semantics/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "http-proxy-agent",
+      "version": "7.0.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/http-proxy-agent/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "https-proxy-agent",
+      "version": "7.0.6",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/https-proxy-agent/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "iconv-lite",
+      "version": "0.7.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/iconv-lite/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "ieee754",
+      "version": "1.2.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/ieee754/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "ignore",
+      "version": "5.3.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/isomorphic-git/node_modules/ignore/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "ignore",
+      "version": "7.0.6",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/ignore/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "ignore-walk",
+      "version": "8.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/ignore-walk/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "imurmurhash",
+      "version": "0.1.4",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/imurmurhash/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "incur",
+      "version": "0.6.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/incur/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "inherits",
+      "version": "2.0.4",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/inherits/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "ini",
+      "version": "6.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/ini/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "init-package-json",
+      "version": "8.2.5",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/init-package-json/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "ip-address",
+      "version": "10.2.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/ip-address/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "is-callable",
+      "version": "1.2.7",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/is-callable/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "is-cidr",
+      "version": "6.0.4",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/is-cidr/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "is-typed-array",
+      "version": "1.1.15",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/is-typed-array/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "isarray",
+      "version": "2.0.5",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/isarray/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "isexe",
+      "version": "2.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/isexe/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "isexe",
+      "version": "4.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/isexe/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "isomorphic-git",
+      "version": "1.38.7",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/isomorphic-git/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "jose",
+      "version": "6.2.12",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/jose/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "json-parse-even-better-errors",
+      "version": "5.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/json-parse-even-better-errors/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "json-schema-traverse",
+      "version": "1.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/json-schema-traverse/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "json-stringify-nice",
+      "version": "1.1.4",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/json-stringify-nice/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "jsonc-parser",
+      "version": "3.3.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/jsonc-parser/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "jsonparse",
+      "version": "1.3.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/jsonparse/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "just-diff",
+      "version": "6.0.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/just-diff/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "just-diff-apply",
+      "version": "5.5.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/just-diff-apply/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "libnpmaccess",
+      "version": "10.0.3",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/libnpmaccess/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "libnpmdiff",
+      "version": "8.1.10",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/libnpmdiff/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "libnpmexec",
+      "version": "10.3.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/libnpmexec/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "libnpmfund",
+      "version": "7.0.24",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/libnpmfund/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "libnpmorg",
+      "version": "8.0.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/libnpmorg/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "libnpmpack",
+      "version": "9.1.10",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/libnpmpack/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "libnpmpublish",
+      "version": "11.2.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/libnpmpublish/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "libnpmsearch",
+      "version": "9.0.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/libnpmsearch/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "libnpmteam",
+      "version": "8.0.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/libnpmteam/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "libnpmversion",
+      "version": "8.0.4",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/libnpmversion/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "lossless-json",
+      "version": "4.3.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/lossless-json/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "lru-cache",
+      "version": "11.5.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/lru-cache/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "lru-cache",
+      "version": "11.5.3",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/lru-cache/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "make-fetch-happen",
+      "version": "15.0.6",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/make-fetch-happen/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "math-intrinsics",
+      "version": "1.1.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/math-intrinsics/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "mimic-response",
+      "version": "3.1.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/mimic-response/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "minimatch",
+      "version": "10.2.5",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/minimatch/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "minimatch",
+      "version": "10.2.6",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/minimatch/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "minimist",
+      "version": "1.2.8",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/minimist/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "minimisted",
+      "version": "2.0.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/minimisted/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "minipass",
+      "version": "3.3.6",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/minipass-pipeline/node_modules/minipass/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "minipass",
+      "version": "7.1.3",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/minipass/package.json",
+        "cli/node_modules/rea-agents/node_modules/minipass/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "minipass-collect",
+      "version": "2.0.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/minipass-collect/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "minipass-fetch",
+      "version": "5.0.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/minipass-fetch/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "minipass-flush",
+      "version": "1.0.6",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/minipass-flush/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "minipass-pipeline",
+      "version": "1.2.4",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/minipass-pipeline/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "minipass-sized",
+      "version": "2.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/minipass-sized/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "minizlib",
+      "version": "3.1.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/minizlib/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "ms",
+      "version": "2.1.3",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/ms/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "mute-stream",
+      "version": "3.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/mute-stream/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "negotiator",
+      "version": "1.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/negotiator/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "node-gyp",
+      "version": "12.4.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/node-gyp/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "nopt",
+      "version": "9.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/nopt/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "npm",
+      "version": "11.17.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "npm-audit-report",
+      "version": "7.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/npm-audit-report/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "npm-bundled",
+      "version": "5.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/npm-bundled/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "npm-install-checks",
+      "version": "8.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/npm-install-checks/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "npm-normalize-package-bin",
+      "version": "5.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/npm-normalize-package-bin/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "npm-package-arg",
+      "version": "13.0.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/npm-package-arg/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "npm-packlist",
+      "version": "10.0.4",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/npm-packlist/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "npm-pick-manifest",
+      "version": "11.0.3",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/npm-pick-manifest/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "npm-profile",
+      "version": "12.0.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/npm-profile/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "npm-registry-fetch",
+      "version": "19.1.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/npm-registry-fetch/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "npm-user-validate",
+      "version": "4.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/npm-user-validate/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "on-exit-leak-free",
+      "version": "2.1.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/on-exit-leak-free/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "once",
+      "version": "1.4.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/once/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "p-map",
+      "version": "7.0.4",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/p-map/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "pacote",
+      "version": "21.5.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/pacote/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "pako",
+      "version": "1.0.11",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/pako/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "parse-conflict-json",
+      "version": "5.0.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/parse-conflict-json/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "parse5",
+      "version": "8.0.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/parse5/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "path-key",
+      "version": "3.1.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/path-key/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "path-scurry",
+      "version": "2.0.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/path-scurry/package.json",
+        "cli/node_modules/rea-agents/node_modules/path-scurry/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "picomatch",
+      "version": "4.0.4",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/tinyglobby/node_modules/picomatch/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "pify",
+      "version": "4.0.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/pify/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "pino",
+      "version": "10.4.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/pino/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "pino-abstract-transport",
+      "version": "3.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/pino-abstract-transport/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "pino-std-serializers",
+      "version": "7.1.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/pino-std-serializers/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "pkce-challenge",
+      "version": "5.0.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/pkce-challenge/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "playwright-core",
+      "version": "1.58.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/playwright-core/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "plist",
+      "version": "5.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/plist/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "possible-typed-array-names",
+      "version": "1.1.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/possible-typed-array-names/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "postcss-selector-parser",
+      "version": "7.1.4",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/postcss-selector-parser/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "proc-log",
+      "version": "6.1.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/proc-log/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "process",
+      "version": "0.11.10",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/process/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "process-warning",
+      "version": "5.1.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/process-warning/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "proggy",
+      "version": "4.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/proggy/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "promise-all-reject-late",
+      "version": "1.0.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/promise-all-reject-late/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "promise-call-limit",
+      "version": "3.0.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/promise-call-limit/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "promzard",
+      "version": "3.0.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/promzard/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "qrcode-terminal",
+      "version": "0.12.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/qrcode-terminal/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "quick-format-unescaped",
+      "version": "4.0.4",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/quick-format-unescaped/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "rea-agents",
+      "version": "6.1.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "read",
+      "version": "5.0.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/read/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "read-cmd-shim",
+      "version": "6.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/read-cmd-shim/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "readable-stream",
+      "version": "4.8.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/readable-stream/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "real-require",
+      "version": "1.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/real-require/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "require-from-string",
+      "version": "2.0.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/require-from-string/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "safe-buffer",
+      "version": "5.2.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/safe-buffer/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "safe-stable-stringify",
+      "version": "2.5.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/safe-stable-stringify/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "safer-buffer",
+      "version": "2.1.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/safer-buffer/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "semver",
+      "version": "7.8.4",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/semver/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "semver",
+      "version": "7.8.5",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/semver/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "set-function-length",
+      "version": "1.2.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/set-function-length/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "sha.js",
+      "version": "2.4.12",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/sha.js/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "shebang-command",
+      "version": "2.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/shebang-command/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "shebang-regex",
+      "version": "3.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/shebang-regex/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "signal-exit",
+      "version": "4.1.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/signal-exit/package.json",
+        "cli/node_modules/rea-agents/node_modules/signal-exit/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "sigstore",
+      "version": "4.1.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/sigstore/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "simple-concat",
+      "version": "1.0.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/simple-concat/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "simple-get",
+      "version": "4.0.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/simple-get/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "sisteransi",
+      "version": "1.0.5",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/sisteransi/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "smart-buffer",
+      "version": "4.2.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/smart-buffer/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "smol-toml",
+      "version": "1.9.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/smol-toml/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "socks",
+      "version": "2.8.9",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/socks/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "socks-proxy-agent",
+      "version": "8.0.5",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/socks-proxy-agent/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "sonic-boom",
+      "version": "4.2.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/sonic-boom/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "spdx-exceptions",
+      "version": "2.5.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/spdx-exceptions/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "spdx-expression-parse",
+      "version": "4.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/spdx-expression-parse/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "spdx-license-ids",
+      "version": "3.0.23",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/spdx-license-ids/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "split2",
+      "version": "4.2.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/split2/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "ssri",
+      "version": "13.0.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/ssri/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "string_decoder",
+      "version": "1.3.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/string_decoder/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "supports-color",
+      "version": "10.2.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/supports-color/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "tar",
+      "version": "7.5.16",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/tar/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "text-table",
+      "version": "0.2.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/text-table/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "thread-stream",
+      "version": "4.2.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/thread-stream/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "tiny-relative-date",
+      "version": "2.0.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/tiny-relative-date/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "tinyglobby",
+      "version": "0.2.17",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/tinyglobby/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "to-buffer",
+      "version": "1.2.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/to-buffer/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "tokenx",
+      "version": "1.6.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/tokenx/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "treeverse",
+      "version": "3.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/treeverse/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "tuf-js",
+      "version": "4.1.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/tuf-js/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "typed-array-buffer",
+      "version": "1.0.3",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/typed-array-buffer/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "undici",
+      "version": "6.26.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/undici/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "util-deprecate",
+      "version": "1.0.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/util-deprecate/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "validate-npm-package-name",
+      "version": "7.0.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/validate-npm-package-name/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "walk-up-path",
+      "version": "4.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/walk-up-path/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "which",
+      "version": "2.0.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/which/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "which",
+      "version": "6.0.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/which/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "which-typed-array",
+      "version": "1.1.24",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/which-typed-array/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "wrappy",
+      "version": "1.0.2",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/wrappy/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "write-file-atomic",
+      "version": "7.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/write-file-atomic/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "write-file-atomic",
+      "version": "7.0.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/write-file-atomic/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "ws",
+      "version": "8.21.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/ws/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "xmlbuilder",
+      "version": "15.1.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/xmlbuilder/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "yallist",
+      "version": "4.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/minipass-pipeline/node_modules/yallist/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "yallist",
+      "version": "5.0.0",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "node/node_modules/npm/node_modules/yallist/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "yaml",
+      "version": "2.9.1",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/yaml/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    },
+    {
+      "name": "zod",
+      "version": "4.4.3",
+      "ecosystem": "npm",
+      "package_manifests": [
+        "cli/node_modules/rea-agents/node_modules/zod/package.json"
+      ],
+      "evidence": "Packaged runtime ZIP bytes"
+    }
+  ],
+  "unknown_components": [],
+  "limitations": [
+    "Python closure uses the corresponding build environment; optional dependencies and unlisted native code are not a complete binary SBOM.",
+    "Node runtime and OS-provided native libraries are outside the PyPI/npm OSV query scope."
+  ]
+}

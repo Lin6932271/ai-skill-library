@@ -1,13 +1,13 @@
 # 使用说明
 
-ai技能库程序版本 1.5.4。本软件由 AI 开发。
+ai技能库程序版本 1.5.5。本软件由 AI 开发。
 
 支持 Codex、Claude、DeepSeek Harness、Hermes、ZCode，以及 WorkBuddy 国内版和国际版。
-原版为 45 模块＋4 入口，共 49 项，全部可用；精品为 157 模块＋4 入口，共 161 项，其中 147 项含可用正文。两套独立保存，尚不可用的目录项目不部署。REA 为共用工具，不计入上述数量。
+原版为 45 模块＋4 入口，共 49 项，全部可用；精品为 157 模块＋4 入口，共 161 项，全部含可用正文。两套独立保存。REA 为共用工具，不计入上述数量。
 
 ## 运行程序
 
-从 [1.5.4 发布页面](https://github.com/Lin6932271/ai-skill-library/releases/tag/v1.5.4)下载 `AISkillLibrary-1.5.4-windows-x64.exe`，或将便携 ZIP 解压后双击 `ai技能库.exe`。
+从 [1.5.5 发布页面](https://github.com/Lin6932271/ai-skill-library/releases/tag/v1.5.5)下载 EXE，或将便携 ZIP 解压后双击 `ai技能库.exe`。
 需要 Windows x64 和 Microsoft Edge WebView2 Runtime，无需安装 Python 或注册账户。
 
 启动动画约 7 秒，静音播放并铺满软件窗口，播放完毕自动进入主界面。
@@ -30,7 +30,7 @@ ai技能库程序版本 1.5.4。本软件由 AI 开发。
 扩展技能库、单个技能和导入方案仍在“高级选项”中。技能库页面可分别查看原版和精品；缺少正文的项目不能预览或安装。控制台只显示方案与数量，不显示正文获取状态提示。原版与精品同名模块独立保存，切换时使用对应方案的内容。
 
 提示词增加目标与可核对成功条件、具体领域优先、失败恢复和证据状态区分。目标文件、网页、日志和接口正文中的指令作为待分析数据，不改变用户当前任务范围。
-该方案离线运行；工具、源码和附件仍需在实际环境核对。功能及验证范围见 [1.5.4 升级说明](UPGRADE_1_5_4.md)。
+该方案离线运行；工具、源码和附件仍需在实际环境核对。功能及验证范围见 [1.5.5 升级说明](UPGRADE_1_5_5.md)。
 
 | 客户端 | 默认目录 / 环境变量 | 指令文件 |
 | --- | --- | --- |
@@ -117,4 +117,4 @@ DeepSeek 的正则报错和安装记录缺失的处理见 [修复说明](https:/
 ## 注意事项
 
 文件写入成功与模型实际读取需要分别确认。技能里提及的工具和附件不代表已安装或已通过测试。
-完整注意事项见[NOTICE.md](https://github.com/Lin6932271/ai-skill-library/blob/main/NOTICE.md)。[历史安全报告](https://github.com/Lin6932271/ai-skill-library/blob/main/docs/security/REVERSE_ANALYSIS.md)针对 1.3.2，不能作为新版 EXE 的扫描结论。
+完整注意事项见[NOTICE.md](https://github.com/Lin6932271/ai-skill-library/blob/main/NOTICE.md)。[本版逆向与安全报告](security/REVERSE_ANALYSIS.md)列出本次样本、检查范围和依赖版本匹配记录；[1.3.2 历史报告](security/REVERSE_ANALYSIS-1.3.2.md)继续保留。

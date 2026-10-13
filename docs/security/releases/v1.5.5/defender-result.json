@@ -1,0 +1,18 @@
+{
+  "sample_sha256": "ddfc22575e5fcc6fe73de826b538f807fe1ce5566141facf5016ec50cd7297a6",
+  "sample_unchanged": true,
+  "started_utc": "2026-10-13T02:38:51.0150273+00:00",
+  "finished_utc": "2026-10-13T02:38:51.2426578+00:00",
+  "return_code": 0,
+  "output_reports_no_threats": true,
+  "disable_remediation": true,
+  "authenticode_status": "NotSigned",
+  "platform_version": "4.18.26080.4",
+  "engine_version": "1.1.26080.3",
+  "intelligence_version": "1.459.691.0",
+  "intelligence_updated_utc": "2026-10-12T16:06:44.0000000Z",
+  "antivirus_enabled": true,
+  "realtime_protection_enabled": true,
+  "protection_settings_unchanged": true,
+  "scope": "Single local file; no explicit external multi-engine upload; no remediation or protection-setting changes"
+}

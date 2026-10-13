@@ -18,3 +18,4 @@ Thumbs.db
 .DS_Store
 
 .audit-venv/
+!docs/security/releases/*/defender-scan.log

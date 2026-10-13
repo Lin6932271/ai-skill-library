@@ -1,0 +1,78 @@
+{
+  "version": "1.5.5",
+  "pass": true,
+  "cases": [
+    {
+      "name": "GET rejects foreign Host",
+      "status": 403,
+      "expected_status": 403,
+      "pass": true
+    },
+    {
+      "name": "POST rejects foreign Origin",
+      "status": 403,
+      "expected_status": 403,
+      "pass": true
+    },
+    {
+      "name": "POST rejects absent token",
+      "status": 403,
+      "expected_status": 403,
+      "pass": true
+    },
+    {
+      "name": "POST rejects invalid token",
+      "status": 403,
+      "expected_status": 403,
+      "pass": true
+    },
+    {
+      "name": "POST rejects foreign Host",
+      "status": 403,
+      "expected_status": 403,
+      "pass": true
+    },
+    {
+      "name": "Authenticated read-only state",
+      "status": 200,
+      "expected_status": 200,
+      "pass": true
+    },
+    {
+      "name": "Malformed JSON rejected",
+      "status": 400,
+      "expected_status": 400,
+      "pass": true
+    },
+    {
+      "name": "Non-object args rejected",
+      "status": 400,
+      "expected_status": 400,
+      "pass": true
+    },
+    {
+      "name": "Oversize Content-Length rejected",
+      "status": 400,
+      "expected_status": 400,
+      "pass": true
+    },
+    {
+      "name": "Static path escape rejected",
+      "status": 404,
+      "expected_status": 404,
+      "pass": true
+    },
+    {
+      "name": "Encoded path escape rejected",
+      "status": 404,
+      "expected_status": 404,
+      "pass": true
+    }
+  ],
+  "real_clients_modified": false,
+  "csp_present": true,
+  "nosniff_present": true,
+  "auth_token_logged": false,
+  "actions_are_read_only": true,
+  "tested_cases": 11
+}

@@ -155,3 +155,17 @@ description: "可用能力目录"
 | `rev-guide` | 逆向工程 | [读取](../rev-guide/SKILL.md) |
 | `rev-binary` | 二进制逆向参考手册 | [读取](../rev-binary/SKILL.md) |
 | `rev-mobile` | 移动端逆向参考手册 | [读取](../rev-mobile/SKILL.md) |
+| `rev-protocol` | 协议与接口逆向参考手册 | [读取](../rev-protocol/SKILL.md) |
+| `rev-web` | Web 逆向参考手册 | [读取](../rev-web/SKILL.md) |
+| `reverse-engineering` | 逆向工程通用入口 | [读取](../reverse-engineering/SKILL.md) |
+| `digital-forensics` | Digital Forensics and Incident Response | [读取](../digital-forensics/SKILL.md) |
+| `hardware-security` | Hardware and Embedded Interface Security | [读取](../hardware-security/SKILL.md) |
+| `llm-security` | LLM Security Assessment | [读取](../llm-security/SKILL.md) |
+| `ot-ics` | OT and ICS Security | [读取](../ot-ics/SKILL.md) |
+| `pentest-methodology` | Penetration Testing Methodology | [读取](../pentest-methodology/SKILL.md) |
+| `prompt-injection` | Prompt Injection Assessment | [读取](../prompt-injection/SKILL.md) |
+| `radio-sdr` | SDR Security Assessment | [读取](../radio-sdr/SKILL.md) |
+| `suite-network` | 能力组：网络协议 / API / 认证 | [读取](../suite-network/SKILL.md) |
+| `suite-orchestration` | 能力组：总控与任务编排 | [读取](../suite-orchestration/SKILL.md) |
+| `suite-security` | 能力组：安全审计 / 防护 / 取证 | [读取](../suite-security/SKILL.md) |
+| `threat-hunting` | Threat Hunting | [读取](../threat-hunting/SKILL.md) |

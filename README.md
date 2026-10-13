@@ -1,16 +1,16 @@
 # ai技能库
 
-**AI 开发 · 程序版本 1.5.4**
+**AI 开发 · 程序版本 1.5.5**
 
 Windows 桌面 AI 技能管理工具，支持技能安装、切换、导入、备份、检查与撤销。支持 Codex、Claude、DeepSeek Harness、Hermes、ZCode，以及 WorkBuddy 国内版和国际版。
 
-原版与精品是两套独立方案：原版 49 项全部可用；精品目录 161 项，目前 147 项包含可用正文。尚不可用的目录项目不能安装。共用 REA 工具不计入这两项数量。
+原版与精品是两套独立方案：原版 49 项、精品 161 项，均包含可用正文。共用 REA 工具不计入这两项数量。
 
 ![控制台](docs/images/console.png)
 
 ## 下载与使用
 
-从 [1.5.4 发布页面](https://github.com/Lin6932271/ai-skill-library/releases/tag/v1.5.4)下载 Windows EXE 直接运行，或解压便携 ZIP 后运行 `ai技能库.exe`。需要 Windows x64 和 Microsoft Edge WebView2 Runtime，无需安装 Python。
+从 [1.5.5 发布页面](https://github.com/Lin6932271/ai-skill-library/releases/tag/v1.5.5)下载 Windows EXE，或解压便携 ZIP 后运行 `ai技能库.exe`。需要 Windows x64 和 Microsoft Edge WebView2 Runtime，无需安装 Python。
 
 1. 确认客户端配置目录。
 2. 上方方案开关关闭为原版技能，开启为精品技能；七个客户端各自保存选择。
@@ -29,9 +29,9 @@ REA 6.1.0 和 Node 24.19.0 已内置，首次安装无需联网下载这些组�
 
 文件写入、独立 CLI/MCP 启动和实际 AI 会话连接分别确认。EXE/DLL 深度反编译需要 IDA/Ghidra；其他专项工具及附件也要在使用环境中核对。
 
-本次完成 54 项自动测试，核对最终 EXE 的 280 个资源文件及核心编译模块，并验证原版、精品两种控制台状态和实际桌面窗口。详情见[版本说明与验收报告](docs/2026-10-12_release-ai-skill-library-1.5.4-report.md)。
+1.5.5 补齐 14 项精品正文，完整精品目录与可部署正文均为 161 项。构建与验收结果见[版本说明与验收报告](docs/2026-10-13_release-ai-skill-library-1.5.5-report.md)。
 
-[更新记录](docs/CHANGELOG.md) · [1.5.4 升级说明](docs/UPGRADE_1_5_4.md) · [源码构建](docs/BUILD.md) · [REA 集成与验收](docs/REA_INTEGRATION.md) · [兼容性修复](docs/REA_COMPATIBILITY.md)
+[更新记录](docs/CHANGELOG.md) · [1.5.5 升级说明](docs/UPGRADE_1_5_5.md) · [源码构建](docs/BUILD.md) · [REA 集成与验收](docs/REA_INTEGRATION.md) · [兼容性修复](docs/REA_COMPATIBILITY.md)
 
 ## 致谢
 
@@ -42,4 +42,4 @@ REA 6.1.0 和 Node 24.19.0 已内置，首次安装无需联网下载这些组�
 - 写入前自动备份，遇到外部修改会保留文件并提示冲突。
 - 技能里的工具和附件说明不代表相应工具已经安装或验证。
 - 第三方组件遵循各自许可证，见 [NOTICE.md](NOTICE.md)。
-- [1.3.2 历史安全报告](docs/security/REVERSE_ANALYSIS.md)仅适用于其标明的样本。历史发行版及记录继续保留。
+- [1.5.5 逆向与安全报告](docs/security/REVERSE_ANALYSIS.md)包含新版检查结果及 6 个 npm 附带组件的公开漏洞版本匹配记录；真实可利用性未确认。[1.3.2 历史报告](docs/security/REVERSE_ANALYSIS-1.3.2.md)和历史发行版继续保留。

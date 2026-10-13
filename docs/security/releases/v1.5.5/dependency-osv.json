@@ -1,0 +1,81 @@
+{
+  "service": "OSV",
+  "queried_utc": "2026-10-13T02:44:43.420600+00:00",
+  "queried_components": 293,
+  "query_complete": true,
+  "findings": [
+    {
+      "component": "brace-expansion",
+      "version": "5.0.6",
+      "ecosystem": "npm",
+      "advisory_ids": [
+        "GHSA-3jxr-9vmj-r5cp",
+        "GHSA-6j4f-fj2g-mc7p",
+        "GHSA-mh99-v99m-4gvg",
+        "GHSA-q2hr-2g5m-vwhr",
+        "GHSA-qhr7-859c-m2p7",
+        "GHSA-rgw5-rvv9-x895"
+      ]
+    },
+    {
+      "component": "http-cache-semantics",
+      "version": "4.2.0",
+      "ecosystem": "npm",
+      "advisory_ids": [
+        "GHSA-ch52-4w7c-c8xp"
+      ]
+    },
+    {
+      "component": "ip-address",
+      "version": "10.2.0",
+      "ecosystem": "npm",
+      "advisory_ids": [
+        "GHSA-22jq-vg5j-6vgg",
+        "GHSA-2vr4-cq9g-pvrc",
+        "GHSA-4xrf-jv44-h6hh",
+        "GHSA-h3mg-xc3c-68pw",
+        "GHSA-j6r3-76f7-8jcv",
+        "GHSA-mwp4-54f8-5fhr",
+        "GHSA-rpw4-54j3-4h4q"
+      ]
+    },
+    {
+      "component": "postcss-selector-parser",
+      "version": "7.1.4",
+      "ecosystem": "npm",
+      "advisory_ids": [
+        "GHSA-rj75-hqrm-r3gf"
+      ]
+    },
+    {
+      "component": "tar",
+      "version": "7.5.16",
+      "ecosystem": "npm",
+      "advisory_ids": [
+        "GHSA-23hp-3jrh-7fpw",
+        "GHSA-8x88-c5mf-7j5w",
+        "GHSA-gvwx-54wh-qm9j",
+        "GHSA-r292-9mhp-454m",
+        "GHSA-w8wr-v893-vjvp"
+      ]
+    },
+    {
+      "component": "undici",
+      "version": "6.26.0",
+      "ecosystem": "npm",
+      "advisory_ids": [
+        "GHSA-35p6-xmwp-9g52",
+        "GHSA-3wwx-pv8p-q78v",
+        "GHSA-8xcm-r25x-g524",
+        "GHSA-g8m3-5g58-fq7m",
+        "GHSA-m8rv-5g2x-5cg5",
+        "GHSA-p88m-4jfj-68fv",
+        "GHSA-r53p-7pc4-xj5r",
+        "GHSA-rfgv-xxqx-mfg5",
+        "GHSA-v3r7-h72x-cjcm",
+        "GHSA-vxpw-j846-p89q"
+      ]
+    }
+  ],
+  "limitations": "Database matches are candidate known-advisory matches; product reachability and exploitability are not established. No-match is not a security guarantee."
+}

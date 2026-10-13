@@ -1,6 +1,6 @@
 # 从源码构建
 
-普通用户从 [1.5.4 发布页面](https://github.com/Lin6932271/ai-skill-library/releases/tag/v1.5.4)下载 Windows 程序即可，无需执行本页命令。
+普通用户从 [1.5.5 发布页面](https://github.com/Lin6932271/ai-skill-library/releases/tag/v1.5.5)下载 Windows 程序即可，无需执行本页命令。
 
 ## 环境与步骤
 

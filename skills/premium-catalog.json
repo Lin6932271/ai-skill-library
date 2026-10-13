@@ -1,187 +1,17 @@
 {
   "schema": 1,
-  "version": "1.5.3",
+  "version": "1.5.5",
   "server_profile": "curated",
   "edition": "professional",
-  "documents": 147,
+  "documents": 161,
   "expected_modules": 157,
   "expected_entries": 4,
   "expected_documents": 161,
-  "available_modules": 143,
-  "available_documents": 147,
-  "missing_count": 14,
-  "missing_ids": [
-    "digital-forensics",
-    "hardware-security",
-    "llm-security",
-    "ot-ics",
-    "pentest-methodology",
-    "prompt-injection",
-    "radio-sdr",
-    "rev-protocol",
-    "rev-web",
-    "reverse-engineering",
-    "suite-network",
-    "suite-orchestration",
-    "suite-security",
-    "threat-hunting"
-  ],
-  "missing_items": [
-    {
-      "id": "premium-digital-forensics",
-      "skill_name": "digital-forensics",
-      "server_id": "digital-forensics",
-      "kind": "module",
-      "collection": "premium",
-      "available": false,
-      "parent_entry": "l-webrecon",
-      "status": "SKIPPED_CAPPED_ENTRY",
-      "server_profile": "curated"
-    },
-    {
-      "id": "premium-hardware-security",
-      "skill_name": "hardware-security",
-      "server_id": "hardware-security",
-      "kind": "module",
-      "collection": "premium",
-      "available": false,
-      "parent_entry": "l-webrecon",
-      "status": "SKIPPED_CAPPED_ENTRY",
-      "server_profile": "curated"
-    },
-    {
-      "id": "premium-llm-security",
-      "skill_name": "llm-security",
-      "server_id": "llm-security",
-      "kind": "module",
-      "collection": "premium",
-      "available": false,
-      "parent_entry": "l-webrecon",
-      "status": "SKIPPED_CAPPED_ENTRY",
-      "server_profile": "curated"
-    },
-    {
-      "id": "premium-ot-ics",
-      "skill_name": "ot-ics",
-      "server_id": "ot-ics",
-      "kind": "module",
-      "collection": "premium",
-      "available": false,
-      "parent_entry": "l-webrecon",
-      "status": "SKIPPED_CAPPED_ENTRY",
-      "server_profile": "curated"
-    },
-    {
-      "id": "premium-pentest-methodology",
-      "skill_name": "pentest-methodology",
-      "server_id": "pentest-methodology",
-      "kind": "module",
-      "collection": "premium",
-      "available": false,
-      "parent_entry": "l-webrecon",
-      "status": "SKIPPED_CAPPED_ENTRY",
-      "server_profile": "curated"
-    },
-    {
-      "id": "premium-prompt-injection",
-      "skill_name": "prompt-injection",
-      "server_id": "prompt-injection",
-      "kind": "module",
-      "collection": "premium",
-      "available": false,
-      "parent_entry": "l-webrecon",
-      "status": "SKIPPED_CAPPED_ENTRY",
-      "server_profile": "curated"
-    },
-    {
-      "id": "premium-radio-sdr",
-      "skill_name": "radio-sdr",
-      "server_id": "radio-sdr",
-      "kind": "module",
-      "collection": "premium",
-      "available": false,
-      "parent_entry": "l-webrecon",
-      "status": "TASK_LIMIT",
-      "server_profile": "curated"
-    },
-    {
-      "id": "premium-rev-protocol",
-      "skill_name": "rev-protocol",
-      "server_id": "rev-protocol",
-      "kind": "module",
-      "collection": "premium",
-      "available": false,
-      "parent_entry": "l-reverse",
-      "status": "TASK_LIMIT",
-      "server_profile": "curated"
-    },
-    {
-      "id": "premium-rev-web",
-      "skill_name": "rev-web",
-      "server_id": "rev-web",
-      "kind": "module",
-      "collection": "premium",
-      "available": false,
-      "parent_entry": "l-reverse",
-      "status": "SKIPPED_GLOBAL_HOURLY_LIMIT",
-      "server_profile": "curated"
-    },
-    {
-      "id": "premium-reverse-engineering",
-      "skill_name": "reverse-engineering",
-      "server_id": "reverse-engineering",
-      "kind": "module",
-      "collection": "premium",
-      "available": false,
-      "parent_entry": "l-reverse",
-      "status": "SKIPPED_GLOBAL_HOURLY_LIMIT",
-      "server_profile": "curated"
-    },
-    {
-      "id": "premium-suite-network",
-      "skill_name": "suite-network",
-      "server_id": "suite-network",
-      "kind": "module",
-      "collection": "premium",
-      "available": false,
-      "parent_entry": "l-webrecon",
-      "status": "SKIPPED_CAPPED_ENTRY",
-      "server_profile": "curated"
-    },
-    {
-      "id": "premium-suite-orchestration",
-      "skill_name": "suite-orchestration",
-      "server_id": "suite-orchestration",
-      "kind": "module",
-      "collection": "premium",
-      "available": false,
-      "parent_entry": "l-webrecon",
-      "status": "SKIPPED_CAPPED_ENTRY",
-      "server_profile": "curated"
-    },
-    {
-      "id": "premium-suite-security",
-      "skill_name": "suite-security",
-      "server_id": "suite-security",
-      "kind": "module",
-      "collection": "premium",
-      "available": false,
-      "parent_entry": "l-webrecon",
-      "status": "SKIPPED_CAPPED_ENTRY",
-      "server_profile": "curated"
-    },
-    {
-      "id": "premium-threat-hunting",
-      "skill_name": "threat-hunting",
-      "server_id": "threat-hunting",
-      "kind": "module",
-      "collection": "premium",
-      "available": false,
-      "parent_entry": "l-webrecon",
-      "status": "SKIPPED_CAPPED_ENTRY",
-      "server_profile": "curated"
-    }
-  ],
+  "available_modules": 157,
+  "available_documents": 161,
+  "missing_count": 0,
+  "missing_ids": [],
+  "missing_items": [],
   "items": [
     {
       "id": "premium-ad-certificate",
@@ -793,6 +623,26 @@
       "server_id": "diagram-generator",
       "content_revision": "curated-62595d7d60f22e4f5c98b406",
       "source_sha256": "ab90ee93327a8b200b92da17b11f95584adab61650df7b2922b4bd0f7a7e3542"
+    },
+    {
+      "id": "premium-digital-forensics",
+      "skill_name": "digital-forensics",
+      "name": "Digital Forensics and Incident Response",
+      "description": "Digital Forensics and Incident Response",
+      "category": "安全",
+      "kind": "module",
+      "collection": "premium",
+      "builtin": true,
+      "keywords": [
+        "digital-forensics"
+      ],
+      "dependencies": [],
+      "content_sha256": "c317bd139974ce556c322d918e76757183898ff3dfadd0cfc9498b80d6935289",
+      "available": true,
+      "server_profile": "curated",
+      "server_id": "digital-forensics",
+      "content_revision": "curated-62595d7d60f22e4f5c98b406",
+      "source_sha256": "d6a4d38a12bb015d6220fb58a8b3192871eab509eb86c6f68f80e05494db39ad"
     },
     {
       "id": "premium-dll-injection",
@@ -1875,6 +1725,26 @@
       "source_sha256": "6d29aca0a10b4a9ce608e85c915a557f1012f03436b4065080bcf8e7c2e40cb1"
     },
     {
+      "id": "premium-hardware-security",
+      "skill_name": "hardware-security",
+      "name": "Hardware and Embedded Interface Security",
+      "description": "Hardware and Embedded Interface Security",
+      "category": "安全",
+      "kind": "module",
+      "collection": "premium",
+      "builtin": true,
+      "keywords": [
+        "hardware-security"
+      ],
+      "dependencies": [],
+      "content_sha256": "fb1292920895f3126892237c55584e5529af8c5e47ee933274b89707d5fd7a65",
+      "available": true,
+      "server_profile": "curated",
+      "server_id": "hardware-security",
+      "content_revision": "curated-62595d7d60f22e4f5c98b406",
+      "source_sha256": "8d1906d856af4403f9611dd51bac7b0ef45ac684b3396fe09070fa4b5c21de80"
+    },
+    {
       "id": "premium-ida-reverse",
       "skill_name": "ida-reverse",
       "name": "IDA Pro Analysis",
@@ -2270,7 +2140,10 @@
         "premium-rev-binary",
         "premium-rev-guide",
         "premium-rev-mobile",
+        "premium-rev-protocol",
+        "premium-rev-web",
         "premium-reverse-android-malware",
+        "premium-reverse-engineering",
         "premium-sec-forge",
         "premium-stego-media",
         "premium-suite-index",
@@ -2283,7 +2156,7 @@
         "premium-win-reverse",
         "premium-windows-binary-deep"
       ],
-      "content_sha256": "c4afef7acde646b6eeefd415a12f3d2a8f4cfcd9a548957b20ea9af5f30ac2b1",
+      "content_sha256": "fc31d7706569da339d94b0948efbcd543d46545372997ecc5c536a5ec45cf86b",
       "available": true,
       "server_profile": "curated",
       "server_id": "l-reverse",
@@ -2364,10 +2237,12 @@
         "premium-code-audit",
         "premium-container-runtime",
         "premium-database-security",
+        "premium-digital-forensics",
         "premium-dns-enum",
         "premium-email-security",
         "premium-file-parser-chain",
         "premium-graphql-rpc-drift",
+        "premium-hardware-security",
         "premium-identity-federation",
         "premium-identity-windows",
         "premium-jit-harness",
@@ -2375,11 +2250,16 @@
         "premium-k8s-control-plane",
         "premium-kerberos-security",
         "premium-kernel-container-escape",
+        "premium-llm-security",
         "premium-oauth-oidc",
+        "premium-ot-ics",
+        "premium-pentest-methodology",
         "premium-port-scan",
         "premium-posture-assessment",
+        "premium-prompt-injection",
         "premium-queue-worker-drift",
         "premium-race-condition",
+        "premium-radio-sdr",
         "premium-request-smuggling",
         "premium-runtime-routing",
         "premium-sec-forge",
@@ -2387,9 +2267,13 @@
         "premium-src-audit",
         "premium-ssrf-defense",
         "premium-suite-index",
+        "premium-suite-network",
+        "premium-suite-orchestration",
+        "premium-suite-security",
         "premium-supply-chain-attack",
         "premium-supply-chain-security",
         "premium-template-render",
+        "premium-threat-hunting",
         "premium-tool-mitmproxy",
         "premium-vuln-scan",
         "premium-web-asset-auditor",
@@ -2398,7 +2282,7 @@
         "premium-wifi-wireless",
         "premium-windows-ad"
       ],
-      "content_sha256": "82ca7785378d61cfc0a4f5bcad4b08fb6e3ab804fb8065113cfcc5ae86f199eb",
+      "content_sha256": "787685a9b7a28d1e6dd37087c00dae89f20ad8433cddee3442a62e486301c8dc",
       "available": true,
       "server_profile": "curated",
       "server_id": "l-webrecon",
@@ -2422,6 +2306,26 @@
       "server_id": "license-flow-recovery",
       "content_revision": "curated-62595d7d60f22e4f5c98b406",
       "source_sha256": "893a19af812cad07be58ecf9e78b577df7d014e69c7c08c8c94f467e70682920"
+    },
+    {
+      "id": "premium-llm-security",
+      "skill_name": "llm-security",
+      "name": "LLM Security Assessment",
+      "description": "LLM Security Assessment",
+      "category": "安全",
+      "kind": "module",
+      "collection": "premium",
+      "builtin": true,
+      "keywords": [
+        "llm-security"
+      ],
+      "dependencies": [],
+      "content_sha256": "5964732af0c6fed9f7f07dd27bf661154ae284f51a7da3ddf92ac7054e219b16",
+      "available": true,
+      "server_profile": "curated",
+      "server_id": "llm-security",
+      "content_revision": "curated-62595d7d60f22e4f5c98b406",
+      "source_sha256": "3cbef4ccdfc5f1680623ef30dde5f9683c6ed0d6ea98fb6a26b2932e9a81311c"
     },
     {
       "id": "premium-macos-reverse",
@@ -2582,6 +2486,26 @@
       "source_sha256": "4beb05502a8be9a2e81d6e9ae225a6a95e0b96eda1ceeb6d40a807d0e8c52bf8"
     },
     {
+      "id": "premium-ot-ics",
+      "skill_name": "ot-ics",
+      "name": "OT and ICS Security",
+      "description": "OT and ICS Security",
+      "category": "安全",
+      "kind": "module",
+      "collection": "premium",
+      "builtin": true,
+      "keywords": [
+        "ot-ics"
+      ],
+      "dependencies": [],
+      "content_sha256": "5307e7dbb82c910486fefa13613bf35d4cf4e1b201e97296dc84031c1f01fb6b",
+      "available": true,
+      "server_profile": "curated",
+      "server_id": "ot-ics",
+      "content_revision": "curated-62595d7d60f22e4f5c98b406",
+      "source_sha256": "28e55a37c6b61ffc3dac375c400f927d16c80cc46be9e918d4dbf404703576b8"
+    },
+    {
       "id": "premium-patch-diff-vuln",
       "skill_name": "patch-diff-vuln",
       "name": "Patch Diff Vulnerability Analysis",
@@ -2665,6 +2589,26 @@
       "source_sha256": "bb5895abcec83e5c0797d71b1984ebd559a5d0ac7987567a3259e4fc73982ba1"
     },
     {
+      "id": "premium-pentest-methodology",
+      "skill_name": "pentest-methodology",
+      "name": "Penetration Testing Methodology",
+      "description": "Penetration Testing Methodology",
+      "category": "安全",
+      "kind": "module",
+      "collection": "premium",
+      "builtin": true,
+      "keywords": [
+        "pentest-methodology"
+      ],
+      "dependencies": [],
+      "content_sha256": "b0ef008d75be0710fa8a0d86fff79c688d2691fb50aa3008874d4b1a3238d5af",
+      "available": true,
+      "server_profile": "curated",
+      "server_id": "pentest-methodology",
+      "content_revision": "curated-62595d7d60f22e4f5c98b406",
+      "source_sha256": "d13a50a9ea8db8acee6e537cd13005ccb81983fb5c6c7b4b5b48be53d9170e76"
+    },
+    {
       "id": "premium-port-scan",
       "skill_name": "port-scan",
       "name": "Service Discovery",
@@ -2699,6 +2643,26 @@
       "server_id": "posture-assessment",
       "content_revision": "curated-62595d7d60f22e4f5c98b406",
       "source_sha256": "bddb2124cc66adab3d7f3c88823c64df6fbbfd4012fdc7e5605dc960cb5fd894"
+    },
+    {
+      "id": "premium-prompt-injection",
+      "skill_name": "prompt-injection",
+      "name": "Prompt Injection Assessment",
+      "description": "Prompt Injection Assessment",
+      "category": "安全",
+      "kind": "module",
+      "collection": "premium",
+      "builtin": true,
+      "keywords": [
+        "prompt-injection"
+      ],
+      "dependencies": [],
+      "content_sha256": "42895e1b73a36308439e3593d04f4218c8c3e9b2e9acba4f93b533b6cb6f89de",
+      "available": true,
+      "server_profile": "curated",
+      "server_id": "prompt-injection",
+      "content_revision": "curated-62595d7d60f22e4f5c98b406",
+      "source_sha256": "d6adf69dc83c56e5abb693bfc48e914b444059b0c4f6ee567505b8cb1af2b3ea"
     },
     {
       "id": "premium-protocol-reverse",
@@ -2827,6 +2791,26 @@
       "source_sha256": "0792bb8d0f19c1c047e906a83c266f73161b877347ab4d7585e0bc611aafb4db"
     },
     {
+      "id": "premium-radio-sdr",
+      "skill_name": "radio-sdr",
+      "name": "SDR Security Assessment",
+      "description": "SDR Security Assessment",
+      "category": "安全",
+      "kind": "module",
+      "collection": "premium",
+      "builtin": true,
+      "keywords": [
+        "radio-sdr"
+      ],
+      "dependencies": [],
+      "content_sha256": "0a7f2b7ca9ebf9f19254103f0027d0867cb026cadd23f5363981a1ad4d074106",
+      "available": true,
+      "server_profile": "curated",
+      "server_id": "radio-sdr",
+      "content_revision": "curated-62595d7d60f22e4f5c98b406",
+      "source_sha256": "417577c4a79afae451b2e35fac89d37053d13eb4a97d127751b100a952adcab6"
+    },
+    {
       "id": "premium-request-smuggling",
       "skill_name": "request-smuggling",
       "name": "HTTP 处理层解析差分",
@@ -2913,6 +2897,46 @@
       "source_sha256": "150eec9620511e80e9025e52ddbe80a9a31adbab1d228df3a65e0f14012cda57"
     },
     {
+      "id": "premium-rev-protocol",
+      "skill_name": "rev-protocol",
+      "name": "协议与接口逆向参考手册",
+      "description": "协议与接口逆向参考手册",
+      "category": "逆向",
+      "kind": "module",
+      "collection": "premium",
+      "builtin": true,
+      "keywords": [
+        "rev-protocol"
+      ],
+      "dependencies": [],
+      "content_sha256": "b3535d660a08ba506d481c9f6b941f8091792b6ed676fc00ea502eea6f53e801",
+      "available": true,
+      "server_profile": "curated",
+      "server_id": "rev-protocol",
+      "content_revision": "curated-62595d7d60f22e4f5c98b406",
+      "source_sha256": "3b5d0110ff243a46193341135263d5ac15bad0f9efd90b47a7e54c255b9dbe16"
+    },
+    {
+      "id": "premium-rev-web",
+      "skill_name": "rev-web",
+      "name": "Web 逆向参考手册",
+      "description": "Web 逆向参考手册",
+      "category": "逆向",
+      "kind": "module",
+      "collection": "premium",
+      "builtin": true,
+      "keywords": [
+        "rev-web"
+      ],
+      "dependencies": [],
+      "content_sha256": "b6d6111ffcb822fad8b61d342071f054d21db2b165cc20667f55bbf916a94380",
+      "available": true,
+      "server_profile": "curated",
+      "server_id": "rev-web",
+      "content_revision": "curated-62595d7d60f22e4f5c98b406",
+      "source_sha256": "a77248643ba20a59fd340a5db8918a8dadfb150c083faaaa0caa9cd79a274a4e"
+    },
+    {
       "id": "premium-reverse-android-malware",
       "skill_name": "reverse-android-malware",
       "name": "Android Malware Reverse Engineering",
@@ -2929,6 +2953,26 @@
       "server_id": "reverse-android-malware",
       "content_revision": "curated-62595d7d60f22e4f5c98b406",
       "source_sha256": "e011eeb1fbbd3cb64eaf569e47dc7559a6dbfe6d68f9e42763272ca2190c5295"
+    },
+    {
+      "id": "premium-reverse-engineering",
+      "skill_name": "reverse-engineering",
+      "name": "逆向工程通用入口",
+      "description": "逆向工程通用入口",
+      "category": "逆向",
+      "kind": "module",
+      "collection": "premium",
+      "builtin": true,
+      "keywords": [
+        "reverse-engineering"
+      ],
+      "dependencies": [],
+      "content_sha256": "613ac5f5e22e3313fa0a8fa9c24084bf79ec240a3db462fed7f1f6716c890a3b",
+      "available": true,
+      "server_profile": "curated",
+      "server_id": "reverse-engineering",
+      "content_revision": "curated-62595d7d60f22e4f5c98b406",
+      "source_sha256": "b26295cdbf12324b6a28cfffcb6b90efd92b94e2ef02cc2a233fee84a345f46e"
     },
     {
       "id": "premium-runtime-routing",
@@ -3070,12 +3114,72 @@
       "builtin": true,
       "keywords": [],
       "dependencies": [],
-      "content_sha256": "399dc5d2b214d2e4367628a136cb6b9fb4159ec05e7e710defb2d3912c0e4765",
+      "content_sha256": "663e56224d7d0026c4c810fbf674c2048a2268bd69bce050709ee4893ccbc659",
       "available": true,
       "server_profile": "curated",
       "server_id": "suite-index",
       "content_revision": "curated-62595d7d60f22e4f5c98b406",
       "source_sha256": "f63efd71c8d6bd44de3679b18e569436187cf2dc3af61d7fc2bc561f5e595f1d"
+    },
+    {
+      "id": "premium-suite-network",
+      "skill_name": "suite-network",
+      "name": "能力组：网络协议 / API / 认证",
+      "description": "能力组：网络协议 / API / 认证",
+      "category": "安全",
+      "kind": "module",
+      "collection": "premium",
+      "builtin": true,
+      "keywords": [
+        "suite-network"
+      ],
+      "dependencies": [],
+      "content_sha256": "745723218f63504baed4a288dc8c8f7b9de3f37f30a51e88833d8c43f7513669",
+      "available": true,
+      "server_profile": "curated",
+      "server_id": "suite-network",
+      "content_revision": "curated-62595d7d60f22e4f5c98b406",
+      "source_sha256": "0ba4457dcf57c115b1ca8fe2907a9f9bb4a577d6d51c574dc412e0ac7faacd01"
+    },
+    {
+      "id": "premium-suite-orchestration",
+      "skill_name": "suite-orchestration",
+      "name": "能力组：总控与任务编排",
+      "description": "能力组：总控与任务编排",
+      "category": "安全",
+      "kind": "module",
+      "collection": "premium",
+      "builtin": true,
+      "keywords": [
+        "suite-orchestration"
+      ],
+      "dependencies": [],
+      "content_sha256": "7b0e256e171516e1193a6b951d60377906cc8d668c716f646575628f554eedec",
+      "available": true,
+      "server_profile": "curated",
+      "server_id": "suite-orchestration",
+      "content_revision": "curated-62595d7d60f22e4f5c98b406",
+      "source_sha256": "4a74f3bb12624d24f0417b860e5e0025cfe477c16819e1f04219b6176c612722"
+    },
+    {
+      "id": "premium-suite-security",
+      "skill_name": "suite-security",
+      "name": "能力组：安全审计 / 防护 / 取证",
+      "description": "能力组：安全审计 / 防护 / 取证",
+      "category": "安全",
+      "kind": "module",
+      "collection": "premium",
+      "builtin": true,
+      "keywords": [
+        "suite-security"
+      ],
+      "dependencies": [],
+      "content_sha256": "02aece735fe482d56b91f60b98eaef1979681f611d0bb6b1650ca494d31d1228",
+      "available": true,
+      "server_profile": "curated",
+      "server_id": "suite-security",
+      "content_revision": "curated-62595d7d60f22e4f5c98b406",
+      "source_sha256": "c863e85b3c21cbf98921a4b136b39e2286d3465cd83ebed06a90ab488236279d"
     },
     {
       "id": "premium-supply-chain-attack",
@@ -3153,6 +3257,26 @@
       "server_id": "thick-client",
       "content_revision": "curated-62595d7d60f22e4f5c98b406",
       "source_sha256": "b5fe05c9f49c286f235b544d3c49b4fdc9dbd2bfdf85721d39d0162801c0e41c"
+    },
+    {
+      "id": "premium-threat-hunting",
+      "skill_name": "threat-hunting",
+      "name": "Threat Hunting",
+      "description": "Threat Hunting",
+      "category": "安全",
+      "kind": "module",
+      "collection": "premium",
+      "builtin": true,
+      "keywords": [
+        "threat-hunting"
+      ],
+      "dependencies": [],
+      "content_sha256": "8e02503184516aaabab0857b04cd009e9f820c295ff188ea568d1ebe8285ac23",
+      "available": true,
+      "server_profile": "curated",
+      "server_id": "threat-hunting",
+      "content_revision": "curated-62595d7d60f22e4f5c98b406",
+      "source_sha256": "892bd282df42ab4fcf1e1aef1e9df0ea83b16c4f5e473c1e066a1f508a96984f"
     },
     {
       "id": "premium-tool-airtest",
@@ -5231,5 +5355,5 @@
   ],
   "catalog_scope": "Four public server entry module lists; not a complete unknown server directory",
   "server_catalog_live_verified_date": "2026-10-12",
-  "merged_unique_names": 147
+  "merged_unique_names": 161
 }

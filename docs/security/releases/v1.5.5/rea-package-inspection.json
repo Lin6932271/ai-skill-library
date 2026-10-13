@@ -1,0 +1,1825 @@
+{
+  "result": {
+    "inspection_id": "ai_70b716a95d4365726c11b94b57ba31d359527ee3ee939ad4c0bf6095a73f90f7",
+    "subject": {
+      "manifest_id": "agm_9ef42f5e2b57d15ce8ef5c44723db4a451f49be9f52a8f460812479d4f169160",
+      "root_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+      "root_sha256": "3b56cc8510d51ae07d525a7cb1e10babb853d185390df8aced8ec2347c316fcd",
+      "root_format": "zip"
+    },
+    "substeps": [
+      {
+        "substep_id": "ais_3803da09f8d6acaf029e9251594a33e5b7e24e570ff9138e0b74a7aa0b6cfef4",
+        "operation": "inventory_artifact",
+        "status": "completed",
+        "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724",
+        "evidence": {
+          "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724",
+          "subject": {
+            "name": "AISkillLibrary-1.5.5-windows-x64.zip",
+            "digest": {
+              "sha256": "3b56cc8510d51ae07d525a7cb1e10babb853d185390df8aced8ec2347c316fcd"
+            },
+            "format": "zip",
+            "architecture": null,
+            "local_path": "AISkillLibrary-1.5.5-windows-x64.zip"
+          },
+          "provider": {
+            "id": "rea-artifact-graph",
+            "name": "REA safe artifact graph provider",
+            "version": "1"
+          },
+          "predicate_type": "rea.analysis",
+          "operation": "inventory_artifact",
+          "parameters": {
+            "integrity_policy": "fail"
+          },
+          "raw_result": null,
+          "normalized_result": {
+            "manifest": {
+              "manifest_id": "agm_9ef42f5e2b57d15ce8ef5c44723db4a451f49be9f52a8f460812479d4f169160",
+              "root_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+              "root_sha256": "3b56cc8510d51ae07d525a7cb1e10babb853d185390df8aced8ec2347c316fcd",
+              "root_format": "zip",
+              "graph_sha256": "971ea59c9cfed9af228d29010549a38297495cb3f097ae62286c3c30a05e0e56",
+              "node_count": 9,
+              "occurrence_count": 9,
+              "edge_count": 8
+            },
+            "nodes": [
+              {
+                "artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+                "kind": "container",
+                "format": "zip",
+                "sha256": "3b56cc8510d51ae07d525a7cb1e10babb853d185390df8aced8ec2347c316fcd",
+                "size": 98476948,
+                "media_type": null,
+                "architecture": null,
+                "executable": false,
+                "content_state": "materialized",
+                "limitations": []
+              },
+              {
+                "artifact_id": "art_a01ac0943e62d8f3ee6f52730b53508e8812db6f20e96bb1fa8aa7b9e64e635b",
+                "kind": "executable",
+                "format": "pe",
+                "sha256": "ddfc22575e5fcc6fe73de826b538f807fe1ce5566141facf5016ec50cd7297a6",
+                "size": 98674724,
+                "media_type": null,
+                "architecture": null,
+                "executable": true,
+                "content_state": "embedded",
+                "limitations": []
+              },
+              {
+                "artifact_id": "art_be7cc7f3b02b6b372100f34ee58dc799ca16cf1b2358297832f94b861c42f3a2",
+                "kind": "resource",
+                "format": "file",
+                "sha256": "378569c6baaeddfea6809ae293b14f593f434aa818a257fe41f289785a21cc2f",
+                "size": 3148,
+                "media_type": null,
+                "architecture": null,
+                "executable": false,
+                "content_state": "embedded",
+                "limitations": []
+              },
+              {
+                "artifact_id": "art_c118d0257b1234c3b9823f771d7adc0804fa4d017c4b0c0ebfa9da4152af3ee6",
+                "kind": "resource",
+                "format": "file",
+                "sha256": "c5f73bd810d681d29d738a61247228c762fdaec95d97b4cdad81b7efe6b2241f",
+                "size": 1102,
+                "media_type": null,
+                "architecture": null,
+                "executable": false,
+                "content_state": "embedded",
+                "limitations": []
+              },
+              {
+                "artifact_id": "art_d58e8efa30211d53052e94abdd170d68fb6c0138e485bd9dd78f810529fc25f8",
+                "kind": "resource",
+                "format": "file",
+                "sha256": "d9c4eeda951d6d08f4aa1316b61aafcf67e6da5f79b18f8edeb56fa6abdc038c",
+                "size": 160552,
+                "media_type": null,
+                "architecture": null,
+                "executable": false,
+                "content_state": "embedded",
+                "limitations": []
+              },
+              {
+                "artifact_id": "art_e44bed09e448c50139a9034b809b85769a8c48cf220b67c6948e8c26bda6758a",
+                "kind": "resource",
+                "format": "file",
+                "sha256": "af28231f73e5cf0e55008a27add46fbb8befafcc4578f20a552e7bae597b6a70",
+                "size": 10663,
+                "media_type": null,
+                "architecture": null,
+                "executable": false,
+                "content_state": "embedded",
+                "limitations": []
+              },
+              {
+                "artifact_id": "art_eefd59b008149c74dd40817a3e54f912473cb341d9deb2f21496ca6fea7510f7",
+                "kind": "resource",
+                "format": "file",
+                "sha256": "0734f59693378c07e869f1022ac385cd72d9c8b15dd423236efe9bcd61eb8bad",
+                "size": 1651,
+                "media_type": null,
+                "architecture": null,
+                "executable": false,
+                "content_state": "embedded",
+                "limitations": []
+              },
+              {
+                "artifact_id": "art_fb795e1dfdecb751fd0a42da6d01fa57bdeb356723afc5123d8529f03035a42d",
+                "kind": "resource",
+                "format": "file",
+                "sha256": "971e8014c5e491fe6a0dec95f6a0470721c85cd7bc19f6cedee2dd3db11f5c38",
+                "size": 8284,
+                "media_type": null,
+                "architecture": null,
+                "executable": false,
+                "content_state": "embedded",
+                "limitations": []
+              },
+              {
+                "artifact_id": "art_fc387efc0427c9853e34efd009138f3320777eb7cbb87843be7b5342650bfeb3",
+                "kind": "resource",
+                "format": "file",
+                "sha256": "798f9e4d18e49b30bf2f12696c8ced73dc4e1413da375a333d01281543a1ea8b",
+                "size": 1064,
+                "media_type": null,
+                "architecture": null,
+                "executable": false,
+                "content_state": "embedded",
+                "limitations": []
+              }
+            ],
+            "occurrences": [
+              {
+                "occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+                "artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+                "parent_occurrence_id": null,
+                "logical_path": ".",
+                "entry_kind": "file",
+                "declared_size": 98476948,
+                "compressed_size": null,
+                "executable": false,
+                "encrypted": false,
+                "hash_status": "verified",
+                "source_location": null,
+                "limitations": []
+              },
+              {
+                "occurrence_id": "occ_c07896e17ff5d8d639ab08ecb8fabf8d02b8508afe83ad8a2f67bf6563afd77b",
+                "artifact_id": "art_a01ac0943e62d8f3ee6f52730b53508e8812db6f20e96bb1fa8aa7b9e64e635b",
+                "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+                "logical_path": "ai技能库.exe",
+                "entry_kind": "file",
+                "declared_size": 98674724,
+                "compressed_size": 98437329,
+                "executable": true,
+                "encrypted": false,
+                "hash_status": "verified",
+                "source_location": null,
+                "limitations": []
+              },
+              {
+                "occurrence_id": "occ_ed810baff9aa1c63386e1064b75b8b3d0710d990df155000812c179eb79d78b4",
+                "artifact_id": "art_fc387efc0427c9853e34efd009138f3320777eb7cbb87843be7b5342650bfeb3",
+                "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+                "logical_path": "licenses/cli-node_modules-rea-agents-LICENSE",
+                "entry_kind": "file",
+                "declared_size": 1064,
+                "compressed_size": 634,
+                "executable": false,
+                "encrypted": false,
+                "hash_status": "verified",
+                "source_location": null,
+                "limitations": []
+              },
+              {
+                "occurrence_id": "occ_025d34a8438cae6326909b231c67e68fd9b7cde71707825ca7e84cc2b90eb2d6",
+                "artifact_id": "art_d58e8efa30211d53052e94abdd170d68fb6c0138e485bd9dd78f810529fc25f8",
+                "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+                "logical_path": "licenses/node-LICENSE",
+                "entry_kind": "file",
+                "declared_size": 160552,
+                "compressed_size": 24570,
+                "executable": false,
+                "encrypted": false,
+                "hash_status": "verified",
+                "source_location": null,
+                "limitations": []
+              },
+              {
+                "occurrence_id": "occ_df6442eec4abb11b7b120bb5082afc23898197e0ab241986f831d6544ef047fb",
+                "artifact_id": "art_eefd59b008149c74dd40817a3e54f912473cb341d9deb2f21496ca6fea7510f7",
+                "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+                "logical_path": "NOTICE.md",
+                "entry_kind": "file",
+                "declared_size": 1651,
+                "compressed_size": 1118,
+                "executable": false,
+                "encrypted": false,
+                "hash_status": "verified",
+                "source_location": null,
+                "limitations": []
+              },
+              {
+                "occurrence_id": "occ_f4b1d422a6c11a97e2c12d3f5d2b046abed298f275c824b065aa5b03a53fcbda",
+                "artifact_id": "art_fb795e1dfdecb751fd0a42da6d01fa57bdeb356723afc5123d8529f03035a42d",
+                "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+                "logical_path": "使用说明.md",
+                "entry_kind": "file",
+                "declared_size": 8284,
+                "compressed_size": 4180,
+                "executable": false,
+                "encrypted": false,
+                "hash_status": "verified",
+                "source_location": null,
+                "limitations": []
+              },
+              {
+                "occurrence_id": "occ_a822d0fb0173711cb04f57b5391d0ea36b8044b8673215d0d50d345170a0ba78",
+                "artifact_id": "art_c118d0257b1234c3b9823f771d7adc0804fa4d017c4b0c0ebfa9da4152af3ee6",
+                "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+                "logical_path": "升级说明.md",
+                "entry_kind": "file",
+                "declared_size": 1102,
+                "compressed_size": 738,
+                "executable": false,
+                "encrypted": false,
+                "hash_status": "verified",
+                "source_location": null,
+                "limitations": []
+              },
+              {
+                "occurrence_id": "occ_86f3c9dc930e56d41c490b340eb7e3ec724860a2c6026559d3b31860b1517c89",
+                "artifact_id": "art_be7cc7f3b02b6b372100f34ee58dc799ca16cf1b2358297832f94b861c42f3a2",
+                "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+                "logical_path": "版本说明与验收报告.md",
+                "entry_kind": "file",
+                "declared_size": 3148,
+                "compressed_size": 1775,
+                "executable": false,
+                "encrypted": false,
+                "hash_status": "verified",
+                "source_location": null,
+                "limitations": []
+              },
+              {
+                "occurrence_id": "occ_b68b3b1961f47f170ca31961abd4757c90063486f742bdb033f31dc4dcff8acc",
+                "artifact_id": "art_e44bed09e448c50139a9034b809b85769a8c48cf220b67c6948e8c26bda6758a",
+                "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+                "logical_path": "逆向与安全报告.md",
+                "entry_kind": "file",
+                "declared_size": 10663,
+                "compressed_size": 5628,
+                "executable": false,
+                "encrypted": false,
+                "hash_status": "verified",
+                "source_location": null,
+                "limitations": []
+              }
+            ],
+            "edges": [
+              {
+                "edge_id": "edge_21ff5a13d39c0e3d034075cb962ed915596e22e0fb3984f5500a75019f4e4adb",
+                "ordinal": 1,
+                "parent_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+                "child_artifact_id": "art_fb795e1dfdecb751fd0a42da6d01fa57bdeb356723afc5123d8529f03035a42d",
+                "relation": "contains",
+                "occurrence_id": "occ_f4b1d422a6c11a97e2c12d3f5d2b046abed298f275c824b065aa5b03a53fcbda",
+                "logical_path": "使用说明.md",
+                "producer": null
+              },
+              {
+                "edge_id": "edge_35a37772c322480c647fba2da55ab0577102191b046ffe90fcc78679c0bf3b15",
+                "ordinal": 4,
+                "parent_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+                "child_artifact_id": "art_e44bed09e448c50139a9034b809b85769a8c48cf220b67c6948e8c26bda6758a",
+                "relation": "contains",
+                "occurrence_id": "occ_b68b3b1961f47f170ca31961abd4757c90063486f742bdb033f31dc4dcff8acc",
+                "logical_path": "逆向与安全报告.md",
+                "producer": null
+              },
+              {
+                "edge_id": "edge_4622c8cd61a3ef76e77128df546cb280570eee259018531a017e2b94296e4ee8",
+                "ordinal": 6,
+                "parent_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+                "child_artifact_id": "art_d58e8efa30211d53052e94abdd170d68fb6c0138e485bd9dd78f810529fc25f8",
+                "relation": "contains",
+                "occurrence_id": "occ_025d34a8438cae6326909b231c67e68fd9b7cde71707825ca7e84cc2b90eb2d6",
+                "logical_path": "licenses/node-LICENSE",
+                "producer": null
+              },
+              {
+                "edge_id": "edge_4e74d71215805fdd3ed710bf348320da4ce985c445581806b15304bfe227b9c0",
+                "ordinal": 5,
+                "parent_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+                "child_artifact_id": "art_eefd59b008149c74dd40817a3e54f912473cb341d9deb2f21496ca6fea7510f7",
+                "relation": "contains",
+                "occurrence_id": "occ_df6442eec4abb11b7b120bb5082afc23898197e0ab241986f831d6544ef047fb",
+                "logical_path": "NOTICE.md",
+                "producer": null
+              },
+              {
+                "edge_id": "edge_4f791d78e96ef186790152e6cc21fc471fb668b5513937b40b6cc6e7af70051d",
+                "ordinal": 3,
+                "parent_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+                "child_artifact_id": "art_be7cc7f3b02b6b372100f34ee58dc799ca16cf1b2358297832f94b861c42f3a2",
+                "relation": "contains",
+                "occurrence_id": "occ_86f3c9dc930e56d41c490b340eb7e3ec724860a2c6026559d3b31860b1517c89",
+                "logical_path": "版本说明与验收报告.md",
+                "producer": null
+              },
+              {
+                "edge_id": "edge_dd0a292d1f3ccaa23af1d1483f3b0d25f309b30c5ec6a6bbf85db5af4d7b568a",
+                "ordinal": 7,
+                "parent_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+                "child_artifact_id": "art_fc387efc0427c9853e34efd009138f3320777eb7cbb87843be7b5342650bfeb3",
+                "relation": "contains",
+                "occurrence_id": "occ_ed810baff9aa1c63386e1064b75b8b3d0710d990df155000812c179eb79d78b4",
+                "logical_path": "licenses/cli-node_modules-rea-agents-LICENSE",
+                "producer": null
+              },
+              {
+                "edge_id": "edge_ef659796b5069095062b9f33717db92fb67b0de9d176780db9fb1b3907e9898b",
+                "ordinal": 0,
+                "parent_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+                "child_artifact_id": "art_a01ac0943e62d8f3ee6f52730b53508e8812db6f20e96bb1fa8aa7b9e64e635b",
+                "relation": "contains",
+                "occurrence_id": "occ_c07896e17ff5d8d639ab08ecb8fabf8d02b8508afe83ad8a2f67bf6563afd77b",
+                "logical_path": "ai技能库.exe",
+                "producer": null
+              },
+              {
+                "edge_id": "edge_f882d5328bd5fb4bcfae7987bb911c467123546b9acb2a9868e1cc84f9cc768d",
+                "ordinal": 2,
+                "parent_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+                "child_artifact_id": "art_c118d0257b1234c3b9823f771d7adc0804fa4d017c4b0c0ebfa9da4152af3ee6",
+                "relation": "contains",
+                "occurrence_id": "occ_a822d0fb0173711cb04f57b5391d0ea36b8044b8673215d0d50d345170a0ba78",
+                "logical_path": "升级说明.md",
+                "producer": null
+              }
+            ],
+            "provenance": [],
+            "integrity_contradictions": [],
+            "limitations": []
+          },
+          "confidence": "observed",
+          "authority": "shipped-artifact",
+          "environment": null,
+          "limitations": [],
+          "locations": [
+            {
+              "kind": "artifact-path",
+              "path": "."
+            },
+            {
+              "kind": "artifact-path",
+              "path": "ai技能库.exe"
+            },
+            {
+              "kind": "artifact-path",
+              "path": "licenses/cli-node_modules-rea-agents-LICENSE"
+            },
+            {
+              "kind": "artifact-path",
+              "path": "licenses/node-LICENSE"
+            },
+            {
+              "kind": "artifact-path",
+              "path": "NOTICE.md"
+            },
+            {
+              "kind": "artifact-path",
+              "path": "使用说明.md"
+            },
+            {
+              "kind": "artifact-path",
+              "path": "升级说明.md"
+            },
+            {
+              "kind": "artifact-path",
+              "path": "版本说明与验收报告.md"
+            },
+            {
+              "kind": "artifact-path",
+              "path": "逆向与安全报告.md"
+            }
+          ],
+          "evidence_links": []
+        }
+      }
+    ],
+    "observations": [
+      {
+        "observation_id": "aio_4b48e12814d8a09826b32cf1aef7aa625880ce2f3f79c9d378c292e8bfbae439",
+        "kind": "root-manifest",
+        "subject": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+        "value": {
+          "manifest_id": "agm_9ef42f5e2b57d15ce8ef5c44723db4a451f49be9f52a8f460812479d4f169160",
+          "root_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+          "root_sha256": "3b56cc8510d51ae07d525a7cb1e10babb853d185390df8aced8ec2347c316fcd",
+          "root_format": "zip",
+          "graph_sha256": "971ea59c9cfed9af228d29010549a38297495cb3f097ae62286c3c30a05e0e56",
+          "node_count": 9,
+          "occurrence_count": 9,
+          "edge_count": 8
+        },
+        "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+      },
+      {
+        "observation_id": "aio_e9aa75a25d89f8d334043dcbe92bc1a45f18f1f40f48657c3b3e2d7cb7ee684b",
+        "kind": "artifact",
+        "subject": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+        "value": {
+          "artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+          "kind": "container",
+          "format": "zip",
+          "sha256": "3b56cc8510d51ae07d525a7cb1e10babb853d185390df8aced8ec2347c316fcd",
+          "size": 98476948,
+          "media_type": null,
+          "architecture": null,
+          "executable": false,
+          "content_state": "materialized",
+          "limitations": []
+        },
+        "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+      },
+      {
+        "observation_id": "aio_a7fcdd5578446d6538e06219cd0b91d901c7a21dac0d6c72fbfb1c1142c6b60a",
+        "kind": "artifact",
+        "subject": "art_a01ac0943e62d8f3ee6f52730b53508e8812db6f20e96bb1fa8aa7b9e64e635b",
+        "value": {
+          "artifact_id": "art_a01ac0943e62d8f3ee6f52730b53508e8812db6f20e96bb1fa8aa7b9e64e635b",
+          "kind": "executable",
+          "format": "pe",
+          "sha256": "ddfc22575e5fcc6fe73de826b538f807fe1ce5566141facf5016ec50cd7297a6",
+          "size": 98674724,
+          "media_type": null,
+          "architecture": null,
+          "executable": true,
+          "content_state": "embedded",
+          "limitations": []
+        },
+        "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+      },
+      {
+        "observation_id": "aio_0ca84cdb68ea34fd363e6e4366607be5c73596fc0e0d69e0a9f122fb32ef1a7a",
+        "kind": "artifact",
+        "subject": "art_be7cc7f3b02b6b372100f34ee58dc799ca16cf1b2358297832f94b861c42f3a2",
+        "value": {
+          "artifact_id": "art_be7cc7f3b02b6b372100f34ee58dc799ca16cf1b2358297832f94b861c42f3a2",
+          "kind": "resource",
+          "format": "file",
+          "sha256": "378569c6baaeddfea6809ae293b14f593f434aa818a257fe41f289785a21cc2f",
+          "size": 3148,
+          "media_type": null,
+          "architecture": null,
+          "executable": false,
+          "content_state": "embedded",
+          "limitations": []
+        },
+        "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+      },
+      {
+        "observation_id": "aio_519372b071678da8611be590309ec531ea8e0684deac052d0b4f7a1b65e63571",
+        "kind": "artifact",
+        "subject": "art_c118d0257b1234c3b9823f771d7adc0804fa4d017c4b0c0ebfa9da4152af3ee6",
+        "value": {
+          "artifact_id": "art_c118d0257b1234c3b9823f771d7adc0804fa4d017c4b0c0ebfa9da4152af3ee6",
+          "kind": "resource",
+          "format": "file",
+          "sha256": "c5f73bd810d681d29d738a61247228c762fdaec95d97b4cdad81b7efe6b2241f",
+          "size": 1102,
+          "media_type": null,
+          "architecture": null,
+          "executable": false,
+          "content_state": "embedded",
+          "limitations": []
+        },
+        "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+      },
+      {
+        "observation_id": "aio_01577112d36396e8f129f3e0b3d4e33174dcb6ff7b13c6c536c3f3f3f381daab",
+        "kind": "artifact",
+        "subject": "art_d58e8efa30211d53052e94abdd170d68fb6c0138e485bd9dd78f810529fc25f8",
+        "value": {
+          "artifact_id": "art_d58e8efa30211d53052e94abdd170d68fb6c0138e485bd9dd78f810529fc25f8",
+          "kind": "resource",
+          "format": "file",
+          "sha256": "d9c4eeda951d6d08f4aa1316b61aafcf67e6da5f79b18f8edeb56fa6abdc038c",
+          "size": 160552,
+          "media_type": null,
+          "architecture": null,
+          "executable": false,
+          "content_state": "embedded",
+          "limitations": []
+        },
+        "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+      },
+      {
+        "observation_id": "aio_2ee7bbd02e40ce38e910f84f5f66205acad4f8dd9d908df9fa95ce450a31f7e6",
+        "kind": "artifact",
+        "subject": "art_e44bed09e448c50139a9034b809b85769a8c48cf220b67c6948e8c26bda6758a",
+        "value": {
+          "artifact_id": "art_e44bed09e448c50139a9034b809b85769a8c48cf220b67c6948e8c26bda6758a",
+          "kind": "resource",
+          "format": "file",
+          "sha256": "af28231f73e5cf0e55008a27add46fbb8befafcc4578f20a552e7bae597b6a70",
+          "size": 10663,
+          "media_type": null,
+          "architecture": null,
+          "executable": false,
+          "content_state": "embedded",
+          "limitations": []
+        },
+        "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+      },
+      {
+        "observation_id": "aio_aedec9ba46ee9acdf24930731535a9efc26b7ea3f0e84cd38e98dc5479961559",
+        "kind": "artifact",
+        "subject": "art_eefd59b008149c74dd40817a3e54f912473cb341d9deb2f21496ca6fea7510f7",
+        "value": {
+          "artifact_id": "art_eefd59b008149c74dd40817a3e54f912473cb341d9deb2f21496ca6fea7510f7",
+          "kind": "resource",
+          "format": "file",
+          "sha256": "0734f59693378c07e869f1022ac385cd72d9c8b15dd423236efe9bcd61eb8bad",
+          "size": 1651,
+          "media_type": null,
+          "architecture": null,
+          "executable": false,
+          "content_state": "embedded",
+          "limitations": []
+        },
+        "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+      },
+      {
+        "observation_id": "aio_9b3f2080e5eee4a5fa078f980a57465e019530b032544835ed5ed1f157694a3e",
+        "kind": "artifact",
+        "subject": "art_fb795e1dfdecb751fd0a42da6d01fa57bdeb356723afc5123d8529f03035a42d",
+        "value": {
+          "artifact_id": "art_fb795e1dfdecb751fd0a42da6d01fa57bdeb356723afc5123d8529f03035a42d",
+          "kind": "resource",
+          "format": "file",
+          "sha256": "971e8014c5e491fe6a0dec95f6a0470721c85cd7bc19f6cedee2dd3db11f5c38",
+          "size": 8284,
+          "media_type": null,
+          "architecture": null,
+          "executable": false,
+          "content_state": "embedded",
+          "limitations": []
+        },
+        "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+      },
+      {
+        "observation_id": "aio_e1a28bdcb5ca852c9c7df22159dd5b49336d26d82c9166ef62365a27f866ac04",
+        "kind": "artifact",
+        "subject": "art_fc387efc0427c9853e34efd009138f3320777eb7cbb87843be7b5342650bfeb3",
+        "value": {
+          "artifact_id": "art_fc387efc0427c9853e34efd009138f3320777eb7cbb87843be7b5342650bfeb3",
+          "kind": "resource",
+          "format": "file",
+          "sha256": "798f9e4d18e49b30bf2f12696c8ced73dc4e1413da375a333d01281543a1ea8b",
+          "size": 1064,
+          "media_type": null,
+          "architecture": null,
+          "executable": false,
+          "content_state": "embedded",
+          "limitations": []
+        },
+        "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+      },
+      {
+        "observation_id": "aio_8733472ccb09f12a511d090bf233cf6b55b36e902c482e66520ff789fed108a5",
+        "kind": "occurrence",
+        "subject": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+        "value": {
+          "occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+          "artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+          "parent_occurrence_id": null,
+          "logical_path": ".",
+          "entry_kind": "file",
+          "declared_size": 98476948,
+          "compressed_size": null,
+          "executable": false,
+          "encrypted": false,
+          "hash_status": "verified",
+          "source_location": null,
+          "limitations": []
+        },
+        "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+      },
+      {
+        "observation_id": "aio_8ee0cdc8d313b724db4bb38f402e0f39ff2cd135b9ff5bbfc4a2c33c97fb0624",
+        "kind": "occurrence",
+        "subject": "occ_c07896e17ff5d8d639ab08ecb8fabf8d02b8508afe83ad8a2f67bf6563afd77b",
+        "value": {
+          "occurrence_id": "occ_c07896e17ff5d8d639ab08ecb8fabf8d02b8508afe83ad8a2f67bf6563afd77b",
+          "artifact_id": "art_a01ac0943e62d8f3ee6f52730b53508e8812db6f20e96bb1fa8aa7b9e64e635b",
+          "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+          "logical_path": "ai技能库.exe",
+          "entry_kind": "file",
+          "declared_size": 98674724,
+          "compressed_size": 98437329,
+          "executable": true,
+          "encrypted": false,
+          "hash_status": "verified",
+          "source_location": null,
+          "limitations": []
+        },
+        "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+      },
+      {
+        "observation_id": "aio_640683dd4778f3cc9647ff536a7864e14eee657cbaf5557015c8f833bf6a60e9",
+        "kind": "occurrence",
+        "subject": "occ_ed810baff9aa1c63386e1064b75b8b3d0710d990df155000812c179eb79d78b4",
+        "value": {
+          "occurrence_id": "occ_ed810baff9aa1c63386e1064b75b8b3d0710d990df155000812c179eb79d78b4",
+          "artifact_id": "art_fc387efc0427c9853e34efd009138f3320777eb7cbb87843be7b5342650bfeb3",
+          "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+          "logical_path": "licenses/cli-node_modules-rea-agents-LICENSE",
+          "entry_kind": "file",
+          "declared_size": 1064,
+          "compressed_size": 634,
+          "executable": false,
+          "encrypted": false,
+          "hash_status": "verified",
+          "source_location": null,
+          "limitations": []
+        },
+        "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+      },
+      {
+        "observation_id": "aio_52dc66f8053d6b1f2406f91b1fe1081b82a1f1f25d1f603e768d63b6a1507e42",
+        "kind": "occurrence",
+        "subject": "occ_025d34a8438cae6326909b231c67e68fd9b7cde71707825ca7e84cc2b90eb2d6",
+        "value": {
+          "occurrence_id": "occ_025d34a8438cae6326909b231c67e68fd9b7cde71707825ca7e84cc2b90eb2d6",
+          "artifact_id": "art_d58e8efa30211d53052e94abdd170d68fb6c0138e485bd9dd78f810529fc25f8",
+          "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+          "logical_path": "licenses/node-LICENSE",
+          "entry_kind": "file",
+          "declared_size": 160552,
+          "compressed_size": 24570,
+          "executable": false,
+          "encrypted": false,
+          "hash_status": "verified",
+          "source_location": null,
+          "limitations": []
+        },
+        "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+      },
+      {
+        "observation_id": "aio_34586322a98afb7920686d940b54a84a253b1233674465e749c6be3de2ac10c9",
+        "kind": "occurrence",
+        "subject": "occ_df6442eec4abb11b7b120bb5082afc23898197e0ab241986f831d6544ef047fb",
+        "value": {
+          "occurrence_id": "occ_df6442eec4abb11b7b120bb5082afc23898197e0ab241986f831d6544ef047fb",
+          "artifact_id": "art_eefd59b008149c74dd40817a3e54f912473cb341d9deb2f21496ca6fea7510f7",
+          "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+          "logical_path": "NOTICE.md",
+          "entry_kind": "file",
+          "declared_size": 1651,
+          "compressed_size": 1118,
+          "executable": false,
+          "encrypted": false,
+          "hash_status": "verified",
+          "source_location": null,
+          "limitations": []
+        },
+        "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+      },
+      {
+        "observation_id": "aio_a9f3a1023314102c9cafe458f370dcce5d6aeef7472031560c2440ffe4b1647d",
+        "kind": "occurrence",
+        "subject": "occ_f4b1d422a6c11a97e2c12d3f5d2b046abed298f275c824b065aa5b03a53fcbda",
+        "value": {
+          "occurrence_id": "occ_f4b1d422a6c11a97e2c12d3f5d2b046abed298f275c824b065aa5b03a53fcbda",
+          "artifact_id": "art_fb795e1dfdecb751fd0a42da6d01fa57bdeb356723afc5123d8529f03035a42d",
+          "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+          "logical_path": "使用说明.md",
+          "entry_kind": "file",
+          "declared_size": 8284,
+          "compressed_size": 4180,
+          "executable": false,
+          "encrypted": false,
+          "hash_status": "verified",
+          "source_location": null,
+          "limitations": []
+        },
+        "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+      },
+      {
+        "observation_id": "aio_ba3f82e739480cfc3c1e19e9001d66241ad14888b5409980b7401475de78a685",
+        "kind": "occurrence",
+        "subject": "occ_a822d0fb0173711cb04f57b5391d0ea36b8044b8673215d0d50d345170a0ba78",
+        "value": {
+          "occurrence_id": "occ_a822d0fb0173711cb04f57b5391d0ea36b8044b8673215d0d50d345170a0ba78",
+          "artifact_id": "art_c118d0257b1234c3b9823f771d7adc0804fa4d017c4b0c0ebfa9da4152af3ee6",
+          "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+          "logical_path": "升级说明.md",
+          "entry_kind": "file",
+          "declared_size": 1102,
+          "compressed_size": 738,
+          "executable": false,
+          "encrypted": false,
+          "hash_status": "verified",
+          "source_location": null,
+          "limitations": []
+        },
+        "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+      },
+      {
+        "observation_id": "aio_114adc049a900ed52e4c6cfafd1a12cb97fb202a0e145dd683c323087e0804aa",
+        "kind": "occurrence",
+        "subject": "occ_86f3c9dc930e56d41c490b340eb7e3ec724860a2c6026559d3b31860b1517c89",
+        "value": {
+          "occurrence_id": "occ_86f3c9dc930e56d41c490b340eb7e3ec724860a2c6026559d3b31860b1517c89",
+          "artifact_id": "art_be7cc7f3b02b6b372100f34ee58dc799ca16cf1b2358297832f94b861c42f3a2",
+          "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+          "logical_path": "版本说明与验收报告.md",
+          "entry_kind": "file",
+          "declared_size": 3148,
+          "compressed_size": 1775,
+          "executable": false,
+          "encrypted": false,
+          "hash_status": "verified",
+          "source_location": null,
+          "limitations": []
+        },
+        "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+      },
+      {
+        "observation_id": "aio_894e783a85348ea3599b057346f02897579ed9fcd26db4bc0a23682460958e31",
+        "kind": "occurrence",
+        "subject": "occ_b68b3b1961f47f170ca31961abd4757c90063486f742bdb033f31dc4dcff8acc",
+        "value": {
+          "occurrence_id": "occ_b68b3b1961f47f170ca31961abd4757c90063486f742bdb033f31dc4dcff8acc",
+          "artifact_id": "art_e44bed09e448c50139a9034b809b85769a8c48cf220b67c6948e8c26bda6758a",
+          "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+          "logical_path": "逆向与安全报告.md",
+          "entry_kind": "file",
+          "declared_size": 10663,
+          "compressed_size": 5628,
+          "executable": false,
+          "encrypted": false,
+          "hash_status": "verified",
+          "source_location": null,
+          "limitations": []
+        },
+        "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+      }
+    ],
+    "derived_relationships": [
+      {
+        "relationship_id": "air_748f6167d723b2dfde6b38d173e1ba9da43242d712e3fd4ae4eb2cfaff5c8d18",
+        "relation": "contains",
+        "source_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+        "target_artifact_id": "art_fb795e1dfdecb751fd0a42da6d01fa57bdeb356723afc5123d8529f03035a42d",
+        "occurrence_id": "occ_f4b1d422a6c11a97e2c12d3f5d2b046abed298f275c824b065aa5b03a53fcbda",
+        "logical_path": "使用说明.md",
+        "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+      },
+      {
+        "relationship_id": "air_98aa7aa646c1595665ab82928a0e090cafcacc0da92aa1de649d2627dc46af5f",
+        "relation": "contains",
+        "source_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+        "target_artifact_id": "art_e44bed09e448c50139a9034b809b85769a8c48cf220b67c6948e8c26bda6758a",
+        "occurrence_id": "occ_b68b3b1961f47f170ca31961abd4757c90063486f742bdb033f31dc4dcff8acc",
+        "logical_path": "逆向与安全报告.md",
+        "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+      },
+      {
+        "relationship_id": "air_76ac3d932e1389cbc4dfd8413f4eafb80f1532c0ca83c610982d899d52115148",
+        "relation": "contains",
+        "source_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+        "target_artifact_id": "art_d58e8efa30211d53052e94abdd170d68fb6c0138e485bd9dd78f810529fc25f8",
+        "occurrence_id": "occ_025d34a8438cae6326909b231c67e68fd9b7cde71707825ca7e84cc2b90eb2d6",
+        "logical_path": "licenses/node-LICENSE",
+        "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+      },
+      {
+        "relationship_id": "air_8263fc5ec9b0a0ab70b8a1fb711ba49a243c0853c0f3daa6b32e6b93dfa1707c",
+        "relation": "contains",
+        "source_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+        "target_artifact_id": "art_eefd59b008149c74dd40817a3e54f912473cb341d9deb2f21496ca6fea7510f7",
+        "occurrence_id": "occ_df6442eec4abb11b7b120bb5082afc23898197e0ab241986f831d6544ef047fb",
+        "logical_path": "NOTICE.md",
+        "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+      },
+      {
+        "relationship_id": "air_0fd2a8a5b6d991b833c66b20f15e815e51b818ee8810e5ee29df8dedc52431be",
+        "relation": "contains",
+        "source_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+        "target_artifact_id": "art_be7cc7f3b02b6b372100f34ee58dc799ca16cf1b2358297832f94b861c42f3a2",
+        "occurrence_id": "occ_86f3c9dc930e56d41c490b340eb7e3ec724860a2c6026559d3b31860b1517c89",
+        "logical_path": "版本说明与验收报告.md",
+        "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+      },
+      {
+        "relationship_id": "air_54fdae21862e46d70d83aeaaed3425b473d39a9a44d2b778aa3ff8f831b2b2b3",
+        "relation": "contains",
+        "source_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+        "target_artifact_id": "art_fc387efc0427c9853e34efd009138f3320777eb7cbb87843be7b5342650bfeb3",
+        "occurrence_id": "occ_ed810baff9aa1c63386e1064b75b8b3d0710d990df155000812c179eb79d78b4",
+        "logical_path": "licenses/cli-node_modules-rea-agents-LICENSE",
+        "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+      },
+      {
+        "relationship_id": "air_ed07f96bd88a115ed6f064bec56da1350787fcb638c6c0d19b89fd557a060c72",
+        "relation": "contains",
+        "source_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+        "target_artifact_id": "art_a01ac0943e62d8f3ee6f52730b53508e8812db6f20e96bb1fa8aa7b9e64e635b",
+        "occurrence_id": "occ_c07896e17ff5d8d639ab08ecb8fabf8d02b8508afe83ad8a2f67bf6563afd77b",
+        "logical_path": "ai技能库.exe",
+        "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+      },
+      {
+        "relationship_id": "air_596acb61010b3f3ef93a6b002885958e5547f8ae5c79a58306b2a89cd3c91bfd",
+        "relation": "contains",
+        "source_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+        "target_artifact_id": "art_c118d0257b1234c3b9823f771d7adc0804fa4d017c4b0c0ebfa9da4152af3ee6",
+        "occurrence_id": "occ_a822d0fb0173711cb04f57b5391d0ea36b8044b8673215d0d50d345170a0ba78",
+        "logical_path": "升级说明.md",
+        "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+      }
+    ],
+    "hypotheses": [],
+    "contradictions": [],
+    "unexplored_branches": [],
+    "next_probes": [],
+    "coverage": {
+      "status": "complete-within-substeps",
+      "substeps_completed": 1,
+      "observations_retained": 19,
+      "observations_omitted": 0,
+      "relationships_retained": 8,
+      "relationships_omitted": 0,
+      "hypotheses_retained": 0,
+      "hypotheses_omitted": 0,
+      "unexplored_branches_retained": 0,
+      "unexplored_branches_omitted": 0,
+      "next_probes_retained": 0,
+      "next_probes_omitted": 0
+    },
+    "evidence_links": [
+      "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+    ],
+    "limitations": [
+      "Inspection derives bounded static hypotheses and next probes; it does not execute the artifact or claim format-specific semantics."
+    ]
+  },
+  "evidence_id": "ev_fec432b5b443848943fce15de78dbd1710b2b07b5a3663998590f477fc31d0aa",
+  "evidence": {
+    "evidence_id": "ev_fec432b5b443848943fce15de78dbd1710b2b07b5a3663998590f477fc31d0aa",
+    "subject": {
+      "name": "AISkillLibrary-1.5.5-windows-x64.zip",
+      "digest": {
+        "sha256": "3b56cc8510d51ae07d525a7cb1e10babb853d185390df8aced8ec2347c316fcd"
+      },
+      "format": "zip",
+      "architecture": null,
+      "local_path": "AISkillLibrary-1.5.5-windows-x64.zip"
+    },
+    "provider": {
+      "id": "rea-artifact-graph",
+      "name": "REA safe artifact graph provider",
+      "version": "1"
+    },
+    "predicate_type": "rea.analysis",
+    "operation": "inspect_artifact",
+    "parameters": {
+      "integrity_policy": "fail"
+    },
+    "raw_result": null,
+    "normalized_result": {
+      "inspection_id": "ai_70b716a95d4365726c11b94b57ba31d359527ee3ee939ad4c0bf6095a73f90f7",
+      "subject": {
+        "manifest_id": "agm_9ef42f5e2b57d15ce8ef5c44723db4a451f49be9f52a8f460812479d4f169160",
+        "root_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+        "root_sha256": "3b56cc8510d51ae07d525a7cb1e10babb853d185390df8aced8ec2347c316fcd",
+        "root_format": "zip"
+      },
+      "substeps": [
+        {
+          "substep_id": "ais_3803da09f8d6acaf029e9251594a33e5b7e24e570ff9138e0b74a7aa0b6cfef4",
+          "operation": "inventory_artifact",
+          "status": "completed",
+          "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724",
+          "evidence": {
+            "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724",
+            "subject": {
+              "name": "AISkillLibrary-1.5.5-windows-x64.zip",
+              "digest": {
+                "sha256": "3b56cc8510d51ae07d525a7cb1e10babb853d185390df8aced8ec2347c316fcd"
+              },
+              "format": "zip",
+              "architecture": null,
+              "local_path": "AISkillLibrary-1.5.5-windows-x64.zip"
+            },
+            "provider": {
+              "id": "rea-artifact-graph",
+              "name": "REA safe artifact graph provider",
+              "version": "1"
+            },
+            "predicate_type": "rea.analysis",
+            "operation": "inventory_artifact",
+            "parameters": {
+              "integrity_policy": "fail"
+            },
+            "raw_result": null,
+            "normalized_result": {
+              "manifest": {
+                "manifest_id": "agm_9ef42f5e2b57d15ce8ef5c44723db4a451f49be9f52a8f460812479d4f169160",
+                "root_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+                "root_sha256": "3b56cc8510d51ae07d525a7cb1e10babb853d185390df8aced8ec2347c316fcd",
+                "root_format": "zip",
+                "graph_sha256": "971ea59c9cfed9af228d29010549a38297495cb3f097ae62286c3c30a05e0e56",
+                "node_count": 9,
+                "occurrence_count": 9,
+                "edge_count": 8
+              },
+              "nodes": [
+                {
+                  "artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+                  "kind": "container",
+                  "format": "zip",
+                  "sha256": "3b56cc8510d51ae07d525a7cb1e10babb853d185390df8aced8ec2347c316fcd",
+                  "size": 98476948,
+                  "media_type": null,
+                  "architecture": null,
+                  "executable": false,
+                  "content_state": "materialized",
+                  "limitations": []
+                },
+                {
+                  "artifact_id": "art_a01ac0943e62d8f3ee6f52730b53508e8812db6f20e96bb1fa8aa7b9e64e635b",
+                  "kind": "executable",
+                  "format": "pe",
+                  "sha256": "ddfc22575e5fcc6fe73de826b538f807fe1ce5566141facf5016ec50cd7297a6",
+                  "size": 98674724,
+                  "media_type": null,
+                  "architecture": null,
+                  "executable": true,
+                  "content_state": "embedded",
+                  "limitations": []
+                },
+                {
+                  "artifact_id": "art_be7cc7f3b02b6b372100f34ee58dc799ca16cf1b2358297832f94b861c42f3a2",
+                  "kind": "resource",
+                  "format": "file",
+                  "sha256": "378569c6baaeddfea6809ae293b14f593f434aa818a257fe41f289785a21cc2f",
+                  "size": 3148,
+                  "media_type": null,
+                  "architecture": null,
+                  "executable": false,
+                  "content_state": "embedded",
+                  "limitations": []
+                },
+                {
+                  "artifact_id": "art_c118d0257b1234c3b9823f771d7adc0804fa4d017c4b0c0ebfa9da4152af3ee6",
+                  "kind": "resource",
+                  "format": "file",
+                  "sha256": "c5f73bd810d681d29d738a61247228c762fdaec95d97b4cdad81b7efe6b2241f",
+                  "size": 1102,
+                  "media_type": null,
+                  "architecture": null,
+                  "executable": false,
+                  "content_state": "embedded",
+                  "limitations": []
+                },
+                {
+                  "artifact_id": "art_d58e8efa30211d53052e94abdd170d68fb6c0138e485bd9dd78f810529fc25f8",
+                  "kind": "resource",
+                  "format": "file",
+                  "sha256": "d9c4eeda951d6d08f4aa1316b61aafcf67e6da5f79b18f8edeb56fa6abdc038c",
+                  "size": 160552,
+                  "media_type": null,
+                  "architecture": null,
+                  "executable": false,
+                  "content_state": "embedded",
+                  "limitations": []
+                },
+                {
+                  "artifact_id": "art_e44bed09e448c50139a9034b809b85769a8c48cf220b67c6948e8c26bda6758a",
+                  "kind": "resource",
+                  "format": "file",
+                  "sha256": "af28231f73e5cf0e55008a27add46fbb8befafcc4578f20a552e7bae597b6a70",
+                  "size": 10663,
+                  "media_type": null,
+                  "architecture": null,
+                  "executable": false,
+                  "content_state": "embedded",
+                  "limitations": []
+                },
+                {
+                  "artifact_id": "art_eefd59b008149c74dd40817a3e54f912473cb341d9deb2f21496ca6fea7510f7",
+                  "kind": "resource",
+                  "format": "file",
+                  "sha256": "0734f59693378c07e869f1022ac385cd72d9c8b15dd423236efe9bcd61eb8bad",
+                  "size": 1651,
+                  "media_type": null,
+                  "architecture": null,
+                  "executable": false,
+                  "content_state": "embedded",
+                  "limitations": []
+                },
+                {
+                  "artifact_id": "art_fb795e1dfdecb751fd0a42da6d01fa57bdeb356723afc5123d8529f03035a42d",
+                  "kind": "resource",
+                  "format": "file",
+                  "sha256": "971e8014c5e491fe6a0dec95f6a0470721c85cd7bc19f6cedee2dd3db11f5c38",
+                  "size": 8284,
+                  "media_type": null,
+                  "architecture": null,
+                  "executable": false,
+                  "content_state": "embedded",
+                  "limitations": []
+                },
+                {
+                  "artifact_id": "art_fc387efc0427c9853e34efd009138f3320777eb7cbb87843be7b5342650bfeb3",
+                  "kind": "resource",
+                  "format": "file",
+                  "sha256": "798f9e4d18e49b30bf2f12696c8ced73dc4e1413da375a333d01281543a1ea8b",
+                  "size": 1064,
+                  "media_type": null,
+                  "architecture": null,
+                  "executable": false,
+                  "content_state": "embedded",
+                  "limitations": []
+                }
+              ],
+              "occurrences": [
+                {
+                  "occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+                  "artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+                  "parent_occurrence_id": null,
+                  "logical_path": ".",
+                  "entry_kind": "file",
+                  "declared_size": 98476948,
+                  "compressed_size": null,
+                  "executable": false,
+                  "encrypted": false,
+                  "hash_status": "verified",
+                  "source_location": null,
+                  "limitations": []
+                },
+                {
+                  "occurrence_id": "occ_c07896e17ff5d8d639ab08ecb8fabf8d02b8508afe83ad8a2f67bf6563afd77b",
+                  "artifact_id": "art_a01ac0943e62d8f3ee6f52730b53508e8812db6f20e96bb1fa8aa7b9e64e635b",
+                  "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+                  "logical_path": "ai技能库.exe",
+                  "entry_kind": "file",
+                  "declared_size": 98674724,
+                  "compressed_size": 98437329,
+                  "executable": true,
+                  "encrypted": false,
+                  "hash_status": "verified",
+                  "source_location": null,
+                  "limitations": []
+                },
+                {
+                  "occurrence_id": "occ_ed810baff9aa1c63386e1064b75b8b3d0710d990df155000812c179eb79d78b4",
+                  "artifact_id": "art_fc387efc0427c9853e34efd009138f3320777eb7cbb87843be7b5342650bfeb3",
+                  "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+                  "logical_path": "licenses/cli-node_modules-rea-agents-LICENSE",
+                  "entry_kind": "file",
+                  "declared_size": 1064,
+                  "compressed_size": 634,
+                  "executable": false,
+                  "encrypted": false,
+                  "hash_status": "verified",
+                  "source_location": null,
+                  "limitations": []
+                },
+                {
+                  "occurrence_id": "occ_025d34a8438cae6326909b231c67e68fd9b7cde71707825ca7e84cc2b90eb2d6",
+                  "artifact_id": "art_d58e8efa30211d53052e94abdd170d68fb6c0138e485bd9dd78f810529fc25f8",
+                  "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+                  "logical_path": "licenses/node-LICENSE",
+                  "entry_kind": "file",
+                  "declared_size": 160552,
+                  "compressed_size": 24570,
+                  "executable": false,
+                  "encrypted": false,
+                  "hash_status": "verified",
+                  "source_location": null,
+                  "limitations": []
+                },
+                {
+                  "occurrence_id": "occ_df6442eec4abb11b7b120bb5082afc23898197e0ab241986f831d6544ef047fb",
+                  "artifact_id": "art_eefd59b008149c74dd40817a3e54f912473cb341d9deb2f21496ca6fea7510f7",
+                  "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+                  "logical_path": "NOTICE.md",
+                  "entry_kind": "file",
+                  "declared_size": 1651,
+                  "compressed_size": 1118,
+                  "executable": false,
+                  "encrypted": false,
+                  "hash_status": "verified",
+                  "source_location": null,
+                  "limitations": []
+                },
+                {
+                  "occurrence_id": "occ_f4b1d422a6c11a97e2c12d3f5d2b046abed298f275c824b065aa5b03a53fcbda",
+                  "artifact_id": "art_fb795e1dfdecb751fd0a42da6d01fa57bdeb356723afc5123d8529f03035a42d",
+                  "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+                  "logical_path": "使用说明.md",
+                  "entry_kind": "file",
+                  "declared_size": 8284,
+                  "compressed_size": 4180,
+                  "executable": false,
+                  "encrypted": false,
+                  "hash_status": "verified",
+                  "source_location": null,
+                  "limitations": []
+                },
+                {
+                  "occurrence_id": "occ_a822d0fb0173711cb04f57b5391d0ea36b8044b8673215d0d50d345170a0ba78",
+                  "artifact_id": "art_c118d0257b1234c3b9823f771d7adc0804fa4d017c4b0c0ebfa9da4152af3ee6",
+                  "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+                  "logical_path": "升级说明.md",
+                  "entry_kind": "file",
+                  "declared_size": 1102,
+                  "compressed_size": 738,
+                  "executable": false,
+                  "encrypted": false,
+                  "hash_status": "verified",
+                  "source_location": null,
+                  "limitations": []
+                },
+                {
+                  "occurrence_id": "occ_86f3c9dc930e56d41c490b340eb7e3ec724860a2c6026559d3b31860b1517c89",
+                  "artifact_id": "art_be7cc7f3b02b6b372100f34ee58dc799ca16cf1b2358297832f94b861c42f3a2",
+                  "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+                  "logical_path": "版本说明与验收报告.md",
+                  "entry_kind": "file",
+                  "declared_size": 3148,
+                  "compressed_size": 1775,
+                  "executable": false,
+                  "encrypted": false,
+                  "hash_status": "verified",
+                  "source_location": null,
+                  "limitations": []
+                },
+                {
+                  "occurrence_id": "occ_b68b3b1961f47f170ca31961abd4757c90063486f742bdb033f31dc4dcff8acc",
+                  "artifact_id": "art_e44bed09e448c50139a9034b809b85769a8c48cf220b67c6948e8c26bda6758a",
+                  "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+                  "logical_path": "逆向与安全报告.md",
+                  "entry_kind": "file",
+                  "declared_size": 10663,
+                  "compressed_size": 5628,
+                  "executable": false,
+                  "encrypted": false,
+                  "hash_status": "verified",
+                  "source_location": null,
+                  "limitations": []
+                }
+              ],
+              "edges": [
+                {
+                  "edge_id": "edge_21ff5a13d39c0e3d034075cb962ed915596e22e0fb3984f5500a75019f4e4adb",
+                  "ordinal": 1,
+                  "parent_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+                  "child_artifact_id": "art_fb795e1dfdecb751fd0a42da6d01fa57bdeb356723afc5123d8529f03035a42d",
+                  "relation": "contains",
+                  "occurrence_id": "occ_f4b1d422a6c11a97e2c12d3f5d2b046abed298f275c824b065aa5b03a53fcbda",
+                  "logical_path": "使用说明.md",
+                  "producer": null
+                },
+                {
+                  "edge_id": "edge_35a37772c322480c647fba2da55ab0577102191b046ffe90fcc78679c0bf3b15",
+                  "ordinal": 4,
+                  "parent_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+                  "child_artifact_id": "art_e44bed09e448c50139a9034b809b85769a8c48cf220b67c6948e8c26bda6758a",
+                  "relation": "contains",
+                  "occurrence_id": "occ_b68b3b1961f47f170ca31961abd4757c90063486f742bdb033f31dc4dcff8acc",
+                  "logical_path": "逆向与安全报告.md",
+                  "producer": null
+                },
+                {
+                  "edge_id": "edge_4622c8cd61a3ef76e77128df546cb280570eee259018531a017e2b94296e4ee8",
+                  "ordinal": 6,
+                  "parent_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+                  "child_artifact_id": "art_d58e8efa30211d53052e94abdd170d68fb6c0138e485bd9dd78f810529fc25f8",
+                  "relation": "contains",
+                  "occurrence_id": "occ_025d34a8438cae6326909b231c67e68fd9b7cde71707825ca7e84cc2b90eb2d6",
+                  "logical_path": "licenses/node-LICENSE",
+                  "producer": null
+                },
+                {
+                  "edge_id": "edge_4e74d71215805fdd3ed710bf348320da4ce985c445581806b15304bfe227b9c0",
+                  "ordinal": 5,
+                  "parent_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+                  "child_artifact_id": "art_eefd59b008149c74dd40817a3e54f912473cb341d9deb2f21496ca6fea7510f7",
+                  "relation": "contains",
+                  "occurrence_id": "occ_df6442eec4abb11b7b120bb5082afc23898197e0ab241986f831d6544ef047fb",
+                  "logical_path": "NOTICE.md",
+                  "producer": null
+                },
+                {
+                  "edge_id": "edge_4f791d78e96ef186790152e6cc21fc471fb668b5513937b40b6cc6e7af70051d",
+                  "ordinal": 3,
+                  "parent_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+                  "child_artifact_id": "art_be7cc7f3b02b6b372100f34ee58dc799ca16cf1b2358297832f94b861c42f3a2",
+                  "relation": "contains",
+                  "occurrence_id": "occ_86f3c9dc930e56d41c490b340eb7e3ec724860a2c6026559d3b31860b1517c89",
+                  "logical_path": "版本说明与验收报告.md",
+                  "producer": null
+                },
+                {
+                  "edge_id": "edge_dd0a292d1f3ccaa23af1d1483f3b0d25f309b30c5ec6a6bbf85db5af4d7b568a",
+                  "ordinal": 7,
+                  "parent_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+                  "child_artifact_id": "art_fc387efc0427c9853e34efd009138f3320777eb7cbb87843be7b5342650bfeb3",
+                  "relation": "contains",
+                  "occurrence_id": "occ_ed810baff9aa1c63386e1064b75b8b3d0710d990df155000812c179eb79d78b4",
+                  "logical_path": "licenses/cli-node_modules-rea-agents-LICENSE",
+                  "producer": null
+                },
+                {
+                  "edge_id": "edge_ef659796b5069095062b9f33717db92fb67b0de9d176780db9fb1b3907e9898b",
+                  "ordinal": 0,
+                  "parent_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+                  "child_artifact_id": "art_a01ac0943e62d8f3ee6f52730b53508e8812db6f20e96bb1fa8aa7b9e64e635b",
+                  "relation": "contains",
+                  "occurrence_id": "occ_c07896e17ff5d8d639ab08ecb8fabf8d02b8508afe83ad8a2f67bf6563afd77b",
+                  "logical_path": "ai技能库.exe",
+                  "producer": null
+                },
+                {
+                  "edge_id": "edge_f882d5328bd5fb4bcfae7987bb911c467123546b9acb2a9868e1cc84f9cc768d",
+                  "ordinal": 2,
+                  "parent_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+                  "child_artifact_id": "art_c118d0257b1234c3b9823f771d7adc0804fa4d017c4b0c0ebfa9da4152af3ee6",
+                  "relation": "contains",
+                  "occurrence_id": "occ_a822d0fb0173711cb04f57b5391d0ea36b8044b8673215d0d50d345170a0ba78",
+                  "logical_path": "升级说明.md",
+                  "producer": null
+                }
+              ],
+              "provenance": [],
+              "integrity_contradictions": [],
+              "limitations": []
+            },
+            "confidence": "observed",
+            "authority": "shipped-artifact",
+            "environment": null,
+            "limitations": [],
+            "locations": [
+              {
+                "kind": "artifact-path",
+                "path": "."
+              },
+              {
+                "kind": "artifact-path",
+                "path": "ai技能库.exe"
+              },
+              {
+                "kind": "artifact-path",
+                "path": "licenses/cli-node_modules-rea-agents-LICENSE"
+              },
+              {
+                "kind": "artifact-path",
+                "path": "licenses/node-LICENSE"
+              },
+              {
+                "kind": "artifact-path",
+                "path": "NOTICE.md"
+              },
+              {
+                "kind": "artifact-path",
+                "path": "使用说明.md"
+              },
+              {
+                "kind": "artifact-path",
+                "path": "升级说明.md"
+              },
+              {
+                "kind": "artifact-path",
+                "path": "版本说明与验收报告.md"
+              },
+              {
+                "kind": "artifact-path",
+                "path": "逆向与安全报告.md"
+              }
+            ],
+            "evidence_links": []
+          }
+        }
+      ],
+      "observations": [
+        {
+          "observation_id": "aio_4b48e12814d8a09826b32cf1aef7aa625880ce2f3f79c9d378c292e8bfbae439",
+          "kind": "root-manifest",
+          "subject": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+          "value": {
+            "manifest_id": "agm_9ef42f5e2b57d15ce8ef5c44723db4a451f49be9f52a8f460812479d4f169160",
+            "root_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+            "root_sha256": "3b56cc8510d51ae07d525a7cb1e10babb853d185390df8aced8ec2347c316fcd",
+            "root_format": "zip",
+            "graph_sha256": "971ea59c9cfed9af228d29010549a38297495cb3f097ae62286c3c30a05e0e56",
+            "node_count": 9,
+            "occurrence_count": 9,
+            "edge_count": 8
+          },
+          "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+        },
+        {
+          "observation_id": "aio_e9aa75a25d89f8d334043dcbe92bc1a45f18f1f40f48657c3b3e2d7cb7ee684b",
+          "kind": "artifact",
+          "subject": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+          "value": {
+            "artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+            "kind": "container",
+            "format": "zip",
+            "sha256": "3b56cc8510d51ae07d525a7cb1e10babb853d185390df8aced8ec2347c316fcd",
+            "size": 98476948,
+            "media_type": null,
+            "architecture": null,
+            "executable": false,
+            "content_state": "materialized",
+            "limitations": []
+          },
+          "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+        },
+        {
+          "observation_id": "aio_a7fcdd5578446d6538e06219cd0b91d901c7a21dac0d6c72fbfb1c1142c6b60a",
+          "kind": "artifact",
+          "subject": "art_a01ac0943e62d8f3ee6f52730b53508e8812db6f20e96bb1fa8aa7b9e64e635b",
+          "value": {
+            "artifact_id": "art_a01ac0943e62d8f3ee6f52730b53508e8812db6f20e96bb1fa8aa7b9e64e635b",
+            "kind": "executable",
+            "format": "pe",
+            "sha256": "ddfc22575e5fcc6fe73de826b538f807fe1ce5566141facf5016ec50cd7297a6",
+            "size": 98674724,
+            "media_type": null,
+            "architecture": null,
+            "executable": true,
+            "content_state": "embedded",
+            "limitations": []
+          },
+          "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+        },
+        {
+          "observation_id": "aio_0ca84cdb68ea34fd363e6e4366607be5c73596fc0e0d69e0a9f122fb32ef1a7a",
+          "kind": "artifact",
+          "subject": "art_be7cc7f3b02b6b372100f34ee58dc799ca16cf1b2358297832f94b861c42f3a2",
+          "value": {
+            "artifact_id": "art_be7cc7f3b02b6b372100f34ee58dc799ca16cf1b2358297832f94b861c42f3a2",
+            "kind": "resource",
+            "format": "file",
+            "sha256": "378569c6baaeddfea6809ae293b14f593f434aa818a257fe41f289785a21cc2f",
+            "size": 3148,
+            "media_type": null,
+            "architecture": null,
+            "executable": false,
+            "content_state": "embedded",
+            "limitations": []
+          },
+          "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+        },
+        {
+          "observation_id": "aio_519372b071678da8611be590309ec531ea8e0684deac052d0b4f7a1b65e63571",
+          "kind": "artifact",
+          "subject": "art_c118d0257b1234c3b9823f771d7adc0804fa4d017c4b0c0ebfa9da4152af3ee6",
+          "value": {
+            "artifact_id": "art_c118d0257b1234c3b9823f771d7adc0804fa4d017c4b0c0ebfa9da4152af3ee6",
+            "kind": "resource",
+            "format": "file",
+            "sha256": "c5f73bd810d681d29d738a61247228c762fdaec95d97b4cdad81b7efe6b2241f",
+            "size": 1102,
+            "media_type": null,
+            "architecture": null,
+            "executable": false,
+            "content_state": "embedded",
+            "limitations": []
+          },
+          "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+        },
+        {
+          "observation_id": "aio_01577112d36396e8f129f3e0b3d4e33174dcb6ff7b13c6c536c3f3f3f381daab",
+          "kind": "artifact",
+          "subject": "art_d58e8efa30211d53052e94abdd170d68fb6c0138e485bd9dd78f810529fc25f8",
+          "value": {
+            "artifact_id": "art_d58e8efa30211d53052e94abdd170d68fb6c0138e485bd9dd78f810529fc25f8",
+            "kind": "resource",
+            "format": "file",
+            "sha256": "d9c4eeda951d6d08f4aa1316b61aafcf67e6da5f79b18f8edeb56fa6abdc038c",
+            "size": 160552,
+            "media_type": null,
+            "architecture": null,
+            "executable": false,
+            "content_state": "embedded",
+            "limitations": []
+          },
+          "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+        },
+        {
+          "observation_id": "aio_2ee7bbd02e40ce38e910f84f5f66205acad4f8dd9d908df9fa95ce450a31f7e6",
+          "kind": "artifact",
+          "subject": "art_e44bed09e448c50139a9034b809b85769a8c48cf220b67c6948e8c26bda6758a",
+          "value": {
+            "artifact_id": "art_e44bed09e448c50139a9034b809b85769a8c48cf220b67c6948e8c26bda6758a",
+            "kind": "resource",
+            "format": "file",
+            "sha256": "af28231f73e5cf0e55008a27add46fbb8befafcc4578f20a552e7bae597b6a70",
+            "size": 10663,
+            "media_type": null,
+            "architecture": null,
+            "executable": false,
+            "content_state": "embedded",
+            "limitations": []
+          },
+          "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+        },
+        {
+          "observation_id": "aio_aedec9ba46ee9acdf24930731535a9efc26b7ea3f0e84cd38e98dc5479961559",
+          "kind": "artifact",
+          "subject": "art_eefd59b008149c74dd40817a3e54f912473cb341d9deb2f21496ca6fea7510f7",
+          "value": {
+            "artifact_id": "art_eefd59b008149c74dd40817a3e54f912473cb341d9deb2f21496ca6fea7510f7",
+            "kind": "resource",
+            "format": "file",
+            "sha256": "0734f59693378c07e869f1022ac385cd72d9c8b15dd423236efe9bcd61eb8bad",
+            "size": 1651,
+            "media_type": null,
+            "architecture": null,
+            "executable": false,
+            "content_state": "embedded",
+            "limitations": []
+          },
+          "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+        },
+        {
+          "observation_id": "aio_9b3f2080e5eee4a5fa078f980a57465e019530b032544835ed5ed1f157694a3e",
+          "kind": "artifact",
+          "subject": "art_fb795e1dfdecb751fd0a42da6d01fa57bdeb356723afc5123d8529f03035a42d",
+          "value": {
+            "artifact_id": "art_fb795e1dfdecb751fd0a42da6d01fa57bdeb356723afc5123d8529f03035a42d",
+            "kind": "resource",
+            "format": "file",
+            "sha256": "971e8014c5e491fe6a0dec95f6a0470721c85cd7bc19f6cedee2dd3db11f5c38",
+            "size": 8284,
+            "media_type": null,
+            "architecture": null,
+            "executable": false,
+            "content_state": "embedded",
+            "limitations": []
+          },
+          "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+        },
+        {
+          "observation_id": "aio_e1a28bdcb5ca852c9c7df22159dd5b49336d26d82c9166ef62365a27f866ac04",
+          "kind": "artifact",
+          "subject": "art_fc387efc0427c9853e34efd009138f3320777eb7cbb87843be7b5342650bfeb3",
+          "value": {
+            "artifact_id": "art_fc387efc0427c9853e34efd009138f3320777eb7cbb87843be7b5342650bfeb3",
+            "kind": "resource",
+            "format": "file",
+            "sha256": "798f9e4d18e49b30bf2f12696c8ced73dc4e1413da375a333d01281543a1ea8b",
+            "size": 1064,
+            "media_type": null,
+            "architecture": null,
+            "executable": false,
+            "content_state": "embedded",
+            "limitations": []
+          },
+          "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+        },
+        {
+          "observation_id": "aio_8733472ccb09f12a511d090bf233cf6b55b36e902c482e66520ff789fed108a5",
+          "kind": "occurrence",
+          "subject": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+          "value": {
+            "occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+            "artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+            "parent_occurrence_id": null,
+            "logical_path": ".",
+            "entry_kind": "file",
+            "declared_size": 98476948,
+            "compressed_size": null,
+            "executable": false,
+            "encrypted": false,
+            "hash_status": "verified",
+            "source_location": null,
+            "limitations": []
+          },
+          "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+        },
+        {
+          "observation_id": "aio_8ee0cdc8d313b724db4bb38f402e0f39ff2cd135b9ff5bbfc4a2c33c97fb0624",
+          "kind": "occurrence",
+          "subject": "occ_c07896e17ff5d8d639ab08ecb8fabf8d02b8508afe83ad8a2f67bf6563afd77b",
+          "value": {
+            "occurrence_id": "occ_c07896e17ff5d8d639ab08ecb8fabf8d02b8508afe83ad8a2f67bf6563afd77b",
+            "artifact_id": "art_a01ac0943e62d8f3ee6f52730b53508e8812db6f20e96bb1fa8aa7b9e64e635b",
+            "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+            "logical_path": "ai技能库.exe",
+            "entry_kind": "file",
+            "declared_size": 98674724,
+            "compressed_size": 98437329,
+            "executable": true,
+            "encrypted": false,
+            "hash_status": "verified",
+            "source_location": null,
+            "limitations": []
+          },
+          "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+        },
+        {
+          "observation_id": "aio_640683dd4778f3cc9647ff536a7864e14eee657cbaf5557015c8f833bf6a60e9",
+          "kind": "occurrence",
+          "subject": "occ_ed810baff9aa1c63386e1064b75b8b3d0710d990df155000812c179eb79d78b4",
+          "value": {
+            "occurrence_id": "occ_ed810baff9aa1c63386e1064b75b8b3d0710d990df155000812c179eb79d78b4",
+            "artifact_id": "art_fc387efc0427c9853e34efd009138f3320777eb7cbb87843be7b5342650bfeb3",
+            "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+            "logical_path": "licenses/cli-node_modules-rea-agents-LICENSE",
+            "entry_kind": "file",
+            "declared_size": 1064,
+            "compressed_size": 634,
+            "executable": false,
+            "encrypted": false,
+            "hash_status": "verified",
+            "source_location": null,
+            "limitations": []
+          },
+          "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+        },
+        {
+          "observation_id": "aio_52dc66f8053d6b1f2406f91b1fe1081b82a1f1f25d1f603e768d63b6a1507e42",
+          "kind": "occurrence",
+          "subject": "occ_025d34a8438cae6326909b231c67e68fd9b7cde71707825ca7e84cc2b90eb2d6",
+          "value": {
+            "occurrence_id": "occ_025d34a8438cae6326909b231c67e68fd9b7cde71707825ca7e84cc2b90eb2d6",
+            "artifact_id": "art_d58e8efa30211d53052e94abdd170d68fb6c0138e485bd9dd78f810529fc25f8",
+            "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+            "logical_path": "licenses/node-LICENSE",
+            "entry_kind": "file",
+            "declared_size": 160552,
+            "compressed_size": 24570,
+            "executable": false,
+            "encrypted": false,
+            "hash_status": "verified",
+            "source_location": null,
+            "limitations": []
+          },
+          "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+        },
+        {
+          "observation_id": "aio_34586322a98afb7920686d940b54a84a253b1233674465e749c6be3de2ac10c9",
+          "kind": "occurrence",
+          "subject": "occ_df6442eec4abb11b7b120bb5082afc23898197e0ab241986f831d6544ef047fb",
+          "value": {
+            "occurrence_id": "occ_df6442eec4abb11b7b120bb5082afc23898197e0ab241986f831d6544ef047fb",
+            "artifact_id": "art_eefd59b008149c74dd40817a3e54f912473cb341d9deb2f21496ca6fea7510f7",
+            "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+            "logical_path": "NOTICE.md",
+            "entry_kind": "file",
+            "declared_size": 1651,
+            "compressed_size": 1118,
+            "executable": false,
+            "encrypted": false,
+            "hash_status": "verified",
+            "source_location": null,
+            "limitations": []
+          },
+          "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+        },
+        {
+          "observation_id": "aio_a9f3a1023314102c9cafe458f370dcce5d6aeef7472031560c2440ffe4b1647d",
+          "kind": "occurrence",
+          "subject": "occ_f4b1d422a6c11a97e2c12d3f5d2b046abed298f275c824b065aa5b03a53fcbda",
+          "value": {
+            "occurrence_id": "occ_f4b1d422a6c11a97e2c12d3f5d2b046abed298f275c824b065aa5b03a53fcbda",
+            "artifact_id": "art_fb795e1dfdecb751fd0a42da6d01fa57bdeb356723afc5123d8529f03035a42d",
+            "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+            "logical_path": "使用说明.md",
+            "entry_kind": "file",
+            "declared_size": 8284,
+            "compressed_size": 4180,
+            "executable": false,
+            "encrypted": false,
+            "hash_status": "verified",
+            "source_location": null,
+            "limitations": []
+          },
+          "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+        },
+        {
+          "observation_id": "aio_ba3f82e739480cfc3c1e19e9001d66241ad14888b5409980b7401475de78a685",
+          "kind": "occurrence",
+          "subject": "occ_a822d0fb0173711cb04f57b5391d0ea36b8044b8673215d0d50d345170a0ba78",
+          "value": {
+            "occurrence_id": "occ_a822d0fb0173711cb04f57b5391d0ea36b8044b8673215d0d50d345170a0ba78",
+            "artifact_id": "art_c118d0257b1234c3b9823f771d7adc0804fa4d017c4b0c0ebfa9da4152af3ee6",
+            "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+            "logical_path": "升级说明.md",
+            "entry_kind": "file",
+            "declared_size": 1102,
+            "compressed_size": 738,
+            "executable": false,
+            "encrypted": false,
+            "hash_status": "verified",
+            "source_location": null,
+            "limitations": []
+          },
+          "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+        },
+        {
+          "observation_id": "aio_114adc049a900ed52e4c6cfafd1a12cb97fb202a0e145dd683c323087e0804aa",
+          "kind": "occurrence",
+          "subject": "occ_86f3c9dc930e56d41c490b340eb7e3ec724860a2c6026559d3b31860b1517c89",
+          "value": {
+            "occurrence_id": "occ_86f3c9dc930e56d41c490b340eb7e3ec724860a2c6026559d3b31860b1517c89",
+            "artifact_id": "art_be7cc7f3b02b6b372100f34ee58dc799ca16cf1b2358297832f94b861c42f3a2",
+            "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+            "logical_path": "版本说明与验收报告.md",
+            "entry_kind": "file",
+            "declared_size": 3148,
+            "compressed_size": 1775,
+            "executable": false,
+            "encrypted": false,
+            "hash_status": "verified",
+            "source_location": null,
+            "limitations": []
+          },
+          "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+        },
+        {
+          "observation_id": "aio_894e783a85348ea3599b057346f02897579ed9fcd26db4bc0a23682460958e31",
+          "kind": "occurrence",
+          "subject": "occ_b68b3b1961f47f170ca31961abd4757c90063486f742bdb033f31dc4dcff8acc",
+          "value": {
+            "occurrence_id": "occ_b68b3b1961f47f170ca31961abd4757c90063486f742bdb033f31dc4dcff8acc",
+            "artifact_id": "art_e44bed09e448c50139a9034b809b85769a8c48cf220b67c6948e8c26bda6758a",
+            "parent_occurrence_id": "occ_cb01f615634fc30ad95e6af61268a51c01c7bdd2ef53423db3f43fe308ec8507",
+            "logical_path": "逆向与安全报告.md",
+            "entry_kind": "file",
+            "declared_size": 10663,
+            "compressed_size": 5628,
+            "executable": false,
+            "encrypted": false,
+            "hash_status": "verified",
+            "source_location": null,
+            "limitations": []
+          },
+          "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+        }
+      ],
+      "derived_relationships": [
+        {
+          "relationship_id": "air_748f6167d723b2dfde6b38d173e1ba9da43242d712e3fd4ae4eb2cfaff5c8d18",
+          "relation": "contains",
+          "source_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+          "target_artifact_id": "art_fb795e1dfdecb751fd0a42da6d01fa57bdeb356723afc5123d8529f03035a42d",
+          "occurrence_id": "occ_f4b1d422a6c11a97e2c12d3f5d2b046abed298f275c824b065aa5b03a53fcbda",
+          "logical_path": "使用说明.md",
+          "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+        },
+        {
+          "relationship_id": "air_98aa7aa646c1595665ab82928a0e090cafcacc0da92aa1de649d2627dc46af5f",
+          "relation": "contains",
+          "source_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+          "target_artifact_id": "art_e44bed09e448c50139a9034b809b85769a8c48cf220b67c6948e8c26bda6758a",
+          "occurrence_id": "occ_b68b3b1961f47f170ca31961abd4757c90063486f742bdb033f31dc4dcff8acc",
+          "logical_path": "逆向与安全报告.md",
+          "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+        },
+        {
+          "relationship_id": "air_76ac3d932e1389cbc4dfd8413f4eafb80f1532c0ca83c610982d899d52115148",
+          "relation": "contains",
+          "source_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+          "target_artifact_id": "art_d58e8efa30211d53052e94abdd170d68fb6c0138e485bd9dd78f810529fc25f8",
+          "occurrence_id": "occ_025d34a8438cae6326909b231c67e68fd9b7cde71707825ca7e84cc2b90eb2d6",
+          "logical_path": "licenses/node-LICENSE",
+          "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+        },
+        {
+          "relationship_id": "air_8263fc5ec9b0a0ab70b8a1fb711ba49a243c0853c0f3daa6b32e6b93dfa1707c",
+          "relation": "contains",
+          "source_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+          "target_artifact_id": "art_eefd59b008149c74dd40817a3e54f912473cb341d9deb2f21496ca6fea7510f7",
+          "occurrence_id": "occ_df6442eec4abb11b7b120bb5082afc23898197e0ab241986f831d6544ef047fb",
+          "logical_path": "NOTICE.md",
+          "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+        },
+        {
+          "relationship_id": "air_0fd2a8a5b6d991b833c66b20f15e815e51b818ee8810e5ee29df8dedc52431be",
+          "relation": "contains",
+          "source_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+          "target_artifact_id": "art_be7cc7f3b02b6b372100f34ee58dc799ca16cf1b2358297832f94b861c42f3a2",
+          "occurrence_id": "occ_86f3c9dc930e56d41c490b340eb7e3ec724860a2c6026559d3b31860b1517c89",
+          "logical_path": "版本说明与验收报告.md",
+          "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+        },
+        {
+          "relationship_id": "air_54fdae21862e46d70d83aeaaed3425b473d39a9a44d2b778aa3ff8f831b2b2b3",
+          "relation": "contains",
+          "source_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+          "target_artifact_id": "art_fc387efc0427c9853e34efd009138f3320777eb7cbb87843be7b5342650bfeb3",
+          "occurrence_id": "occ_ed810baff9aa1c63386e1064b75b8b3d0710d990df155000812c179eb79d78b4",
+          "logical_path": "licenses/cli-node_modules-rea-agents-LICENSE",
+          "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+        },
+        {
+          "relationship_id": "air_ed07f96bd88a115ed6f064bec56da1350787fcb638c6c0d19b89fd557a060c72",
+          "relation": "contains",
+          "source_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+          "target_artifact_id": "art_a01ac0943e62d8f3ee6f52730b53508e8812db6f20e96bb1fa8aa7b9e64e635b",
+          "occurrence_id": "occ_c07896e17ff5d8d639ab08ecb8fabf8d02b8508afe83ad8a2f67bf6563afd77b",
+          "logical_path": "ai技能库.exe",
+          "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+        },
+        {
+          "relationship_id": "air_596acb61010b3f3ef93a6b002885958e5547f8ae5c79a58306b2a89cd3c91bfd",
+          "relation": "contains",
+          "source_artifact_id": "art_3458b79bf71c59eac3ab2190a8289379045f973d33f92058569fb8fb704b02ab",
+          "target_artifact_id": "art_c118d0257b1234c3b9823f771d7adc0804fa4d017c4b0c0ebfa9da4152af3ee6",
+          "occurrence_id": "occ_a822d0fb0173711cb04f57b5391d0ea36b8044b8673215d0d50d345170a0ba78",
+          "logical_path": "升级说明.md",
+          "evidence_id": "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+        }
+      ],
+      "hypotheses": [],
+      "contradictions": [],
+      "unexplored_branches": [],
+      "next_probes": [],
+      "coverage": {
+        "status": "complete-within-substeps",
+        "substeps_completed": 1,
+        "observations_retained": 19,
+        "observations_omitted": 0,
+        "relationships_retained": 8,
+        "relationships_omitted": 0,
+        "hypotheses_retained": 0,
+        "hypotheses_omitted": 0,
+        "unexplored_branches_retained": 0,
+        "unexplored_branches_omitted": 0,
+        "next_probes_retained": 0,
+        "next_probes_omitted": 0
+      },
+      "evidence_links": [
+        "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+      ],
+      "limitations": [
+        "Inspection derives bounded static hypotheses and next probes; it does not execute the artifact or claim format-specific semantics."
+      ]
+    },
+    "confidence": "observed",
+    "authority": "shipped-artifact",
+    "environment": null,
+    "limitations": [
+      "Inspection derives bounded static hypotheses and next probes; it does not execute the artifact or claim format-specific semantics."
+    ],
+    "locations": [
+      {
+        "kind": "artifact-path",
+        "path": "."
+      },
+      {
+        "kind": "artifact-path",
+        "path": "ai技能库.exe"
+      },
+      {
+        "kind": "artifact-path",
+        "path": "licenses/cli-node_modules-rea-agents-LICENSE"
+      },
+      {
+        "kind": "artifact-path",
+        "path": "licenses/node-LICENSE"
+      },
+      {
+        "kind": "artifact-path",
+        "path": "NOTICE.md"
+      },
+      {
+        "kind": "artifact-path",
+        "path": "使用说明.md"
+      },
+      {
+        "kind": "artifact-path",
+        "path": "升级说明.md"
+      },
+      {
+        "kind": "artifact-path",
+        "path": "版本说明与验收报告.md"
+      },
+      {
+        "kind": "artifact-path",
+        "path": "逆向与安全报告.md"
+      }
+    ],
+    "evidence_links": [
+      "ev_3d103bb44a0bd2d3e327f00b226c6ea77b855f257670f44b407497a2f5dff724"
+    ]
+  }
+}

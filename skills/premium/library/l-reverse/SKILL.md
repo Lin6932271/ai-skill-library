@@ -67,3 +67,6 @@ description: "按样本格式路由二进制、移动端、JS 和协议逆向任
 | `rev-guide` | 逆向工程 | [读取](../rev-guide/SKILL.md) |
 | `rev-binary` | 二进制逆向参考手册 | [读取](../rev-binary/SKILL.md) |
 | `rev-mobile` | 移动端逆向参考手册 | [读取](../rev-mobile/SKILL.md) |
+| `rev-protocol` | 协议与接口逆向参考手册 | [读取](../rev-protocol/SKILL.md) |
+| `rev-web` | Web 逆向参考手册 | [读取](../rev-web/SKILL.md) |
+| `reverse-engineering` | 逆向工程通用入口 | [读取](../reverse-engineering/SKILL.md) |

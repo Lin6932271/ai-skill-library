@@ -75,12 +75,13 @@ def qualified_name(node):
     return '<expression>'
 
 
-def static_checks(exe, source, output, native_reference_dirs=()):
+def static_checks(exe, source, output, native_reference_dirs=(), build_analysis_toc=None):
     packed = CArchiveReader(str(exe))
     pyz_name = next(name for name in packed.toc if name.endswith('.pyz'))
     pyz = packed.open_embedded_archive(pyz_name)
-    core = [compare_code(marshal.loads(packed.extract('main')), source / 'main.py'),
-            compare_code(pyz.extract('backend'), source / 'backend.py')]
+    core = [compare_code(marshal.loads(packed.extract('main')), source / 'main.py')]
+    core.extend(compare_code(pyz.extract(name), source / (name + '.py'))
+                for name in ['backend', 'rea_config', 'rea_runtime'])
     assert all(row['matches'] for row in core), 'Packed application code differs from supplied source'
 
     manifest = []
@@ -92,7 +93,7 @@ def static_checks(exe, source, output, native_reference_dirs=()):
         normalized = name.replace('\\', '/')
         item = {'name': normalized, 'type': info[-1], 'bytes': len(data), 'sha256': sha(data)}
         manifest.append(item)
-        if normalized.startswith(('frontend/', 'skills/')):
+        if normalized.startswith(('frontend/', 'skills/', 'runtime/')):
             path = source / normalized
             assets.append({**item, 'matches_source': path.is_file() and data == path.read_bytes()})
         if info[-1] in ('s', 'm') and name != 'main':
@@ -135,6 +136,16 @@ def static_checks(exe, source, output, native_reference_dirs=()):
         offset = debug.struct.get_file_offset() + debug.struct.get_field_relative_offset('TimeDateStamp') - stock_rdata.PointerToRawData
         if 0 <= offset <= len(normalized_stock_rdata) - 4:
             normalized_stock_rdata[offset:offset + 4] = b'\0' * 4
+    build_references = {}
+    if build_analysis_toc:
+        def walk_reference(value):
+            if isinstance(value, (list, tuple)):
+                if len(value) >= 3 and all(isinstance(part, str) for part in value[:3]) and value[2] == 'BINARY':
+                    build_references[value[0].replace('\\', '/')] = Path(value[1])
+                else:
+                    for item in value:
+                        walk_reference(item)
+        walk_reference(ast.literal_eval(Path(build_analysis_toc).read_text('utf-8')))
     native_comparison = []
     for member in manifest:
         name = member['name']
@@ -148,6 +159,8 @@ def static_checks(exe, source, output, native_reference_dirs=()):
                      ('windows-downlevel', Path(os.environ.get('WINDIR', 'C:/Windows')) / 'System32' / 'downlevel' / name)]
         locations.extend(('build-native-runtime-reference', Path(folder) / Path(name).name)
                          for folder in native_reference_dirs)
+        if name in build_references:
+            locations.append(('exact-build-analysis-reference', build_references[name]))
         references = [{'category': category, 'sha256': sha(path.read_bytes())}
                       for category, path in locations if path.is_file()]
         matching = [item for item in references if item['sha256'] == member['sha256']]
@@ -180,7 +193,8 @@ def static_checks(exe, source, output, native_reference_dirs=()):
 
     calls = []
     imports_own = []
-    for name in ['main.py', 'backend.py']:
+    application_files = ['main.py', 'backend.py', 'rea_config.py', 'rea_runtime.py']
+    for name in application_files:
         tree = ast.parse((source / name).read_text('utf-8'))
         for node in ast.walk(tree):
             if isinstance(node, ast.Call):
@@ -190,7 +204,7 @@ def static_checks(exe, source, output, native_reference_dirs=()):
                                     'module': node.module if isinstance(node, ast.ImportFrom) else ','.join(alias.name for alias in node.names)})
     write_json(output / 'application-call-index.json', calls)
     write_json(output / 'application-import-index.json', imports_own)
-    bandit = subprocess.run([sys.executable, '-m', 'bandit', str(source / 'main.py'), str(source / 'backend.py'),
+    bandit = subprocess.run([sys.executable, '-m', 'bandit', *[str(source / name) for name in application_files],
                              '-f', 'json', '-q'], capture_output=True, encoding='utf-8', timeout=45)
     assert bandit.returncode in (0, 1), 'Bandit could not complete'
     findings = json.loads(bandit.stdout)
@@ -248,9 +262,12 @@ def observe(exe, output):
     smoke = sandbox / 'native.json'
     started_at = time.time()
     before = persistence_snapshot()
+    startup = subprocess.STARTUPINFO()
+    startup.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+    startup.wShowWindow = 0
     process = subprocess.Popen([str(exe), '--sandbox', '--home', str(sandbox / 'home'),
                                 '--data-dir', str(sandbox / 'data'), '--smoke-file', str(smoke)],
-                               stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                               stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, startupinfo=startup)
     root = psutil.Process(process.pid)
     identities = {process.pid: root.create_time()}
     names = {}
@@ -327,16 +344,21 @@ def main():
     parser.add_argument('--observe', action='store_true', help='run an isolated native startup observation on Windows')
     parser.add_argument('--native-reference-dir', type=Path, action='append', default=[],
                         help='optional build-time native runtime directory used for reference hashes')
+    parser.add_argument('--build-analysis-toc', type=Path,
+                        help='optional corresponding PyInstaller Analysis-00.toc for exact native source references')
     args = parser.parse_args()
     exe, source, output = args.exe.resolve(), args.source.resolve(), args.out.resolve()
     output.mkdir(parents=True, exist_ok=True)
     before_hash = sha(exe.read_bytes())
-    result = {'name': 'ai技能库', 'version': '1.3.2', 'exe_filename': exe.name,
+    source_ast = ast.parse((source / 'backend.py').read_text('utf-8'))
+    version = next(node.value.value for node in source_ast.body if isinstance(node, ast.Assign)
+                   and any(isinstance(target, ast.Name) and target.id == 'VERSION' for target in node.targets))
+    result = {'name': 'ai技能库', 'version': version, 'exe_filename': exe.name,
               'exe_bytes': exe.stat().st_size, 'exe_sha256': before_hash,
               'examined_at': datetime.now(timezone(timedelta(hours=8))).isoformat(timespec='seconds'),
               'python': platform.python_version(), 'platform': platform.platform(),
               'tools': {name: importlib.metadata.version(name) for name in ['pyinstaller', 'pefile', 'psutil', 'bandit']}}
-    result['static'] = static_checks(exe, source, output, args.native_reference_dir)
+    result['static'] = static_checks(exe, source, output, args.native_reference_dir, args.build_analysis_toc)
     print(json.dumps({'stage': 'static-complete', 'core_matches': True,
                       'archive_entries': result['static']['archive_entries'],
                       'resource_matches': result['static']['bundled_resources_checked']}, ensure_ascii=False), flush=True)

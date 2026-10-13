@@ -1,0 +1,744 @@
+{
+  "name": "ai技能库",
+  "version": "1.5.5",
+  "exe_filename": "ai技能库-1.5.5.exe",
+  "exe_bytes": 98674724,
+  "exe_sha256": "ddfc22575e5fcc6fe73de826b538f807fe1ce5566141facf5016ec50cd7297a6",
+  "examined_at": "2026-10-13T10:35:52+08:00",
+  "python": "3.14.3",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "tools": {
+    "pyinstaller": "6.22.3",
+    "pefile": "2024.8.26",
+    "psutil": "7.2.2",
+    "bandit": "1.9.4"
+  },
+  "static": {
+    "application_code_matches_source": true,
+    "application_modules": [
+      {
+        "file": "main.py",
+        "source_sha256": "0966cf41d87f84c98fa72223380a43ecce10038611dcaa1b58a67128e2d4f137",
+        "packed_code_sha256": "b6b610e30528d85406ba69011d2e3dc91c3a579d1b01073320ddec73aa9426dd",
+        "compiled_source_code_sha256": "b6b610e30528d85406ba69011d2e3dc91c3a579d1b01073320ddec73aa9426dd",
+        "matches": true,
+        "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+      },
+      {
+        "file": "backend.py",
+        "source_sha256": "595af11f38dc5c019146c7adfda941064db60ccb84c96dad1bd6546e87df3fac",
+        "packed_code_sha256": "96c196b57262137acb7a4f227e9be5be66b55fa2d25a4c915272c3b5979cc0aa",
+        "compiled_source_code_sha256": "96c196b57262137acb7a4f227e9be5be66b55fa2d25a4c915272c3b5979cc0aa",
+        "matches": true,
+        "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+      },
+      {
+        "file": "rea_config.py",
+        "source_sha256": "0909e63d059b30df351b30bdb384e6b1441f96716f6c47a0643e0997cf64700c",
+        "packed_code_sha256": "7011805eb82c9e1fa0718c5185b317bb393c7cd1bf2ff30eabccabc7bb4bb215",
+        "compiled_source_code_sha256": "7011805eb82c9e1fa0718c5185b317bb393c7cd1bf2ff30eabccabc7bb4bb215",
+        "matches": true,
+        "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+      },
+      {
+        "file": "rea_runtime.py",
+        "source_sha256": "f475cd6c65800987fcad25741f825ada648ca8459444722985c3c547f6786105",
+        "packed_code_sha256": "1b3f86a11a8992a7979fc5e8def022bba7aad76e3ff517e49bf711be900fd59e",
+        "compiled_source_code_sha256": "1b3f86a11a8992a7979fc5e8def022bba7aad76e3ff517e49bf711be900fd59e",
+        "matches": true,
+        "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+      }
+    ],
+    "bootstrap_hook_checks": [
+      {
+        "name": "pyi_rth_inspect",
+        "reference_available": true,
+        "file": "pyi_rth_inspect.py",
+        "source_sha256": "e9db311f97b750a30a422e0bf2bdcff7514da67cd35b0f6189ad786956ff1abc",
+        "packed_code_sha256": "7dd6e9a613ae4ec03d447c016717650dfe12fdcfaf1e01278b1bb8764abda586",
+        "compiled_source_code_sha256": "7dd6e9a613ae4ec03d447c016717650dfe12fdcfaf1e01278b1bb8764abda586",
+        "matches": true,
+        "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+      },
+      {
+        "name": "pyi_rth_multiprocessing",
+        "reference_available": true,
+        "file": "pyi_rth_multiprocessing.py",
+        "source_sha256": "2834a4a14da13d263183426eb7e61eec75cd720fac1bd0794f8ae63878763e20",
+        "packed_code_sha256": "8c409ec89e413e7c90d34dba2a27fa60d91532c710a8ac3ffbfbbfdc397c5a52",
+        "compiled_source_code_sha256": "8c409ec89e413e7c90d34dba2a27fa60d91532c710a8ac3ffbfbbfdc397c5a52",
+        "matches": true,
+        "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+      },
+      {
+        "name": "pyi_rth_pkgutil",
+        "reference_available": true,
+        "file": "pyi_rth_pkgutil.py",
+        "source_sha256": "7d006a9675674b9cc7d8b11ea98ad037adea5dbdb6ebdf9b7a45c861501c4204",
+        "packed_code_sha256": "d34b70d770da08275c6bdadcec94de2bc61dc80bc3ac0306c7abe095b8621cfc",
+        "compiled_source_code_sha256": "d34b70d770da08275c6bdadcec94de2bc61dc80bc3ac0306c7abe095b8621cfc",
+        "matches": true,
+        "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+      },
+      {
+        "name": "pyi_rth_setuptools",
+        "reference_available": true,
+        "file": "pyi_rth_setuptools.py",
+        "source_sha256": "aeb0dc75b5064ae52751e5c3451fc76a5c4cd7e821b4989614880ebce20830fa",
+        "packed_code_sha256": "7b31a51bddd1bcbd8db02e8900f5a611241a786d03a32d824851fc4a97d63aff",
+        "compiled_source_code_sha256": "7b31a51bddd1bcbd8db02e8900f5a611241a786d03a32d824851fc4a97d63aff",
+        "matches": true,
+        "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+      },
+      {
+        "name": "pyiboot01_bootstrap",
+        "reference_available": true,
+        "file": "pyiboot01_bootstrap.py",
+        "source_sha256": "6773bb364344a01f176133f8624ddda9e8f992052eaddad32609b1e90399ef1f",
+        "packed_code_sha256": "661e11c1887e96438fa622647ab0ace2a228988fc9bf4a119d6fd9f30e50e777",
+        "compiled_source_code_sha256": "661e11c1887e96438fa622647ab0ace2a228988fc9bf4a119d6fd9f30e50e777",
+        "matches": true,
+        "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+      },
+      {
+        "name": "pyimod01_archive",
+        "reference_available": true,
+        "file": "pyimod01_archive.py",
+        "source_sha256": "38d2c8b801b6c2165d44bc40f47bc1e230110272003da67d4d4eaa59af4ff397",
+        "packed_code_sha256": "4450a291d67481ffd2c2a3ac14482df9177949aaee4c6f953d6fc8e10bb3cfc3",
+        "compiled_source_code_sha256": "4450a291d67481ffd2c2a3ac14482df9177949aaee4c6f953d6fc8e10bb3cfc3",
+        "matches": true,
+        "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+      },
+      {
+        "name": "pyimod02_importers",
+        "reference_available": true,
+        "file": "pyimod02_importers.py",
+        "source_sha256": "33e786adc20d247cc5acf02eaa021f8629f30b8d3d5bf8a1e651088cca132eef",
+        "packed_code_sha256": "8e424f777ae81969d72152a1f6f360a883d8e36a02035a736068ff30f8c7bf4c",
+        "compiled_source_code_sha256": "8e424f777ae81969d72152a1f6f360a883d8e36a02035a736068ff30f8c7bf4c",
+        "matches": true,
+        "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+      },
+      {
+        "name": "pyimod03_ctypes",
+        "reference_available": true,
+        "file": "pyimod03_ctypes.py",
+        "source_sha256": "a93c2ec1677cc5d77fa4c000136b9da36f61388f9536f2b1a66193b329d1f312",
+        "packed_code_sha256": "cce2158f9e12a3af926124a9fcf6acc52824afc25f7388bcfea19840ab7cd1b3",
+        "compiled_source_code_sha256": "cce2158f9e12a3af926124a9fcf6acc52824afc25f7388bcfea19840ab7cd1b3",
+        "matches": true,
+        "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+      },
+      {
+        "name": "pyimod04_pywin32",
+        "reference_available": true,
+        "file": "pyimod04_pywin32.py",
+        "source_sha256": "bc55444d6745a5922ba1ab63d131a90c4d9f00c800553b3cd08423acd1982aec",
+        "packed_code_sha256": "d34195382e5467eb9632ce15bf30e9e2741daae60780dfc4e3cc4963aec3a6b4",
+        "compiled_source_code_sha256": "d34195382e5467eb9632ce15bf30e9e2741daae60780dfc4e3cc4963aec3a6b4",
+        "matches": true,
+        "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+      },
+      {
+        "name": "struct",
+        "reference_available": true,
+        "file": "struct.py",
+        "source_sha256": "c632708f6b3a7d8a52d875ab11cb93761bfb4ab14efe09cf0fa2c8a174ffdcdc",
+        "packed_code_sha256": "263111aef6f2e4ba2bb6247d960295ce0743ae6c628af3bf1737e1f02c6dbd75",
+        "compiled_source_code_sha256": "263111aef6f2e4ba2bb6247d960295ce0743ae6c628af3bf1737e1f02c6dbd75",
+        "matches": true,
+        "method": "recursive code-object fields including bytecode/constants/import names/line tables; filename excluded"
+      }
+    ],
+    "archive_entries": 505,
+    "pyz_modules": 892,
+    "bundled_resources_checked": 294,
+    "all_bundled_resources_match": true,
+    "pe": {
+      "machine": "0x8664",
+      "subsystem": 2,
+      "authenticode_certificate_bytes": 0,
+      "sections": [
+        {
+          "name": ".text",
+          "bytes": 204800,
+          "sha256": "67bdc7f5eeccf01180cd5b3621be7d0265efa6a44742496a7a6c6f9076ef4b1f",
+          "matches_installed_bootloader": true
+        },
+        {
+          "name": ".rdata",
+          "bytes": 84480,
+          "sha256": "df87d07241a36a4f4dccaaaacedb845e5fd0a74e62af6998fe4b90517320dede",
+          "matches_installed_bootloader": false
+        },
+        {
+          "name": ".data",
+          "bytes": 3584,
+          "sha256": "f999ee89612700ed57df416c1025d22e69bf061e54903f34ecf2398e8d8b0627",
+          "matches_installed_bootloader": true
+        },
+        {
+          "name": ".pdata",
+          "bytes": 10240,
+          "sha256": "f33be2799dafcdfb77a394fd72134a9a838822f9fa500e5381029f152423c278",
+          "matches_installed_bootloader": true
+        },
+        {
+          "name": ".fptable",
+          "bytes": 512,
+          "sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560",
+          "matches_installed_bootloader": true
+        },
+        {
+          "name": ".rsrc",
+          "bytes": 117248,
+          "sha256": "9eb6337dd9325a963587bd0d412ebd49b473149517a90f80039bc13fd9223898",
+          "matches_installed_bootloader": false
+        },
+        {
+          "name": ".reloc",
+          "bytes": 2048,
+          "sha256": "f10e5c9b3cca6292a947f527a24f91802bd207c348624b01187ef083a85a07ed",
+          "matches_installed_bootloader": true
+        }
+      ],
+      "requested_execution_level": "asInvoker",
+      "import_count": 150,
+      "embedded_manifest": [
+        "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<assembly xmlns=\"urn:schemas-microsoft-com:asm.v1\" manifestVersion=\"1.0\">\n  <trustInfo xmlns=\"urn:schemas-microsoft-com:asm.v3\">\n    <security>\n      <requestedPrivileges>\n        <requestedExecutionLevel level=\"asInvoker\" uiAccess=\"false\"/>\n      </requestedPrivileges>\n    </security>\n  </trustInfo>\n  <compatibility xmlns=\"urn:schemas-microsoft-com:compatibility.v1\">\n    <application>\n      <supportedOS Id=\"{e2011457-1546-43c5-a5fe-008deee3d3f0}\"/>\n      <supportedOS Id=\"{35138b9a-5d96-4fbd-8e2d-a2440225f93a}\"/>\n      <supportedOS Id=\"{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}\"/>\n      <supportedOS Id=\"{1f676c76-80e1-4239-95bb-83d0f6d0da78}\"/>\n      <supportedOS Id=\"{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}\"/>\n    </application>\n  </compatibility>\n  <application xmlns=\"urn:schemas-microsoft-com:asm.v3\">\n    <windowsSettings>\n      <longPathAware xmlns=\"http://schemas.microsoft.com/SMI/2016/WindowsSettings\">true</longPathAware>\n    </windowsSettings>\n  </application>\n  <dependency>\n    <dependentAssembly>\n      <assemblyIdentity type=\"win32\" name=\"Microsoft.Windows.Common-Controls\" version=\"6.0.0.0\" processorArchitecture=\"*\" publicKeyToken=\"6595b64144ccf1df\" language=\"*\"/>\n    </dependentAssembly>\n  </dependency>\n</assembly>"
+      ],
+      "rdata_matches_after_debug_timestamp_normalization": true,
+      "debug_timestamp_offsets_in_rdata": [
+        67252
+      ],
+      "resource_type_ids": [
+        3,
+        14,
+        16,
+        24
+      ],
+      "bootloader_reference": "PyInstaller 6.22.3 stock Windows-64bit-intel/runw.exe"
+    },
+    "native_library_comparison": {
+      "checked": 103,
+      "matching": 103,
+      "unmatched": [],
+      "additional_reference_method": "Exact build Analysis-00.toc source bytes, without executing reference libraries"
+    },
+    "bandit": {
+      "version": "1.9.4",
+      "results": [
+        {
+          "code": "46                 return {\"ok\": False, \"error\": \"目录尚不存在，开启技能后会创建\"}\n47             os.startfile(str(root))\n48             return {\"ok\": True, \"data\": {\"path\": str(root)}}\n",
+          "col_offset": 12,
+          "end_col_offset": 35,
+          "filename": "main.py",
+          "issue_confidence": "MEDIUM",
+          "issue_cwe": {
+            "id": 78,
+            "link": "https://cwe.mitre.org/data/definitions/78.html"
+          },
+          "issue_severity": "LOW",
+          "issue_text": "Starting a process without a shell.",
+          "line_number": 47,
+          "line_range": [
+            47
+          ],
+          "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b606_start_process_with_no_shell.html",
+          "test_id": "B606",
+          "test_name": "start_process_with_no_shell"
+        },
+        {
+          "code": "299         def native_acceptance():\n300             result = {\"pass\": False, \"pid\": os.getpid(), \"runtime\": \"WebView2 desktop\"}\n301             try:\n",
+          "col_offset": 22,
+          "end_col_offset": 28,
+          "filename": "main.py",
+          "issue_confidence": "MEDIUM",
+          "issue_cwe": {
+            "id": 259,
+            "link": "https://cwe.mitre.org/data/definitions/259.html"
+          },
+          "issue_severity": "LOW",
+          "issue_text": "Possible hardcoded password: 'False'",
+          "line_number": 300,
+          "line_range": [
+            300
+          ],
+          "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html",
+          "test_id": "B105",
+          "test_name": "hardcoded_password_string"
+        },
+        {
+          "code": "11 import stat\n12 import subprocess\n13 import tempfile\n",
+          "col_offset": 0,
+          "end_col_offset": 17,
+          "filename": "rea_runtime.py",
+          "issue_confidence": "HIGH",
+          "issue_cwe": {
+            "id": 78,
+            "link": "https://cwe.mitre.org/data/definitions/78.html"
+          },
+          "issue_severity": "LOW",
+          "issue_text": "Consider possible security implications associated with the subprocess module.",
+          "line_number": 12,
+          "line_range": [
+            12
+          ],
+          "more_info": "https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess",
+          "test_id": "B404",
+          "test_name": "blacklist"
+        },
+        {
+          "code": "250         try:\n251             version = subprocess.run([runtime[\"node\"], runtime[\"entry\"], \"--version\"],\n252                                      capture_output=True, text=True, encoding=\"utf-8\", timeout=45, **options)\n253         except (OSError, subprocess.TimeoutExpired) as exc:\n",
+          "col_offset": 22,
+          "end_col_offset": 109,
+          "filename": "rea_runtime.py",
+          "issue_confidence": "HIGH",
+          "issue_cwe": {
+            "id": 78,
+            "link": "https://cwe.mitre.org/data/definitions/78.html"
+          },
+          "issue_severity": "LOW",
+          "issue_text": "subprocess call - check for execution of untrusted input.",
+          "line_number": 251,
+          "line_range": [
+            251,
+            252
+          ],
+          "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html",
+          "test_id": "B603",
+          "test_name": "subprocess_without_shell_equals_true"
+        },
+        {
+          "code": "256             raise ReaError(\"REA CLI 启动测试失败，请查看诊断\")\n257         process = subprocess.Popen([runtime[\"node\"], runtime[\"entry\"], \"mcp\"], stdin=subprocess.PIPE,\n258                                    stdout=subprocess.PIPE, stderr=subprocess.PIPE,\n259                                    text=True, encoding=\"utf-8\", **options)\n260         messages = queue.Queue()\n",
+          "col_offset": 18,
+          "end_col_offset": 74,
+          "filename": "rea_runtime.py",
+          "issue_confidence": "HIGH",
+          "issue_cwe": {
+            "id": 78,
+            "link": "https://cwe.mitre.org/data/definitions/78.html"
+          },
+          "issue_severity": "LOW",
+          "issue_text": "subprocess call - check for execution of untrusted input.",
+          "line_number": 257,
+          "line_range": [
+            257,
+            258,
+            259
+          ],
+          "more_info": "https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html",
+          "test_id": "B603",
+          "test_name": "subprocess_without_shell_equals_true"
+        }
+      ],
+      "errors": [],
+      "metrics": {
+        "CONFIDENCE.HIGH": 3,
+        "CONFIDENCE.LOW": 0,
+        "CONFIDENCE.MEDIUM": 2,
+        "CONFIDENCE.UNDEFINED": 0,
+        "SEVERITY.HIGH": 0,
+        "SEVERITY.LOW": 5,
+        "SEVERITY.MEDIUM": 0,
+        "SEVERITY.UNDEFINED": 0,
+        "loc": 1558,
+        "nosec": 0,
+        "skipped_tests": 0
+      }
+    }
+  },
+  "runtime": {
+    "native_acceptance_pass": true,
+    "closed_naturally": true,
+    "process_names": [
+      "ai技能库-1.5.5.exe",
+      "msedgewebview2.exe"
+    ],
+    "observed_process_count": 9,
+    "duration_seconds": 11.342,
+    "requested_sampling_interval_seconds": 0.1,
+    "mean_sampling_interval_seconds": 0.109,
+    "successful_socket_samples": 105,
+    "socket_sampling_errors": 0,
+    "connections": [
+      {
+        "process": "ai技能库-1.5.5.exe",
+        "local": [
+          "127.0.0.1",
+          51599
+        ],
+        "remote": [
+          "127.0.0.1",
+          50201
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "ai技能库-1.5.5.exe",
+        "local": [
+          "127.0.0.1",
+          51599
+        ],
+        "remote": [
+          "127.0.0.1",
+          50210
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "ai技能库-1.5.5.exe",
+        "local": [
+          "127.0.0.1",
+          51599
+        ],
+        "remote": [
+          "127.0.0.1",
+          50597
+        ],
+        "status": "SYN_RECV",
+        "external_remote": false
+      },
+      {
+        "process": "ai技能库-1.5.5.exe",
+        "local": [
+          "127.0.0.1",
+          51599
+        ],
+        "remote": [
+          "127.0.0.1",
+          51546
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "ai技能库-1.5.5.exe",
+        "local": [
+          "127.0.0.1",
+          51599
+        ],
+        "remote": [
+          "127.0.0.1",
+          52728
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "ai技能库-1.5.5.exe",
+        "local": [
+          "127.0.0.1",
+          51599
+        ],
+        "remote": [
+          "127.0.0.1",
+          55365
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "ai技能库-1.5.5.exe",
+        "local": [
+          "127.0.0.1",
+          51599
+        ],
+        "remote": [
+          "127.0.0.1",
+          58230
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "ai技能库-1.5.5.exe",
+        "local": [
+          "127.0.0.1",
+          51599
+        ],
+        "remote": [
+          "127.0.0.1",
+          58986
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "ai技能库-1.5.5.exe",
+        "local": [
+          "127.0.0.1",
+          51599
+        ],
+        "remote": [
+          "127.0.0.1",
+          60898
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "ai技能库-1.5.5.exe",
+        "local": [
+          "127.0.0.1",
+          51599
+        ],
+        "remote": [
+          "127.0.0.1",
+          61687
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "ai技能库-1.5.5.exe",
+        "local": [
+          "127.0.0.1",
+          51599
+        ],
+        "remote": [],
+        "status": "LISTEN",
+        "external_remote": false
+      },
+      {
+        "process": "msedgewebview2.exe",
+        "local": [
+          "127.0.0.1",
+          50201
+        ],
+        "remote": [
+          "127.0.0.1",
+          51599
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "msedgewebview2.exe",
+        "local": [
+          "127.0.0.1",
+          50210
+        ],
+        "remote": [
+          "127.0.0.1",
+          51599
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "msedgewebview2.exe",
+        "local": [
+          "127.0.0.1",
+          50597
+        ],
+        "remote": [
+          "127.0.0.1",
+          51599
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "msedgewebview2.exe",
+        "local": [
+          "127.0.0.1",
+          51546
+        ],
+        "remote": [
+          "127.0.0.1",
+          51599
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "msedgewebview2.exe",
+        "local": [
+          "127.0.0.1",
+          52728
+        ],
+        "remote": [
+          "127.0.0.1",
+          51599
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "msedgewebview2.exe",
+        "local": [
+          "127.0.0.1",
+          53569
+        ],
+        "remote": [
+          "127.0.0.1",
+          7897
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "msedgewebview2.exe",
+        "local": [
+          "127.0.0.1",
+          55365
+        ],
+        "remote": [
+          "127.0.0.1",
+          51599
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "msedgewebview2.exe",
+        "local": [
+          "127.0.0.1",
+          58230
+        ],
+        "remote": [
+          "127.0.0.1",
+          51599
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "msedgewebview2.exe",
+        "local": [
+          "127.0.0.1",
+          58986
+        ],
+        "remote": [
+          "127.0.0.1",
+          51599
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "msedgewebview2.exe",
+        "local": [
+          "127.0.0.1",
+          59917
+        ],
+        "remote": [
+          "127.0.0.1",
+          7897
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "msedgewebview2.exe",
+        "local": [
+          "127.0.0.1",
+          59923
+        ],
+        "remote": [
+          "127.0.0.1",
+          7897
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "msedgewebview2.exe",
+        "local": [
+          "127.0.0.1",
+          59924
+        ],
+        "remote": [
+          "127.0.0.1",
+          7897
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "msedgewebview2.exe",
+        "local": [
+          "127.0.0.1",
+          60898
+        ],
+        "remote": [
+          "127.0.0.1",
+          51599
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      },
+      {
+        "process": "msedgewebview2.exe",
+        "local": [
+          "127.0.0.1",
+          61687
+        ],
+        "remote": [
+          "127.0.0.1",
+          51599
+        ],
+        "status": "ESTABLISHED",
+        "external_remote": false
+      }
+    ],
+    "external_remote_connections_observed": 0,
+    "persistence_snapshots": {
+      "HKCU:64:Run": {
+        "available": true,
+        "unchanged": true
+      },
+      "HKCU:64:RunOnce": {
+        "available": true,
+        "unchanged": true
+      },
+      "HKCU:32:Run": {
+        "available": true,
+        "unchanged": true
+      },
+      "HKCU:32:RunOnce": {
+        "available": true,
+        "unchanged": true
+      },
+      "HKLM:64:Run": {
+        "available": true,
+        "unchanged": true
+      },
+      "HKLM:64:RunOnce": {
+        "available": true,
+        "unchanged": true
+      },
+      "HKLM:32:Run": {
+        "available": true,
+        "unchanged": true
+      },
+      "HKLM:32:RunOnce": {
+        "available": true,
+        "unchanged": true
+      },
+      "startup-folder-0": {
+        "available": true,
+        "unchanged": true
+      },
+      "startup-folder-1": {
+        "available": true,
+        "unchanged": true
+      },
+      "service-names": {
+        "available": true,
+        "unchanged": true
+      },
+      "scheduled-task-definitions": {
+        "available": true,
+        "unchanged": true
+      }
+    },
+    "scope": "isolated native startup, automatic animation completion, main UI rendering and page scroll; sampled TCP/UDP tables, not packet capture",
+    "isolation": "explicit temporary home/data paths and --sandbox; no real AI client installs"
+  },
+  "sample_unchanged_after_analysis": true
+}

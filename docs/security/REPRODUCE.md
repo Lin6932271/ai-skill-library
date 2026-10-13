@@ -1,29 +1,21 @@
-# 复现 v1.3.2 检查
+# 复现 ai技能库 1.5.5 检查
 
-使用 Windows x64、Python 3.14，以及公开发布页下载的固定哈希 EXE。
-静态分析只读取 PE、归档和代码对象，不执行提取出来的代码。
+使用 Windows x64、Python 3.14 和本版固定哈希 EXE。工具静态读取归档、PE 与代码对象，不执行提取出来的应用代码或技能附件。
 
 ```powershell
 python -m venv .audit-venv
-.\.audit-venv\Scripts\python.exe -m pip install -r requirements-audit.txt
-.\.audit-venv\Scripts\python.exe tools/audit_release.py --exe .\AISkillLibrary-1.3.2-windows-x64.exe --out .\artifacts\security-audit
+& .\.audit-venv\Scripts\python.exe -m pip install -r requirements.txt -r requirements-audit.txt
+& .\.audit-venv\Scripts\python.exe tools/audit_release.py --exe .\AISkillLibrary-1.5.5-windows-x64.exe --out .\artifacts\security-audit --observe
+& .\.audit-venv\Scripts\python.exe tools/audit_dependencies.py --out .\artifacts\security-audit
+powershell -NoProfile -ExecutionPolicy Bypass -File tools/scan_release.ps1 -Exe .\AISkillLibrary-1.5.5-windows-x64.exe -Out .\artifacts\security-audit
 ```
 
-额外运行短时桌面观察：
+Defender 命令按本机权限与 Microsoft 官方要求执行；不会关闭防护、添加排除项或执行补救动作。保存完整输出，不能只凭返回码 0 就忽略命令正文。OSV 查询发送组件名称与版本，不发送项目源码或凭据。
 
-```powershell
-.\.audit-venv\Scripts\python.exe tools/audit_release.py --exe .\AISkillLibrary-1.3.2-windows-x64.exe --out .\artifacts\security-audit --observe
-```
+四个核心模块的代码对象比较要求相同 Python 字节码版本；bootloader 比较要求相同 PyInstaller 版本。Python 组件清单来自对应构建环境的应用依赖闭包；若要核对发布包，应使用固定版本的 requirements。
 
-桌面观察使用明确隔离的 home/data 路径及 `--sandbox`，显示应用窗口，自动关闭。
-它采样该实例与其子进程的连接表，对 Run/RunOnce、启动目录、服务名称和计划任务定义进行前后快照。
-这是短时观察，不是隔离虚拟机或全量抓包；本机代理可以隐藏最终目的地址。
+原生 DLL/PYD 可通过 `--native-reference-dir <目录>` 增加构建参考。保有对应构建资料时，使用 `--build-analysis-toc <Analysis-00.toc路径>` 对照精确源文件。不同机器缺少参考文件不等于发现恶意文件。
 
-`--native-reference-dir <目录>` 可补充构建时的原生运行库参考目录。
-额外 CRT/API-set 参考文件需与构建环境对应。
-不同机器上未安装相同参考文件时，原生库哈希匹配数量会变化；不应把缺少参考文件直接判为恶意。
-核心代码对照需要相同 Python 字节码版本；bootloader 对照需要相同 PyInstaller 版本。
+`--observe` 使用隔离 home/data 和 --sandbox，对应用及其子进程做短时连接表采样、启动窗口检查与持久化快照。不是全量抓包或完整虚拟机隔离，本机代理可能遮蔽最终目的地址。这里只验证启动路径，不代表所有 AI 客户端与 REA 工具均完成业务验证。
 
-Bandit 两个低等级提示及人工分析均在报告中保留，工具返回码 1 可能表示存在提示，不能简单按“运行失败”解释。
-Defender 定点扫描请遵循 Microsoft 官方说明，使用规范的 Windows 路径并记录平台、引擎、情报版本与完整输出。
-报告与附件中的 SHA-256 清单可用于独立核对证据文件。
+本地接口的 11 项检查和实际方案切换结果随本版证据提供。历史步骤见 [1.3.2 复现记录](REPRODUCE-1.3.2.md)。

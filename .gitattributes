@@ -21,3 +21,8 @@
 frontend/** -text
 skills/** -text
 runtime/** -text
+docs/security/releases/** -text
+main.py -text
+backend.py -text
+rea_config.py -text
+rea_runtime.py -text

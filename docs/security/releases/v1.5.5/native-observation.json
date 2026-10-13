@@ -1,0 +1,391 @@
+{
+  "native_acceptance_pass": true,
+  "closed_naturally": true,
+  "process_names": [
+    "ai技能库-1.5.5.exe",
+    "msedgewebview2.exe"
+  ],
+  "observed_process_count": 9,
+  "duration_seconds": 11.342,
+  "requested_sampling_interval_seconds": 0.1,
+  "mean_sampling_interval_seconds": 0.109,
+  "successful_socket_samples": 105,
+  "socket_sampling_errors": 0,
+  "connections": [
+    {
+      "process": "ai技能库-1.5.5.exe",
+      "local": [
+        "127.0.0.1",
+        51599
+      ],
+      "remote": [
+        "127.0.0.1",
+        50201
+      ],
+      "status": "ESTABLISHED",
+      "external_remote": false
+    },
+    {
+      "process": "ai技能库-1.5.5.exe",
+      "local": [
+        "127.0.0.1",
+        51599
+      ],
+      "remote": [
+        "127.0.0.1",
+        50210
+      ],
+      "status": "ESTABLISHED",
+      "external_remote": false
+    },
+    {
+      "process": "ai技能库-1.5.5.exe",
+      "local": [
+        "127.0.0.1",
+        51599
+      ],
+      "remote": [
+        "127.0.0.1",
+        50597
+      ],
+      "status": "SYN_RECV",
+      "external_remote": false
+    },
+    {
+      "process": "ai技能库-1.5.5.exe",
+      "local": [
+        "127.0.0.1",
+        51599
+      ],
+      "remote": [
+        "127.0.0.1",
+        51546
+      ],
+      "status": "ESTABLISHED",
+      "external_remote": false
+    },
+    {
+      "process": "ai技能库-1.5.5.exe",
+      "local": [
+        "127.0.0.1",
+        51599
+      ],
+      "remote": [
+        "127.0.0.1",
+        52728
+      ],
+      "status": "ESTABLISHED",
+      "external_remote": false
+    },
+    {
+      "process": "ai技能库-1.5.5.exe",
+      "local": [
+        "127.0.0.1",
+        51599
+      ],
+      "remote": [
+        "127.0.0.1",
+        55365
+      ],
+      "status": "ESTABLISHED",
+      "external_remote": false
+    },
+    {
+      "process": "ai技能库-1.5.5.exe",
+      "local": [
+        "127.0.0.1",
+        51599
+      ],
+      "remote": [
+        "127.0.0.1",
+        58230
+      ],
+      "status": "ESTABLISHED",
+      "external_remote": false
+    },
+    {
+      "process": "ai技能库-1.5.5.exe",
+      "local": [
+        "127.0.0.1",
+        51599
+      ],
+      "remote": [
+        "127.0.0.1",
+        58986
+      ],
+      "status": "ESTABLISHED",
+      "external_remote": false
+    },
+    {
+      "process": "ai技能库-1.5.5.exe",
+      "local": [
+        "127.0.0.1",
+        51599
+      ],
+      "remote": [
+        "127.0.0.1",
+        60898
+      ],
+      "status": "ESTABLISHED",
+      "external_remote": false
+    },
+    {
+      "process": "ai技能库-1.5.5.exe",
+      "local": [
+        "127.0.0.1",
+        51599
+      ],
+      "remote": [
+        "127.0.0.1",
+        61687
+      ],
+      "status": "ESTABLISHED",
+      "external_remote": false
+    },
+    {
+      "process": "ai技能库-1.5.5.exe",
+      "local": [
+        "127.0.0.1",
+        51599
+      ],
+      "remote": [],
+      "status": "LISTEN",
+      "external_remote": false
+    },
+    {
+      "process": "msedgewebview2.exe",
+      "local": [
+        "127.0.0.1",
+        50201
+      ],
+      "remote": [
+        "127.0.0.1",
+        51599
+      ],
+      "status": "ESTABLISHED",
+      "external_remote": false
+    },
+    {
+      "process": "msedgewebview2.exe",
+      "local": [
+        "127.0.0.1",
+        50210
+      ],
+      "remote": [
+        "127.0.0.1",
+        51599
+      ],
+      "status": "ESTABLISHED",
+      "external_remote": false
+    },
+    {
+      "process": "msedgewebview2.exe",
+      "local": [
+        "127.0.0.1",
+        50597
+      ],
+      "remote": [
+        "127.0.0.1",
+        51599
+      ],
+      "status": "ESTABLISHED",
+      "external_remote": false
+    },
+    {
+      "process": "msedgewebview2.exe",
+      "local": [
+        "127.0.0.1",
+        51546
+      ],
+      "remote": [
+        "127.0.0.1",
+        51599
+      ],
+      "status": "ESTABLISHED",
+      "external_remote": false
+    },
+    {
+      "process": "msedgewebview2.exe",
+      "local": [
+        "127.0.0.1",
+        52728
+      ],
+      "remote": [
+        "127.0.0.1",
+        51599
+      ],
+      "status": "ESTABLISHED",
+      "external_remote": false
+    },
+    {
+      "process": "msedgewebview2.exe",
+      "local": [
+        "127.0.0.1",
+        53569
+      ],
+      "remote": [
+        "127.0.0.1",
+        7897
+      ],
+      "status": "ESTABLISHED",
+      "external_remote": false
+    },
+    {
+      "process": "msedgewebview2.exe",
+      "local": [
+        "127.0.0.1",
+        55365
+      ],
+      "remote": [
+        "127.0.0.1",
+        51599
+      ],
+      "status": "ESTABLISHED",
+      "external_remote": false
+    },
+    {
+      "process": "msedgewebview2.exe",
+      "local": [
+        "127.0.0.1",
+        58230
+      ],
+      "remote": [
+        "127.0.0.1",
+        51599
+      ],
+      "status": "ESTABLISHED",
+      "external_remote": false
+    },
+    {
+      "process": "msedgewebview2.exe",
+      "local": [
+        "127.0.0.1",
+        58986
+      ],
+      "remote": [
+        "127.0.0.1",
+        51599
+      ],
+      "status": "ESTABLISHED",
+      "external_remote": false
+    },
+    {
+      "process": "msedgewebview2.exe",
+      "local": [
+        "127.0.0.1",
+        59917
+      ],
+      "remote": [
+        "127.0.0.1",
+        7897
+      ],
+      "status": "ESTABLISHED",
+      "external_remote": false
+    },
+    {
+      "process": "msedgewebview2.exe",
+      "local": [
+        "127.0.0.1",
+        59923
+      ],
+      "remote": [
+        "127.0.0.1",
+        7897
+      ],
+      "status": "ESTABLISHED",
+      "external_remote": false
+    },
+    {
+      "process": "msedgewebview2.exe",
+      "local": [
+        "127.0.0.1",
+        59924
+      ],
+      "remote": [
+        "127.0.0.1",
+        7897
+      ],
+      "status": "ESTABLISHED",
+      "external_remote": false
+    },
+    {
+      "process": "msedgewebview2.exe",
+      "local": [
+        "127.0.0.1",
+        60898
+      ],
+      "remote": [
+        "127.0.0.1",
+        51599
+      ],
+      "status": "ESTABLISHED",
+      "external_remote": false
+    },
+    {
+      "process": "msedgewebview2.exe",
+      "local": [
+        "127.0.0.1",
+        61687
+      ],
+      "remote": [
+        "127.0.0.1",
+        51599
+      ],
+      "status": "ESTABLISHED",
+      "external_remote": false
+    }
+  ],
+  "external_remote_connections_observed": 0,
+  "persistence_snapshots": {
+    "HKCU:64:Run": {
+      "available": true,
+      "unchanged": true
+    },
+    "HKCU:64:RunOnce": {
+      "available": true,
+      "unchanged": true
+    },
+    "HKCU:32:Run": {
+      "available": true,
+      "unchanged": true
+    },
+    "HKCU:32:RunOnce": {
+      "available": true,
+      "unchanged": true
+    },
+    "HKLM:64:Run": {
+      "available": true,
+      "unchanged": true
+    },
+    "HKLM:64:RunOnce": {
+      "available": true,
+      "unchanged": true
+    },
+    "HKLM:32:Run": {
+      "available": true,
+      "unchanged": true
+    },
+    "HKLM:32:RunOnce": {
+      "available": true,
+      "unchanged": true
+    },
+    "startup-folder-0": {
+      "available": true,
+      "unchanged": true
+    },
+    "startup-folder-1": {
+      "available": true,
+      "unchanged": true
+    },
+    "service-names": {
+      "available": true,
+      "unchanged": true
+    },
+    "scheduled-task-definitions": {
+      "available": true,
+      "unchanged": true
+    }
+  },
+  "scope": "isolated native startup, automatic animation completion, main UI rendering and page scroll; sampled TCP/UDP tables, not packet capture",
+  "isolation": "explicit temporary home/data paths and --sandbox; no real AI client installs"
+}

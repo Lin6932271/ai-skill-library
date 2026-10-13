@@ -1,11 +1,11 @@
 ---
 name: pojia-local
-description: "按任务选择精品服务器目录中已保存的本地技能。"
+description: "按任务选择精品目录中已保存的本地技能。"
 ---
 
 # 精品技能目录
 
-本版服务器公开目录为 161 项技能（4个入口、157个模块）；当前已保存 147 项正文。按用户当前任务选择实际存在的本版模块，先核对工具、版本与附件。
+本版目录为 161 项技能（4个入口、157个模块）；当前已保存全部 161 项正文。按用户当前任务选择适用模块，先核对工具、版本与附件。
 
 | 名称 | 用途 | 正文 |
 | --- | --- | --- |
@@ -34,6 +34,7 @@ description: "按任务选择精品服务器目录中已保存的本地技能。
 | `custom-protocol-replay` | Custom Protocol Replay | [读取](../custom-protocol-replay/SKILL.md) |
 | `database-security` | Database Security Assessment | [读取](../database-security/SKILL.md) |
 | `diagram-generator` | Security Diagram Generator | [读取](../diagram-generator/SKILL.md) |
+| `digital-forensics` | Digital Forensics and Incident Response | [读取](../digital-forensics/SKILL.md) |
 | `dll-injection` | 进程加载路径、前置条件与结果检查 | [读取](../dll-injection/SKILL.md) |
 | `dns-enum` | DNS Inventory | [读取](../dns-enum/SKILL.md) |
 | `docs-generator` | Security Documentation Generator | [读取](../docs-generator/SKILL.md) |
@@ -70,6 +71,7 @@ description: "按任务选择精品服务器目录中已保存的本地技能。
 | `ghidra-rpc` | Ghidra Scripted Analysis | [读取](../ghidra-rpc/SKILL.md) |
 | `go-rust-reverse` | Go/Rust Binary Analysis | [读取](../go-rust-reverse/SKILL.md) |
 | `graphql-rpc-drift` | 对照 schema、生成客户端、网关和 handler 的版本与操作契约，验证最小非修改漂移案例。 | [读取](../graphql-rpc-drift/SKILL.md) |
+| `hardware-security` | Hardware and Embedded Interface Security | [读取](../hardware-security/SKILL.md) |
 | `ida-reverse` | IDA Pro Analysis | [读取](../ida-reverse/SKILL.md) |
 | `identity-federation` | Identity Federation Assessment | [读取](../identity-federation/SKILL.md) |
 | `identity-windows` | Windows Identity and Authentication Assessment | [读取](../identity-windows/SKILL.md) |
@@ -85,17 +87,21 @@ description: "按任务选择精品服务器目录中已保存的本地技能。
 | `l-reverse` | 按样本格式路由二进制、移动端、JS 和协议逆向任务 | [读取](../l-reverse/SKILL.md) |
 | `l-webrecon` | Web/API 的范围确定、低影响探测、权限与数据边界检查 | [读取](../l-webrecon/SKILL.md) |
 | `license-flow-recovery` | License Flow Recovery | [读取](../license-flow-recovery/SKILL.md) |
+| `llm-security` | LLM Security Assessment | [读取](../llm-security/SKILL.md) |
 | `macos-reverse` | macOS Application Analysis | [读取](../macos-reverse/SKILL.md) |
 | `malware-analysis` | Malware Analysis | [读取](../malware-analysis/SKILL.md) |
 | `malware-config` | Malware Configuration Extraction | [读取](../malware-config/SKILL.md) |
 | `mobile-competitive-game` | 样本、引擎、运行时、协议与证据复核 | [读取](../mobile-competitive-game/SKILL.md) |
 | `oauth-oidc` | OAuth/OIDC Security Review | [读取](../oauth-oidc/SKILL.md) |
+| `ot-ics` | OT and ICS Security | [读取](../ot-ics/SKILL.md) |
 | `patch-diff-vuln` | Patch Diff Vulnerability Analysis | [读取](../patch-diff-vuln/SKILL.md) |
 | `patch-rollback` | Patch Rollback Review | [读取](../patch-rollback/SKILL.md) |
 | `pc-game-memory` | 数值定位、指针链、特征码与结果验证 | [读取](../pc-game-memory/SKILL.md) |
 | `pcap-protocol` | 抓包统计、会话重建、载荷与证据表 | [读取](../pcap-protocol/SKILL.md) |
+| `pentest-methodology` | Penetration Testing Methodology | [读取](../pentest-methodology/SKILL.md) |
 | `port-scan` | Service Discovery | [读取](../port-scan/SKILL.md) |
 | `posture-assessment` | Security Posture Assessment | [读取](../posture-assessment/SKILL.md) |
+| `prompt-injection` | Prompt Injection Assessment | [读取](../prompt-injection/SKILL.md) |
 | `protocol-reverse` | 协议逆向工程 | [读取](../protocol-reverse/SKILL.md) |
 | `protocol-reverse-advanced` | Advanced Protocol Reverse Engineering | [读取](../protocol-reverse-advanced/SKILL.md) |
 | `queue-worker-drift` | Queue Worker Drift Analysis | [读取](../queue-worker-drift/SKILL.md) |
@@ -103,11 +109,15 @@ description: "按任务选择精品服务器目录中已保存的本地技能。
 | `quickref-frida` | Frida Hook 速查模板库 | [读取](../quickref-frida/SKILL.md) |
 | `race-condition` | Race Condition Analysis | [读取](../race-condition/SKILL.md) |
 | `radare2` | Radare2 Binary Analysis | [读取](../radare2/SKILL.md) |
+| `radio-sdr` | SDR Security Assessment | [读取](../radio-sdr/SKILL.md) |
 | `request-smuggling` | 在隔离链路比较代理与后端的请求边界、头规范化和 chunk/trailer 解析。 | [读取](../request-smuggling/SKILL.md) |
 | `rev-binary` | 二进制逆向参考手册 | [读取](../rev-binary/SKILL.md) |
 | `rev-guide` | 逆向工程 | [读取](../rev-guide/SKILL.md) |
 | `rev-mobile` | 移动端逆向参考手册 | [读取](../rev-mobile/SKILL.md) |
+| `rev-protocol` | 协议与接口逆向参考手册 | [读取](../rev-protocol/SKILL.md) |
+| `rev-web` | Web 逆向参考手册 | [读取](../rev-web/SKILL.md) |
 | `reverse-android-malware` | Android Malware Reverse Engineering | [读取](../reverse-android-malware/SKILL.md) |
+| `reverse-engineering` | 逆向工程通用入口 | [读取](../reverse-engineering/SKILL.md) |
 | `runtime-routing` | 比较源码配置、挂载配置、环境和监听者，定位客户端到实际服务的首次路由分歧。 | [读取](../runtime-routing/SKILL.md) |
 | `sec-forge` | 安全研究任务编排 | [读取](../sec-forge/SKILL.md) |
 | `sqli-test` | 用可丢弃数据库和最小对照请求验证查询边界及参数化修复。 | [读取](../sqli-test/SKILL.md) |
@@ -115,10 +125,14 @@ description: "按任务选择精品服务器目录中已保存的本地技能。
 | `ssrf-defense` | 对照校验器、DNS 和真实请求层，验证 URL 允许范围与解析时序的防御效果。 | [读取](../ssrf-defense/SKILL.md) |
 | `stego-media` | Steganography and Media Analysis | [读取](../stego-media/SKILL.md) |
 | `suite-index` | 可用能力目录 | [读取](../suite-index/SKILL.md) |
+| `suite-network` | 能力组：网络协议 / API / 认证 | [读取](../suite-network/SKILL.md) |
+| `suite-orchestration` | 能力组：总控与任务编排 | [读取](../suite-orchestration/SKILL.md) |
+| `suite-security` | 能力组：安全审计 / 防护 / 取证 | [读取](../suite-security/SKILL.md) |
 | `supply-chain-attack` | Supply Chain Attack Detection | [读取](../supply-chain-attack/SKILL.md) |
 | `supply-chain-security` | Supply Chain Security | [读取](../supply-chain-security/SKILL.md) |
 | `template-render` | Template Injection Assessment | [读取](../template-render/SKILL.md) |
 | `thick-client` | 检查桌面应用、本地存储、更新与进程间信任边界 | [读取](../thick-client/SKILL.md) |
+| `threat-hunting` | Threat Hunting | [读取](../threat-hunting/SKILL.md) |
 | `tool-airtest` | Airtest跨平台游戏与应用UI自动化 技能卡 | [读取](../tool-airtest/SKILL.md) |
 | `tool-bepinex` | BepInEx Unity/.NET 插件加载与运行框架 技能卡 | [读取](../tool-bepinex/SKILL.md) |
 | `tool-breakpad` | 核对模块和符号版本，保存 minidump、线程信息与符号化堆栈的证据有效性。 | [读取](../tool-breakpad/SKILL.md) |

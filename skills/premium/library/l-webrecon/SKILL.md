@@ -70,3 +70,14 @@ description: "Web/API 的范围确定、低影响探测、权限与数据边界�
 | `bundle-sourcemap-recovery` | Bundle and Sourcemap Recovery | [读取](../bundle-sourcemap-recovery/SKILL.md) |
 | `email-security` | Email Security Assessment | [读取](../email-security/SKILL.md) |
 | `wifi-wireless` | Wireless Security Assessment | [读取](../wifi-wireless/SKILL.md) |
+| `digital-forensics` | Digital Forensics and Incident Response | [读取](../digital-forensics/SKILL.md) |
+| `hardware-security` | Hardware and Embedded Interface Security | [读取](../hardware-security/SKILL.md) |
+| `llm-security` | LLM Security Assessment | [读取](../llm-security/SKILL.md) |
+| `ot-ics` | OT and ICS Security | [读取](../ot-ics/SKILL.md) |
+| `pentest-methodology` | Penetration Testing Methodology | [读取](../pentest-methodology/SKILL.md) |
+| `prompt-injection` | Prompt Injection Assessment | [读取](../prompt-injection/SKILL.md) |
+| `radio-sdr` | SDR Security Assessment | [读取](../radio-sdr/SKILL.md) |
+| `suite-network` | 能力组：网络协议 / API / 认证 | [读取](../suite-network/SKILL.md) |
+| `suite-orchestration` | 能力组：总控与任务编排 | [读取](../suite-orchestration/SKILL.md) |
+| `suite-security` | 能力组：安全审计 / 防护 / 取证 | [读取](../suite-security/SKILL.md) |
+| `threat-hunting` | Threat Hunting | [读取](../threat-hunting/SKILL.md) |
