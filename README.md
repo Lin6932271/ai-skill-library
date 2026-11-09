@@ -1,6 +1,6 @@
 # ai技能库
 
-**AI 开发 · 程序版本 1.5.5**
+** 开发 · 程序版本 1.5.5**
 
 Windows 桌面 AI 技能管理工具，支持技能安装、切换、导入、备份、检查与撤销。支持 Codex、Claude、DeepSeek Harness、Hermes、ZCode，以及 WorkBuddy 国内版和国际版。
 
